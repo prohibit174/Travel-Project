@@ -41,26 +41,6 @@
 <meta name="google-signin-client_id" content="41152955122-5m3ufq08325k2m3mgeppmkknn9rql13h.apps.googleusercontent.com">
 
 
-<!--[if lt IE 9]>
-<script type="text/javascript">
-  document.createElement('header');
-  document.createElement('nav');
-  document.createElement('article');
-  document.createElement('section');
-  document.createElement('aside');
-  document.createElement('footer');
-</script>
-<style type="text/css">
-  header, nav, article, section, aside, footer, menu, hgroup, figure {display:block;}
-</style>
-<![endif]-->
-<!--[if gte IE 9]>
-<style type="text/css">
-  .gradient {
-    filter: none;
-  }
-</style>
-<![endif]-->
 <style type="text/css">
   body, pre {
     font-family: "맑은 고딕","Malgun Gothic","Helvetica Neue","Apple SD Gothic Neo",Helvetica,Arial,"Apple Gothic","돋움",Dotum,sans-serif!important;
@@ -194,15 +174,15 @@
   <!-- {header -->
   <div class="header">
     <div class="main-nav-con">
-      <p class="wishbeen-logo"><a href="/"><img src="/images/h1_logo_wishbeen.png" alt="세상의 모든 여행, 위시빈"></a><span>세상의 모든 여행, 위시빈</span></p>
+      <p class="wishbeen-logo"><span>세상의 모든 여행, 위시빈</span></p>
 
       <div class="nav-login-search">
-        <a class="btn-new-plan">일정 만들기</a>
+        <a class="btn-new-plan">로그인</a>
         <div class="login-and-profile">
           
           <div>
-            <a id="nav-btn-about" href="http://blog.naver.com/PostThumbnailList.nhn?blogId=wishbeen&from=postList&categoryNo=97&parentCategoryNo=97" target="_blank">위시빈 사용법</a>
-            <a id="nav-login-btn" class="nav-btn-login">로그인</a>
+            <a id="nav-btn-about" href="http://blog.naver.com/PostThumbnailList.nhn?blogId=wishbeen&from=postList&categoryNo=97&parentCategoryNo=97" target="_blank">회원가입</a>
+            <a id="nav-login-btn" class="nav-btn-login">마이페이지</a>
             <a id="nav-fb-login" class="fb"></a>
             <a id="nav-ggl-login" class="ggl"></a>
           </div>
@@ -231,140 +211,21 @@
 <div class="main-tabs">
     <div class="tabs-list">
         <ul id="menu_tab_list">
-            <li><a data-tab="home" >추천콘텐츠</a></li>
-            <li><a data-tab="hotdeal" >여행핫딜</a></li>
-            <li><a data-tab="specialTip" >여행꿀팁</a></li>
-            <li><a data-tab="community" >커뮤니티</a></li>
-            <li><a data-tab="plan" >여행일정</a></li>
-            <li><a data-tab="attraction" >가볼만한 곳</a></li>
-            <li><a data-tab="food" >맛집</a></li>
-            <li><a data-tab="sleep" >숙소</a></li>
-            <li><a data-tab="hotel" href="/hotels" target="_blank">최저가 호텔</a></li>
-            <li><a data-tab="flight" href="http://flights.wishbeen.com/ko-KR/flights/" target="_blank">항공권 조회</a></li>
+            <li><a data-tab="home" >HOME</a></li>
+            <li><a data-tab="hotdeal" >동행</a></li>
+            <li><a data-tab="specialTip" >카풀</a></li>
+            <li><a data-tab="community" >물품교환</a></li>
+            <li><a data-tab="plan" >커뮤니티</a></li>
+            <li><a data-tab="attraction" >블로그</a></li>
+
         </ul><!-- e// tabs -->
     </div><!-- e//tabs-list -->
 
-    <div class="search-box">
-        <div class="inner-box">
-            <div id="where_search_box" class="first-box">
-                <label for="where"></label>
-                <input type="text" id="where" placeholder="어디에서"/>
-                <div id="search_city_recommend_cities" class="search-list hide">
-                    <ul>
-                        <li class="sub-tit"><a><span>추천여행지</span></a></li>
-                        
-                        <li class="search-place" data-city="korea">
-                            <a>
-                                <strong>대한민국</strong>
-                                
-                                <span>아시아</span>
-                                
-                            </a>
-                        </li>
-                        
-                        <li class="search-place" data-city="jeju">
-                            <a>
-                                <strong>제주</strong>
-                                
-                                <span>대한민국, 아시아</span>
-                                
-                            </a>
-                        </li>
-                        
-                        <li class="search-place" data-city="seoul">
-                            <a>
-                                <strong>서울</strong>
-                                
-                                <span>대한민국, 아시아</span>
-                                
-                            </a>
-                        </li>
-                        
-                        <li class="search-place" data-city="kansai">
-                            <a>
-                                <strong>오사카</strong>
-                                
-                                <span>일본, 아시아</span>
-                                
-                            </a>
-                        </li>
-                        
-                        <li class="search-place" data-city="taiwan">
-                            <a>
-                                <strong>대만</strong>
-                                
-                                <span>아시아</span>
-                                
-                            </a>
-                        </li>
-                        
-                        <li class="search-place" data-city="hongkong">
-                            <a>
-                                <strong>홍콩</strong>
-                                
-                                <span>아시아</span>
-                                
-                            </a>
-                        </li>
-                        
-                        <li class="search-place" data-city="thailand">
-                            <a>
-                                <strong>태국</strong>
-                                
-                                <span>아시아</span>
-                                
-                            </a>
-                        </li>
-                        
-                        <li class="search-place" data-city="singapore">
-                            <a>
-                                <strong>싱가포르</strong>
-                                
-                                <span>아시아</span>
-                                
-                            </a>
-                        </li>
-                        
-                        <li class="search-place" data-city="europe">
-                            <a>
-                                <strong>유럽</strong>
-                                
-                                <span></span>
-                                
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div><!-- e//search-list -->
-            </div><!-- e//first-box -->
-            <div id="what_search_box" class="second-box">
-                <label for="what"></label>
-                <input type="text" id="what" autocomplete="off" placeholder="무엇을 하고 싶으세요?"/>
-                <div id="search_text_tab_menus" class="search-list hide">
-                    <ul>
-                        <li class="l-type01 search-tab" data-tab="home"><a><span class="tmp-search-text-input"></span> <span>추천콘텐츠</span></a></li>
-                        <li class="l-type02 search-tab" data-tab="hotdeal"><a><span class="tmp-search-text-input"></span> <span>여행핫딜</span></a></li>
-                        <li class="l-type02 search-tab" data-tab="specialTip"><a><span class="tmp-search-text-input"></span> <span>여행꿀팁</span></a></li>
-                        <li class="l-type03 search-tab" data-tab="community"><a><span class="tmp-search-text-input"></span> <span>커뮤니티</span></a></li>
-                        <li class="l-type04 search-tab" data-tab="plan"><a><span class="tmp-search-text-input"></span> <span>여행일정</span></a></li>
-                        <li class="l-type05 search-tab" data-tab="attraction"><a><span class="tmp-search-text-input"></span> <span>가볼만한 곳</span></a></li>
-                        <li class="l-type06 search-tab" data-tab="food"><a><span class="tmp-search-text-input"></span> <span>맛집</span></a></li>
-                        <li class="l-type07 search-tab" data-tab="sleep"><a><span class="tmp-search-text-input"></span> <span>숙소</span></a></li>
-                    </ul>
-                    <ul>
-                        <li class="sub-tit"><a><span>예약하기</span></a></li>
-                        <li class="l-type07 search-tab" data-tab="hotel" ><a href="/hotels" target="_blank"><span class="tmp-search-text-input"></span> <span>최저가 호텔</span></a></li>
-                        <li class="l-type08 search-tab" data-tab="flight"><a href="http://flights.wishbeen.com/ko-KR/flights/" target="_blank"><span class="tmp-search-text-input"></span> <span>항공권 조회</span></a></li><!-- 나라를 선택하고나면 디폴트값 -->
-                    </ul>
-                </div><!-- e//search-list -->
-            </div><!-- e//second-box -->
-            <a id="search_tab_search_btn" class="btn-main-search"><img src="/images/btn-search.png" alt=""/></a>
-        </div><!-- e//inner-box -->
-    </div><!-- e//search-box -->
+   <!-- e//search-box -->
 </div><!-- e//main-tabs -->
 
 
-<script>
+<!-- <script>
     g_localizedString["_Won_"] = "원";
 g_localizedString["_Sale_"] = "할인";
 </script>
@@ -395,9 +256,9 @@ g_localizedString["_Sale_"] = "할인";
     <div class="inner-box">
         
         <div id="slide">
-    <!-- ** 전달해야될 값들 ** -->
-    <!-- introBanners -->
-    <!-- {banner-container -->
+    ** 전달해야될 값들 **
+    introBanners
+    {banner-container
     <div id="intro_banner_container" class="banner-container">
         <div class="banner-inner-box">
             <div>
@@ -461,7 +322,7 @@ g_localizedString["_Sale_"] = "할인";
             <a class="btn-prev"><span></span></a>
             <a class="btn-next"><span></span></a>
         </div>
-    </div><!-- banner-container } -->
+    </div>banner-container }
 </div>
         
         <script>
@@ -471,20 +332,20 @@ g_localizedString["_Sale_"] = "할인";
   g_localizedString["_EnterDestination_"] = "목적지를 입력 해주세요.";
   g_data['clientType'] = "web";
 </script>
-<div id="widget"><!-- 201603위젯 -->
+<div id="widget">201603위젯
   <div class="widget-wrap">
     
     <div class="tab-widget">
       <ul>
         <li class="active" data-target="htl-widget"><a>최저가 호텔</a></li>
         <li data-target="flight-widget"><a>항공권 조회</a></li>
-        <!--<li data-target="hotdeal-widget"><a>여행핫팅</a></li>-->
+        <li data-target="hotdeal-widget"><a>여행핫팅</a></li>
       </ul>
-    </div> <!-- e//tab-widget -->
+    </div> e//tab-widget
     
 
     
-    <div  class="htl-widget widget-content active"> <!--호텔  {-->
+    <div  class="htl-widget widget-content active"> 호텔  {
     <div class="widget-data">
         <div class="btn-box"><button id="near-hotel" class="btn btn-near-htl"> 오늘밤 가능한 인근 호텔</button></div>
         <form action="" method="post">
@@ -542,10 +403,10 @@ g_localizedString["_Sale_"] = "할인";
             <p>위시빈의 최저가 호텔 조회는 호텔스컴바인과의 제휴를 통해 정보를 제공해 드리고 있습니다. 당사는 본 제휴와 관련한 상담, 예약, 구매 등에 대해 단순 정보 제공 이상으로는 관여하지 않으며, 이로 인해 발생하는 모든 일에 대한 책임을 지지 않습니다.</p> <p>예약 내역은 당 제휴사에서 전송하는 이메일 등으로 확인하실 수 있으며, 예약의 변경/취소 등에 관련한 내용은 실제 예약을 진행한 업체에 직접 문의하셔야 합니다.</p>
         </div>
     </div>
-</div><!--e//호텔  hlt-widget }-->
+</div>e//호텔  hlt-widget }
     
     
-    <div id="flight-widget-" class="flight-widget widget-content "><!-- 항공  {-->
+    <div id="flight-widget-" class="flight-widget widget-content ">항공  {
     <fieldset>
         <div class="widget-data">
             <div class="departure box">
@@ -638,7 +499,7 @@ g_localizedString["_Sale_"] = "할인";
           </div>
           <i class="ico"></i>
           </span>
-            </div><!--e//persanl -->
+            </div>e//persanl
 
             <div class="btn-box"><button id="flight-search-btn" type="button" class="btn btn-pakage btn btn-primary">검색하기</button></div>
 
@@ -647,7 +508,7 @@ g_localizedString["_Sale_"] = "할인";
             </div>
         </div>
     </fieldset>
-</div><!--e//항공 flight-widget  }-->
+</div>e//항공 flight-widget  }
     
     
   </div>
@@ -657,39 +518,14 @@ g_localizedString["_Sale_"] = "할인";
 
 <div id="contents" class="main">
     
-    <!-- 여행꿀팁 영역 -->
+    여행꿀팁 영역
     <div class="conts-container conts-box">
         <div class="contents-wrap">
             <div class="bigHeader">
                 여행꿀팁
             </div>
             <div class="content-tabs">
-                
-                
-                
-                <ul class="tabs-list">
-    
-        
-            <li><a href="/city?serviceType=global&amp;tab=specialTip" class="first-tag active"><span>전체</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=9d8e9099ece71808" data-id="9d8e9099ece71808" class=""><span>베스트 여행기</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=da838626723f098d" data-id="da838626723f098d" class=""><span>4월 추천여행</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=03a0320a545638be" data-id="03a0320a545638be" class=""><span>여행꿀팁</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=6450e6b4dad28b97" data-id="6450e6b4dad28b97" class=""><span>여행매거진</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=d0b231dbd188789e" data-id="d0b231dbd188789e" class=""><span>여행 상품 핫딜</span></a></li>
-            
-        
-    
-</ul>
+
             </div>
             <div class="conts-box-list">
                 <div class="inner-box">
@@ -1033,46 +869,19 @@ g_localizedString["_Sale_"] = "할인";
                     
                     <a class="btn-more" href="/city?serviceType=global&amp;tab=specialTip"><span>여행꿀팁</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                     
-                </div><!-- e//btn-box -->
+                </div>e//btn-box
             </div>
         </div>
     </div>
     
 
-    <!-- 여행핫딜 영역 -->
+    여행핫딜 영역
     
     <div class="conts-container conts-box">
         <div class="contents-wrap">
-            <div class="bigHeader">
-                여행핫딜
-            </div>
+
             <div class="content-tabs">
-                
-                
-                
-                <ul class="tabs-list">
-    
-        
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal" class="first-tag active"><span>전체</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=5d1504d8bebfc81e" data-id="5d1504d8bebfc81e" class=""><span>국내항공권</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" data-id="2d8eef384cefda06" class=""><span>국내패키지</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>해외자유여행</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=d89affed9eab18e5" data-id="d89affed9eab18e5" class=""><span>해외패키지</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=d3d1bffe5bf618e5" data-id="d3d1bffe5bf618e5" class=""><span>여행용품</span></a></li>
-            
-        
-    
-</ul>
+
             </div>
             <div class="conts-box-list">
                 <div class="inner-box" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
@@ -1081,22 +890,14 @@ g_localizedString["_Sale_"] = "할인";
 
                 </div>
                 <div class="clear"></div>
-                <div align="center" class="loading-image">
-                    <div class="load-01">
-                        <div class="load-02 fa-spin"></div>
-                    </div>
-                </div>
-                <div class="btn-box center">
-                    
-                    <a class="btn-more" href="/city?serviceType=global&amp;tab=hotdeal"><span>여행핫딜</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
-                    
-                </div><!-- e//btn-box -->
+
+e//btn-box
             </div>
         </div>
     </div>
     
 
-    <!-- 커뮤니티 영역 -->
+    커뮤니티 영역
     
     <div class="conts-container community">
         <div class="contents-wrap">
@@ -1104,38 +905,7 @@ g_localizedString["_Sale_"] = "할인";
                 커뮤니티
             </div>
             <div class="content-tabs">
-                <ul class="tabs-list">
-    
-        
-        
-            
-            
-                <li><a href="/city?serviceType=global&amp;tab=community&amp;communityName=%5B%EC%A0%84%EC%84%B8%EA%B3%84%5D%20%EC%9B%94%EA%B0%84%20BEST" class="active"><span>[전세계] 월간 BEST</span></a></li>
-            
-        
-            
-            
-                <li><a href="/city?serviceType=global&amp;tab=community&amp;communityName=%5B%EC%A0%84%EC%84%B8%EA%B3%84%5D%20Q%26A" class=""><span>[전세계] Q&amp;A</span></a></li>
-            
-        
-            
-            
-                <li><a href="/city?serviceType=global&amp;tab=community&amp;communityName=%5B%EC%A0%84%EC%84%B8%EA%B3%84%5D%20%EC%97%AC%ED%96%89%EA%B8%B0" class=""><span>[전세계] 여행기</span></a></li>
-            
-        
-            
-            
-                <li><a href="/city?serviceType=global&amp;tab=community&amp;communityName=%5B%EC%A0%84%EC%84%B8%EA%B3%84%5D%20%EC%9E%90%EC%9C%A0%EA%B2%8C%EC%8B%9C%ED%8C%90" class=""><span>[전세계] 자유게시판</span></a></li>
-            
-        
-            
-            
-                <li><a href="/city?serviceType=global&amp;tab=community&amp;communityName=%5B%EC%A0%84%EC%84%B8%EA%B3%84%5D%20%EC%97%AC%ED%96%89%20%EC%A0%84%20%EB%A9%94%EB%AA%A8" class=""><span>[전세계] 여행 전 메모</span></a></li>
-            
-        
-        
-    
-</ul>
+
             </div>
             <div class="conts-box-list">
                 <div class="inner-box">
@@ -1340,14 +1110,14 @@ g_localizedString["_Sale_"] = "할인";
                     
                     <a class="btn-more" href="/city?serviceType=global&amp;tab=community"><span>커뮤니티</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                     
-                </div><!-- e//btn-box -->
-            </div><!-- -e//conts-box-list -->
+                </div>e//btn-box
+            </div>-e//conts-box-list
         </div>
     </div>
     
 
 
-    <!-- 여행일정 영역 -->
+    여행일정 영역
     
     <div class="conts-container plan">
         <div class="contents-wrap">
@@ -1542,15 +1312,15 @@ g_localizedString["_Sale_"] = "할인";
                 
                 <a class="btn-more" href="/city?serviceType=global&amp;tab=plan"><span>여행일정</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                 
-            </div><!-- e//btn-box -->
+            </div>e//btn-box
         </div>
     </div>
     
 
 
-    <!-- 스팟 영역 -->
+    스팟 영역
     <div class="conts-container spot">
-        <!-- 가볼만한 곳 -->
+        가볼만한 곳
         <div class="contents-wrap plance">
             <div class="bigHeader">
                 가볼만한 곳
@@ -1681,10 +1451,10 @@ g_localizedString["_Sale_"] = "할인";
                     
                     <a class="btn-more" href="/city?serviceType=global&amp;tab=attraction"><span>가볼만한 곳</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                     
-                </div><!-- e//btn-box -->
+                </div>e//btn-box
             </div>
         </div>
-        <!-- 맛집 -->
+        맛집
         <div class="contents-wrap foods">
             <div class="bigHeader">
                 맛집
@@ -1815,10 +1585,10 @@ g_localizedString["_Sale_"] = "할인";
                     
                     <a class="btn-more" href="/city?serviceType=global&amp;tab=food"><span>맛집</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                     
-                </div><!-- e//btn-box -->
+                </div>e//btn-box
             </div>
         </div>
-        <!-- 숙소 -->
+        숙소
         <div class="contents-wrap rooms">
             <div class="bigHeader">
                 숙소
@@ -1949,7 +1719,7 @@ g_localizedString["_Sale_"] = "할인";
                     
                     <a class="btn-more" href="/city?serviceType=global&amp;tab=sleep"><span>숙소</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                     
-                </div><!-- e//btn-box -->
+                </div>e//btn-box
             </div>
         </div>
     </div>
@@ -1964,7 +1734,7 @@ g_localizedString["_Sale_"] = "할인";
       google_ad_width = 728;
       google_ad_height = 90;
     </script>
-    <!-- main-bottom -->
+    main-bottom
     <script type="text/javascript"
             src="//pagead2.googlesyndication.com/pagead/show_ads.js">
     </script>
@@ -1972,27 +1742,10 @@ g_localizedString["_Sale_"] = "할인";
 </div>
 
 
-
-
-<div class="app-download ko"><!-- 한글일떄 ko 영문일땐 en -->
-
-    <div class="btn-box">
-        <div class="down-txt">
-            <h1>당신이 원하는<br/>
-                여행정보 앱, 위시빈</h1>
-        </div><!-- 영어버전 멘트 필요-->
-        
-        <a class="appstore" href="https://itunes.apple.com/kr/app/wisibin-yeohaengpilsuaeb-jayu/id930810134?mt=8" target="_blank"><img src="/images/btn-appstore.png" alt=""/></a>
-        
-        <a class="googleplay" href="https://play.google.com/store/apps/details?id=com.tourscrap.wishbeen" target="_blank"> <img src="/images/btn-googleplay.png" alt=""/></a>
-    </div>
-</div><!-- app-download -->
-
-
-<div class="plan-search-top"><!-- 위로가기 버튼 -->
+<div class="plan-search-top">위로가기 버튼
     <a class="btn-top" style="display: none;"><img src="/images/btn-top.png" alt="go to top"></a>
-</div>
-
+</div> -->
+<h1> 여기가 컨텐츠 부분입니다.<br><br> 원하는 거 집어 넣으면 돼요</h1>
 
 <div id="footer">
     <div class="foot-inner">
@@ -2241,19 +1994,7 @@ g_localizedString["_Sale_"] = "할인";
       </div><!-- language-->
     </div><!-- footer-menu-->
   </div><!-- footer-wrap-->
-  <div class="footer_partner_wrap">
-    <div class="footer_partner">
-      <div class="footer_partner_tit">Partners</div>
-      <ul class="partner-list">
-        <li><a href="http://www.wooripension.com/" target="_blank"><image src="../../images/woori.png" class="우리팬션"/> </a></li>
-        <li><a href="http://www.tourbaksa.com/" target="_blank"><image src="../../images/tourbaksa.png" class="여행박사"/> </a></li>
-        <li><a href="http://www.pinspot.co.kr/" target="_blank"><image src="../../images/pin.png" class="핀스팟"/> </a></li>
-        <li><a href="https://www.pikicast.com/" target="_blank"><image src="../../images/piki.png" class="피키캐스트"/></a></li>
-        <li><a href="http://www.hanintel.com/" target="_blank"><image src="../../images/hanin.png" class="한인텔"/></a></li>
-        <li><a href="http://www.coocha.co.kr/" target="_blank"><image src="../../images/coocha.png" class="쿠차"/></a></li>
-      </ul>
-    </div><!-- footer_partner-->
-  </div><!-- footer_partner_wrap-->
+<!-- footer_partner_wrap-->
   <div class="footer-bottom">
     <div class="copyright">
       <p>상호명 : (주)투어스크랩<span>|</span>대표 : 박동두<span>|</span>개인정보책임자 : 이지현</p>
@@ -2263,15 +2004,7 @@ g_localizedString["_Sale_"] = "할인";
       <p>투어스크랩은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 투어스크랩은 상품·거래정보 및 거래에 대하여 책임을 지지 않습니다.</p>
     </div>
 
-    <div class="footerlink">
-      
-      <a href="http://wishbeen.blog.me" class="blog" target="_blank" ><img src="/images/btn-f-blog.png" alt=""/></a>
-      <a href="https://www.facebook.com/wishbeen.co.kr" class="facebook" target="_blank"><img src="/images/btn-f-facebook.png" alt=""/></a>
-      <a class="apps" href="https://itunes.apple.com/kr/app/wisibin-yeohaengpilsuaeb-jayu/id930810134?mt=8" target="_blank"><img src="/images/btn-f-appstore.png" alt=""/></a>
-      
-      <a href="https://play.google.com/store/apps/details?id=com.tourscrap.wishbeen" class="googlep" target="_blank"><img src="/images/btn-f-googleplay.png" alt=""/></a>
-      <div class="footer_kakao"><image src="../../images/kakao.jpg" class="카카오"width="230px" height="37"/></div>
-    </div>
+
   </div><!-- footer-bottom-->
     </div>
 </div><!-- #footer-->
