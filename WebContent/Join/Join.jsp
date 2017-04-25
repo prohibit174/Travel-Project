@@ -151,7 +151,7 @@
 <![endif]-->
 
 
-<link rel="stylesheet" href="../css/carpool_css/city-main-styles.css">
+<link rel="stylesheet" href="../css/join_css/city-main-styles.css">
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
@@ -1745,11 +1745,22 @@ e//btn-box
 <div class="plan-search-top">위로가기 버튼
     <a class="btn-top" style="display: none;"><img src="/images/btn-top.png" alt="go to top"></a>
 </div> -->
-<h1> 회원가입</h1>
+
+
+
+	<div class="lnb">
+		<h2>회원가입</h2>
+		<ul class="city_name">
+			<li class="city"><img
+				src="//img.tourtips.com/images/common/lnb/join.png"
+				alt="회원가입 - 회원정보입력" /></li>
+		</ul>
+	</div>
+
 	<br>
 	<br>
-	<div class="body">
-		<form action="">
+	<div class="form_body">
+		<form action="" class="join_form">
 			<fieldset>
 				<legend>필수 입력 사항</legend>
 				<table class="primary_table">
@@ -1760,7 +1771,7 @@ e//btn-box
 					아이디
 					</th>
 					<td>
-					<input type = "text" id = "id" placeholder="아이디">
+					<input type = "text" id = "id">
 					&nbsp;&nbsp;&nbsp;&nbsp;<span>영문소문자 / 숫자, 4~16자</span>
 					</td>
 					</tr>
@@ -1838,7 +1849,7 @@ e//btn-box
 					<tr>
 					<th scope = "row">주소</th>
 					<td>
-					<input type = "text" name = "address">		<!-- 주소입려어어억 -->
+					<input type = "text" name = "address">		<!-- 주소입려어어억 API를 사용해봅시다-->
 					</td>
 					</tr>
 
@@ -1848,14 +1859,40 @@ e//btn-box
 			</fieldset>
 			
 			<fieldset>
-			<legend></legend>
+			<legend>선택 입력사항</legend>
 			<table>
 			
 				<tr>
 				<th scope="row">직업</th>
+				<td>
+				<input type = "text" name = "job" placeholder="직업을 입력해주세요">
+				</td>
+				</tr>
 				
+				<tr>
+				<th scope = "row">사용언어</th>
+				<td>
+				<input type = "text" name = "language">
+				<span>여행 시 사용하는 언어를 알려주세요.</span>
+				</td>
+				</tr>
+				
+				<tr>
+				<th scope="row">종교</th>
+				<td>
+				<input type ="text" name = "religion">
+				</td>
 				</tr>
 			
+				<tr>
+				<th scope = "row">운전면허 유무</th>
+				<td>
+				<input type = "radio" name = "license" value = "licensed">
+				<label>유</label>
+				<input type = "radio" name = "license" value = "Nolicensed">
+				<label>무</label>
+				</td>
+				</tr>
 			
 			
 			</table>
@@ -1863,7 +1900,7 @@ e//btn-box
 			
 			</fieldset>
 
-
+		<button type = "submit">가입하기</button>
 		</form>
 
 
