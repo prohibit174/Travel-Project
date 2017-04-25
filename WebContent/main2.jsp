@@ -1746,7 +1746,7 @@ e//btn-box
     <a class="btn-top" style="display: none;"><img src="/images/btn-top.png" alt="go to top"></a>
 </div> -->
 <h1> 여기가 컨텐츠 부분입니다.<br><br> 원하는 거 집어 넣으면 돼요</h1>
-<div id="contents"  class="city">
+<div id="contents"  class="citys">
     <div class="conts-container">
         <div class="present">
             <div class="tabs-list">
@@ -1806,6 +1806,7 @@ e//btn-box
         </div>
     </div>
 </div>
+
 <div id="footer">
     <div class="foot-inner">
   <div class="footer-wrap">
@@ -2054,6 +2055,7 @@ e//btn-box
     </div><!-- footer-menu-->
   </div><!-- footer-wrap-->
 <!-- footer_partner_wrap-->
+
   <div class="footer-bottom">
     <div class="copyright">
       <p>상호명 : (주)투어스크랩<span>|</span>대표 : 박동두<span>|</span>개인정보책임자 : 이지현</p>
