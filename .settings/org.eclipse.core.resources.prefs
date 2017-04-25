@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
-encoding//WebContent/carpool.jsp=UTF-8
-encoding//WebContent/css/city-curation-page-styles.css=UTF-8
-encoding//WebContent/css/city-main-styles.css=UTF-8
+encoding//WebContent/Carpool/carpool_add.jsp=UTF-8
+encoding//WebContent/css/carpool_css/city-curation-page-styles.css=UTF-8
+encoding//WebContent/css/carpool_css/city-main-styles.css=UTF-8
 encoding//WebContent/main.jsp=UTF-8
 encoding//WebContent/main2.jsp=UTF-8
