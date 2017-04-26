@@ -192,6 +192,7 @@
     window.location.reload();
   }
 </script>
+
 <div class="page-container">
   <!-- {header -->
   <div class="header">
@@ -290,18 +291,20 @@
                 </div>
             
             </div><!-- e//tabs-list -->
-     <form action="carpool_add.carpool" method="post">
+<form action="insertAction.carpool" method="post">	<input type="text" name="start_lati" id="join_email_id" title="이메일 주소"  maxlength="96"/>
+<input type="submit" value="sdf"></form>
     <div id="carpool_map">
     	<h3 id="carpool_title">카풀의 출발지와 목적지를 마크 하세요</h3>
     	<br>
     	<div id="map"></div>
     </div>
             </div>
-     					
+
 						<div class="nlogin_total_box">
 							<h3 class="nlogin_title nlogin_email_title">카풀 등록 정보</h3>
 							<div class="nlogin_content">
 								<div class="email_member_join">
+
 									<table class="nlogin_table" cellpadding="0" cellspacing="0">
 									<colgroup>
 										<col width="130" />
@@ -983,17 +986,22 @@
 										</tr>
 
 										</tbody>
+									
 									</table>
 								</div>
+								
 							</div>
 
 						</div>
+						
 						</div>
+						
 						</div>
+						
 						<div class="nlogin_join_center">
 							<button class="nlogin_btn" type="submit">카풀 등록</button>
-						</div>
-					</form>
+					    </div>
+					
 
     <style>
        #map {
