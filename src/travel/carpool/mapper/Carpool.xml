@@ -9,10 +9,10 @@
 	
 	<insert id="insertCarpool" parameterType="Carpool">
 			insert into car_list(
-			c_num, u_id, start_lati, start_longti, c_price, c_date, c_person, c_dep_time
+			c_num, u_id, start_lati, start_longti, dest_lati, dest_longti, c_price, c_date, c_person, c_dep_time
 		)
 		values(
-			1, abc123, #{start_lati}, #{start_longti}, 1000, SYSDATE, #{c_person}, SYSDATE
+			1, abc123, #{start_lati}, #{start_longti}, #{dest_lati}, ${dest_longti}, 1000, SYSDATE, #{c_person}, SYSDATE
 		)
 	</insert>
 	

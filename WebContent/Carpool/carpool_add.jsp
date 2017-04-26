@@ -283,13 +283,14 @@
                     google_ad_height = 260;
                   </script>
                   <!-- search-260x260 -->
+                  
                   <script type="text/javascript"
                           src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                   </script>
                 </div>
             
             </div><!-- e//tabs-list -->
-     <form action="carpool_add.do" method="post">
+     <form action="carpool_add.carpool" method="post">
     <div id="carpool_map">
     	<h3 id="carpool_title">카풀의 출발지와 목적지를 마크 하세요</h3>
     	<br>
@@ -310,15 +311,29 @@
 										<tr>
 											<td colspan="2" colspan="2">
 												<div class="nlogin_form_section nlogin_form_text">
-													<label for="join_email_id">출발지</label>
-													<input type="text" name="join_email_id" id="join_email_id" title="이메일 주소" value="" maxlength="96"/>
+													<label for="join_email_id">출발위도</label>
+													<input type="text" name="start_lati" id="join_email_id" title="이메일 주소"  maxlength="96"/>
 													<span class="email_alpha"></span>
 													<span class="login_email_02_pos"></span>
 												</div>
 												
 												<div class="nlogin_form_section nlogin_form_text">
-													<label for="join_email_id">도착지</label>
-													<input type="text" name="join_email_id" id="join_email_id" title="이메일 주소" value="" maxlength="96"/>
+													<label for="join_email_id">출발경도</label>
+													<input type="text" name="start_longti" id="join_email_id" title="이메일 주소" maxlength="96"/>
+													<span class="email_alpha"></span>
+													<span class="login_email_02_pos"></span>
+												</div>
+												
+												<div class="nlogin_form_section nlogin_form_text">
+													<label for="join_email_id">도착위도</label>
+													<input type="text" name="dest_lati" id="join_email_id" title="이메일 주소"  maxlength="96"/>
+													<span class="email_alpha"></span>
+													<span class="login_email_02_pos"></span>
+												</div>
+												
+												<div class="nlogin_form_section nlogin_form_text">
+													<label for="join_email_id">도착경도</label>
+													<input type="text" name="dest_longti" id="join_email_id" title="이메일 주소" maxlength="96"/>
 													<span class="email_alpha"></span>
 													<span class="login_email_02_pos"></span>
 												</div>
@@ -545,11 +560,15 @@
 													</div>
 													
 													<div class="nlogin_select" id="nlogin_gender">
-														<input type="hidden" id="nlogin_gender_value" name="join_sex">
+														<input type="hidden" id="nlogin_gender_value" name="c_person">
 														<p data-value="choice"><span>남은 좌석</span></p>
 														<ul>
-															<li><a href="#" data-value="1">남</a></li>
-															<li><a href="#" data-value="2">여</a></li>
+															<li><a href="#" data-value="1">1</a></li>
+															<li><a href="#" data-value="2">2</a></li>
+															<li><a href="#" data-value="3">3</a></li>
+															<li><a href="#" data-value="4">4</a></li>
+															<li><a href="#" data-value="5">5</a></li>
+															<li><a href="#" data-value="6">6</a></li>
 														</ul>
 													</div>
 													

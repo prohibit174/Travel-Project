@@ -19,7 +19,7 @@ public class CarpoolDao {
 	}
 	
 	public SqlSessionFactory getSqlSessionFactory(){
-		String resource ="mybatis-config.xml";
+		String resource ="mybatis-config-carpool.xml";
 		InputStream input = null;
 		try {
 			input = Resources.getResourceAsStream(resource);

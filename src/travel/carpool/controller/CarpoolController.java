@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import travel.carpool.action.Action;
 import travel.carpool.action.ActionForward;
+import travel.carpool.action.AddFormAction;
 
 
 
-@WebServlet({ "/CarpoolAddController", "*.do" })
-public class CarpoolAddController extends HttpServlet {
+@WebServlet( "*.carpool" )
+public class CarpoolController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public CarpoolAddController() {
+    public CarpoolController() {
         super();
     }
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,13 +29,25 @@ public class CarpoolAddController extends HttpServlet {
         
         ActionForward forward = null;
         Action action = null;
+        
+        if(command.equals("capool_add.carpool")){
+            //insertFormAction()을 만든다 : 역할 jsp로가는메소드
+            action = new AddFormAction();
+            //insert.form.jsp로 가겠다.
+            try {
+               forward = action.execute(request, response);
+           } catch (Exception e) {
+              e.printStackTrace();
+           }
+           //커맨드 값이 마으면 거기에 맞는 액션을 호출하면 된다.
+         }
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doProcess(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		doProcess(request, response);
 	}
 
 }
