@@ -7,13 +7,9 @@
 	<link rel="apple-touch-icon" href="/images/common/logo/icon_114.png">
 
 	<link rel="stylesheet" type="text/css"  href="../css/carpool_css/carpool_list.css">
-	<link rel="stylesheet" type="text/css"  href="../css/carpool_css/city-main-styles.css">
+	<link rel="stylesheet" type="text/css"  href="../css/carpool_css/city-main-styles.css"> 
 	
-
-
-
-
-
+	
 
 <head>
 	<meta charset="UTF-8" />
@@ -34,15 +30,90 @@
 
 </head>
 
+<div class="page-container">
+  <!-- {header -->
+  <div class="header">
+    <div class="main-nav-con">
+      <p class="wishbeen-logo"><span>심심할 틈이 없다! 프로동행러</span></p>
+
+      <div class="nav-login-search">
+        <a class="btn-new-plan">로그인</a>
+        <div class="login-and-profile">
+          
+          <div>
+            <a id="nav-btn-about" href="http://blog.naver.com/PostThumbnailList.nhn?blogId=wishbeen&from=postList&categoryNo=97&parentCategoryNo=97" target="_blank">회원가입</a>
+            <a id="nav-login-btn" class="nav-btn-login">마이페이지</a>
+            <a id="nav-fb-login" class="fb"></a>
+            <a id="nav-ggl-login" class="ggl"></a>
+          </div>
+          
+          
+        </div><!-- login-and-profile -->
+      </div>
+    </div>
+  </div><!-- header } -->
+</div><!-- page-container -->
+
+
+<div class="main-tabs">
+    <div class="tabs-list">
+        <ul id="menu_tab_list">
+            <li><a data-tab="home" >HOME</a></li>	
+            <li><a data-tab="hotdeal" >동행</a></li>
+            <li><a data-tab="specialTip" >카풀</a></li>
+            <li><a data-tab="community" >물품교환</a></li>
+            <li><a data-tab="plan" >커뮤니티</a></li>
+            <li><a data-tab="attraction" >블로그</a></li>
+
+        </ul><!-- e// tabs -->
+    </div><!-- e//tabs-list -->
+
+   <!-- e//search-box -->
+</div><!-- e//main-tabs -->
+
+
+
 <body id="tikle">
 <div id="wrapper">
-	<a href="#content_wrapper" title="본문바로가기" target="_self" class="hidden">본문바로가기</a>
-<header id="header">
+        <div class="present">
+            <div class="tabs-list">
+                
+                <ul class="tabs-list">
+    
+        
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal" class="first-tag active"><span>CARPOOL</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=5d1504d8bebfc81e" data-id="5d1504d8bebfc81e" class=""><span>카풀 등록</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" data-id="2d8eef384cefda06" class=""><span>대기중인 카풀 리스트</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>내 카풀 등록 조회</span></a></li>
+            
+		</ul>
+
+                <div id="google-ad-sense" style="margin-top:20px;float:left;" data-type="260x260">
+                  <script type="text/javascript">
+                    google_ad_client = "ca-pub-9419115827273897";
+                    google_ad_slot = "3548612763";
+                    google_ad_width = 260;
+                    google_ad_height = 260;
+                  </script>
+                  <!-- search-260x260 -->
+                  <script type="text/javascript"
+                          src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script>
+                </div>
+            
+            </div><!-- e//tabs-list -->
+            </div> <!-- present -->
+            
+            
+
+	<section class="section" id="content_wrapper">
 	<section id="box_header">
-		
-
-		
-
 
 			<!-- 검색 -->
 		<article class="header_bot hideClass1">
@@ -83,48 +154,8 @@
 					--><input type="submit" name="" value="검색" title="검색" class="btn_type3 btn_search j_btn_search">
 				</fieldset>
 			</form>
-		</article>
-		</section>
-
-	<!-- 배너 --->
-	<section id="mainBannerWrap" class="hideClass">
-		<div class="inner_banner">
-			<ul id="boxBanner">
-<!--
-				<li class="list_banner j_list_banner">
-					<a href="https://www.gamebus.kr" title="게임버스 이벤트" target="_blank">
-						<img src="/images/pc/banner/banner_gamebus_p.jpg" title="게임버스 타면 게임친구가 가득! 게임 좀 한다는 당신을 위한 취향저걱 앱!" alt="게임버스 타면 게임친구가 가득! 게임 좀 한다는 당신을 위한 취향저걱 앱!">
-					</a>
-				</li>
-				<li class="list_banner j_list_banner " data-no="1">
-					<a href="http://www.tikle.co.kr/board/view?no=987" title="티클 후기이벤트">
-						<img src="/images/pc/banner/banner_14.jpg" title="티클 후기이벤트" alt="티클 후기이벤트">
-					</a>
-				</li><li class="list_banner j_list_banner " data-no="1">
-					<a href="http://www.tikle.co.kr" title="티클 쇼핑몰 2014.7.14일 까지만 운영">
-						<img src="/images/pc/banner/banner_15.jpg" title="티클 쇼핑몰 2014.7.14일 까지만 운영" alt="안녕하세요? 티클입니다. 티클 쇼핑몰 2014.7.14일 까지만 운영됩니다. 그동안 사랑해주신 분들께 진심으로 감사드리며, 문의사항은 게시판을 통해 부탁드립니다.">
-					</a>
-				</li><li class="list_banner j_list_banner " data-no="1">
-					<a href="http://www.tikle.co.kr/driver/intro" title="티클 운전자 등록">
-						<img src="/images/pc/banner/banner_09.jpg" title="내 주변 사람과 실시간으로 카풀하세요!" alt="내 주변 사람과 실시간으로 카풀하세요! 운전자 등록">
-					</a>
-				</li><li class="list_banner j_list_banner " data-no="4">
-					<a href="http://www.tikle.co.kr/event/levelinfo#boxMileage" title="마일리지 전환방법 보러가기">
-						<img src="/images/pc/banner/banner_12.jpg" title="티클에서 활동할수록 쌓이는 마일리지!" alt="티클에서 활동할수록 쌓이는 마일리지! 티클 쇼핑몰에서 바로 할인받으세요!">
-					</a>
-				</li><li class="list_banner j_list_banner " data-no="2">
-					<a href="http://www.tikle.co.kr/driver/driverlist?tikle_kind=5" title="실시간 카풀 리스트 보러가기">
-						<img src="/images/pc/banner/banner_11.jpg" title="실시간으로 카풀 하세요!" alt="근처 운전자와 실시간으로 카풀 하세요!">
-					</a>
-				</li><li class="list_banner j_list_banner " data-no="1">
-					<a href="http://www.tikle.co.kr/ledger/ledger" title="티클 차계부">
-						<img src="/images/pc/banner/banner_05_3.jpg" title="티클 차계부" alt="차에 들어가는 돈 1년에 60만원 아끼는법">
-					</a>
-				</li> 
--->
-			</ul>
-		</div>
-	</section>
+		</article> <!-- header_bot hideClass1 -->
+		</section> <!-- box_header -->
 
 	<!-- temp -->
 	<div class="box_temp hideClass">
@@ -266,8 +297,6 @@
 			</div>
 		</div>
 	</div>
-</header>
-	<section class="section" id="content_wrapper">
 		<div class="content_area">
 			<div class="content" id="tikleList">
 	<table class="tiklelist_dvs">
@@ -711,55 +740,7 @@
 										</div>
 				</div>
 			</a>
-			<!-- 함께아는 친구 -->
-			<!-- 2014-01-03 이창순 - 사용안함 -->
-			<div class="box_cofriends hideClass">
-				<h1 class="title_cofriends">함께아는친구</h1>
-				<ul>
-					<!-- loop -->
-					<li class="cofriends_list">
-						<a href="###" title="" target="_blank" class="link_fb">
-							<!-- 사진 -->
-							<img src="" title="" alt="" style="width: 30px; height: 30px" class="picture">
-						</a>
-					</li>
-				</ul>
-			</div>
-		</li>
-				<li class="tiklelist">
-						<a href="/tikle/view?no=16&list=%2Ftikle%2Ftiklelist%3Ftikle_kind%3D1%26tikle_pattern%3D1" title="단기 카풀 태워주세요 : 서울시 강서구 화곡동 강서구청 1111 ⇒ 천안 아산시 탕정면 2-9" class="link_tikleview j_btn_link_tikle_view">
-				<div class="box_tikle">
-					<figure class="user_pic">
-						<img src="/profile/photo?no=16" title="박진명" alt="박진명" style="width: 60px; height: 60px;" class="picture">
-						<figcaption class="name">박진명</figcaption>
-					</figure>
-					<div class="tikle_con">
-						<div class="box_tikle_info1">
-							<div class="tikle_loc">
-								<!-- 출발지 -->
-								<div class="tikle_place tikle_start"><h1 class="hidden">출발지</h1>서울시 강서구 화곡동 강서구청 1111</div><!-- 
-								--><span class="ico_dir_wrap"><i class="ico_dir"></i></span><!--
-								도착지 
-								--><div class="tikle_place tikle_arrival"><h1 class="hidden">도착지</h1>천안 아산시 탕정면 2-9</div>
-							</div>
-							<div class="tikle_date">2013.05.25 오전 6시 0분</div><span title="티클목적" class="tikle_purpose">카풀</span>
-						</div><!-- 
-						유형 및 금액
-						--><div class="box_tikle_info2">
-							<!-- 타세요 -->
-							<div class="tikle_type">
-								<span title="티클 유형" class="tikle_type1">단기 카풀</span>
-								<span title="티클 유형2" class="tikle_type2">태워주세요</span>
-							</div><!--
-							--><!--
-							--><div class="tikle_end">
-								마감
-							</div><!--
-							-->						</div>
-											
-										</div>
-				</div>
-			</a>
+			
 			<!-- 함께아는 친구 -->
 			<!-- 2014-01-03 이창순 - 사용안함 -->
 			<div class="box_cofriends hideClass">
