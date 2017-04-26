@@ -4,16 +4,24 @@
 
 
 <mapper namespace="travel.product.mapper.TravelMapper">
+
 	<cache />
 	<insert id="insertProduct" parameterType="Product">
 			insert into product(
 		p_num, u_id, p_img, p_detail, p_price, p_amount, p_term, p_ox
 		)
 		values(
-			#{p_num}, #{u_id}, #{p_img},#{p_detail},#{p_price},#{p_amount}, sysdate, 'n'
+			#{p_num}, #{u_id}, #{p_img},#{p_detail},#{p_price},#{p_amount}, #{p_term}, #{p_ox}
 		)
 	</insert>
+	
+	<select id="listProduct" resultType="product">
+		select* from product
+	</select>
+	
+	
 </mapper>
+
 
 
 

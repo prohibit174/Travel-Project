@@ -16,9 +16,11 @@
 			</dataSource>
 		</environment>		
 	</environments>
-	
+
 	<mappers>
 		<mapper resource="travel/product/mapper/Travel.xml"/>
 	</mappers>
-	
+
 </configuration>
+
+

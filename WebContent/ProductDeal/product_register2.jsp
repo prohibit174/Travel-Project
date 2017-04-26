@@ -277,7 +277,7 @@
               <div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
            <!-- boram -->
              	<div class="form_body">
-		<form action="insertAction.do" class="join_form" method="post" enctype="multipart/form-data">
+		<form action="insertAction.product" class="join_form" method="post">
 			<fieldset>
 				<legend>물품 등록</legend>
 
@@ -288,37 +288,50 @@
 					<tr>
 					<th scope="row">물품등록번호</th>
 					<td>
-					<input type = "text" id = "p_num">
+					<input type = "text" id = "p_num" name="p_num">
 					</tr>
 					
 					<tr>
 					<th scope="row">회원ID</th>
 					<td>
-					<input type = "text" id = "u_id">
+					<input type = "text" id = "u_id" name="u_id">
 					</tr>
 					
 					<tr>
 					<th scope="row">파일</th>
 					<td>
-					<input type = "file" id = "p_img">
+					<input type = "text" id = "p_img" name="p_img">
 					</tr>
 					
 					<tr>
 					<th scope="row">내용</th>
 					<td>
-					<input type = "text" id = "p_detail">
+					<input type = "text" id = "p_detail" name="p_detail">
 					</tr>
 					
 					<tr>
 					<th scope="row">가격</th>
 					<td>
-					<input type = "text" id = "p_price">
+					<input type = "text" id = "p_price" name="p_price">
 					</tr>
 					
 					<tr>
 					<th scope="row">수량</th>
 					<td>
-					<input type = "text" id = "p_amount">
+					<input type = "text" id = "p_amount" name="p_amount">
+					</tr>
+					
+					
+					<tr>
+					<th scope="row">기간</th>
+					<td>
+					<input type = "text" id = "p_term" name="p_term">
+					</tr>
+					
+					<tr>
+					<th scope="row">여부</th>
+					<td>
+					<input type = "text" id = "p_ox" name="p_ox">
 					</tr>
 
 					</tbody>
