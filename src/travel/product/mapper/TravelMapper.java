@@ -7,5 +7,6 @@ import travel.product.model.Product;
 public interface TravelMapper {
 
 	int insertProduct(Product product);
+	List<Product> listProduct();
 
 }

@@ -1,6 +1,7 @@
 package travel.product.model;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -48,6 +49,17 @@ public class ProductDao {
 		}
 	}
 
+	public List<Product> listBoard() throws Exception {
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {
+			return session.getMapper(TravelMapper.class).listProduct();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally{
+			session.close();
+		}
+	}
 
 	
 	

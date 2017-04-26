@@ -304,10 +304,10 @@
         <img src="https://thumb-wishbeen.akamaized.net/p_wNQU2-utSUwVL9bL9x7CMS8Ts=/218x180/smart/img-wishbeen.akamaized.net/spot/1385501535032_plazadela.jpg" alt="img" />
       </div>
       
-      <div class="tit">TITLE</div>
+      <div class="tit">상품명1</div>
       <div class="desc">
-        <span>ID</span>
-        <span>DATE?</span>
+        <span>가격1</span>
+        <span>판매일자1</span>
       </div>
     </div>
   </a>
@@ -326,10 +326,10 @@
         <img src="https://thumb-wishbeen.akamaized.net/gp0yEVJ9QpGj-H7uheFyZQOQZV0=/218x180/smart/img-wishbeen.akamaized.net/plan/1487738928525_image" alt="img" />
       </div>
       
-      <div class="tit">오사카 2박 3일 with 려니</div>
+      <div class="tit">상품명2</div>
       <div class="desc">
-        <span>Hyemi Jeong</span>
-        <span>일정</span>
+        <span>가격2</span>
+        <span>판매일자2</span>
       </div>
     </div>
   </a>
@@ -348,10 +348,10 @@
         <img src="https://thumb-wishbeen.akamaized.net/12q_XtSntnuOkSGRs3KBFt9kA28=/218x180/smart/img-wishbeen.akamaized.net/plan/1488698138544_image" alt="img" />
       </div>
       
-      <div class="tit">[세부보홀] 아주부부의 4박6일 자유여행기</div>
+      <div class="tit">상품명3</div>
       <div class="desc">
-        <span>오주희</span>
-        <span>일정</span>
+        <span>가격3</span>
+        <span>판매일자3</span>
       </div>
     </div>
   </a>
@@ -370,10 +370,10 @@
         <img src="https://thumb-wishbeen.akamaized.net/oyVTxGoiBxdXaHWtgp6O-3U9zR8=/218x180/smart/img-wishbeen.akamaized.net/plan/1491142029631_10f2b105-f75d-40db-968b-357fe488a3ba.jpg" alt="img" />
       </div>
       
-      <div class="tit">2017 제주 힐링 여행</div>
+      <div class="tit">상품명4</div>
       <div class="desc">
-        <span>eui-jin Kim</span>
-        <span>일정</span>
+        <span>가격4</span>
+        <span>판매기간4</span>
       </div>
     </div>
   </a>
