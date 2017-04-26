@@ -151,7 +151,7 @@
 <![endif]-->
 
 
-<link rel="stylesheet" href="../css/product_css/city-main-styles.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-main-styles.css">
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
