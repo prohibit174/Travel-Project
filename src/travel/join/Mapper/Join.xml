@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="travel.join.Mapper.JoinMapper">
+
+	<cache />
+
+	<!-- 새로운 게시글 입력 -->
+	<insert id="insertJoin" parameterType="Join">
+		insert into users(
+			u_id, u_name, u_pwd, u_birth, <!-- u_sex, --> u_address, u_job,
+			 u_lang, u_religion,  u_license, u_img
+			 <!-- ts_name -->
+		)values(
+			#{u_id}, #{u_name}, #{u_pwd}, #{u_birth},<!-- #{u_sex}, -->#{u_address},#{u_job},
+			#{u_lang},#{u_religion},#{u_license}, #{u_img}
+
+			<!--  ,#{ts_name}-->
+			
+			<!-- #{u_job, jdbcType=VARCHAR},#{u_lang, jdbcType=VARCHAR},#{u_religion, jdbcType=VARCHAR},#{u_license, jdbcType=VARCHAR},#{u_img, jdbcType=VARCHAR}, #{ts_name, jdbcType=VARCHAR}  -->
+		)
+		
+		
+	
+	
+		<!-- insert into board2(
+			b_id, b_name, b_title, b_content, b_pwd, b_hit, b_date,
+			b_ref, b_step, b_level, b_fname
+		)values(
+			#{b_id}, #{b_name}, #{b_title}, #{b_content}, #{b_pwd},0, SYSDATE,
+			#{b_ref}, #{b_step}, #{b_level}, #{b_fname}
+		)
+		##이 #{}로 바뀜. -->
+	</insert>
+	
+	
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
