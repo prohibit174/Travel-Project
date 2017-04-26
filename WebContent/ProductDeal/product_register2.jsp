@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
-<%
-	request.setCharacterEncoding("utf-8");
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -154,7 +151,7 @@
 <![endif]-->
 
 
-<link rel="stylesheet" href="../css/carpool_css/city-main-styles.css">
+<link rel="stylesheet" href="../css/product_css/city-main-styles.css">
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
@@ -242,7 +239,7 @@
             <li><a href="product_main.jsp" class="first-tag active"><span>전체 조회</span></a></li>
             
             
-            <li><a href="product_register2.jsp" data-id="5d1504d8bebfc81e" class=""><span>물품 등록</span></a></li>
+            <li><a href="product_register.jsp" data-id="5d1504d8bebfc81e" class=""><span>물품 등록</span></a></li>
             
             
             <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" data-id="2d8eef384cefda06" class=""><span>물품 추천</span></a></li>
@@ -279,116 +276,80 @@
            
               <div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
            <!-- boram -->
-             <div class="conts-container conts-box">
-        <div class="contents-wrap">
-            <div class="bigHeader">
-		추천 물품
-            </div>
-            <div class="content-tabs">
-	물품 검색 : <input type="text" />
-            </div>
-            <div class="conts-box-list">
-                <div class="inner-box">
+             	<div class="form_body">
+		<form action="insertAction.product" class="join_form" method="post">
+			<fieldset>
+				<legend>물품 등록</legend>
+
+	
+				<table class="primary_table" style="margin-left: auto; margin-right: auto;">
+					<tbody>
+					
+					<tr>
+					<th scope="row">물품등록번호</th>
+					<td>
+					<input type = "text" id = "p_num" name="p_num">
+					</tr>
+					
+					<tr>
+					<th scope="row">회원ID</th>
+					<td>
+					<input type = "text" id = "u_id" name="u_id">
+					</tr>
+					
+					<tr>
+					<th scope="row">파일</th>
+					<td>
+					<input type = "text" id = "p_img" name="p_img">
+					</tr>
+					
+					<tr>
+					<th scope="row">내용</th>
+					<td>
+					<input type = "text" id = "p_detail" name="p_detail">
+					</tr>
+					
+					<tr>
+					<th scope="row">가격</th>
+					<td>
+					<input type = "text" id = "p_price" name="p_price">
+					</tr>
+					
+					<tr>
+					<th scope="row">수량</th>
+					<td>
+					<input type = "text" id = "p_amount" name="p_amount">
+					</tr>
+					
+					
+					<tr>
+					<th scope="row">기간</th>
+					<td>
+					<input type = "text" id = "p_term" name="p_term">
+					</tr>
+					
+					<tr>
+					<th scope="row">여부</th>
+					<td>
+					<input type = "text" id = "p_ox" name="p_ox">
+					</tr>
+
+					</tbody>
+
+				</table>
+			</fieldset>
+			<input type="submit" value="등록하기">
+			<!-- 
+		 <div class="btn-box center">
                     
-                    
-
-
-
-
-<div data-id="6a341fddf4c819fc" class="content-box type01">
-  
-
-  <a href="/plan/3e5564ed7d45785b" target=&#34;_blank&#34; >
-    <div class="type01">
-      <div class="cover-img">
-        <img src="https://thumb-wishbeen.akamaized.net/p_wNQU2-utSUwVL9bL9x7CMS8Ts=/218x180/smart/img-wishbeen.akamaized.net/spot/1385501535032_plazadela.jpg" alt="img" />
-      </div>
-      
-      <div class="tit">상품명1</div>
-      <div class="desc">
-        <span>가격1</span>
-        <span>판매일자1</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-
-
-<div data-id="2984b3f6f7bc5a5c" class="content-box type01">
-  
-
-  <a href="/plan/43592af952ac78e8" target=&#34;_blank&#34; >
-    <div class="type01">
-      <div class="cover-img">
-        <img src="https://thumb-wishbeen.akamaized.net/gp0yEVJ9QpGj-H7uheFyZQOQZV0=/218x180/smart/img-wishbeen.akamaized.net/plan/1487738928525_image" alt="img" />
-      </div>
-      
-      <div class="tit">상품명2</div>
-      <div class="desc">
-        <span>가격2</span>
-        <span>판매일자2</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-
-
-<div data-id="fb8b1036e9303841" class="content-box type01">
-  
-
-  <a href="/plan/c5d4e519df6328c2" target=&#34;_blank&#34; >
-    <div class="type01">
-      <div class="cover-img">
-        <img src="https://thumb-wishbeen.akamaized.net/12q_XtSntnuOkSGRs3KBFt9kA28=/218x180/smart/img-wishbeen.akamaized.net/plan/1488698138544_image" alt="img" />
-      </div>
-      
-      <div class="tit">상품명3</div>
-      <div class="desc">
-        <span>가격3</span>
-        <span>판매일자3</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-
-
-<div data-id="d29d44f3f4e7a9b8" class="content-box type01">
-  
-
-  <a href="/plan/bc319c8ed3d0d898" target=&#34;_blank&#34; >
-    <div class="type01">
-      <div class="cover-img">
-        <img src="https://thumb-wishbeen.akamaized.net/oyVTxGoiBxdXaHWtgp6O-3U9zR8=/218x180/smart/img-wishbeen.akamaized.net/plan/1491142029631_10f2b105-f75d-40db-968b-357fe488a3ba.jpg" alt="img" />
-      </div>
-      
-      <div class="tit">상품명4</div>
-      <div class="desc">
-        <span>가격4</span>
-        <span>판매기간4</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-                    <div class="clear"></div>
-                </div>
-                <div class="btn-box center">
-                    
-                    <a class="btn-more" href="/city?serviceType=global&amp;tab=specialTip"><span>추천 상품</span> 더보기 </a>
+                    <a class="btn-more" href="product_registerOk.jsp"><span>등록하기</span></a>
                     
                 </div>
-            </div>
-        </div>
-    </div>
+                 -->
+		</form>
+
+
+	</div>
     <!-- boram end -->
     
     
