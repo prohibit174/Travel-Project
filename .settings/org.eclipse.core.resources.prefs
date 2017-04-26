@@ -1,8 +1,14 @@
 eclipse.preferences.version=1
 encoding//WebContent/Carpool/carpool_add.jsp=UTF-8
+encoding//WebContent/GoogleAPI/index.jsp=UTF-8
 encoding//WebContent/css/carpool_css/carpoolJoin4.css=UTF-8
 encoding//WebContent/css/carpool_css/city-curation-page-styles.css=UTF-8
 encoding//WebContent/css/carpool_css/city-main-styles.css=UTF-8
 encoding//WebContent/main.jsp=UTF-8
 encoding//WebContent/main2.jsp=UTF-8
+<<<<<<< HEAD
+encoding//src/travel/carpool/action/ActionForward.java=UTF-8
+encoding//src/travel/carpool/mapper/CarpoolMapper.java=UTF-8
+=======
 encoding//src/travel/product/controller/ProductController.java=UTF-8
+>>>>>>> branch '김두두' of https://github.com/prohibit174/Travel-project
