@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="travel.carpool.mapper.CarpoolMapper">
+	<cache />
+	
+	<insert id="insertCarpool" parameterType="Carpool">
+			insert into car_list(
+			c_num, u_id, start_lati, start_longti, c_price, c_date, c_person, c_dep_time
+		)
+		values(
+			1, abc123, #{start_lati}, #{start_longti}, 1000, SYSDATE, #{c_person}, SYSDATE
+		)
+	</insert>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
