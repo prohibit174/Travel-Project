@@ -9,10 +9,10 @@
 	
 	<insert id="insertCarpool" parameterType="Carpool">
 			insert into test(
-			start_lati
+			c_num, u_id, start_lati, start_longti, dest_lati, dest_longti, c_price, c_date, c_person, c_dept_time
 		)
 		values(
-			#{start_lati}
+			1, 1234, #{start_lati}, #{start_longti}, #{dest_lati}, #{dest_longti}, 2000, SYSDATE, #{c_person}, SYSDATE
 		)
 	</insert>
 	

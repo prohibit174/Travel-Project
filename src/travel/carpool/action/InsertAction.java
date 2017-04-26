@@ -17,6 +17,10 @@ public class InsertAction implements Action {
 		Carpool carpool = new Carpool();
 
 		carpool.setStart_lati(request.getParameter("start_lati"));
+		carpool.setStart_longti(request.getParameter("start_longti"));
+		carpool.setDest_lati(request.getParameter("dest_lati"));
+		carpool.setDest_longti(request.getParameter("dest_longti"));
+		carpool.setC_person(request.getParameter("c_person"));
 		System.out.println(request.getParameter("start_lati"));
 		
 		dao.insertCarpool(carpool);

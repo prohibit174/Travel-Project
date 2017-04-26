@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import travel.carpool.action.Action;
 import travel.carpool.action.ActionForward;
+import travel.carpool.action.InsertAction;
 import travel.carpool.action.InsertFormAction;
 import travel.product.action.insertAction;
 
@@ -47,6 +48,13 @@ public class CarpoolController extends HttpServlet {
             e.printStackTrace();
          }
          //커맨드 값이 마으면 거기에 맞는 액션을 호출하면 된다.
+       }else if(command.equals("insertAction.carpool")){
+           action = new InsertAction();
+           try {
+             forward = action.execute(request, response);   
+          } catch (Exception e) {
+             e.printStackTrace();
+          }
        }
        
        if(forward !=null){

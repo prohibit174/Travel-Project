@@ -151,24 +151,24 @@
 <![endif]-->
 
 
-<link rel="stylesheet" href="../css/carpool_css/city-main-styles.css">
-<link rel="stylesheet" type="text/css" href="../css/carpool_css/carpoolJoin.css" />
-<link rel="stylesheet" type="text/css" href="../css/carpool_css/carpoolJoin2.css" />
-<link rel="stylesheet" type="text/css" href="../css/carpool_css/carpoolJoin3.css" />
-<link rel="stylesheet" type="text/css" href="../css/carpool_css/carpoolJoin4.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin2.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin3.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin4.css" />
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
- <script type="text/javascript" src="../JS/carpool_javascript/jquery.js"></script>
+ <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
 <script type="text/javascript" src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>           
-<script type="text/javascript" src="../JS/carpool_javascript/carpool_JoinEvent.js"></script>
-<script type="text/javascript" src="../JS/carpool_javascript/carpool_JoinEvent2.js"></script>
-<script type="text/javascript" src="../JS/carpool_javascript/tests.js"></script>
- <script src='../GoogleAPI/lib/jquery.min.js'></script>
-<script src='../GoogleAPI/lib/moment.min.js'></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/tests.js"></script>
+ <script src='${pageContext.request.contextPath}/GoogleAPI/lib/jquery.min.js'></script>
+<script src='${pageContext.request.contextPath}/GoogleAPI/lib/moment.min.js'></script>
 <link rel='stylesheet' href='../GoogleAPI/fullcalendar.css' />
-<script src='../GoogleAPI/fullcalendar.js'></script>
-<script src="../GoogleAPI/moment.js"></script>
+<script src='${pageContext.request.contextPath}/GoogleAPI/fullcalendar.js'></script>
+<script src="${pageContext.request.contextPath}/GoogleAPI/moment.js"></script>
 <script>
     moment().format();
 </script>
@@ -291,8 +291,7 @@
                 </div>
             
             </div><!-- e//tabs-list -->
-<form action="insertAction.carpool" method="post">	<input type="text" name="start_lati" id="join_email_id" title="이메일 주소"  maxlength="96"/>
-<input type="submit" value="sdf"></form>
+<form action="insertAction.carpool" method="post">	
     <div id="carpool_map">
     	<h3 id="carpool_title">카풀의 출발지와 목적지를 마크 하세요</h3>
     	<br>
@@ -1001,7 +1000,7 @@
 						<div class="nlogin_join_center">
 							<button class="nlogin_btn" type="submit">카풀 등록</button>
 					    </div>
-					
+</form>					
 
     <style>
        #map {
