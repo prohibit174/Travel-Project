@@ -5378,14 +5378,19 @@ body{
 	padding: 0;
 	z-index: 0;
 }
+
+
 body{
 	position: relative;
 }
-#wrapper,
-#header{
-	min-width: 1024px;
-	z-index: 10;
+
+#wrapper, #header {
+    min-width: 1024px;
+    z-index: 10;
+    margin-top : 20px;
 }
+
+
 .section{
 	margin: 20px 0 100px 0;
 	z-index: 5;
@@ -10109,4 +10114,3 @@ textarea:-webkit-autofill{
 	transform: rotate(133deg);
 	-webkit-transform: rotate(133deg);
 }
-
