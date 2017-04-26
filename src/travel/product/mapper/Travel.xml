@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="travel.product.mapper.TravelMapper">
+	<cache />
+	<insert id="insertProduct" parameterType="Product">
+			insert into product(
+		p_num, u_id, p_img, p_detail, p_price, p_amount, p_term, p_ox
+		)
+		values(
+			#{p_num}, #{u_id}, #{p_img},#{p_detail},#{p_price},#{p_amount}, sysdate, 'n'
+		)
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

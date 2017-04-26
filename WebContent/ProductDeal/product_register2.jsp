@@ -277,73 +277,62 @@
               <div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
            <!-- boram -->
              	<div class="form_body">
-		<form action="" class="join_form" method="post" enctype="multipart/form-data">
+		<form action="insertAction.do" class="join_form" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<legend>물품 등록</legend>
+
+	
 				<table class="primary_table" style="margin-left: auto; margin-right: auto;">
 					<tbody>
 					
 					<tr>
-					<th scope = "row">
-					이미지
-					</th>
+					<th scope="row">물품등록번호</th>
 					<td>
-					<input type = "file" id = "product_image">
-	
-					</td>
-					</tr>
-					
-					
-
-					<tr>
-					<th scope="row">판매자</th>
-					<td>
-					<input type = "text" id = "seller">
-					
-					
+					<input type = "text" id = "p_num">
 					</tr>
 					
 					<tr>
-					<th scope="row">가격</th>
+					<th scope="row">회원ID</th>
 					<td>
-					<input type = "text" id = "product_price">
-					
-					
+					<input type = "text" id = "u_id">
 					</tr>
 					
 					<tr>
-					<th scope="row">수량</th>
+					<th scope="row">파일</th>
 					<td>
-					<input type = "text" id = "product_amount">
-					
-					
-					</tr>
-					
-					<tr>
-					<th scope="row">판매기간</th>
-					<td>
-					<input type = "text" id = "product_date">
-					
-					
+					<input type = "file" id = "p_img">
 					</tr>
 					
 					<tr>
 					<th scope="row">내용</th>
 					<td>
-					<input type = "text" id = "product_contents">
-					
-					
+					<input type = "text" id = "p_detail">
 					</tr>
+					
+					<tr>
+					<th scope="row">가격</th>
+					<td>
+					<input type = "text" id = "p_price">
+					</tr>
+					
+					<tr>
+					<th scope="row">수량</th>
+					<td>
+					<input type = "text" id = "p_amount">
+					</tr>
+
 					</tbody>
 
 				</table>
 			</fieldset>
-
+			<input type="submit" value="등록하기">
+			<!-- 
 		 <div class="btn-box center">
                     
-                    <a class="btn-more" href="/city?serviceType=global&amp;tab=specialTip"><span>등록하기</span></a>
+                    <a class="btn-more" href="product_registerOk.jsp"><span>등록하기</span></a>
                     
                 </div>
+                 -->
 		</form>
 
 
