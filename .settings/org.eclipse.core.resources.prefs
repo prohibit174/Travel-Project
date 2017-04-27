@@ -11,6 +11,7 @@ encoding//WebContent/css/product_css/city-main-styles.css=UTF-8
 encoding//WebContent/main.jsp=UTF-8
 encoding//WebContent/main2.jsp=UTF-8
 encoding//src/travel/carpool/action/ActionForward.java=UTF-8
+encoding//src/travel/carpool/controller/CarpoolController.java=UTF-8
 encoding//src/travel/carpool/mapper/CarpoolMapper.java=UTF-8
 encoding//src/travel/product/action/DetailAction.java=UTF-8
 encoding//src/travel/product/action/UpdateFormAction.java=UTF-8

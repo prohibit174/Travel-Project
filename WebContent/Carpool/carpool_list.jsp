@@ -1,19 +1,19 @@
+<%@page import="travel.carpool.model.Search"%>
 <%@page import="travel.carpool.model.Carpool"%>
 <%@page import="java.util.List"%>
 <%@page import="travel.carpool.model.CarpoolDao"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 
-<%
-request.setCharacterEncoding("utf-8");
-CarpoolDao dao = CarpoolDao.getInstance();
-List<Carpool>list = dao.listCarpool();
-%>
+
 
 <html>
-	<link rel="stylesheet" type="text/css"  href="../css/carpool_css/carpool_list.css">
-	<link rel="stylesheet" type="text/css"  href="../css/carpool_css/city-main-styles.css"> 	
+	<link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/css/carpool_css/carpool_list.css">
+	<link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css"> 	
 <head>
 	<meta charset="UTF-8" />
 
@@ -63,7 +63,7 @@ List<Carpool>list = dao.listCarpool();
         <ul id="menu_tab_list">
             <li><a data-tab="home" >HOME</a></li>	
             <li><a data-tab="hotdeal" >동행</a></li>
-            <li><a data-tab="specialTip" >카풀</a></li>
+            <li><a href="main.carpool" >카풀</a></li>
             <li><a data-tab="community" >물품교환</a></li>
             <li><a data-tab="plan" >커뮤니티</a></li>
             <li><a data-tab="attraction" >블로그</a></li>
@@ -120,43 +120,25 @@ List<Carpool>list = dao.listCarpool();
 
 			<!-- 검색 -->
 		<article class="header_bot hideClass1">
-			<form id="form_src" name="form_src" action="http://www.tikle.co.kr/tikle/tiklelist" method="GET">
 				<fieldset>
 					<legend class="hidden">티클 검색하기</legend>
 					<!-- 티클 타입 1 -->
-					<select name="tikle_kind" title="티클 유형1 검색 셀렉트박스" class="j_src_tikle_kind_sel" id="tikleType1" data-val="1">
-						<option value="">전체</option>
-						<option value="1">카풀</option>
-						<option value="3">KTX카풀</option>
-						<option value="2">택시카풀</option>
-						<option value="4">주차장</option>
-						<option value="5">운전자</option>
-					</select><!--
-					티클 타입 2
-					--><select name="tikle_type" title="티클 유형2(카풀, 택시카풀) 검색 셀렉트 박스" id="tikleType2" class="j_src_tikle_type_sel" data-val="">
-						<option value="">전체</option>
-					</select><!--
-					--><input type="hidden" name="tikle_pattern" value="1" class="hideClass"><!--
-					카풀, ktx, 택시카풀, 주차장일때의 temp 파일 저장위치
-					--><div class="search_wrap">
-						<div class="place_wrap j_src_key_box">
-							<!-- 카풀, 택시카풀 출발지 도착지 -->
-							<div class="inp_wrap start_place">
-								<img src="/images/pc/ico_start.gif" title="출발지" alt="출발지" width="12px" height="20px">
-								<input type="search" name="src_key_1" value="" title="출발지를 입력해주세요" size="10" maxlength="100" placeholder="서울" class="inp_txt_comm">
-							</div><!--
-							--><div class="inp_wrap arrival_place">
-								<img src="/images/pc/ico_arrival.gif" title="도착지" alt="도착지" width="12px" height="20px">
-								<input type="search" name="src_key_2" value="" title="도착지를 입력해주세요" size="10" maxlength="100" placeholder="경기도" class="inp_txt_comm">
-							</div>
-						</div>
-					 </div><!--
-					날짜
-					--><!--
-					검색버튼
-					--><input type="submit" name="" value="검색" title="검색" class="btn_type3 btn_search j_btn_search">
+	<input type="hidden" name="tikle_pattern" value="1" class="hideClass">
+					
+ <form action="list.carpool" method="post">
+       <input type="hidden" name="temp" value="temp"></input>
+       					<select name="carpool_search" data-val="1">
+							<option value="">전체</option>
+							<option value="u_id">회원정보</option>
+							<option value="start_lati">출발지</option>
+							<option value="dest_lati">도착지</option>
+							<option value="c_price">가격</option>
+							<option value="c_person">남은 좌석</option>
+					</select>
+       <input type="text" name="searchKey" size="20"></input>
+       <input type="submit" name="" value="검색" title="검색" class="btn_type3 btn_search j_btn_search">
+   </form>
 				</fieldset>
-			</form>
 		</article> <!-- header_bot hideClass1 -->
 		</section> <!-- box_header -->
 
@@ -303,78 +285,74 @@ List<Carpool>list = dao.listCarpool();
 		<div class="content_area">
 			<div class="content" id="tikleList">
 			
-			<!-- 연습 -->
-			   <table width="500" border="1" cellpadding="0" cellspacing="0">
-      <tr>
-         <th>카풀번호</th>
-         <th>회원아이디</th>
-         <th>출발경도</th>
-         <th>출발위도</th>
-         <th>도착경도</th>
-         <th>도착위도</th>
-         <th>도착경도</th>
-         <th>도착경도</th>
-         <th>도착경도</th>
-         <th>도착경도</th>
-      </tr>
-      <%for(int i=0 ; i<list.size() ; i++){
-    	  Carpool carpool = list.get(i);
-         %>
-      <tr>
-      <td><%=carpool.getC_num() %></td>
-      <td><%=carpool.getC_date() %></td>
-      </tr>
-      <% }%>
-   </table>
+	
    
-   <!-- 연습끝 -->
-			
-			
-			
-			
-			
-			
-	<table class="tiklelist_dvs">
+   
+   
+   
+   	<table class="carpool_table">
 		<caption class="hideClass">티클리스트 항목 구분 제목</caption>
 		<tbody>
-			<tr>
-				<td class="list_dvs1">프로필</td>
-				<td class="list_dvs2">출발</td>
-				<td class="list_dvs2">도착</td>
-				<td class="list_dvs3">유형</td>
-				<td class="list_dvs3">자리/금액</td>
+			<tr id="table_tab">
+				<td class="list_dvs1">카풀번호</td>
+				<td class="list_dvs1">출발위도</td>
+				<td class="list_dvs1">출발경도</td>
+				<td class="list_dvs1">도착위도</td>
+				<td class="list_dvs1">도착경도</td>
+				<td class="list_dvs2">가격</td>
+				<td class="list_dvs2">날짜</td>
+				<td class="list_dvs3">남은좌석</td>
+				<td class="list_dvs3">도착날짜</td>
 			</tr>
+			
+	<c:forEach var="carpool" items="${list}">
+      <tr height="30">
+        <td align="center">${carpool.c_num }</td>
+         <td align="center">${carpool.start_lati }></td>
+         <td align=center>${carpool.start_longti }</td>
+         <td align="center">${carpool.dest_lati }</td>
+         <td align="center">${carpool.dest_longti }</td>
+         <td align="center">${carpool.c_price }</td>
+         <td align="center">${carpool.c_date }</td>
+         <td align="center">${carpool.c_person }</td>
+         <td align="center">${carpool.c_dept_time }</td>
+      </tr>      
+      </c:forEach>  
 		</tbody>
 	</table>
-	<ul class="tiklelist_wrap">
-			<!-- loop -->
+	
+
+<!-- <ul class="tiklelist_wrap">
+			loop
 				<li class="tiklelist">
-						<a href="/tikle/view?no=29702&list=%2Ftikle%2Ftiklelist%3Ftikle_kind%3D1%26tikle_pattern%3D1" title="단기 카풀 타세요 : 서울특별시 ⇒ 경상북도 경산시" class="link_tikleview j_btn_link_tikle_view">
 				<div class="box_tikle">
-					<figure class="user_pic">
+					<figure class="use	r_pic">
 						<img src="/profile/photo?no=38350" title="조민습" alt="조민습" style="width: 60px; height: 60px;" class="picture">
 						<figcaption class="name">조민습</figcaption>
 					</figure>
 					<div class="tikle_con">
 						<div class="box_tikle_info1">
 							<div class="tikle_loc">
-								<!-- 출발지 -->
-								<div class="tikle_place tikle_start"><h1 class="hidden">출발지</h1>서울특별시</div><!-- 
-								--><span class="ico_dir_wrap"><i class="ico_dir"></i></span><!--
+								출발지
+								<div class="tikle_place tikle_start"><h1 class="hidden">출발지</h1>서울특별시</div>
+								
+								<span class="ico_dir_wrap"><i class="ico_dir"></i></span>
+								
 								도착지 
-								--><div class="tikle_place tikle_arrival"><h1 class="hidden">도착지</h1>경상북도 경산시</div>
+								<div class="tikle_place tikle_arrival"><h1 class="hidden">도착지</h1>경상북도 경산시</div>
 							</div>
+							
 							<div class="tikle_date">2017.04.29 오후 9시 0분</div><span title="티클목적" class="tikle_purpose">출퇴근</span>
-						</div><!-- 
+						</div>
 						유형 및 금액
-						--><div class="box_tikle_info2">
-							<!-- 타세요 -->
+						<div class="box_tikle_info2">
+							타세요
 							<div class="tikle_type">
 								<span title="티클 유형" class="tikle_type1">단기 카풀</span>
 								<span title="티클 유형2" class="tikle_type2">타세요</span>
-							</div><!--
-							--><!--
-							--><div class="tikle_type">
+							</div>
+							
+							<div class="tikle_type">
 								<span title="예약 가능 자리" class="tikle_seat"><strong>3</strong>자리</span> 
 								<span title="1인 요금입니다">15,000원<small>/인</small></span>
 							</div>
@@ -382,16 +360,15 @@ List<Carpool>list = dao.listCarpool();
 	
 										</div>
 				</div>
-			</a>
-			<!-- 함께아는 친구 -->
-			<!-- 2014-01-03 이창순 - 사용안함 -->
+			함께아는 친구
+			2014-01-03 이창순 - 사용안함
 			<div class="box_cofriends hideClass">
 				<h1 class="title_cofriends">함께아는친구</h1>
 				<ul>
-					<!-- loop -->
+					loop
 					<li class="cofriends_list">
 						<a href="###" title="" target="_blank" class="link_fb">
-							<!-- 사진 -->
+							사진
 							<img src="" title="" alt="" style="width: 30px; height: 30px" class="picture">
 						</a>
 					</li>
@@ -408,23 +385,23 @@ List<Carpool>list = dao.listCarpool();
 					<div class="tikle_con">
 						<div class="box_tikle_info1">
 							<div class="tikle_loc">
-								<!-- 출발지 -->
-								<div class="tikle_place tikle_start"><h1 class="hidden">출발지</h1>서울 영등포구</div><!-- 
-								--><span class="ico_dir_wrap"><i class="ico_dir"></i></span><!--
+								출발지
+								<div class="tikle_place tikle_start"><h1 class="hidden">출발지</h1>서울 영등포구</div>
+								<span class="ico_dir_wrap"><i class="ico_dir"></i></span>
 								도착지 
-								--><div class="tikle_place tikle_arrival"><h1 class="hidden">도착지</h1>부산 해운대구</div>
+								<div class="tikle_place tikle_arrival"><h1 class="hidden">도착지</h1>부산 해운대구</div>
 							</div>
 							<div class="tikle_date">2017.05.02 오후 5시 0분</div><span title="티클목적" class="tikle_purpose">출퇴근</span>
-						</div><!-- 
+						</div>
 						유형 및 금액
-						--><div class="box_tikle_info2">
-							<!-- 타세요 -->
+						<div class="box_tikle_info2">
+							타세요
 							<div class="tikle_type">
 								<span title="티클 유형" class="tikle_type1">단기 카풀</span>
 								<span title="티클 유형2" class="tikle_type2">태워주세요</span>
-							</div><!--
-							--><!--
-							--><div class="tikle_type">
+							</div>
+							
+							<div class="tikle_type">
 								<span title="예약 가능 자리" class="tikle_seat"><strong>1</strong>자리</span> 
 								<span title="1인 요금입니다">26,000원<small>/인</small></span>
 							</div>
@@ -432,29 +409,22 @@ List<Carpool>list = dao.listCarpool();
 										</div>
 				</div>
 			</a>
-			<!-- 함께아는 친구 -->
-			<!-- 2014-01-03 이창순 - 사용안함 -->
+			함께아는 친구
+			2014-01-03 이창순 - 사용안함
 			<div class="box_cofriends hideClass">
 				<h1 class="title_cofriends">함께아는친구</h1>
 				<ul>
-					<!-- loop -->
+					loop
 					<li class="cofriends_list">
 						<a href="###" title="" target="_blank" class="link_fb">
-							<!-- 사진 -->
+							사진
 							<img src="" title="" alt="" style="width: 30px; height: 30px" class="picture">
 						</a>
 					</li>
 				</ul>
 			</div>
 		</li>
-				
-				
-				
-				
-				
-				
-				
-				</ul>
+	</ul>  -->
 
 	<!-- 페이징 -->
 	<div class="paging" style="margin-top: 50px;">
@@ -463,7 +433,7 @@ List<Carpool>list = dao.listCarpool();
 			<aside id="aside">
 								<article class="aside snb" id="sidebarTikleList">
 	<form action="" method="">
-		<fieldset>
+		<fieldset id="right_menu">
 			<legend class="hidden">간편 검색</legend>
 						<!-- 타세요 태워주세요 -->
 
@@ -717,7 +687,32 @@ List<Carpool>list = dao.listCarpool();
 		</select>
 	</div>
 
-	
+	<style>
+		.carpool_table{
+			width: 100%;
+		}
+		#table_tab{
+			background: gray;
+		}
+		#aside{
+		    float: right;
+    		width: 260px;
+		}
+		.paging{
+			width: 600px;
+			padding-left: 60px;
+			
+		}
+		#tikleList{
+			width: 750px;
+			padding-top: 30px;
+			padding-left: 100px;
+		}
+		#right_menu{
+			padding-left: 120px;
+		}
+
+	</style>
 
 </div><div id="temp_content" class="j_temp_content hideClass">
 
