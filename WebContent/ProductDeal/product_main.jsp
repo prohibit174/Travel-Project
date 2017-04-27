@@ -1,7 +1,16 @@
+<%@page import="travel.product.model.Product"%>
+<%@page import="java.util.List"%>
+<%@page import="travel.product.model.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("utf-8"); %>
+
 <%
+	
 	request.setCharacterEncoding("utf-8");
+    ProductDao dao = ProductDao.getInstance();
+	
+   List<Product> list = dao.listProduct();
+   
+   
 %>
 <!DOCTYPE html>
 <html>
@@ -154,7 +163,7 @@
 <![endif]-->
 
 
-<link rel="stylesheet" href="../css/carpool_css/city-main-styles.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
@@ -246,18 +255,7 @@
             
             
             <li><a href="" class=""><span>물품 추천</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>물품 교환 리스트</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=d89affed9eab18e5" data-id="d89affed9eab18e5" class=""><span>---</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=d3d1bffe5bf618e5" data-id="d3d1bffe5bf618e5" class=""><span>---</span></a></li>
-            
-        
-    
+
 </ul>
            
                 <div id="google-ad-sense" style="margin-top:20px;float:left;" data-type="260x260">
@@ -282,7 +280,7 @@
              <div class="conts-container conts-box">
         <div class="contents-wrap">
             <div class="bigHeader">
-		추천 물품
+		전체 물품
             </div>
             <div class="content-tabs">
 	물품 검색 : <input type="text" />
@@ -291,104 +289,38 @@
                 <div class="inner-box">
                     
                     
-
-
-
-
+  <%for(int i=0 ; i<list.size() ; i++){
+         Product product = list.get(i);
+         %>
 <div data-id="6a341fddf4c819fc" class="content-box type01">
   
-
-  <a href="/plan/3e5564ed7d45785b" target=&#34;_blank&#34; >
+	<a href = "detailAction.product?seq=<%=product.getP_num() %>" >
     <div class="type01">
       <div class="cover-img">
-        <img src="https://thumb-wishbeen.akamaized.net/p_wNQU2-utSUwVL9bL9x7CMS8Ts=/218x180/smart/img-wishbeen.akamaized.net/spot/1385501535032_plazadela.jpg" alt="img" />
+        <img src="<%=product.getP_img() %>" alt="img" />
       </div>
       
-      <div class="tit">상품명1</div>
+      <div class="tit"><%=product.getP_num() %></div>
       <div class="desc">
-        <span>가격1</span>
-        <span>판매일자1</span>
+        <span><%=product.getP_price() %></span>
+        <span><%=product.getP_term() %></span>
       </div>
     </div>
   </a>
 </div>
 
-
-
-
-
-<div data-id="2984b3f6f7bc5a5c" class="content-box type01">
-  
-
-  <a href="/plan/43592af952ac78e8" target=&#34;_blank&#34; >
-    <div class="type01">
-      <div class="cover-img">
-        <img src="https://thumb-wishbeen.akamaized.net/gp0yEVJ9QpGj-H7uheFyZQOQZV0=/218x180/smart/img-wishbeen.akamaized.net/plan/1487738928525_image" alt="img" />
-      </div>
-      
-      <div class="tit">상품명2</div>
-      <div class="desc">
-        <span>가격2</span>
-        <span>판매일자2</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-
-
-<div data-id="fb8b1036e9303841" class="content-box type01">
-  
-
-  <a href="/plan/c5d4e519df6328c2" target=&#34;_blank&#34; >
-    <div class="type01">
-      <div class="cover-img">
-        <img src="https://thumb-wishbeen.akamaized.net/12q_XtSntnuOkSGRs3KBFt9kA28=/218x180/smart/img-wishbeen.akamaized.net/plan/1488698138544_image" alt="img" />
-      </div>
-      
-      <div class="tit">상품명3</div>
-      <div class="desc">
-        <span>가격3</span>
-        <span>판매일자3</span>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-
-
-
-<div data-id="d29d44f3f4e7a9b8" class="content-box type01">
-  
-
-  <a href="/plan/bc319c8ed3d0d898" target=&#34;_blank&#34; >
-    <div class="type01">
-      <div class="cover-img">
-        <img src="https://thumb-wishbeen.akamaized.net/oyVTxGoiBxdXaHWtgp6O-3U9zR8=/218x180/smart/img-wishbeen.akamaized.net/plan/1491142029631_10f2b105-f75d-40db-968b-357fe488a3ba.jpg" alt="img" />
-      </div>
-      
-      <div class="tit">상품명4</div>
-      <div class="desc">
-        <span>가격4</span>
-        <span>판매기간4</span>
-      </div>
-    </div>
-  </a>
-</div>
-
+ <% }%>
                     <div class="clear"></div>
                 </div>
                 <div class="btn-box center">
                     
-                    <a class="btn-more" href="/city?serviceType=global&amp;tab=specialTip"><span>추천 상품</span> 더보기 </a>
+                    <a class="btn-more" href="/city?serviceType=global&amp;tab=specialTip"><span>전체 물품</span> 더보기 </a>
                     
                 </div>
             </div>
         </div>
     </div>
+      
     <!-- boram end -->
     
     
