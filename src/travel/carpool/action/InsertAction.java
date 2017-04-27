@@ -27,8 +27,8 @@ public class InsertAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
-		forward.setPath("test.jsp");
-		// »õ·Î¿î ¿äÃ»¿¡ ÀÇÇØ¼­ jsp·Î ÀÌµ¿ÇØ¾ßÇÏ±â ¶§¹®¿¡ true ¶ó°í ¹Ù²Ù¾îÁØ´Ù.
+		forward.setPath("Carpool/carpool_list.jsp");
+		// ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ jspï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ø¾ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ true ï¿½ï¿½ï¿½ ï¿½Ù²Ù¾ï¿½ï¿½Ø´ï¿½.
 		
 		return forward;
 	}
