@@ -47,8 +47,7 @@ h2.sub_title2 span			{ font-size:20px; font-weight:600; letter-spacing:-0.05em; 
 h2.sub_title2 strong			{ font-size:13px; font-weight:normal; color:#999; letter-spacing:-0.05em; margin-left:10px}
 h2.cs_title					{ display:block; position:relative; width:100%; font-size:18px; color:#000; letter-spacing:-0.15em; line-height:22px; padding:6px 0 10px 0; border-bottom:2px solid #373737}
 
-
-/* 기존  */
+/* 湲곗〈  */
 html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%
@@ -8695,13 +8694,13 @@ body, html {
 	width: 100%;
 	height: 100%;
 	font-family: 'Noto Sans KR', "Helvetica Neue", "Apple SD Gothic Neo",
-		Helvetica, Arial, "Apple Gothic", "ë‹ì›€", Dotum,
+		Helvetica, Arial, "Apple Gothic", "챘혧�뮨р�뷜궗", Dotum,
 		sans-serif !important
 }
 
 pre {
 	font-family: 'Noto Sans KR', "Helvetica Neue", "Apple SD Gothic Neo",
-		Helvetica, Arial, "Apple Gothic", "ë‹ì›€", Dotum,
+		Helvetica, Arial, "Apple Gothic", "챘혧�뮨р�뷜궗", Dotum,
 		sans-serif !important
 }
 
@@ -12867,7 +12866,7 @@ a.go-to-map {
 	padding: 0 !important;
 	cursor: pointer;
 	font-family: 'Noto Sans KR', "Helvetica Neue", "Apple SD Gothic Neo",
-		Helvetica, Arial, "Apple Gothic", "ë‹ì›€", Dotum,
+		Helvetica, Arial, "Apple Gothic", "챘혧�뮨р�뷜궗", Dotum,
 		sans-serif !important;
 	border-bottom: 1px solid #eee
 }

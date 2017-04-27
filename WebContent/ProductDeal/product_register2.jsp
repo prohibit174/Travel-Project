@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -236,10 +237,10 @@
                 <ul class="tabs-list">
     
         
-            <li><a href="product_main.jsp" class="first-tag active"><span>전체 조회</span></a></li>
+            <li><a href="mainAction.product" class="first-tag active"><span>전체 조회</span></a></li>
             
             
-            <li><a href="product_register.jsp" data-id="5d1504d8bebfc81e" class=""><span>물품 등록</span></a></li>
+            <li><a href="insertForm.product" data-id="5d1504d8bebfc81e" class=""><span>물품 등록</span></a></li>
             
             
             <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" data-id="2d8eef384cefda06" class=""><span>물품 추천</span></a></li>
@@ -277,7 +278,7 @@
               <div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
            <!-- boram -->
              	<div class="form_body">
-		<form action="insertAction.product" class="join_form" method="post">
+		<form action="insertAction.product?p_num=" class="join_form" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<legend>물품 등록</legend>
 
@@ -300,7 +301,7 @@
 					<tr>
 					<th scope="row">파일</th>
 					<td>
-					<input type = "text" id = "p_img" name="p_img">
+					<input type = "file" id = "p_img" name="p_img">
 					</tr>
 					
 					<tr>
@@ -333,12 +334,15 @@
 					<td>
 					<input type = "text" id = "p_ox" name="p_ox">
 					</tr>
+					
 
 					</tbody>
 
 				</table>
 			</fieldset>
-			<input type="submit" value="등록하기">
+		 <div class="btn-box center">
+		<button type = "submit" class="btn-more">등록하기</button>
+		</div>
 			<!-- 
 		 <div class="btn-box center">
                     
