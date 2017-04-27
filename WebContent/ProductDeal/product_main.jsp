@@ -245,7 +245,7 @@
             <li><a href="product_register2.jsp" data-id="5d1504d8bebfc81e" class=""><span>물품 등록</span></a></li>
             
             
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" data-id="2d8eef384cefda06" class=""><span>물품 추천</span></a></li>
+            <li><a href="" class=""><span>물품 추천</span></a></li>
             
             
             <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>물품 교환 리스트</span></a></li>
