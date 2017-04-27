@@ -455,7 +455,7 @@ request.setAttribute("list", list);
 			<aside id="aside">
 								<article class="aside snb" id="sidebarTikleList">
 	<form action="" method="">
-		<fieldset>
+		<fieldset id="right_menu">
 			<legend class="hidden">간편 검색</legend>
 						<!-- 타세요 태워주세요 -->
 
@@ -716,6 +716,24 @@ request.setAttribute("list", list);
 		#table_tab{
 			background: gray;
 		}
+		#aside{
+		    float: right;
+    		width: 260px;
+		}
+		.paging{
+			width: 600px;
+			padding-left: 60px;
+			
+		}
+		#tikleList{
+			width: 750px;
+			padding-top: 30px;
+			padding-left: 100px;
+		}
+		#right_menu{
+			padding-left: 120px;
+		}
+	
 
 	</style>
 
