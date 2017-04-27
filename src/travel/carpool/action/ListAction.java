@@ -19,12 +19,14 @@ public class ListAction implements Action {
 		CarpoolDao dao = CarpoolDao.getInstance();
 		Search search = new Search();
 		search.setCarpool_search(request.getParameterValues("carpool_search"));
-		System.out.println(request.getParameterValues("carpool_search"));
 		search.setSearchKey("%"+request.getParameter("searchKey")+"%");
-		System.out.println(request.getParameter("searchKey"));
+		
 		List<Carpool> list = dao.listCarpool(search);
 		request.setAttribute("list", list);
+		
 		ActionForward forward = new ActionForward();
+		
+		
 		forward.setRedirect(false);
 		forward.setPath("Carpool/carpool_list.jsp");
 		return forward;
