@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import travel.product.action.Action;
 import travel.product.action.ActionForward;
+import travel.product.action.DetailAction;
 import travel.product.action.InsertFormAction;
 import travel.product.action.ListAction;
 import travel.product.action.insertAction;
@@ -57,6 +58,15 @@ public class ProductController extends HttpServlet {
 	       }
 	          else if(command.equals("listAction.product")){
 		          action = new ListAction();
+		          try {
+		            forward = action.execute(request, response);   
+		         } catch (Exception e) {
+		            e.printStackTrace();
+		         }
+	          
+	          
+	       } else if(command.equals("detailAction.product")){
+		          action = new DetailAction();
 		          try {
 		            forward = action.execute(request, response);   
 		         } catch (Exception e) {
