@@ -27,7 +27,7 @@ public class InsertAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
-		forward.setPath("test.jsp");
+		forward.setPath("Carpool/carpool_list.jsp");
 		// 새로운 요청에 의해서 jsp로 이동해야하기 때문에 true 라고 바꾸어준다.
 		
 		return forward;
