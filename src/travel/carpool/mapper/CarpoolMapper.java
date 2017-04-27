@@ -5,6 +5,7 @@ import java.util.List;
 import travel.carpool.model.Carpool;
 
 public interface CarpoolMapper {
-	int insertCarpool(Carpool carpool); 
+	int insertCarpool(Carpool carpool);
+	List<Carpool>listCarpool();
 
 }
