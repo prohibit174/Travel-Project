@@ -1,6 +1,6 @@
-package travel.join.Model;
+package travel.users.model;
 
-public class Join {
+public class Users {
 
 	private String u_id;
 	private String u_pwd;
@@ -15,9 +15,9 @@ public class Join {
 	private String u_img;
 	private String ts_name;
 
-	public Join(){}
+	public Users(){}
 
-	public Join(String u_id, String u_pwd, String u_name, String u_birth, String u_sex, String u_address, String u_job,
+	public Users(String u_id, String u_pwd, String u_name, String u_birth, String u_sex, String u_address, String u_job,
 			String u_lang, String u_religion, String u_license, String u_img, String ts_name) {
 		super();
 		this.u_id = u_id;

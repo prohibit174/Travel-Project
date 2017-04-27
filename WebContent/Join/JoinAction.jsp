@@ -1,18 +1,14 @@
-<%@page import="travel.join.Model.JoinDao"%>
-
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <% request.setCharacterEncoding("UTF-8"); %>
 
-<jsp:useBean id="join" class = "travel.join.Model.Join"></jsp:useBean>
-<jsp:setProperty property="*" name="join"/>
+<jsp:useBean id="users" class = "travel.users.model.Users"></jsp:useBean>
+<jsp:setProperty property="*" name="users"/>
 
 <% 
-	JoinDao dao = JoinDao.getInstance();
 
-	dao.insertJoin(join);
 	//JoinService service = JoinService.getInstance();
 	//int re = service.insertJoin(join);
 	
