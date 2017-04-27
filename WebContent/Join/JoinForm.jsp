@@ -879,6 +879,8 @@
 		<button type = "submit" class = "nlogin_btn">가입하기</button>
 		<span>이게 나의 최선이다..... 누가 가운데 정렬좀 해주세요.........</span>
 		</div>
+		
+		
 		</form>
 
 

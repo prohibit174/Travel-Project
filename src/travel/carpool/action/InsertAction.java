@@ -21,14 +21,13 @@ public class InsertAction implements Action {
 		carpool.setDest_lati(request.getParameter("dest_lati"));
 		carpool.setDest_longti(request.getParameter("dest_longti"));
 		carpool.setC_person(request.getParameter("c_person"));
-		System.out.println(request.getParameter("start_lati"));
 		
 		dao.insertCarpool(carpool);
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
-		forward.setPath("test.jsp");
-		// 새로운 요청에 의해서 jsp로 이동해야하기 때문에 true 라고 바꾸어준다.
+		forward.setPath("list.carpool");
+
 		
 		return forward;
 	}
