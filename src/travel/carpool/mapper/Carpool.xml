@@ -16,10 +16,19 @@
 		)
 	</insert>
 	
-	<select id ="listCarpool" resultType="Carpool">
-	select * from TEST
-	</select>
 	
+		<select id="listCarpool" resultType="Carpool" parameterType="Search">
+		select * from test 
+		<if test="carpool_search !=null">
+		<where>
+		<!-- b_title LIKE %자바% OR b_wirter LIKE %자바% -->
+		<foreach collection="carpool_search" item="item" separator="or" open="(" close=")">
+			${item} LIKE #{searchKey}
+		</foreach>
+		</where>
+		</if>
+		
+	</select>
 	
 </mapper>
 

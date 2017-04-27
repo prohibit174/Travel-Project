@@ -1,3 +1,4 @@
+<%@page import="travel.carpool.model.Search"%>
 <%@page import="travel.carpool.model.Carpool"%>
 <%@page import="java.util.List"%>
 <%@page import="travel.carpool.model.CarpoolDao"%>
@@ -8,12 +9,7 @@
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 
-<%
-request.setCharacterEncoding("utf-8");
-CarpoolDao dao = CarpoolDao.getInstance();
-List<Carpool>list = dao.listCarpool();
-request.setAttribute("list", list);
-%>
+
 
 <html>
 	<link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/css/carpool_css/carpool_list.css">
@@ -67,7 +63,7 @@ request.setAttribute("list", list);
         <ul id="menu_tab_list">
             <li><a data-tab="home" >HOME</a></li>	
             <li><a data-tab="hotdeal" >동행</a></li>
-            <li><a data-tab="specialTip" >카풀</a></li>
+            <li><a href="main.carpool" >카풀</a></li>
             <li><a data-tab="community" >물품교환</a></li>
             <li><a data-tab="plan" >커뮤니티</a></li>
             <li><a data-tab="attraction" >블로그</a></li>
@@ -124,43 +120,25 @@ request.setAttribute("list", list);
 
 			<!-- 검색 -->
 		<article class="header_bot hideClass1">
-			<form id="form_src" name="form_src" action="http://www.tikle.co.kr/tikle/tiklelist" method="GET">
 				<fieldset>
 					<legend class="hidden">티클 검색하기</legend>
 					<!-- 티클 타입 1 -->
-					<select name="tikle_kind" title="티클 유형1 검색 셀렉트박스" class="j_src_tikle_kind_sel" id="tikleType1" data-val="1">
-						<option value="">전체</option>
-						<option value="1">카풀</option>
-						<option value="3">KTX카풀</option>
-						<option value="2">택시카풀</option>
-						<option value="4">주차장</option>
-						<option value="5">운전자</option>
-					</select><!--
-					티클 타입 2
-					--><select name="tikle_type" title="티클 유형2(카풀, 택시카풀) 검색 셀렉트 박스" id="tikleType2" class="j_src_tikle_type_sel" data-val="">
-						<option value="">전체</option>
-					</select><!--
-					--><input type="hidden" name="tikle_pattern" value="1" class="hideClass"><!--
-					카풀, ktx, 택시카풀, 주차장일때의 temp 파일 저장위치
-					--><div class="search_wrap">
-						<div class="place_wrap j_src_key_box">
-							<!-- 카풀, 택시카풀 출발지 도착지 -->
-							<div class="inp_wrap start_place">
-								<img src="/images/pc/ico_start.gif" title="출발지" alt="출발지" width="12px" height="20px">
-								<input type="search" name="src_key_1" value="" title="출발지를 입력해주세요" size="10" maxlength="100" placeholder="서울" class="inp_txt_comm">
-							</div><!--
-							--><div class="inp_wrap arrival_place">
-								<img src="/images/pc/ico_arrival.gif" title="도착지" alt="도착지" width="12px" height="20px">
-								<input type="search" name="src_key_2" value="" title="도착지를 입력해주세요" size="10" maxlength="100" placeholder="경기도" class="inp_txt_comm">
-							</div>
-						</div>
-					 </div><!--
-					날짜
-					--><!--
-					검색버튼
-					--><input type="submit" name="" value="검색" title="검색" class="btn_type3 btn_search j_btn_search">
+	<input type="hidden" name="tikle_pattern" value="1" class="hideClass">
+					
+ <form action="list.carpool" method="post">
+       <input type="hidden" name="temp" value="temp"></input>
+       					<select name="carpool_search" data-val="1">
+							<option value="">전체</option>
+							<option value="u_id">회원정보</option>
+							<option value="start_lati">출발지</option>
+							<option value="dest_lati">도착지</option>
+							<option value="c_price">가격</option>
+							<option value="c_person">남은 좌석</option>
+					</select>
+       <input type="text" name="searchKey" size="20"></input>
+       <input type="submit" name="" value="검색" title="검색" class="btn_type3 btn_search j_btn_search">
+   </form>
 				</fieldset>
-			</form>
 		</article> <!-- header_bot hideClass1 -->
 		</section> <!-- box_header -->
 
@@ -733,7 +711,6 @@ request.setAttribute("list", list);
 		#right_menu{
 			padding-left: 120px;
 		}
-	
 
 	</style>
 
