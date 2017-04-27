@@ -13,6 +13,7 @@ import travel.carpool.action.Action;
 import travel.carpool.action.ActionForward;
 import travel.carpool.action.InsertAction;
 import travel.carpool.action.InsertFormAction;
+import travel.product.action.ListAction;
 import travel.product.action.insertAction;
 
 @WebServlet("*.carpool")
@@ -25,9 +26,9 @@ public class CarpoolController extends HttpServlet {
         super();
     }
 
-    //¿äÃ»°ú °ü·ÃµÈ °ÍµéÀº request°¡ °¡Áö°í ÀÖ´Ù.
+    //ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ ï¿½Íµï¿½ï¿½ï¿½ requestï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½.
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       //¿äÃ»µÇ´Â URLÀÌ ¹«¾ùÀÎÁö È®ÀÎÇØº»´Ù. getRequestURI¸Þ¼­µå¸¦ ÅëÇØ¼­
+       //ï¿½ï¿½Ã»ï¿½Ç´ï¿½ URLï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Øºï¿½ï¿½ï¿½. getRequestURIï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½Ø¼ï¿½
        String requestURI = request.getRequestURI();
        //System.out.println(requestURI);
        String contextPath = request.getContextPath();
@@ -37,17 +38,17 @@ public class CarpoolController extends HttpServlet {
        ActionForward forward = null;
        Action action = null;
        
-       //insertForm.do·Î ¿äÃ»µÇ¾îÁö¸é
+       //insertForm.doï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½
        if(command.equals("insertForm.carpool")){
-          //insertFormAction()À» ¸¸µç´Ù : ¿ªÇÒ jsp·Î°¡´Â¸Þ¼Òµå
+          //insertFormAction()ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ jspï¿½Î°ï¿½ï¿½Â¸Þ¼Òµï¿½
           action = new InsertFormAction();
-          //insert.form.jsp·Î °¡°Ú´Ù.
+          //insert.form.jspï¿½ï¿½ ï¿½ï¿½ï¿½Ú´ï¿½.
           try {
              forward = action.execute(request, response);
          } catch (Exception e) {
             e.printStackTrace();
          }
-         //Ä¿¸Çµå °ªÀÌ ¸¶À¸¸é °Å±â¿¡ ¸Â´Â ¾×¼ÇÀ» È£ÃâÇÏ¸é µÈ´Ù.
+         //Ä¿ï¿½Çµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å±â¿¡ ï¿½Â´ï¿½ ï¿½×¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½È´ï¿½.
        }else if(command.equals("insertAction.carpool")){
            action = new InsertAction();
            try {
@@ -55,14 +56,21 @@ public class CarpoolController extends HttpServlet {
           } catch (Exception e) {
              e.printStackTrace();
           }
+       }else if(command.equals("listAction.do")){
+    	   action = new travel.carpool.action.ListAction();
+    	   try{
+    		   forward = action.execute(request, response);
+    	   } catch(Exception e){
+    		   e.printStackTrace();
+    	   }
        }
        
        if(forward !=null){
           if(forward.isRedirect()){
-             //getPath·Î setPathÇß´ø °æ·Î¸¦ ¾ò¾î ¿Ã ¼ö ÀÖ´Ù.
+             //getPathï¿½ï¿½ setPathï¿½ß´ï¿½ ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
              response.sendRedirect(forward.getPath());
           } else {
-             //Dispathcer : ±âÁ¸¿äÃ»ÀÇ ¿¬Àå¼± ±× ¿äÃ»À¸·Î jsp·Î °¡°Ú´Ù.
+             //Dispathcer : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½å¼± ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ jspï¿½ï¿½ ï¿½ï¿½ï¿½Ú´ï¿½.
               RequestDispatcher dispatcher = 
                     request.getRequestDispatcher(forward.getPath());
               dispatcher.forward(request, response);

@@ -1,6 +1,7 @@
 package travel.carpool.model;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -42,6 +43,18 @@ public class CarpoolDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
+			session.close();
+		}
+	}
+	
+	public List<Carpool>listCarpool() throws Exception{
+		SqlSession session = getSqlSessionFactory().openSession();
+		try{
+			return session.getMapper(CarpoolMapper.class).listCarpool();
+		} catch(Exception e){
+			e.printStackTrace();
+			return null;
+		} finally{
 			session.close();
 		}
 	}
