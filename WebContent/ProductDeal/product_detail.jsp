@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
     <%
 	request.setCharacterEncoding("utf-8");
+    
 %>
 
 
