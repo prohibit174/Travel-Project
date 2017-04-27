@@ -22,7 +22,7 @@ public class ListAction implements Action {
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("Carpool/carpool_list.jsp");
-		return null;
+		return forward;
 	}
 
 }

@@ -13,14 +13,14 @@ public class Carpool implements Serializable {
 	private String c_price;
 	private String c_date;
 	private String c_person;
-	private String c_dep_time;
+	private String c_dept_time;
 	
 	
 	public Carpool(){}
 
 
 	public Carpool(String c_num, String u_id, String start_lati, String start_longti, String dest_lati,
-			String dest_longti, String c_price, String c_date, String c_person, String c_dep_time) {
+			String dest_longti, String c_price, String c_date, String c_person, String c_dept_time) {
 		super();
 		this.c_num = c_num;
 		this.u_id = u_id;
@@ -31,7 +31,7 @@ public class Carpool implements Serializable {
 		this.c_price = c_price;
 		this.c_date = c_date;
 		this.c_person = c_person;
-		this.c_dep_time = c_dep_time;
+		this.c_dept_time = c_dept_time;
 	}
 
 
@@ -125,13 +125,13 @@ public class Carpool implements Serializable {
 	}
 
 
-	public String getC_dep_time() {
-		return c_dep_time;
+	public String getC_dept_time() {
+		return c_dept_time;
 	}
 
 
-	public void setC_dep_time(String c_dep_time) {
-		this.c_dep_time = c_dep_time;
+	public void setC_dept_time(String c_dept_time) {
+		this.c_dept_time = c_dept_time;
 	}
 	
 }

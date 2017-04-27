@@ -16,8 +16,8 @@ request.setAttribute("list", list);
 %>
 
 <html>
-	<link rel="stylesheet" type="text/css"  href="../css/carpool_css/carpool_list.css">
-	<link rel="stylesheet" type="text/css"  href="../css/carpool_css/city-main-styles.css"> 	
+	<link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/css/carpool_css/carpool_list.css">
+	<link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css"> 	
 <head>
 	<meta charset="UTF-8" />
 
@@ -312,62 +312,39 @@ request.setAttribute("list", list);
    
    
    
-   	<table class="tiklelist_dvs">
+   	<table class="carpool_table">
 		<caption class="hideClass">티클리스트 항목 구분 제목</caption>
 		<tbody>
-			<tr>
+			<tr id="table_tab">
 				<td class="list_dvs1">카풀번호</td>
-				<td class="list_dvs1">출발경도</td>
 				<td class="list_dvs1">출발위도</td>
-				<td class="list_dvs1">도착경도</td>
+				<td class="list_dvs1">출발경도</td>
 				<td class="list_dvs1">도착위도</td>
+				<td class="list_dvs1">도착경도</td>
 				<td class="list_dvs2">가격</td>
 				<td class="list_dvs2">날짜</td>
 				<td class="list_dvs3">남은좌석</td>
 				<td class="list_dvs3">도착날짜</td>
 			</tr>
+			
+	<c:forEach var="carpool" items="${list}">
+      <tr height="30">
+        <td align="center">${carpool.c_num }</td>
+         <td align="center">${carpool.start_lati }></td>
+         <td align=center>${carpool.start_longti }</td>
+         <td align="center">${carpool.dest_lati }</td>
+         <td align="center">${carpool.dest_longti }</td>
+         <td align="center">${carpool.c_price }</td>
+         <td align="center">${carpool.c_date }</td>
+         <td align="center">${carpool.c_person }</td>
+         <td align="center">${carpool.c_dept_time }</td>
+      </tr>      
+      </c:forEach>  
 		</tbody>
 	</table>
 	
-	<ul class="tiklelist_wrap">
-	<c:forEach var ="carpool" items = "${list}">
-	<li class="tiklelist">
-				<div class="box_tikle">
 
-					<div class="tikle_con">
-						<div class="box_tikle_info1">
-							<div class="tikle_loc">
-								<!-- 카풀 등록 번호 -->
-								<div class=" c_num">${carpool.c_num} </div>
-								<!-- 회원 정보 -->
-								<div class="a">${carpool.u_id }</div>
-								<!-- 출발 위도 -->
-								<div class="tikle_date">${carpool.start_lati }</div>
-								<!-- 출발 경도 -->
-								<div class="tikle_date">${carpool.start_longti }</div>
-								<!-- 도착 위도 -->
-								<div class="tikle_date">${carpool.dest_lati }</div>
-								<!-- 도착 경도 -->
-								<div class="tikle_date">${carpool.dest_longti }</div>
-							</div>
-							
-
-	
-										</div>
-				</div>
-</div>
-	</c:forEach>
-	
-	
-	
-	
-   
-   <!-- 연습끝 -->
-			
-
-	
-	
-<!-- 	<ul class="tiklelist_wrap">
+<!-- <ul class="tiklelist_wrap">
 			loop
 				<li class="tiklelist">
 				<div class="box_tikle">
@@ -386,6 +363,7 @@ request.setAttribute("list", list);
 								도착지 
 								<div class="tikle_place tikle_arrival"><h1 class="hidden">도착지</h1>경상북도 경산시</div>
 							</div>
+							
 							<div class="tikle_date">2017.04.29 오후 9시 0분</div><span title="티클목적" class="tikle_purpose">출퇴근</span>
 						</div>
 						유형 및 금액
@@ -395,7 +373,7 @@ request.setAttribute("list", list);
 								<span title="티클 유형" class="tikle_type1">단기 카풀</span>
 								<span title="티클 유형2" class="tikle_type2">타세요</span>
 							</div>
-							--><!--
+							
 							<div class="tikle_type">
 								<span title="예약 가능 자리" class="tikle_seat"><strong>3</strong>자리</span> 
 								<span title="1인 요금입니다">15,000원<small>/인</small></span>
@@ -444,7 +422,7 @@ request.setAttribute("list", list);
 								<span title="티클 유형" class="tikle_type1">단기 카풀</span>
 								<span title="티클 유형2" class="tikle_type2">태워주세요</span>
 							</div>
-							--><!--
+							
 							<div class="tikle_type">
 								<span title="예약 가능 자리" class="tikle_seat"><strong>1</strong>자리</span> 
 								<span title="1인 요금입니다">26,000원<small>/인</small></span>
@@ -468,7 +446,7 @@ request.setAttribute("list", list);
 				</ul>
 			</div>
 		</li>
-	</ul> -->
+	</ul>  -->
 
 	<!-- 페이징 -->
 	<div class="paging" style="margin-top: 50px;">
@@ -731,7 +709,15 @@ request.setAttribute("list", list);
 		</select>
 	</div>
 
-	
+	<style>
+		.carpool_table{
+			width: 100%;
+		}
+		#table_tab{
+			background: gray;
+		}
+
+	</style>
 
 </div><div id="temp_content" class="j_temp_content hideClass">
 

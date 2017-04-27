@@ -56,7 +56,7 @@ public class CarpoolController extends HttpServlet {
           } catch (Exception e) {
              e.printStackTrace();
           }
-       }else if(command.equals("listAction.do")){
+       }else if(command.equals("list.carpool")){
     	   action = new travel.carpool.action.ListAction();
     	   try{
     		   forward = action.execute(request, response);
