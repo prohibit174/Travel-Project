@@ -63,7 +63,7 @@ public class ProductDao {
 		return list;
 	}
 	
-	public Product detailProduct(int p_num) throws Exception {
+	public Product detailProduct(String p_num) throws Exception {
 		SqlSession session = getSqlSessionFactory().openSession();
 		Product product = null;
 		try {

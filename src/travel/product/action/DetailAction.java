@@ -13,15 +13,11 @@ public class DetailAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		String num = request.getParameter("seq");
-		   int seq = 1;
-		   
-		   if (num != null) {
-		      seq = Integer.parseInt(num);
-		   }
+		String p_num = request.getParameter("p_num");
+		  
 		   
 		   ProductDao dao = ProductDao.getInstance();
-		   Product product = dao.detailProduct(seq);
+		   Product product = dao.detailProduct(p_num);
 			ActionForward forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("ProductDeal/product_detail.jsp");
