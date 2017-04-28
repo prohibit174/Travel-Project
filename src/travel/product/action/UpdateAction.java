@@ -9,22 +9,29 @@ import javax.servlet.http.HttpServletResponse;
 import travel.product.model.Product;
 import travel.product.model.ProductDao;
 
-public class UpdateFormAction implements Action {
+public class UpdateAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, Exception {
+		
 		String p_num = request.getParameter("p_num");
-	
-	
+
+		System.out.println(p_num);
+
+		
 		ProductDao dao = ProductDao.getInstance();
 		Product product = dao.detailProduct(p_num);
+		
+		product.setP_num(p_num);
+
+		dao.updateProduct(product);
+		
 		ActionForward forward = new ActionForward();
 
-		forward.setRedirect(false);
-		forward.setPath("ProductDeal/product_update.jsp");
+		forward.setRedirect(true);
+		forward.setPath("ProductDeal/product_updateOk.jsp");
 		return forward;
 	}
-	
 
 }

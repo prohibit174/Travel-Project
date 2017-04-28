@@ -59,28 +59,13 @@ public class insertAction implements Action{
 				
 		
 		product.setP_num(multi.getParameter("p_num"));
-		System.out.println(request.getParameter("p_num"));
-		
 		product.setU_id(multi.getParameter("u_id"));
-		System.out.println(request.getParameter("u_id"));
-		
-		//product.setP_img(request.getParameter("p_img"));
-	
-		
 		product.setP_detail(multi.getParameter("p_detail"));
-		System.out.println(multi.getParameter("p_detail"));
-		
-		product.setP_price(multi.getParameter("p_price"));
-		System.out.println(multi.getParameter("p_price"));
-		
+		product.setP_price(multi.getParameter("p_price"));	
 		product.setP_amount(multi.getParameter("p_amount"));
-		System.out.println(multi.getParameter("p_amount"));
-		
 		product.setP_term(multi.getParameter("p_term"));
-		System.out.println(multi.getParameter("p_term"));
-		
 		product.setP_ox(multi.getParameter("p_ox"));
-		System.out.println(multi.getParameter("p_ox"));
+
 		
 		dao.insertProduct(product);
 		
