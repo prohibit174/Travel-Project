@@ -24,23 +24,6 @@
 <meta name="subject" content="가볼만한곳/맛집/숙박 정보, 항공/호텔 가격비교, 나만의 여행일정">
 <meta name="googlebot" content="index,follow">
 
-<!-- open graph data -->
-<meta property="og:url" content="https://www.wishbeen.co.kr/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="가볼만한곳/맛집/숙박 정보, 항공/호텔 가격비교, 나만의 여행일정 | 여행의 모든 것, 위시빈">
-<meta property="og:image" content="https://wishbeen.akamaized.net/v2.5/images/wb_logo.png">
-<meta property="og:description" content="궁금한 여행정보, 위시빈에 다 있다! 1천 개 이상의 전 세계 여행꿀팁 · 25만 개의 자유 여행일정 · 40만 개의 전 세계 가볼만한 곳, 맛집, 숙박 정보 · 여행자들이 직접 남긴 100만 개의 리뷰/후기/꿀팁 · 항공, 호텔 가격비교 · 나만의 여행일정 계획하기">
-<meta property="og:site_name" content="wishbeen">
-<meta property="og:locale" content="ko-KR">
-
-
-
-<meta property="fb:app_id" content="1422306324649276" />
-
-
-<meta name="google-signin-client_id" content="41152955122-5m3ufq08325k2m3mgeppmkknn9rql13h.apps.googleusercontent.com">
- 
-
 
 <style type="text/css">
   body, pre {
@@ -52,118 +35,6 @@
   }
 
 </style>
-<script src="/js/lib/bower_components/stacktrace-js/dist/stacktrace.min.js"></script>
-<script>(function () {
-    window.onerror = function(msg, file, line, col, error) {
-      // callback is called with an Array[StackFrame]
-      StackTrace.fromError(error).then(function (stackframes) {
-        StackTrace.report(stackframes, "/v2.5/ajax/errorHandler").catch(function (response) {
-          console.error(response);
-        });
-      }).catch(function (err) {
-        console.error(err);
-      });
-    };
-  })();</script>
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T5WKH7"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-T5WKH7');</script>
-<!-- End Google Tag Manager -->
-
-<!--FacebookSDK-->
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.7&appId=1422306324649276";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-<!--EndFaceBookSDK-->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  
-    ga('create', 'UA-45004699-2', 'wishbeen.co.kr');
-    ga('require', 'displayfeatures');
-    ga('send', 'pageview');
-  
-
-  ga('create', 'UA-53303012-1', 'auto', {'name': 'yelloTracker'});
-  ga('yelloTracker.send', 'pageview');
-
-  //wishbeen tracking send event
-  function WebTrackingSendEvent(category, action, label){
-    ga('send', 'event', category, action, label);
-  }
-
-  /*
-
-   */
-  function trackEventsByUrl(trackingEvents){
-
-    var url = window.location.href;
-    var urlArr = url.split('/');
-    var eventKeys = Object.keys(trackingEvents);
-
-    for( var eventKeyIndex in eventKeys){
-      var eventKey = eventKeys[eventKeyIndex];
-
-      if(urlArr.indexOf(eventKey) > -1){
-        var event = trackingEvents[eventKey];
-        WebTrackingSendEvent(event.category, event.action, event.label);
-      }
-    }
-  }
-
-  var g_localizedString = {
-    _Confirm_:"확인",
-    _Close_:"닫기",
-    _Source_:"출처",
-    _Notifications_: ""
-  };
-
-  var g_data = {
-  };
-  
-  var g_isLogin = false;
-  
-  g_data['clientType'] = "web";
-  
-  g_data['gcid'] = "41152955122-5m3ufq08325k2m3mgeppmkknn9rql13h.apps.googleusercontent.com";
-  
-  var g_language = "ko-KR";
-
-  //require js timeout 발생 하지 않도록함.
-  var require = {
-    waitSeconds: 0
-  };
-</script>
-<!--[if lte IE 9]>
-<link rel="stylesheet" href="/styles/ie8.css" />
-<![endif]-->
-
-
-<link rel="stylesheet" href="../css/join_css/city-main-styles_join.css">
-
-    <script data-main="/js/page/city"
-            src="/js/lib/bower_components/requirejs/require.js"></script>
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-    <![endif]-->
-</head>
-<body>
 
 
 <script type="text/javascript">
@@ -171,6 +42,16 @@
     window.location.reload();
   }
 </script>
+
+
+
+<link rel="stylesheet" href="../css/mypage_css/city-main-styles_mypage.css">
+	
+
+</head>
+<body>
+
+
 <div class="page-container">
   <!-- {header -->
   <div class="header">
@@ -195,17 +76,7 @@
   </div><!-- header } -->
 </div><!-- page-container -->
 
-<!-- 포함되어야 할 파라미터 목록 -->
-<!-- language, curCity, tab (현재 선택된 탭) -->
-<script>
-  g_data['searchTabData'] = {
-    language : "ko-KR",
-    curServiceType: "global",
-    curCityName: "전세계",
-    tab: ""
-  };
-  g_localizedString['_SearchRegion_'] = "지역검색";
-</script>
+
 
 <div id="search_tab_dim" class="bg hide"></div>
 
@@ -225,24 +96,38 @@
    <!-- e//search-box -->
 </div><!-- e//main-tabs -->
 
-
-
-
-
-
-	<div class="lnb">
-		<h2>회원가입</h2>
-		<ul class="city_name">
-			<li class="city"><img
-				src="//img.tourtips.com/images/common/lnb/join.png"
-				alt="회원가입 - 회원정보입력" /></li>
-		</ul>
-	</div>
-
-	<br>
 	<br>
 	<div class="form_body">
 		<form action="JoinAction.join" class="join_form">
+		        <div class="present">
+            <div class="tabs-list">
+                
+                <ul class="tabs-list">
+    
+        
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal" class="first-tag active"><span>마이페이지</span></a></li> 
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=5d1504d8bebfc81e" data-id="5d1504d8bebfc81e" class=""><span>내 정보 수정</span></a></li>
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" data-id="2d8eef384cefda06" class=""><span>내 동행 조회</span></a></li>
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>내 카풀조회</span></a></li>
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>내 상품조회</span></a></li>
+            
+		</ul>
+
+                <div id="google-ad-sense" style="margin-top:20px;float:left;" data-type="260x260">
+                  <script type="text/javascript">
+                    google_ad_client = "ca-pub-9419115827273897";
+                    google_ad_slot = "3548612763";
+                    google_ad_width = 260;
+                    google_ad_height = 260;
+                  </script>
+                  <!-- search-260x260 -->
+                  <script type="text/javascript"
+                          src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script>
+                </div>
+            
+            </div><!-- e//tabs-list -->
+            </div> <!-- present -->
 			<fieldset>
 				<legend>필수 입력 사항</legend>
 				<table class="primary_table">
@@ -253,8 +138,7 @@
 					아이디
 					</th>
 					<td>
-					<input type = "text" name = "u_id">
-					&nbsp;&nbsp;&nbsp;&nbsp;<span>영문소문자 / 숫자, 4~16자</span>
+					김보람조장
 					</td>
 					</tr>
 					
@@ -280,42 +164,17 @@
 					<input type = "text" name = "u_name">
 					</td>
 					</tr>
-					<!-- <tr>
-					<th>이메일</th>	 : 이메일 필요 없는데 왜 만들었냐.......ㅠ
-					
-					<td>
-					<input type = "email" id = "mail">@
-					<select name = "email">
-					<option>선택하세요</option>
-					<option>naver.com</option>
-					<option>hanmail.net</option>
-					<option>gmail.com</option>
-					<option>nate.com</option>
-					<option>hotmail.com</option>
-					<option>daum.net</option>
-					<option>yahoo.com</option>
-					<option>korea.com</option>
-					<option>empas.com</option>
-					<option>직접입력</option>			자바스크립트로 직접 입력하는 폼 만들어주기.
-					</select>
-					 
-					</td>
-					</tr> -->
+
 					
 					<tr>
 					<th scope = "row">생년월일</th>
-					<td>
-					<input type = "text" name = "u_birth" >
-					</td>
+					<td>1991년 1월 22일</td>
 					</tr>
 					
 					<tr>
 					<th scope="row">성별</th>
 					<td>
-					<input type = "radio" name = "u_sex" value = "male">
-					<label>남자</label>
-					<input type = "radio" name = "u_sex" value="female">
-					<label>여자</label>
+					여자
 					</td>
 					
 					</tr>
@@ -462,7 +321,7 @@
 			</fieldset>
 
 		<div class="nlogin_join_center">
-		<button type = "submit" class = "nlogin_btn">가입하기</button>
+		<button type = "submit" class = "nlogin_btn">수정하기</button>
 		</div>
 		
 		
