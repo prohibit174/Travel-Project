@@ -61,12 +61,11 @@ public class UsersDao {
 		
 		try {
 			re = sqlsession.getMapper(UsersMapper.class).idCheck(string);
-			//여기로 입력받은 id가 존재하는지 갯수가 들어올거임.
+			//�뿬湲곕줈 �엯�젰諛쏆� id媛� 議댁옱�븯�뒗吏� 媛��닔媛� �뱾�뼱�삱嫄곗엫.
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		return re;
 	}
-	
 }
