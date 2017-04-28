@@ -102,6 +102,23 @@
       });
     };
   })();</script>
+  <script type="text/javascript">
+  
+	function btn_js_update_click(){
+  	  /* confirm(문자열, 초기값) */
+  	  var check = confirm("수정하시겠습니까?");
+  	  /* if(check == true) else false */
+  	  if(check) document.location.href="updateFormAction.product?p_num=<%=product.getP_num()%>";
+  	}
+  
+  
+	function btn_js_delete_click(){
+    	  /* confirm(문자열, 초기값) */
+    	  var check = confirm("삭제하시겠습니까?");
+    	  /* if(check == true) else false */
+    	  if(check) document.location.href="deleteAction.product?p_num=<%=product.getP_num()%>";
+    	}
+  </script>
 
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T5WKH7"
@@ -440,7 +457,11 @@
                         <p class="caution_dsc"></p>
                         <div class="btn_area">
                             <a href ="updateFormAction.product?p_num=<%=product.getP_num()%>">수정하기</a>
-                      
+                      		 <a href ="deleteAction.product?p_num=<%=product.getP_num()%>">삭제하기</a>
+                     <input type="button" name="btn_js_update" id="btn_js_update" onclick="btn_js_update_click();" value="수정하기" />  		 
+                    <input type="button" name="btn_js_delete" id="btn_js_delete" onclick="btn_js_delete_click();" value="삭제하기" />
+
+
                         </div>
                     </div>
                     <a style="cursor:pointer" id="lpop_btn_close_new" class="btn_clse">
