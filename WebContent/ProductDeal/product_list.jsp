@@ -307,7 +307,7 @@
                      value="${fn:substring(product.p_img, fn:length(head)+1, fn:length(product.p_img)) }"></c:set>
 
                   <c:choose>
-                     <c:when test="${pattern=='jpg' || pattern =='gif' }">
+                     <c:when test="${pattern=='jpg' || pattern =='gif' || pattern =='png' }">
                         <img src="upload/${head }_small.${pattern}" alt="img /">
                      </c:when>
                      <c:otherwise>
