@@ -102,6 +102,7 @@
                   <script type="text/javascript"
                           src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                   </script>
+                  <script src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
                 </div>
             
             </div><!-- e//tabs-list -->
