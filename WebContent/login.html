@@ -59,6 +59,11 @@ function jf_join_reload(id,pwd){
 	opener.location.href='/servlet/wizard.servlet.contents.login.myloginMainServlet?client_id=main&command=login&id='+id+'&pwd='+pwd;
 	window.close();
 } */
+function linkToOpener(URL){
+	if(window.opener && !window.opener.closed)
+		window.opener.location = URL;
+		window.closed();
+}
 </script><noscript></noscript>
 </head>
 
@@ -106,7 +111,7 @@ document.domain = "kornu.ac.kr";
 <table width="190" height="30" border="0" align="center" cellpadding="3" cellspacing="0" summary="로그인 버튼 테이블">
 <tr>
 
-<td width="54"><img src="./images/loginPopupImages/log_btn_join.gif" width="53" height="20" onClick="jf_join();" onkeypress="if(event.keycode==13)jf_join();" alt="회원 가입 버튼" longdesc="" style="cursor:hand"></td>
+<td width="54"><a href="javascript:linkToOpener('JoinForm.users')"><img src="./images/loginPopupImages/log_btn_join.gif" width="53" height="20" onClick="jf_join();" onkeypress="if(event.keycode==13)jf_join();" alt="회원 가입 버튼" longdesc="" style="cursor:hand"></a></td>
 <td width="124"><img src="./images/loginPopupImages/log_btn_searchpass.gif" width="108" height="20" onClick="javascript:jf_findPass();" onkeypress="if(event.keycode==13)jf_findPass();" alt="비밀번호 검색 버튼" longdesc="" style="cursor:hand"></td>
 
 </tr>
@@ -118,5 +123,6 @@ document.domain = "kornu.ac.kr";
 </tr>
 </table>
 </form>
+
 </body>
 </html>
