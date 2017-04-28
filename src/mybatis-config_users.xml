@@ -7,7 +7,7 @@
 
 	<typeAliases>
 		
-		<typeAlias type="travel.join.Model.Join" alias="Join"/>
+		<typeAlias type="travel.users.model.Users" alias="Users"/>
 		
 	</typeAliases>
 	
@@ -29,7 +29,7 @@
 	
 	
 	<mappers>
-		<mapper resource="travel/join/Mapper/Join.xml"/>
+		<mapper resource="travel/users/mapper/Users.xml"/>
 	</mappers>
 	
 </configuration>

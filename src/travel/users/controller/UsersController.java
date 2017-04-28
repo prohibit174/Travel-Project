@@ -1,23 +1,27 @@
-package travel.join.Controller;
+package travel.users.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import travel.join.Action.Action;
-import travel.join.Action.ActionForward;
-import travel.join.Action.JoinAction;
+import travel.users.action.Action;
+import travel.users.action.ActionForward;
+import travel.users.action.IdCheckAction;
+import travel.users.action.JoinAction;
+import travel.users.action.JoinFormAction;
 
 
-@WebServlet("*.join")
-public class JoinController extends HttpServlet {
+@WebServlet("*.users")
+public class UsersController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
-    public JoinController() {
+    public UsersController() {
         super();
         
     }
@@ -29,8 +33,9 @@ public class JoinController extends HttpServlet {
 	/*	String path = request.getContextPath();
 		//travelProject
 */		String contextPath = request.getContextPath();
-    	//getContextPath를 통해서 /MVC_project라는 컨텍스트 경로를 가져옴.
+    	//getContextPath를 통해서 컨텍스트 경로를 가져옴.
     	System.out.println(contextPath);
+    	
     	String command = requestURI.substring(contextPath.length()+1);
     	/*전체 경로에서 context경로의 뒤에 있는 /까지 포함하기위해서 +1을 넣어줌.
     	context의 길이만큼 자르고 +1을 하면 /부터 t까지 잘림.
@@ -39,20 +44,56 @@ public class JoinController extends HttpServlet {
     	System.out.println(command);
     	//잘라내고 남은 필요한 url만 잘라왔음.
     	
+    	
+    	
+    	
     	ActionForward forward= null;
     	Action action= null;
     	
-    	if(command.equals("Join/JoinAction.join")){
-    		//insert_form.jsp에서 submit하면 insertForm.do로 향하게되고, 이 컨트롤러는 .do하면 실행되게됨.
+    	if(command.equals("JoinForm.users")){
     		//해당하는 action을 호출.
-    		action = new JoinAction();
-    		//action = new InsertFormAction();
+    		action = new JoinFormAction();
+    		
     		try {
     			forward = action.execute(request, response);
         		//이 forward를 통해서 redirect안한다, jsp로 가겠다는 내용을 가지고있음.
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    	}else if(command.equals("JoinAction.users")){
+    		action = new JoinAction();
+    		
+    		try {
+				
+    			forward = action.execute(request, response);
+    			
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("IdCheckAction.users")){
+    		action = new IdCheckAction();
+    		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}
+    	
+    	
+    	
+    	
+    	if(forward!=null){
+    		//forward가 null이 아니라는건 한번 실행해봤다.
+    		if(forward.isRedirect()){
+    			//redirect로 연결해달라.
+    			response.sendRedirect(forward.getPath());
+    		}else{
+    			//dispatch시키겠다.
+    			RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
+    			dispatcher.forward(request, response);
+    		
+    		}
     	}
 	}
     

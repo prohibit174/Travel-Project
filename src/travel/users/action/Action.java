@@ -1,4 +1,4 @@
-package travel.join.Action;
+package travel.users.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

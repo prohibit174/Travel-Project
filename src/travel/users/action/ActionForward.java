@@ -1,4 +1,4 @@
-package travel.join.Action;
+package travel.users.action;
 
 public class ActionForward {
 

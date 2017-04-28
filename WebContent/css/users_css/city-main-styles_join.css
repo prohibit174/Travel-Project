@@ -48,8 +48,45 @@ h2.sub_title2 strong			{ font-size:13px; font-weight:normal; color:#999; letter-
 h2.cs_title					{ display:block; position:relative; width:100%; font-size:18px; color:#000; letter-spacing:-0.15em; line-height:22px; padding:6px 0 10px 0; border-bottom:2px solid #373737}
 
 .nlogin_btn {margin:0; padding:12px 32px; line-height:18px; background:#ff7f11; border:1px solid #e86e0f; font-size:18px; color:#fff; font-weight:bold; cursor:pointer}
-.nlogin_join_center {margin-top:30px; text-align:center; margin-right: 30%}
+.nlogin_join_center {margin-top:30%; text-align:center;   margin-right: 40%; margin-left:50%; margin-bottom: 20px;}
 
+
+.nlogin_policy_wrap {display:inline-block; *display:inline; zoom:1; margin-top:30px; width:383px; margin-bottom: 15%;}
+.nlogin_policy_wrap.last {margin-left:29px}
+.nlogin_policy {height:126px; border:1px solid #c6c6c6}
+.nlogin_policy_check {padding:15px 20px; border:1px solid #c6c6c6; border-bottom:0}
+.nlogin_policy_check label {font-size:15px; color:#232323; vertical-align:middle; font-weight:normal; font-family:"NanumBarunGothicBold";}
+.nlogin_policy_check label em{color:#ff4f02;font-family:"NanumBarunGothic";}
+
+
+/*개인정보취급방침*/
+.private_description 	{margin-top:30px}
+.private_description li	{padding: 0 0 30px 10px; background: url("//img.tourtips.com/images/common/bullet_orange.gif") no-repeat left 7px; border-bottom:1px solid #ccc; line-height:18px; font-size:13px}
+.private_select 			{position:relative; margin-top:25px;}
+.private_view_btn 		{position:absolute; left:205px; top:2px}
+.private_print_btn 		{position:absolute; right:3px; top:2px}
+.btn_print_long 			{width:74px; height:24px; border:none; cursor:pointer; background:url("//img.tourtips.com/images/serviceinfo/btn_print_long.gif") no-repeat left top}
+.policy_content_wrap		{margin:13px 0 100px 0; width:800px; border-bottom:1px solid #999}
+.policy_content 			{padding:20px 30px 20px 30px; height:410px; border:1px solid #ddd; overflow-y:scroll; overflow-x:hidden; line-height:18px; font-size:13px;}
+.policy_content p 		{margin:5px 0 5px 5px}
+.policy_content span 		{display:inline-block; *display:block; zoom:1; margin-left:5px}
+.policy_content p.private_list_title {margin-top:15px; margin-left:0; font-weight:600; color:black;}
+.policy_content p.private_policy_title {margin:0;}
+.policy_content ol {list-style: list-item}
+.policy_content ol li {list-style-type:decimal; margin-left:-10px}
+.policy_content_wrap{width:auto;margin:0; margin-bottom : 20px;;border:1px solid #c6c6c6;}
+.policy_content_wrap .policy_content{border:none;}
+.policy_content_wrap .policy_content p.private_list_title{font-weight:normal;color:#666;}
+.policy_content_wrap .policy_content ol{padding-left:32px;}
+.policy_content_wrap .policy_content strong{font-weight:normal;}
+.nlogin_policy_wrap{float:left;width:400px;margin-top:0; margin-bottom: 20px;}
+.nlogin_policy_wrap.last{margin:0;}
+.nlogin_policy_check{padding:18px 30px;}
+.nlogin_policy_wrap.last .nlogin_policy_check{border-left:none;}
+.nlogin_policy_wrap.last .policy_content_wrap{border-left:none;}
+.policy_content p.private_policy_title{margin-top:15px;}
+.policy_content.nlogin_policy{height:205px;}
+.policy_content.nlogin_policy ol{margin-left:35px;}
 
 /* 기존  */
 html {
