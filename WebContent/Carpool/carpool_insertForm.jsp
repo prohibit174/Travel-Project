@@ -169,6 +169,7 @@
 <link rel='stylesheet' href='../GoogleAPI/fullcalendar.css' />
 <script src='${pageContext.request.contextPath}/GoogleAPI/fullcalendar.js'></script>
 <script src="${pageContext.request.contextPath}/GoogleAPI/moment.js"></script>
+<script src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
 <script>
     moment().format();
 </script>
