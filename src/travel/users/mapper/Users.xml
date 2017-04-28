@@ -20,7 +20,7 @@
 	</insert>
 	
 	<!-- id확인 -->
-	<select id="idCheck" parameterType="String">
+	<select id="idCheck" parameterType="String" resultType="int">
 		SELECT count(*) FROM users WHERE u_id = #{u_id}
 	</select>
 	

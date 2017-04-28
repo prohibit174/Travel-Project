@@ -157,6 +157,7 @@
 <script type="text/javascript"
    src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/join_checkInfo.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/IdCheck.js"></script>
 			
 
     <script data-main="/js/page/city"
@@ -258,18 +259,25 @@
 					아이디
 					</th>
 					<td>
-					<input type = "text" name = "u_id">
+					<input type = "text" name = "u_id" id = "u_id">
 					&nbsp;&nbsp;&nbsp;&nbsp;<span>영문소문자 / 숫자, 4~16자</span>
-					<span id = "idcheck"></span>
+					<input type = "button" id = "u_idcheck" value = "중복검사">
+					
 					</td>
 					</tr>
 					
-
+					<tr>
+					<th></th>
+					<td>
+					<font id="idcheck" size="2" color="green"></font> 
+					<td>
+					</tr>
+					
 					<tr>
 					<th scope="row">비밀번호</th>
 					<td>
 					<input type = "password" name = "u_pwd" id = "u_pwd">
-					&nbsp;&nbsp;&nbsp;&nbsp;<span>알파벳과 숫자 조합으로 4~16자</span>
+					&nbsp;&nbsp;&nbsp;&nbsp;<span>알파벳과 숫자 조합으로 6~12자</span>
 					
 					
 					
