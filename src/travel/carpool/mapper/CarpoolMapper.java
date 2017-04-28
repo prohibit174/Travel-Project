@@ -10,5 +10,7 @@ import travel.carpool.model.Search;
 public interface CarpoolMapper {
 	 int insertCarpool(Carpool carpool);
 	 List<Carpool> listCarpool(Search search);
-	 int duplicateCheck();
+	 int deleteCarpool(Carpool carpool);
+	Carpool detailCarpool(String c_num);
+	int updateCarpool(Carpool carpool);
 }

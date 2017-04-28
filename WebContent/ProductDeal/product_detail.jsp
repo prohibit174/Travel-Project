@@ -456,8 +456,7 @@
                         </div>
                         <p class="caution_dsc"></p>
                         <div class="btn_area">
-                            <a href ="updateFormAction.product?p_num=<%=product.getP_num()%>">수정하기</a>
-                      		 <a href ="deleteAction.product?p_num=<%=product.getP_num()%>">삭제하기</a>
+
                      <input type="button" name="btn_js_update" id="btn_js_update" onclick="btn_js_update_click();" value="수정하기" />  		 
                     <input type="button" name="btn_js_delete" id="btn_js_delete" onclick="btn_js_delete_click();" value="삭제하기" />
 
