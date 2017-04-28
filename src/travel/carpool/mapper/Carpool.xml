@@ -30,6 +30,9 @@
 		
 	</select>
 	
+	<select id="duplicateCheck" resultType="integer" parameterType="Carpool">
+		select count(*) from users where user_id=#{user_id} and user_pass=#{user_pass}
+	</select>	
 </mapper>
 
 

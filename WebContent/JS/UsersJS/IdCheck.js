@@ -1,32 +1,58 @@
-/*function IdCheck(){
-	var keyword = document.form_body.join_form.u_id.value;
-	
-	var params = "keyword=" + encodeURIComponent(keyword);
-	
-	sendRequest("")
-}
-*/
-
-$("#u_id").keyup(function() {
-			$.ajax({
-				url : "IdCheckAction.users",
-				type : "post",
-				data : $(this).serialize(),
-				success : function(data) {
-					if (data.length > 0) {
-					document.getElementByName("u_id").value = "이미 해당 아이디로 가입된 회원가 있습니다.";
-					} else {
-						if ($("#u_id").val().length < 5) {
-						document.getElementByName("u_id").value = "아이디를 5자 이상 입력해주세요.";
-						} else {
-							document.getElementByName("u_id").value = "사용 가능한 아이디입니다.";
-						}
+/*
+$(function(){
+	$("#u_idcheck").click(function(){
+		alert('button');
+		$.ajax({
+			url : "Join/IdCheckAction.users",
+			type : "post",
+			data : $("#u_id").serialize(),
+			success : function(data){
+				if(data>0){
+					$('#idcheck').text(''); 
+					$('#idcheck').html('사용중인 아이디 입니다');
+					alert('사용 중인 아이디 입니다.')
+				}else{
+					if($("#u_id").val().length<5 || $("#u_id").val().length>12){
+						$('#idcheck').text(''); 
+						$('#idcheck').html('아이디는 4~12자로 등록해주세요.'); 
+					
+					}else{
+						$('#idcheck').text(''); 
+						$('#idcheck').html('사용가능한 아이디 입니다.'); 
 					}
-				},
-				error : function(error) {
-					alert(error.statusText);
 				}
-			});
+			}
+		})
+		
+	})
+})*/
 
-			return false;
-		});
+
+//id확인
+$(function(){
+
+	var regexp = "/^[a-z0-9]/";
+
+	$("#u_idcheck").click(function(){
+		$.ajax({
+			url : "IdCheckAction.users",
+			type : "post",
+			data : $("#u_id").serialize(),
+			success : function(data){
+				if(data>0){
+					alert("사용중인 아이디 입니다")
+				}else{
+					if($("#u_id").val().length<5 || $("#u_id").val().length>12){
+						alert('아이디는 4~12자로 등록해주세요.');
+					}else if(!('#u_id').val().match(regexp)){
+						alert('아이디는 영어 소문자, 숫자 조합만 가능합니다.');
+					}else{
+						$('#idcheck').text(''); 
+						$('#idcheck').html('사용가능한 아이디 입니다.'); 
+					}
+
+				}
+			}
+			})
+		})
+	});
