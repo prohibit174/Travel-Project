@@ -8,6 +8,6 @@ public interface TravelMapper {
 
 	int insertProduct(Product product);
 	List<Product> listProduct();
-	Product detailProduct(int p_num);
+	Product detailProduct(String p_num);
 
 }

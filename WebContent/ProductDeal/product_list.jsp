@@ -1,5 +1,21 @@
+<%@page import="travel.product.model.Product"%>
+<%@page import="java.util.List"%>
+<%@page import="travel.product.model.ProductDao"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("utf-8"); %>
+
+<%
+	
+	request.setCharacterEncoding("utf-8");
+    ProductDao dao = ProductDao.getInstance();
+	
+   List<Product> list = dao.listProduct();
+   request.setAttribute("list", list);
+   
+   
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +51,7 @@
 
 
 
-<meta property="fb:app_id" content="14223064649276" />
+<meta property="fb:app_id" content="1422306324649276" />
 
 
 <meta name="google-signin-client_id" content="41152955122-5m3ufq08325k2m3mgeppmkknn9rql13h.apps.googleusercontent.com">
@@ -151,38 +167,16 @@
 <![endif]-->
 
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin.css" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin2.css" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin3.css" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin4.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-main-styles.css">
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
- <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
-<script type="text/javascript" src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>           
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent2.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/tests.js"></script>
- <script src='${pageContext.request.contextPath}/GoogleAPI/lib/jquery.min.js'></script>
-<script src='${pageContext.request.contextPath}/GoogleAPI/lib/moment.min.js'></script>
-<link rel='stylesheet' href='../GoogleAPI/fullcalendar.css' />
-<script src='${pageContext.request.contextPath}/GoogleAPI/fullcalendar.js'></script>
-<script src="${pageContext.request.contextPath}/GoogleAPI/moment.js"></script>
-<script>
-    moment().format();
-</script>
-<script type="text/javascript">
-
-
-
-		
-	
-</script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <!--[if lt IE 9]>
     <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
     <![endif]-->
-
 </head>
 <body>
 
@@ -192,12 +186,11 @@
     window.location.reload();
   }
 </script>
-
 <div class="page-container">
   <!-- {header -->
   <div class="header">
     <div class="main-nav-con">
-      <p class="wishbeen-logo"><span>심심할 틈이 없다! 프로동행러</span></p>
+      <p class="wishbeen-logo"><span>세상의 모든 여행, 위시빈</span></p>
 
       <div class="nav-login-search">
         <a class="btn-new-plan">로그인</a>
@@ -206,6 +199,8 @@
           <div>
             <a id="nav-btn-about" href="http://blog.naver.com/PostThumbnailList.nhn?blogId=wishbeen&from=postList&categoryNo=97&parentCategoryNo=97" target="_blank">회원가입</a>
             <a id="nav-login-btn" class="nav-btn-login">마이페이지</a>
+            <a id="nav-fb-login" class="fb"></a>
+            <a id="nav-ggl-login" class="ggl"></a>
           </div>
           
           
@@ -226,14 +221,7 @@
   };
   g_localizedString['_SearchRegion_'] = "지역검색";
 </script>
-  <script src='../GoogleAPI/lib/jquery.min.js'></script>
-<script src='../GoogleAPI/lib/moment.min.js'></script>
-<link rel='stylesheet' href='../GoogleAPI/fullcalendar.css' />
-<script src='../GoogleAPI/fullcalendar.js'></script>
-<script src="../GoogleAPI/moment.js"></script>
-<script>
-    moment().format();
-</script>
+
 <div id="search_tab_dim" class="bg hide"></div>
 
 <div class="main-tabs">
@@ -241,7 +229,7 @@
         <ul id="menu_tab_list">
             <li><a data-tab="home" >HOME</a></li>
             <li><a data-tab="hotdeal" >동행</a></li>
-            <li><a href="main.carpool" >카풀</a></li>
+            <li><a data-tab="specialTip" >카풀</a></li>
             <li><a data-tab="community" >물품교환</a></li>
             <li><a data-tab="plan" >커뮤니티</a></li>
             <li><a data-tab="attraction" >블로그</a></li>
@@ -253,6 +241,9 @@
 </div><!-- e//main-tabs -->
 
 
+
+<!--<h1> 여기가 컨텐츠 부분입니다.<br><br> 원하는 거 집어 넣으면 돼요</h1>  -->
+
 <div id="contents"  class="city">
     <div class="conts-container">
         <div class="present">
@@ -261,19 +252,16 @@
                 <ul class="tabs-list">
     
         
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal" class="first-tag active"><span>CARPOOL</span></a></li>
+            <li><a href="mainAction.product" class="first-tag active"><span>전체 조회</span></a></li>
             
             
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=5d1504d8bebfc81e" data-id="5d1504d8bebfc81e" class=""><span>카풀 등록</span></a></li>
+            <li><a href="insertForm.product"><span>물품 등록</span></a></li>
             
             
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" data-id="2d8eef384cefda06" class=""><span>대기중인 카풀 리스트</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>내 카풀 등록 조회</span></a></li>
-            
-		</ul>
+            <li><a href="" class=""><span>물품 추천</span></a></li>
 
+</ul>
+           
                 <div id="google-ad-sense" style="margin-top:20px;float:left;" data-type="260x260">
                   <script type="text/javascript">
                     google_ad_client = "ca-pub-9419115827273897";
@@ -282,52 +270,87 @@
                     google_ad_height = 260;
                   </script>
                   <!-- search-260x260 -->
-                  
                   <script type="text/javascript"
                           src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                   </script>
                 </div>
-                
-                
-            
+         
             </div><!-- e//tabs-list -->
 
-
+            <div class="conts-box-list search">
+           
+              <div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
+           <!-- boram -->
+             <div class="conts-container conts-box">
+        <div class="contents-wrap">
+            <div class="bigHeader">
+		전체 물품
             </div>
-
-						
-						
-						</div>
-						
-						</div>
-
-
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-
-       }
-       #calendar {
-        height:600px;
-        width: 50%;
-       }
-		#carpool_map{
-		margin-left: 300px;
-		}
-		#footer{
-		height: 30%;
-		}
-
-    </style>
-    
+            <div class="content-tabs">
+	물품 검색 : <input type="text" />
+            </div>
+            <div class="conts-box-list">
+                <div class="inner-box">
 
 
+         
+         <c:forEach var="product" items="${list}">
+<div data-id="6a341fddf4c819fc" class="content-box type01">
+	<a href = "detailAction.product?p_num=${product.p_num }" >
+    <div class="type01">
+      <div class="cover-img">
+      <!-- modi -->
+	<c:if test="${product.p_img!=null}">
+                  <c:set var="head"
+                     value="${fn:substring(product.p_img, 0, fn:length(product.p_img)-4) }"></c:set>
+                  <c:set var="pattern"
+                     value="${fn:substring(product.p_img, fn:length(head)+1, fn:length(product.p_img)) }"></c:set>
 
-   
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnrWQ2SHvedNrvdozheYo32pHwCbuvPgs&callback=initMap">
-    </script>
+                  <c:choose>
+                     <c:when test="${pattern=='jpg' || pattern =='gif' }">
+                        <img src="upload/${head }_small.${pattern}" alt="img /">
+                     </c:when>
+                     <c:otherwise>
+                        <c:out value="No IMAGE"></c:out>
+                     </c:otherwise>
+                  </c:choose>
+               </c:if>
+
+      </div>
+      
+      <div class="tit"> <c:out value="${product.p_num }"></c:out></div>
+      <div class="desc">
+        <span><c:out value="${product.p_price }"></c:out></span>
+        <span><c:out value="${product.p_term }"></c:out></span>
+      </div>
+    </div>
+  </a>
+</div>
+
+ </c:forEach>
+                    <div class="clear"></div>
+                </div>
+                <div class="btn-box center">
+                    <a class="btn-more" href="/city?serviceType=global&amp;tab=specialTip"><span>전체 물품</span> 더보기 </a>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    <!-- boram end -->
+
+              </div>
+              <div class="clear"></div>
+              <div align="center" class="loading-image">
+             
+                <div class="load-01">
+                  <div class="load-02 fa-spin"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div> 
 
 
 <div id="footer">
@@ -361,114 +384,48 @@
             
             
             <option value="2"  > USD(미국)</option>
-            
-            
-            
-            
+
             <option value="1" selected > KRW(한국)</option>
-            
-            
-            
-            
+
             <option value="0"  > EUR(유럽연합)</option>
-            
-            
-            
-            
+
             <option value="3"  > JPY(일본)</option>
-            
-            
-            
-            
+
             <option value="4"  > CNY(중국)</option>
-            
-            
-            
-            
+
             <option value="5"  > HKD(홍콩)</option>
-            
-            
-            
-            
+
             <option value="6"  > TWD(대만)</option>
-            
-            
-            
-            
+
             <option value="7"  > GBP(영국)</option>
-            
-            
-            
-            
+
             <option value="8"  > CAD(캐나다)</option>
-            
-            
-            
-            
+
             <option value="9"  > CHF(스위스)</option>
-            
-            
-            
-            
+  
             <option value="10"  > SEK(스웨덴)</option>
-            
-            
-            
-            
+
             <option value="11"  > AUD(호주)</option>
-            
-            
-            
-            
+ 
             <option value="12"  > NZD(뉴질랜드)</option>
-            
-            
-            
-            
+ 
             <option value="13"  > CZK(체코)</option>
-            
-            
-            
-            
+
             <option value="14"  > TRY(터키)</option>
-            
-            
-            
-            
+ 
             <option value="15"  > MNT(몽골)</option>
-            
-            
-            
-            
+  
             <option value="16"  > ILS(이스라엘)</option>
             
-            
-            
-            
             <option value="17"  > DKK(덴마크)</option>
-            
-            
-            
-            
+
             <option value="18"  > NOK(노르웨이)</option>
-            
-            
-            
-            
+ 
             <option value="19"  > SAR(사우디아라비아)</option>
-            
-            
-            
-            
+ 
             <option value="20"  > KWD(쿠웨이트)</option>
-            
-            
-            
-            
+ 
             <option value="21"  > BHD(바레인)</option>
-            
-            
-            
             
             <option value="22"  > AED(아랍에미리트)</option>
             

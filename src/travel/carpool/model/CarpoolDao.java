@@ -3,6 +3,7 @@ package travel.carpool.model;
 import java.io.InputStream;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -47,10 +48,10 @@ public class CarpoolDao {
 		}
 	}
 	
-	public List<Carpool>listCarpool() throws Exception{
+	public List<Carpool> listCarpool(Search search) throws Exception{
 		SqlSession session = getSqlSessionFactory().openSession();
 		try{
-			return session.getMapper(CarpoolMapper.class).listCarpool();
+			return session.getMapper(CarpoolMapper.class).listCarpool(search);
 		} catch(Exception e){
 			e.printStackTrace();
 			return null;
