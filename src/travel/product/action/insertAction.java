@@ -29,12 +29,9 @@ public class insertAction implements Action{
 									"utf-8", new DefaultFileRenamePolicy());
 		//파일 업로드
 				if(multi.getFilesystemName("p_img") != null){
-					System.out.println("method in");
 					String p_img = multi.getFilesystemName("p_img");
-					System.out.println(p_img);
 					product.setP_img(p_img);
 
-					
 					//썸네일 이미지(jpg, gif) aaa.gif -> aaa_small.gif
 					String pattern = p_img.substring(p_img.lastIndexOf(".")+1);
 					String headName = p_img.substring(0, p_img.lastIndexOf("."));

@@ -10,6 +10,7 @@ String p_num = request.getParameter("p_num");
 	Product product = dao.detailProduct(p_num);
 	
 	request.setAttribute("product", product);
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -288,7 +289,7 @@ String p_num = request.getParameter("p_num");
               <div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
            <!-- boram -->
              	<div class="form_body">
-		<form action="updateAction.product?p_num=<%=product.getP_num() %>" class="join_form" method="post" enctype="multipart/form-data">
+		<form action="updateAction.product" class="join_form" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<legend>물품 수정</legend>
 
@@ -311,7 +312,7 @@ String p_num = request.getParameter("p_num");
 					<tr>
 					<th scope="row">파일</th>
 					<td>
-					<input type = "file" id = "p_img" name="p_img" value="${product.p_img}">
+					<input type = "file" id = "p_img" name="p_img" value="${product.p_img}" >
 					</tr>
 					
 					<tr>
@@ -351,7 +352,7 @@ String p_num = request.getParameter("p_num");
 				</table>
 			</fieldset>
 		 <div class="btn-box center">
-		<button type = "submit" class="btn-more">수정완료</button>
+		<input type = "submit" class="btn-more" value="수정완료">
 		</div>
 			<!-- 
 		 <div class="btn-box center">
