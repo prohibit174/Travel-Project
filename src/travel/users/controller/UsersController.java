@@ -70,6 +70,7 @@ public class UsersController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    		
     	}else if(command.equals("IdCheckAction.users")){
     		action = new IdCheckAction();
     		
