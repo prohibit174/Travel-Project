@@ -30,6 +30,7 @@
 	
 	<mappers>
 		<mapper resource="travel/users/mapper/Users.xml"/>
+		<mapper resource="travel/main/mapper/login.xml"/>
 	</mappers>
 	
 </configuration>
