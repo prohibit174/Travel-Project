@@ -47,7 +47,7 @@ public class insertAction implements Action{
 					String thumImagePath = uploadPath+"\\" +headName+"_small."+pattern;
 					File dest = new File(thumImagePath);
 					
-					if(pattern.equals("jpg") || pattern.equals("gif")){
+					if(pattern.equals("jpg") || pattern.equals("gif") || pattern.equals("png")){
 						ImageUtil.resize(src, dest, 100, ImageUtil.RATIO);
 					}
 					
