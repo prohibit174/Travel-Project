@@ -1,5 +1,15 @@
+<%@page import="travel.carpool.model.CarpoolDao"%>
+<%@page import="travel.carpool.model.Carpool"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+<%
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +55,7 @@
 
 
 
-<link rel="stylesheet" href="../css/mypage_css/city-main-styles_mypage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
 	
 
 </head>
@@ -98,7 +108,7 @@
 
 	<br>
 	<div class="form_body">
-		<form action="JoinAction.join" class="join_form">
+		<form  class="join_form">
 		        <div class="present">
             <div class="tabs-list">
                 
@@ -130,35 +140,36 @@
             </div> <!-- present -->
 			<fieldset>
 				<legend>카풀 등록 현황</legend>
+				
             <table class="primary_table">
             <tr>
             <th>이름</th>
-            <th>출발일</th>
+            <th>출발</th>
+            <th>가격</th>
             <th>출발시간</th>
             <th>남은인원</th>
-            <th>가격</th> 
             <th>주소</th> 
+            <th>수정</th> 
+            <th>삭제</th> 
             </tr>
-            <tr>
-            <td>박윤기</td>
-            <td>실험용</td>
-            <td>DB되면</td>
-            <td>여기</td>
-            <td>추가</td>
-            <td>하면됨</td>
-            </table>
-            
-            <div class="nlogin_join_center">
-        <span>
-			<button type = "submit" class = "nlogin_btn">수정</button>
-		</span>
-		
-		<span>
-			<button type = "submit" class = "nlogin_btn" >삭제</button>
-		</span>
-		</div>
-
+	<c:forEach var="carpool" items="${list}">
+      <tr height="30">
+         <td align="center">${carpool.c_num }</td>
+         <td align="center">${carpool.start_lati }></td>
+         <td align="center">${carpool.c_price }</td>
+         <td align="center">${carpool.c_date }</td>
+         <td align="center">${carpool.c_person }</td>
+         <td align="center">${carpool.c_dept_time }</td>
+         <td align="center"><button type = "submit" onclick="fn_update()"class = "nlogin_btn">수정</button></td>
+         <td align="center"><input type="button" value="삭제" onclick="location.href='carpoolDelete.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
+         
+         
+                  
+         </tr>
+         </c:forEach>
+      </table>
 			</fieldset>
+			
 			
 			<fieldset>
 			<legend>카풀 구매현황</legend>
@@ -179,7 +190,6 @@
             <td>추가</td>
             <td>하면됨</td>
             </table>
-
 			
 					<div class="nlogin_join_center">
 		<button type = "submit" class = "nlogin_btn">취소</button>

@@ -30,6 +30,18 @@
 		
 	</select>
 	
+	<select id = "detailCarpool" parameterType="String" resultType="Carpool">
+		select * from test where c_num = #{c_num}
+	</select>
+	
+	<delete id = "deleteCarpool" parameterType="Carpool">
+		delete from test where c_num = #{c_num}
+	</delete>
+	
+	<update id = "updateCarpool" parameterType="Carpool">
+	
+	</update>
+	
 </mapper>
 
 
