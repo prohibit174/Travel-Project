@@ -37,7 +37,7 @@ public class CarpoolController extends HttpServlet {
        ActionForward forward = null;
        Action action = null;
        
-       //insertForm.do로 요청되어지면
+       //insertForm.carpool로 요청되어지면
        if(command.equals("insertForm.carpool")){
           //insertFormAction()을 만든다 : 역할 jsp로가는메소드
           action = new InsertFormAction();
