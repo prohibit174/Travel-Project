@@ -1,7 +1,6 @@
 package travel.mypage.action;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,9 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import travel.carpool.model.Carpool;
 import travel.carpool.model.CarpoolDao;
-import travel.carpool.model.Search;
 
-public class CarpoolDeleteAction implements Action {
+public class CarpoolUpdateAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
@@ -23,11 +21,11 @@ public class CarpoolDeleteAction implements Action {
 		Carpool carpool = dao.detailCarpool(num);
 		System.out.println(carpool.getC_num());
 		
-		dao.deleteCarpool(carpool);
+		request.setAttribute("carpool", carpool);
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("carpoolCheck.mypage");
+		forward.setPath("MyPage/mypage_carpoolUpdateForm.jsp");
 		return forward;
 	}
 

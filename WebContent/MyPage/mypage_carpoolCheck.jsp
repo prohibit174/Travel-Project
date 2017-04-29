@@ -160,11 +160,9 @@
          <td align="center">${carpool.c_date }</td>
          <td align="center">${carpool.c_person }</td>
          <td align="center">${carpool.c_dept_time }</td>
-         <td align="center"><button type = "submit" onclick="fn_update()"class = "nlogin_btn">수정</button></td>
+         <td align="center"><input type="button" value="수정" onclick="location.href='carpoolUpdate.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
          <td align="center"><input type="button" value="삭제" onclick="location.href='carpoolDelete.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
          
-         
-                  
          </tr>
          </c:forEach>
       </table>

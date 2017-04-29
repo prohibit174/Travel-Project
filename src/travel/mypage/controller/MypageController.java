@@ -13,6 +13,7 @@ import travel.mypage.action.Action;
 import travel.mypage.action.ActionForward;
 import travel.mypage.action.CarpoolDeleteAction;
 import travel.mypage.action.CarpoolListAction;
+import travel.mypage.action.CarpoolUpdateAction;
 
 
 @WebServlet("*.mypage")
@@ -25,11 +26,10 @@ public class MypageController extends HttpServlet {
         super();
     }
 
-    //占쏙옙청占쏙옙 占쏙옙占시듸옙 占싶듸옙占쏙옙 request占쏙옙 占쏙옙占쏙옙占쏙옙 占쌍댐옙.
+   
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       //占쏙옙청占실댐옙 URL占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 확占쏙옙占쌔븝옙占쏙옙. getRequestURI占쌨쇽옙占썲를 占쏙옙占쌔쇽옙
+      
        String requestURI = request.getRequestURI();
-       //System.out.println(requestURI);
        String contextPath = request.getContextPath();
        String command = requestURI.substring(contextPath.length()+1);
        System.out.println(command);
@@ -46,13 +46,20 @@ public class MypageController extends HttpServlet {
             e.printStackTrace();
          }
        } else if (command.equals("carpoolDelete.mypage")) {
-    	   action = new CarpoolDeleteAction();
-           try {
-               forward = action.execute(request, response);
-           } catch (Exception e) {
-              e.printStackTrace();
-           }
-	}
+			action = new CarpoolDeleteAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("carpoolUpdate.mypage")){
+			action = new CarpoolUpdateAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
        
        if(forward !=null){
           if(forward.isRedirect()){

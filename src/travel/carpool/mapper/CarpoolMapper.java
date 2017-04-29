@@ -12,5 +12,5 @@ public interface CarpoolMapper {
 	 List<Carpool> listCarpool(Search search);
 	 int deleteCarpool(Carpool carpool);
 	Carpool detailCarpool(String c_num);
-
+	int updateCarpool(Carpool carpool);
 }

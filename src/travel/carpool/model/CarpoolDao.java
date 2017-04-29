@@ -88,4 +88,22 @@ public class CarpoolDao {
 			session.close();
 		}
 	}
+	
+	public void updateCarpool(Carpool carpool) throws Exception {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CarpoolMapper.class).updateCarpool(carpool);
+			if(re > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		
+	}
 }
