@@ -17,11 +17,12 @@ public class ListAction implements Action {
 		ProductDao dao = ProductDao.getInstance();
 		
 		
-		List<Product> list = dao.listBoard();
+		List<Product> list = dao.listProduct();
 		request.setAttribute("list", list);
+		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("/ProductDeal/product_main.jsp");
+		forward.setPath("/ProductDeal/product_list.jsp");
 		
 		return forward;
 	}

@@ -1,611 +1,710 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-    <%
+<%@page import="travel.product.model.Product"%>
+<%@page import="travel.product.model.ProductDao"%>
+<%@page import="java.util.List"%>
+<%@page import="travel.product.model.ProductDao"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%
+	
 	request.setCharacterEncoding("utf-8");
-%>
+	String p_num=request.getParameter("p_num");
 
-
-
-<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-compatible" content="IE=edge" />
-<!-- start facebook meta tag -->
-<meta property="og:title" content="ÇØÇÇ¸Ó´Ï»óÇ°±Ç ¹è¼Û"/>
-<meta property="og:image" content="http://img1.tmon.kr/deals/2016/09/27/404852886/404852886_mobile_022ad_1474976661production.jpg"/>
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="627" />
-<meta property="og:description" content="10¸¸¿ø±Ç 8% ÇÒÀÎ! ¼±¹°·Î °­Ãß!"/>
-<!-- end facebook meta tag -->
-
-<title>
-ÇØÇÇ¸Ó´Ï»óÇ°±Ç ¹è¼Û - 
-Æ¼¸ó :: ¼îÇÎÀ» ¶Òµü! Æ¼¸ó
-</title>
-
-<meta name="google-site-verification" content="QdQofYukhicF9dhcY_spJY1lIoc9kWxs0FMB9y2UUMg" />
-<script src="http://static2.tmon.kr/static/analysis/ga_create.js?v=b0298c616c4384e4d7a8dc4efb652ab6c5534993"></script>
-<script>    
-        ga("set", {"dimension17":"62f61c1a-f1a6-47f7-a22c-8273d9c5ffe2|20170405123304"});
-        ga("set", {"dimension7":"14090001","dimension2":"\ud574\ud53c\uba38\ub2c8\uc0c1\ud488\uad8c \ubc30\uc1a1"});
+    ProductDao dao = ProductDao.getInstance();
+	
+    List<Product> list = dao.listProduct();
+    Product product=dao.detailProduct(p_num);
     
-    ga("send", "pageview");
-
-    </script>
-<!--Granify Script Start!!! -->
-<script src="http://static1.tmon.kr/static/analysis/granifyManager.js?v=b6cdb50acf5715d49fdcb54483b2180eb21ed821"></script>
-<script>    GranifyManager.init(1088);
-    GranifyManager.trackPageView("product");
-</script>
-<!--Granify Script End!!! -->
-
+    System.out.println(product.getP_num());
+    
+   
+   
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<meta name="fragment" content="!" />
+<meta name="naver-site-verification" content="b5dc8e0c6fe0f77b6e8a970e244d1d74397fc8cf"/>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?1">
+<meta name="referrer" content="origin">
 <link href="http://img2.tmon.kr/static/img/favi_tmon.ico" rel="shortcut icon"/>
 <link href="http://static2.tmon.kr/static/gen/css/common_new.css?v=e9246ef610b2c5ffeb315290178ace3b56b7e97a" rel="stylesheet" type="text/css" charset="utf-8"/>
 <link href="http://static1.tmon.kr/static/gen/css/deal.css?v=9967e849305d0ae005ce9fac80a0a74ade132c3e" rel="stylesheet" type="text/css" charset="utf-8"/>
-
 <link href="http://static2.tmon.kr/static/gen/css/deal_old.css?v=084304a6106f90aaeee0c7587bf899cad415c75b" rel="stylesheet" type="text/css" charset="utf-8"/>
-
 <link href="http://static1.tmon.kr/static/gen/css/deal_option.css?v=e2281836b3e88c746a8335f39d52a67b7516051a" rel="stylesheet" type="text/css" charset="utf-8"/>
-
 <link href="http://static2.tmon.kr/static/gen/css/cs_mem.css?v=e1226aa4dabb6690fae5f8ef33bd5a49e10bd188" rel="stylesheet" type="text/css" charset="utf-8"/>
-
 <link href="http://static2.tmon.kr/static/gen/css/deal_lst.css?v=84c22073473acdb08c012e29b9faf6349064b551" rel="stylesheet" type="text/css" charset="utf-8"/>
-
 <link href="http://static2.tmon.kr/static/gen/css/nanum_local.css?v=" rel="stylesheet" type="text/css" charset="utf-8"/>
-
 <link href="http://static2.tmon.kr/static/gen/css/dc_tmpl.css?v=6fb710d723b44a0f9998979d515cf5b05c623055" rel="stylesheet" type="text/css" charset="utf-8"/>
-
 <link href="http://static1.tmon.kr/static/fancybox/jquery.fancybox-1.3.4.css?v=20110520" rel="stylesheet" type="text/css" charset="utf-8" media="screen"/>
 <link href="http://static2.tmon.kr/static/gen/css/jquery.mCustomScrollbar.css?v=" rel="stylesheet" type="text/css" charset="utf-8"/>
 <!--    <link rel="stylesheet" type="text/css" charset="utf-8" href="/static/css/shared.css" sg:hash>  -->
-<!-- [D] °³¹ß ¿Ï·á½Ã http://img1.tmon.kr/resources/shared/p/css/shared.css ·Î ±³Ã¼ ºÎÅ¹µå¸³´Ï´Ù. -->
+<!-- [D] ê°œë°œ ì™„ë£Œì‹œ http://img1.tmon.kr/resources/shared/p/css/shared.css ë¡œ êµì²´ ë¶€íƒë“œë¦½ë‹ˆë‹¤. -->
 <!-- <link rel="stylesheet" type="text/css" charset="utf-8" href="http://img1.tmon.kr/resources/shared/p/css/shared.css" sg:hash>  -->
             <link href="http://img1.tmon.kr/resources/shared/p/css/shared.css?v=" rel="stylesheet" type="text/css"/>
-    
-
-<script src="http://static2.tmon.kr/static/js/jquery-1.8.3.min.js"></script>
-<script src="http://static1.tmon.kr/static/js/jquery.cookie.js"></script>
-<script src="http://static1.tmon.kr/static/js/jquery.lazyload-1.8.4.min.js"></script>
-<script src="http://static2.tmon.kr/static/js/jquery.validate.min.js?v=201305071600"></script>
-<script src="http://static2.tmon.kr/static/fancybox/jquery.fancybox-1.3.4.js"></script>
-<script src="http://static1.tmon.kr/static/js/jquery.number_format.js?v=2011111915"></script>
-<script src="http://static1.tmon.kr/static/js/jquery.slides.min.js?v=201305071600"></script>
-<script src="http://static1.tmon.kr/static/js/jquery.placeholder.js"></script>
-<script src="http://static1.tmon.kr/static/js/jquery-ui-1.9.2.min.js"></script>
-<!--script src="/static/js/jquery.vticker-min.js"></script//-->
-<script src="http://static1.tmon.kr/static/common.js?v=7a46751eca8db6dbb1014ce648ce1c731d4e976d"></script>
-<script src="http://static1.tmon.kr/static/js/lz-string-1.3.3-min.js"></script>
-<!--<script src="/static/tl.js" sg:hash></script>-->
-<!--<script src="/static/tab.js" sg:hash></script>-->
-<script src="http://static2.tmon.kr/static/log.js?v=e22065fd0082add0e20e7de388d434f07f2352e6"></script>
-<script src="http://static2.tmon.kr/static/plog.js?v=f95cdc46a16395c5ed5e3d729c0b3f66ae0d4222"></script>
-<script src="http://static2.tmon.kr/static/js/jquery.mCustomScrollbar.concat.min.js?v=201406021738"></script>
-<script src="http://static2.tmon.kr/static/jquery.tmpl.min.js"></script>
-
-<script>document.cookie = 'viewShow=yes; expires=Fri, 02-Apr-2117 10:33:14 +0900; path=/; domain=.ticketmonster.co.kr';</script>    <script type="text/javascript">    $(document).ready(function(){
-        $('input[placeholder], textarea[placeholder]').placeholder(); // IE placeholder Áö¿ø
-    });
-    </script>
+  
 
 
-<!-- Facebook Pixel Code -->
-<script>    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function()
-            {n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}
-            ;if(!f._fbq)f._fbq=n;
-            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-            document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1506050232762893'); // Insert your pixel ID here.
-</script>
-<!-- DO NOT MODIFY -->
-<!-- End Facebook Pixel Code -->
+<!--common meta data-->
+<title>ê°€ë³¼ë§Œí•œê³³/ë§›ì§‘/ìˆ™ë°• ì •ë³´, í•­ê³µ/í˜¸í…” ê°€ê²©ë¹„êµ, ë‚˜ë§Œì˜ ì—¬í–‰ì¼ì • | ì—¬í–‰ì˜ ëª¨ë“  ê²ƒ, ìœ„ì‹œë¹ˆ</title>
+<meta name="keywords" content="ìœ„ì‹œë¹ˆ, ì—¬í–‰ì¼ì •, ì—¬í–‰ì •ë³´, ì—¬í–‰ê¿€íŒ, ì„¸ê³„ì—¬í–‰ì •ë³´, êµ­ë‚´ì—¬í–‰ì •ë³´, í•´ì™¸ì—¬í–‰ì •ë³´, ì—¬í–‰íŒ, ììœ ì—¬í–‰, ììœ ì—¬í–‰ì¤€ë¹„, ê°€ì´ë“œë¶, ì§€ë„, ì¶”ì²œì¼ì •, í…Œë§ˆì—¬í–‰, ëª…ì†Œ, ìŠ¤íŒŸ, ë§›ì§‘, ì‡¼í•‘, ìˆ™ë°•, í˜¸í…”, ê²ŒìŠ¤íŠ¸í•˜ìš°ìŠ¤, ìµœì €ê°€ í•­ê³µê¶Œ ê²€ìƒ‰, ìµœì €ê°€ ìˆ™ë°• ê²€ìƒ‰, ìµœì €ê°€ í˜¸í…” ê²€ìƒ‰, íŠ¹ê°€ í•­ê³µê¶Œ, ë¬´ë£Œ í•­ê³µ ì´ë²¤íŠ¸, ë¬´ë£Œ í˜¸í…” ì´ë²¤íŠ¸, ì—¬í–‰Q&A, ì—¬í–‰í›„ê¸°, í™ì½©, ë§ˆì¹´ì˜¤, ì˜¤ì‚¬ì¹´, í›„ì¿ ì˜¤ì¹´, ë„ì¿„, íƒ€ì´ë² ì´, ë² ì´ì§•, ìƒí•˜ì´, ì¹­ë‹¤ì˜¤, ì‹±ê°€í¬ë¥´, ë°©ì½•, í‘¸ê»«, ë³´ë¼ì¹´ì´, ì½”íƒ€ í‚¤ë‚˜ë°œë£¨, íŒŒë¦¬, ë¡œë§ˆ, ëŸ°ë˜, ë°”ë¥´ì…€ë¡œë‚˜, í¬ë¡œì•„í‹°ì•„, ì´ìŠ¤íƒ„ë¶ˆ, ë‰´ìš•, í•˜ì™€ì´, ë¯¸ì„œë¶€, ê´Œ, ì‹œë“œë‹ˆ, ì œì£¼, íƒ€ì´ì¤‘, ê°€ì˜¤ìŠ">
+<meta name="description" content="ê¶ê¸ˆí•œ ì—¬í–‰ì •ë³´, ìœ„ì‹œë¹ˆì— ë‹¤ ìˆë‹¤! 1ì²œ ê°œ ì´ìƒì˜ ì „ ì„¸ê³„ ì—¬í–‰ê¿€íŒ Â· 25ë§Œ ê°œì˜ ììœ  ì—¬í–‰ì¼ì • Â· 40ë§Œ ê°œì˜ ì „ ì„¸ê³„ ê°€ë³¼ë§Œí•œ ê³³, ë§›ì§‘, ìˆ™ë°• ì •ë³´ Â· ì—¬í–‰ìë“¤ì´ ì§ì ‘ ë‚¨ê¸´ 100ë§Œ ê°œì˜ ë¦¬ë·°/í›„ê¸°/ê¿€íŒ Â· í•­ê³µ, í˜¸í…” ê°€ê²©ë¹„êµ Â· ë‚˜ë§Œì˜ ì—¬í–‰ì¼ì • ê³„íší•˜ê¸°"/>
+<link rel="canonical" href="https://www.wishbeen.co.kr/">
+<meta name="url" content=https://www.wishbeen.co.kr/>
+<!--<meta name="keywords" content="">-->
+<meta name="subject" content="ê°€ë³¼ë§Œí•œê³³/ë§›ì§‘/ìˆ™ë°• ì •ë³´, í•­ê³µ/í˜¸í…” ê°€ê²©ë¹„êµ, ë‚˜ë§Œì˜ ì—¬í–‰ì¼ì •">
+<meta name="googlebot" content="index,follow">
 
-<!-- begin additional head -->
-<!-- end additional head -->
-
-</head>
-<body class="deallist">
-<div id="fb-root"></div>
-<div id="wrap" heatmap:ignore="1">
+<!--open graph data -->
+<meta property="og:url" content="https://www.wishbeen.co.kr/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ê°€ë³¼ë§Œí•œê³³/ë§›ì§‘/ìˆ™ë°• ì •ë³´, í•­ê³µ/í˜¸í…” ê°€ê²©ë¹„êµ, ë‚˜ë§Œì˜ ì—¬í–‰ì¼ì • | ì—¬í–‰ì˜ ëª¨ë“  ê²ƒ, ìœ„ì‹œë¹ˆ">
+<meta property="og:image" content="https://wishbeen.akamaized.net/v2.5/images/wb_logo.png">
+<meta property="og:description" content="ê¶ê¸ˆí•œ ì—¬í–‰ì •ë³´, ìœ„ì‹œë¹ˆì— ë‹¤ ìˆë‹¤! 1ì²œ ê°œ ì´ìƒì˜ ì „ ì„¸ê³„ ì—¬í–‰ê¿€íŒ Â· 25ë§Œ ê°œì˜ ììœ  ì—¬í–‰ì¼ì • Â· 40ë§Œ ê°œì˜ ì „ ì„¸ê³„ ê°€ë³¼ë§Œí•œ ê³³, ë§›ì§‘, ìˆ™ë°• ì •ë³´ Â· ì—¬í–‰ìë“¤ì´ ì§ì ‘ ë‚¨ê¸´ 100ë§Œ ê°œì˜ ë¦¬ë·°/í›„ê¸°/ê¿€íŒ Â· í•­ê³µ, í˜¸í…” ê°€ê²©ë¹„êµ Â· ë‚˜ë§Œì˜ ì—¬í–‰ì¼ì • ê³„íší•˜ê¸°">
+<meta property="og:site_name" content="wishbeen">
+<meta property="og:locale" content="ko-KR">
 
 
 
-        <div id="inner_wrap">
-        <!-- ¸¶ÄÉÆÃ ±âÈ¹ÀüÀÇ °æ¿ì, »ó´Ü ³×ºñ°ÔÀÌ¼Ç ¼û±è
-             ÅëÇÕ ±âÈ¹ÀüÀÇ °æ¿ì, »ó´Ü ³×ºñ°ÔÀÌ¼Ç ³ëÃâ¿©ºÎ¿¡ µû¶ó ³ëÃâ -->
-                    <div class="spot">
-    <div class="spot_in" style="margin-left: 0px;">
+<meta property="fb:app_id" content="1422306324649276" />
 
 
-        </div>
-</div>
-        
-        <div id="container" heatmap:ignore="1">
-                <script>        fbq('track', 'ViewContent', {
-            'content_id' : 548520330,
-            'content_type' : 'product_group'
+<meta name="google-signin-client_id" content="41152955122-5m3ufq08325k2m3mgeppmkknn9rql13h.apps.googleusercontent.com">
+
+
+<style type="text/css">
+  body, pre {
+    font-family: "ë§‘ì€ ê³ ë”•","Malgun Gothic","Helvetica Neue","Apple SD Gothic Neo",Helvetica,Arial,"Apple Gothic","ë‹ì›€",Dotum,sans-serif!important;
+  }
+
+  .if-me{
+    display: none !important;
+  }
+
+</style>
+<script src="/js/lib/bower_components/stacktrace-js/dist/stacktrace.min.js"></script>
+<script>(function () {
+    window.onerror = function(msg, file, line, col, error) {
+      // callback is called with an Array[StackFrame]
+      StackTrace.fromError(error).then(function (stackframes) {
+        StackTrace.report(stackframes, "/v2.5/ajax/errorHandler").catch(function (response) {
+          console.error(response);
         });
-    </script>
+      }).catch(function (err) {
+        console.error(err);
+      });
+    };
+  })();</script>
+  <script type="text/javascript">
+  
+	function btn_js_update_click(){
+  	  /* confirm(ë¬¸ìì—´, ì´ˆê¸°ê°’) */
+  	  var check = confirm("ìˆ˜ì •í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+  	  /* if(check == true) else false */
+  	  if(check) document.location.href="updateFormAction.product?p_num=<%=product.getP_num()%>";
+  	}
+  
+  
+	function btn_js_delete_click(){
+    	  /* confirm(ë¬¸ìì—´, ì´ˆê¸°ê°’) */
+    	  var check = confirm("ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+    	  /* if(check == true) else false */
+    	  if(check) document.location.href="deleteAction.product?p_num=<%=product.getP_num()%>";
+    	}
+  </script>
 
-                    <!-- Fashion Content //-->
-<div id="content">
-<a href="#footer" class="accessibility">ÇÏ´Ü ¹Ù·Î°¡±â</a>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T5WKH7"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T5WKH7');</script>
+<!-- End Google Tag Manager -->
 
-<script src="http://static1.tmon.kr/static/js/jquery.jqzoom-core-pack.js?v=acbfb0fb76e84fa9f032aaa567ee691cf9a5cf5f"></script>
-<script src="http://static2.tmon.kr/static/js/alarm.js?v=b8c60b5477825358023e2f453ed6a53011d5ef3b"></script>
-<!--
-<script sg:if="$self->lm->is_logged_in()">
-function notifyCouponDealInfo()
-{
-    var params = {type:'JSON', deals:548520330};
+<!--FacebookSDK-->
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.7&appId=1422306324649276";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<!--EndFaceBookSDK-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    $.ajaxSetup({ cache: false });
-    $.getJSON('/coupon/notify', params, function (output) {
-        if (!output || output.length == 0)
-            return;
-        var maxCoupon = 0;
-        var maxCouponMinBuy = 0;
-        var maxCouponTitle = '';
-        for (var i = 0; i < output.length; i++) {
-            if (output[i].amount > maxCoupon
-                || (output[i].amount == maxCoupon && output[i].min_buy_amount < maxCouponMinBuy)) {
-                maxCoupon = output[i].amount;
-                maxCouponMinBuy = output[i].min_buy_amount;
-                maxCouponTitle = output[i].title;
-            }
-        }
-        console.log(maxCouponMinBuy+'/'+maxCoupon);
-        if (maxCouponMinBuy > 0 && maxCoupon > 0) {
-            $('#coupon_guide_inner').html('<nobr>ÄíÆùÀ¸·Î <strong class="pr">ÇÒÀÎ</strong> ¹ŞÀ¸¼¼¿ä!</nobr>');
-            $('.coupon_avil').css('display', 'inline-block');
-            var couponGuideFadeInTimer = setTimeout(function () {
-                $('#coupon_guide').fadeIn('slow');
-            }, 1 * 1000);
-            /*
-            var couponGuideFadeOutTimer = setTimeout(function () {
-                $('#coupon_guide').fadeOut('slow');
-            }, 5 * 1000);
-            */
-            $('#coupon_guide').click(notifyCoupon);
-            /*
-            $('#ico_coupon_notify')
-            .click(notifyCoupon)
-            */
-            /*
-            .mouseover(function () {
-                try { clearTimeout(couponGuideFadeOutTimer); } catch (e) { }
-                $('#coupon_guide').show();
-            })
-            .mouseout(function () {
-                $('#coupon_guide').hide();
-            })
-            */
-            ;
-        }
-    });
-}
+  
+    ga('create', 'UA-45004699-2', 'wishbeen.co.kr');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  
 
-</script>
--->
-<script id="viewUserViewTemplate" type="text/x-jquery-tmpl">	<li>
-		<a href="/deal/${deal_srl}${query_string}" tl:area="${tl_area}" tl:ord="${tlord}" class="abstart thmb">
-		<span class="edge"></span>
-		<img src="${thumbnail_img}" width="164" height="167" alt="${title}"/>
-		</a>
-		<div class="detail">
-			<a href="/deal/${deal_srl}" class="subject">${title_name}</a>
-			<div class="amounts">
-				<div class="price">
-					{{if orgprice_view}}
-						<!--// orgprice_view °¡ YÀÎ °æ¿ì(°øµ¿ ±âÈ¹°¡, Æ¼¸ó°¡) //-->
-						{{if orgprice_title == '°øµ¿ ±âÈ¹°¡'}}
-							<p class="sale"><span class="blind">°øµ¿ ±âÈ¹°¡</span><em>${deal_disamount_number_format}</em>¿ø</p>
-						{{else}}
-							<p class="sale"><span class="blind">Æ¼¸ó°¡</span><em>${deal_disamount_number_format}</em>¿ø</p>
-						{{/if}}
-					{{else}}
-						<p class="sale"><span class="blind">ÇÒÀÎ°¡</span><em>${deal_disamount_number_format}</em>¿ø</p>
-						{{if deal_disrate > 0}}
-						<p class="prime"><span class="blind">Á¤»ó°¡</span><em>${deal_amount_number_format}</em>¿ø</p>
-						{{/if}}
-					{{/if}}
-				</div>
-			</div>
-		</div>
-	</li>
-</script>
-<script id="viewUserViewUlTemplate" type="text/x-jquery-tmpl">	<ul class="lst column5s" id="viewuserview${class_name}">
-	</ul>
-</script>
-<script id="similarLayerTemplate" type="text/x-jquery-tmpl">	{{if tl_ord > 5}}
-	<li id="list${tl_ord}" style="display:none">
-	{{else}}
-	<li id="list${tl_ord}" style="display:block">
-	{{/if}}
-		<a href="${url}" tl:area="SICO" tl:ord="${tl_ord}" tl:linktype="img">
-			<span class="img_area">
-				<img src="${img_path}" width="141" height="95" alt="">
-				<span class="line"></span>
-			</span>                                    
-			<span class="name">${title_name}</span>
-			<span class="people"><em>${deal_buy_count}</em>¸í ±¸¸Å</span>
-		</a>
-	</li>
-</script>
-<script id="similarLayerUlTemplate" type="text/x-jquery-tmpl">	<div class="similar_pd_ct" id="similar_pd_ct" style='display:block'>
-		<span id="bestTagDealsCnt" style="display:none;">${bestTagDealsCnt}</span>
-		<p class="tit">ºñ½ÁÇÑ »óÇ° º¸±â</p>
-		<p class="page"><strong>${view_cur_page}</strong>/${view_total_page}</p>
-		<ul class="similar_pd_lst" id="similarLayerLiUl">
-		</ul>
-		<div class="loading" style="display:block" id="similarLoading"><img src="http://image.ticketmonster.co.kr/static/img/ajax-loader.gif" width="32" height="32" alt="·ÎµùÁß"></div>
-		<a style="cursor:pointer" id="si_btn_prev" class="btn_prev" tl:area="SICO" tl:ord="0" tl:linktype="prev"><span>ÀÌÀü »óÇ°</span></a>
-		<a style="cursor:pointer" id="si_btn_next" class="btn_next" tl:area="SICO" tl:ord="0" tl:linktype="next"><span>´ÙÀ½ »óÇ°</span></a>
-	</div>
-	<script type="text/javascript">
+  ga('create', 'UA-53303012-1', 'auto', {'name': 'yelloTracker'});
+  ga('yelloTracker.send', 'pageview');
 
-	{{html "</sc"+"ript>"}}
-</script>
+  //wishbeen tracking send event
+  function WebTrackingSendEvent(category, action, label){
+    ga('send', 'event', category, action, label);
+  }
 
-<script>var verticalType = "S";
+  /*
 
-$(document).ready(function(){
+   */
+  function trackEventsByUrl(trackingEvents){
 
-        var menu_lst = $("#menu_lst").children();
+    var url = window.location.href;
+    var urlArr = url.split('/');
+    var eventKeys = Object.keys(trackingEvents);
 
-        if(menu_lst.last().prop("class") == 'bar')
-        {
-            menu_lst.last().css("display", "none");
-        }
-        if(menu_lst.first().prop("class") == 'bar')
-        {
-            menu_lst.first().css("display", "none");
-        }
+    for( var eventKeyIndex in eventKeys){
+      var eventKey = eventKeys[eventKeyIndex];
 
-        var people_time = $(".people_time").children();
-
-        if(people_time.last().prop("class") == 'bar')
-        {
-            people_time.last().css("display", "none");
-        }
-        if(people_time.first().prop("class") == 'bar')
-        {
-            people_time.first().css("display", "none");
-        }
-
-        var flag_main_video = 'N';
-
-        if(flag_main_video == 'Y')
-        {
-            var i = 0;
-
-            $('#menu_lst .bar').each(function(){
-                if($(this).css('display') != 'none') i++;
-            });
-
-            if(i >= 3)
-            {
-                $('#menu_lst .bar').last().css('display', 'none');
-                $('.dc_coupon').css('white-space', 'normal');
-            }
-        }
-        $('.fd_coupon').appendTo('body');
-
-        // CVS ÇÈ¾÷ °¡´É µô µµ¿ò¸»
-        $('.picup_txt .tip').hover(function() {
-            $('.tmonpickup_guide').fadeTo(1,1);
-            $('.zzim_area').css('z-index', 300 );
-        },function() {
-            $('.tmonpickup_guide').fadeTo(1,0);
-            $('.zzim_area').css('z-index', 800);
-        });
-
-                getCouponInfo();
-        		// º»º» Á¤º¸ °¡Á®¿À±â
-		getViewUserView();
-});
-
-function getCouponInfo() {
-	var dealSrl = 548520330;
-    var couponSrl = 0;
-    
-    $.ajax({
-		cache:false,
-		url:'/deal/getCouponInfo/' + dealSrl + '/' + couponSrl,
-		dataType:'json',
-		success:function(data){
-			if(data != null && data.coupon_srl != null && data.coupon_srl > 0) {
-				var discountStr = "";
-				
-                if(data.coupon_type == "DELIVERY") {
-					discountStr = "¹è¼Ûºñ ÇÒÀÎ";
-                } else if(data.coupon_type == "PERCENT" || (data.coupon_type == "CARTR") || (data.is_fixed_rate)){
-                    var discountPercent = data.percent;
-                    discountStr = $.number_format(discountPercent) + "% ÇÒÀÎ";
-                } else {
-					var discountAmount = 0;
-					if(data.discountAmount != null && data.discountAmount > 0) {
-						discountAmount = data.discountAmount;
-					} else {
-						discountAmount = data.amount;
-					}
-					discountStr = $.number_format(discountAmount) + "¿ø ÇÒÀÎ";
-				}
-				$("#couponDiscountAmount").text(discountStr);
-
-				$("#couponA").show();
-			}
-		}
-	})
-}
-
-// º»º» ajax È£Ãâ ÇÔ¼ö
-function getViewUserView() {
-	var dealSrl = "548520330";
-	var tagSrl = "501257010001000";
-    
-    if (!tagSrl) {
-        return;
+      if(urlArr.indexOf(eventKey) > -1){
+        var event = trackingEvents[eventKey];
+        WebTrackingSendEvent(event.category, event.action, event.label);
+      }
     }
+  }
 
-    $.ajax({
-		cache:false,
-		url:'/deal/getViewUserView/' + verticalType + '/'  + dealSrl + '/' + tagSrl,
-		dataType:'json',
-		success:function(data) {
-			if(data != null) {
-				var isBestTagDealExist = false;
-				if(data.bestTagDealNoList != null) {
-					var bestTagDealNoCount = data.bestTagDealNoList.length;
-					if(bestTagDealNoCount != null && bestTagDealNoCount > 0) {
-						$("#bestTagDealList").val(data.bestTagDealNoList.join());
-						$("#bestTagDealCnt").html(bestTagDealNoCount);
-						isBestTagDealExist = true;
-					}
-				}
+  var g_localizedString = {
+    _Confirm_:"í™•ì¸",
+    _Close_:"ë‹«ê¸°",
+    _Source_:"ì¶œì²˜",
+    _Notifications_: ""
+  };
 
-				if(isBestTagDealExist == false) {
-					$("#similarbtn").hide();
-				}
+  var g_data = {
+  };
+  
+  var g_isLogin = false;
+  
+  g_data['clientType'] = "web";
+  
+  g_data['gcid'] = "41152955122-5m3ufq08325k2m3mgeppmkknn9rql13h.apps.googleusercontent.com";
+  
+  var g_language = "ko-KR";
 
-				var viewUserViewList = data.viewUserViewList;
-				if(viewUserViewList != null && viewUserViewList.length > 0) {
-					$("#viewuser").show();
-					var i = 0;
-					var class_name = 0;
-					var viewUserViewCount = viewUserViewList.length;
-
-					for (x in viewUserViewList) {
-						var entry = viewUserViewList[x];
-						entry.tlord = i+1;
-
-						// ÃÖÃÊ »©°í ±× ÀÌÈÄºÎÅÍ ul µ¿Àû »ğÀÔ
-						if(i > 0 && entry.tlord % 5 == 1) {
-							entry.class_name = ++class_name;
-							$("#viewUserViewUlTemplate").tmpl(entry).appendTo("#viewuserview");;
-						}
-
-						if(class_name == 0) {
-							$("#viewUserViewTemplate").tmpl(entry).appendTo("#viewUserViewUlArea");;
-						} else {
-							$("#viewUserViewTemplate").tmpl(entry).appendTo("#viewuserview" + class_name);;
-						}
-					
-						i++;
-					};
-
-					$("#total_page").html(++class_name);
-				}
-			}
-
-			addSlide();
-		}
-	})
-}
+  //require js timeout ë°œìƒ í•˜ì§€ ì•Šë„ë¡í•¨.
+  var require = {
+    waitSeconds: 0
+  };
 </script>
-<input type="hidden" id="total_amount" value="0">
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="/styles/ie8.css" />
+<![endif]-->
+
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
+
+    <script data-main="/js/page/city"
+            src="/js/lib/bower_components/requirejs/require.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+<script type="text/javascript">
+  function snsLoginHandler(){
+    window.location.reload();
+  }
+</script>
+<div class="page-container">
+  <!-- {header -->
+  <div class="header">
+    <div class="main-nav-con">
+      <p class="wishbeen-logo"><span>ì„¸ìƒì˜ ëª¨ë“  ì—¬í–‰, ìœ„ì‹œë¹ˆ</span></p>
+
+      <div class="nav-login-search">
+        <a class="btn-new-plan">ë¡œê·¸ì¸</a>
+        <div class="login-and-profile">
+          
+          <div>
+            <a id="nav-btn-about" href="http://blog.naver.com/PostThumbnailList.nhn?blogId=wishbeen&from=postList&categoryNo=97&parentCategoryNo=97" target="_blank">íšŒì›ê°€ì…</a>
+            <a id="nav-login-btn" class="nav-btn-login">ë§ˆì´í˜ì´ì§€</a>
+            <a id="nav-fb-login" class="fb"></a>
+            <a id="nav-ggl-login" class="ggl"></a>
+          </div>
+          
+          
+        </div><!-- login-and-profile -->
+      </div>
+    </div>
+  </div><!-- header } -->
+</div><!-- page-container -->
+
+<!-- í¬í•¨ë˜ì–´ì•¼ í•  íŒŒë¼ë¯¸í„° ëª©ë¡ -->
+<!-- language, curCity, tab (í˜„ì¬ ì„ íƒëœ íƒ­) -->
+<script>
+  g_data['searchTabData'] = {
+    language : "ko-KR",
+    curServiceType: "global",
+    curCityName: "ì „ì„¸ê³„",
+    tab: ""
+  };
+  g_localizedString['_SearchRegion_'] = "ì§€ì—­ê²€ìƒ‰";
+</script>
+
+<div id="search_tab_dim" class="bg hide"></div>
+
+<div class="main-tabs">
+    <div class="tabs-list">
+        <ul id="menu_tab_list">
+            <li><a data-tab="home" >HOME</a></li>
+            <li><a data-tab="hotdeal" >ë™í–‰</a></li>
+            <li><a data-tab="specialTip" >ì¹´í’€</a></li>
+            <li><a data-tab="community" >ë¬¼í’ˆêµí™˜</a></li>
+            <li><a data-tab="plan" >ì»¤ë®¤ë‹ˆí‹°</a></li>
+            <li><a data-tab="attraction" >ë¸”ë¡œê·¸</a></li>
+
+        </ul><!-- e// tabs -->
+    </div><!-- e//tabs-list -->
+
+   <!-- e//search-box -->
+</div><!-- e//main-tabs -->
+
+
+
+<!--<h1> ì—¬ê¸°ê°€ ì»¨í…ì¸  ë¶€ë¶„ì…ë‹ˆë‹¤.<br><br> ì›í•˜ëŠ” ê±° ì§‘ì–´ ë„£ìœ¼ë©´ ë¼ìš”</h1>  -->
+
+<div id="contents"  class="city">
+    <div class="conts-container">
+        <div class="present">
+            <div class="tabs-list">
+                
+                <ul class="tabs-list">
+    
+        
+            <li><a href="product_main.jsp" class="first-tag active"><span>ì „ì²´ ì¡°íšŒ</span></a></li>
+            
+            
+            <li><a href="product_register2.jsp" data-id="5d1504d8bebfc81e" class=""><span>ë¬¼í’ˆ ë“±ë¡</span></a></li>
+            
+            
+            <li><a href="" class=""><span>ë¬¼í’ˆ ì¶”ì²œ</span></a></li>
+
+</ul>
+           
+                <div id="google-ad-sense" style="margin-top:20px;float:left;" data-type="260x260">
+                  <script type="text/javascript">
+                    google_ad_client = "ca-pub-9419115827273897";
+                    google_ad_slot = "3548612763";
+                    google_ad_width = 260;
+                    google_ad_height = 260;
+                  </script>
+                  <!-- search-260x260 -->
+                  <script type="text/javascript"
+                          src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script>
+                </div>
+         
+            </div><!-- e//tabs-list -->
+
+            <div class="conts-box-list search">
+           
+              <div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="ì—ì–´í…”" data-category="T_22">
+          
+        <!-- boram -->
+    <div class="conts-container conts-box">
+        <div class="contents-wrap">
+            <div class="bigHeader">ë¬¼í’ˆ ì„¸ë¶€</div>
+            
+            <input type="hidden" id="total_amount" value="0">
 <link href="http://static2.tmon.kr/static/gen/css/jquery.jqzoom.css?v=0662945f6041df0748663a319955ef132fa97499" rel="stylesheet" type="text/css"/>
                                     <div class="deal_detail_wrap deal_detail_type2">
-                <div class="img_area">
-                                                        <div class="main_img" id="main_img">
+                <div class="img_area" style="width:350px;height:402px;visibility:;">
+                <div class="main_img" id="main_img" style="width:350px;height:402px;visibility:;">
                         <div class="condition" style="z-index:100">
                             </div>
-                        <ul class="roll">
-                            <li >
-                                <img src="http://img2.tmon.kr/deals/2017/04/12/548520330/548520330_front_80c0b_1491979376production.jpg" id="front_image_area" class="main_img_slide" style="width:476px;height:502px;visibility:;" alt=""></img>
+                        <ul class="roll" style="width:350px;height:402px;visibility:;"
+                        >
+                            <li style="width:350px;height:402px;visibility:;">
+                            <!-- ì´ë¯¸ì§€ -->
+                                <img src="upload/<%=product.getP_img() %>" id="front_image_area" class="main_img_slide" style="width:350px;height:402px;visibility:;" alt="img" />
+                      
                             </li>
                             </ul>
                         </div>
-                    
+                  
                     <div class="review_result">
-                        <dl>
-                            <dt>»óÇ°</dt>
-                            <dd><span style="width:96%">4.8Á¡</span></dd>
-							                            <dt>¹è¼Û</dt>
-                            <dd><span style="width:96%">4.8Á¡</span></dd>
-							
-                        </dl>
-                        <a href="/userReview/548520330/14090000/14090001/#content_start">ÈÄ±â <em>343</em>°Ç<span class="bu"></span></a>
+                     
                     </div>
-                                                        </div>                 <!-- WEB-3705 by dwkang <div class="alimipop" id="alarmpop" style="display:none;"></div> -->                 <div class="ct_area">
-                    <div class="deal_info">
-                                                    </div>
-                                            <p class="stit">10¸¸¿ø±Ç 8% ÇÒÀÎ! ¼±¹°·Î °­Ãß!</p>
-                    <h3 class="tit">Áö·ù»óÇ°±ÇÀ¸·Î ¹è¼ÛµÇ´Â<br />
-[ ÇØÇÇ¸Ó´Ï »óÇ°±Ç ]<br />
-</h3>
+                                                        </div>                 <!-- WEB-3705 by dwkang <div class="alimipop" id="alarmpop" style="display:none;"></div> -->              
+                 <div class="ct_area" style="width:470px;height:576px;visibility:;">
+                    <div class="deal_info"></div>
+                     <p class="stit">íŒë§¤ì ì´ë¦„</p>
+                    <h3 class="tit">ìƒí’ˆëª…<br /></h3>
+                  
+                  
                <div id="promotion_block">
-                    <div id="price_info" class="price_info">
-
-						                        <div class="price">
-                            <div class="old">
-                                                            <span class="blind">Á¤»ó°¡</span>
-                                <em>
-                                    100,000<span class="won">¿ø</span><span class="line"></span>
-                                </em>
-                                                                    <a style="cursor:pointer" class="btn_price" id="btn_price">
-                                        <span class="inner">È¨ÆäÀÌÁö ÆÇ¸Å°¡<span>?</span></span>
-                                    </a>
-                                    <div class="price_guide" id="price_guide" style="display:none">
-                                        <div class="inner">
-                                            <span class="bu"></span>
-                                            <strong>È¨ÆäÀÌÁö ÆÇ¸Å°¡</strong>
-                                            ¸ÅÀå¿¡¼­ ¿î¿µÇÏ´Â È¨ÆäÀÌÁö »ó¿¡ Ç¥½ÃµÈ °¡°İÀ» ±âÁØÀ¸·Î ÇÕ´Ï´Ù.                                        </div>
-                                    </div>
-                                
-                            
-                            </div>
-                            <strong class="now_price">
-                                <span class="blind">ÇÒÀÎ°¡</span>
-<span class="no9">9</span><span class="no2">2</span><span class="comma">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span><span class="won">¿ø</span></strong>
-                        </div>
-						
-						                                                                                    <div class="discount">
-                                    8<span class="percent">%</span>
-                                </div>
-                            
-                        
+               <div id="price_info" class="price_info">
+               <p>ê°€ê²©:<%=product.getP_price()%>
+         
+                      
+                      
                     </div>
                     <div class="dc_coupon">
                         <div class="menu_lst" id="menu_lst">
-							<a class="btn_viewcp _eventCoupon _act" tl:area="DDIA" tl:ord="1" style="cursor:pointer;display:none;" id="couponA">
-								<img src="http://img2.tmon.kr/static/img/img_discount1.gif" width="28" height="21" alt="ÄíÆù"></img>
-								<span id="couponDiscountAmount"></span>
-								<span class="btn download">´Ù¿î·Îµå</span>
-								</a>
-                                                            <span class="bar">|</span>
-                                <em><img src="http://img2.tmon.kr/static/img/img_discount3.gif" width="28" height="21" alt="¹«·á¹è¼Û"></img>
-¹«·á¹è¼Û</em>
-                            
+                                                <a class="btn_viewcp _eventCoupon _act" tl:area="DDIA" tl:ord="1" style="cursor:pointer;display:none;" id="couponA">
+                                                       <img src="http://img2.tmon.kr/static/img/img_discount1.gif" width="28" height="21" alt="ì¿ í°"></img>
+                                                       <span id="couponDiscountAmount"></span>
+                                                       <span class="btn download">ë‹¤ìš´ë¡œë“œ</span>
+                                                       </a>
+                                 <!--  <span class="bar">|</span>
+                                <em>íŒë§¤ê¸°ê°„:</em>
+                          
                             </div>
                     </div>
                     </div> <!-- promotion_block -->
-                                        <div class="people_time">
-                        <span class="stock">ÇöÀç<strong class="num buycount">0</strong>
-                            <span class="txt2">°³ ±¸¸Å</span>
-                        </span>
-                        <span class="bar">|</span>
-                                                                                    <span class="time">
-                                    ³²Àº½Ã°£<strong id="rest_time"></strong><span class="day" style="display:none;">ÀÏ</span>
-                                </span>
-                            
-                        
+	 <div class="people_time">
+                       íŒë§¤ê¸°ê°„:<%=product.getP_term()%>
+                          
+                      
                     </div>
-                    
-                    <!-- »óÇ° ¿É¼Ç //-->
-                                                                <p class="txt_choice">
-                        <span class="default_opt_msg">»ó¼¼¿É¼ÇÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä.</span>
-                        <span class="second_opt_msg" style="display:none">Ãß°¡ ±¸¸ÅÇÏ½Ã·Á¸é, ¿É¼ÇÀ» ÇÑ¹ø ´õ ¼±ÅÃÇØ ÁÖ¼¼¿ä.</span> 
-                                                    <span>(1ÀÎ´ç ÃÖ´ë <span>10</span>°³, <em>¹«·á¹è¼Û</em>)</span>
-                        
+                  
+                    <!-- ë‚´ìš©-->
+                        <p class="txt_choice">
+                                       ë‚´ìš©
                         </p>
-                                        
+                                      
                     <div class="option_info2">
                         <p class="option_txt"></p>
                         <ul class="uio_option_area uio_scroll">
                         <li>
-                        
-                                                <span class="option">
-                            ÇØÇÇ¸Ó´Ï»óÇ°±Ç 10¸¸¿ø                                                            <span class="bar">|</span>17,421°³ ³²À½
-                                                            </span>
-                            <span class="uio_option_cnt">
-                                <input type="text" id="t_550207546" class="uio_option_input t_550207546 box" value="0" dealsrl="550207546" mincnt="17421" mincnt_buywait="10">
-                                <span class="uio_option_control">
-                                <a dealsrl="550207546" mincnt="17421" mincnt_buywait="10" class="uio_btn_plus" style="cursor:pointer">Áõ°¡</a>
-                                <a dealsrl="550207546" mincnt="17421" mincnt_buywait="10" class="uio_btn_minus" style="cursor:pointer">°¨¼Ò</a>
-                                </span>
-                            </span>
-                                                            <span class="total"><em id="opt_amt_550207546">92,000</em>¿ø</span>
-                            
-                        
+    
+                          
+                        <%=product.getP_detail()%>
                         </li>
                         </ul>
-                        </div>
+                      </div>
+                      
                                             <div class="order_price1 sell" style="display:none;">
                             <div class="total">
-                                <em>ÃÑ »óÇ° ±İ¾× : </em>
-                                <strong><span class="total_amount">0</span><span class="won">¿ø</span></strong>
+                                <em>ì´ ìƒí’ˆ ê¸ˆì•¡ : </em>
+                                <strong><span class="total_amount">0</span><span class="won">ì›</span></strong>
                             </div>
                         </div>
-                    
-                    <!-- »óÇ° ¿É¼Ç //-->
+                  
+                    <!-- ìƒí’ˆ ì˜µì…˜ //-->
                     <!--<dummy sg:if="!$self->preparing && count($self->alarm_keyword) > 0 && ($self->soldout || $self->deal_time_left == 0)">-->
                         <!-- WEB-3705 by dwkang
                         <div class="alarm_area">
-                            <strong class="blind">ÀçÆÇ¸Å ¾Ë¸®¹Ì ¼­ºñ½º</strong>
+                            <strong class="blind">ì¬íŒë§¤ ì•Œë¦¬ë¯¸ ì„œë¹„ìŠ¤</strong>
                             <div class="alarm">
-                                <span sg:if="$self->soldout" class="soldout">¸ÅÁøµÇ¾ú½À´Ï´Ù! ´ÙÀ½¿¡ ¾Ë·Áµå¸±±î¿ä</span>
-                                <span sg:elseif="$self->deal_time_left == 0" class="deal_end">ÆÇ¸Å Á¾·áµÇ¾ú½À´Ï´Ù! ´ÙÀ½¿¡ ¾Ë·Áµå¸±±î¿ä</span>
-                                <a onmouseover="$('#alarm_tooltip_main').css('display', 'block')" onmouseout="$('#alarm_tooltip_main').css('display', 'none')" class="ico_help">ÀçÆÇ¸Å ¾Ë¸®¹Ì ¼­ºñ½º¶õ?</a>
+                                <span sg:if="$self->soldout" class="soldout">ë§¤ì§„ë˜ì—ˆìŠµë‹ˆë‹¤! ë‹¤ìŒì— ì•Œë ¤ë“œë¦´ê¹Œìš”</span>
+                                <span sg:elseif="$self->deal_time_left == 0" class="deal_end">íŒë§¤ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤! ë‹¤ìŒì— ì•Œë ¤ë“œë¦´ê¹Œìš”</span>
+                                <a onmouseover="$('#alarm_tooltip_main').css('display', 'block')" onmouseout="$('#alarm_tooltip_main').css('display', 'none')" class="ico_help">ì¬íŒë§¤ ì•Œë¦¬ë¯¸ ì„œë¹„ìŠ¤ë€?</a>
                                 <div class="lpop_alarm" id="alarm_tooltip_main" style="display:none">
                                     <div class="inner">
-                                    ÀçÆÇ¸Å ¾Ë¸®¹Ì ¼­ºñ½º¸¦ ½ÅÃ»ÇÏ½Ã¸é, <strong>´ÙÀ½¿¡ °°Àº »óÇ°ÀÇ ÆÇ¸Å°¡ ÁøÇàµÉ ¶§</strong> °í°´´ÔÀÇ ÀÌ¸ŞÀÏ·Î ¾Ë·Áµå¸³´Ï´Ù.
+                                    ì¬íŒë§¤ ì•Œë¦¬ë¯¸ ì„œë¹„ìŠ¤ë¥¼ ì‹ ì²­í•˜ì‹œë©´, <strong>ë‹¤ìŒì— ê°™ì€ ìƒí’ˆì˜ íŒë§¤ê°€ ì§„í–‰ë  ë•Œ</strong> ê³ ê°ë‹˜ì˜ ì´ë©”ì¼ë¡œ ì•Œë ¤ë“œë¦½ë‹ˆë‹¤.
                                     </div>
                                     <span class="arr"></span>
                                 </div>
                             </div>
-                            <a name="btn_alarm" onclick="alarmRequest('548520330', 'main');" attr-if:class="$self->alarm_request_cnt >= count($self->alarm_keyword);btn_alarm_ok" attr-else:class="btn_alarm" style="cursor:pointer">ÀçÆÇ¸Å ¾Ë¸®¹Ì ½ÅÃ»</a>
-                            <div class="ly_alarm" id="alarm_cancel_main" style="display:none;"><span class="arr"></span>ÀçÆÇ¸Å ¾Ë¸®¹Ì°¡ Ãë¼ÒµÇ¾ú½À´Ï´Ù.</div>
-                            <div class="ly_alarm" id="alarm_ok_main" style="display:none;"><span class="arr"></span>ÀçÆÇ¸Å ¾Ë¸®¹Ì°¡ ½ÅÃ»µÇ¾ú½À´Ï´Ù.</div>
+                            <a name="btn_alarm" onclick="alarmRequest('548520330', 'main');" attr-if:class="$self->alarm_request_cnt >= count($self->alarm_keyword);btn_alarm_ok" attr-else:class="btn_alarm" style="cursor:pointer">ì¬íŒë§¤ ì•Œë¦¬ë¯¸ ì‹ ì²­</a>
+                            <div class="ly_alarm" id="alarm_cancel_main" style="display:none;"><span class="arr"></span>ì¬íŒë§¤ ì•Œë¦¬ë¯¸ê°€ ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.</div>
+                            <div class="ly_alarm" id="alarm_ok_main" style="display:none;"><span class="arr"></span>ì¬íŒë§¤ ì•Œë¦¬ë¯¸ê°€ ì‹ ì²­ë˜ì—ˆìŠµë‹ˆë‹¤.</div>
                         </div>
                         -->
                     <!--</dummy>
                     <dummy sg:else>-->
-                    
+                  
                         <div class="btn_area default">
-                                                            <div class="btn_direct"><a id="buy_button" href="#buy">¹Ù·Î±¸¸Å</a></div>                                                                                                    
-                            
+                                                            <div class="btn_direct"><a id="buy_button" href="#buy">ê±°ë˜ìš”ì²­</a></div>                                                                                                  
+                          
                             <div                                class="click_zzim z_548520330">
-                                <input type="hidden" id="zzim_count" value="1414"><a id="deal_zzim" class="btn_zzim " style="cursor:pointer" value="548520330" tl:area="BWCO" tl:ord="2">ÂòÇÏ±â</a><strong class="hits" ><em id="zzim_cnt">1,414</em></strong>
+                                <input type="hidden" id="zzim_count" value="1414"><a id="deal_zzim" class="btn_zzim " style="cursor:pointer" value="548520330" tl:area="BWCO" tl:ord="2">ìª½ì§€ë³´ë‚´ê¸°</a>
                             </div>
                         </div>
-                    
+                  
                     </div>
-                <div id="div_deal_zzimlayer" style=""></div>
+                   
+               <!-- <div id="div_deal_zzimlayer" style=""></div>
                 <div class="lpop_wrap2" id="standby_alert" style="display:block;top:50%;z-index:1110;margin-top:-155px;display:none">
                     <div class="lpop_cont">
                         <div class="h_area" id="h_area_1" style="display:none">
-                            <strong class="txt">´ë±â¿¹¾à »óÇ°ÀÔ´Ï´Ù!</strong>
+                            <strong class="txt">ëŒ€ê¸°ì˜ˆì•½ ìƒí’ˆì…ë‹ˆë‹¤!</strong>
                         </div>
-                        <!-- [D] ´ë±â¿¹¾à°¡´ÉÀÏ °æ¿ì -->
+                        <!-- [D] ëŒ€ê¸°ì˜ˆì•½ê°€ëŠ¥ì¼ ê²½ìš° -->
                         <div class="h_area" id="h_area_2" style="display:none">
-                            <strong class="txt"><span id="h_area_txt"></span>ÀåºÎÅÍ´Â ´ë±â¿¹¾àÀ¸·Î ±¸¸ÅµË´Ï´Ù!</strong>
+                            <strong class="txt"><span id="h_area_txt"></span>ì¥ë¶€í„°ëŠ” ëŒ€ê¸°ì˜ˆì•½ìœ¼ë¡œ êµ¬ë§¤ë©ë‹ˆë‹¤!</strong>
                         </div>
                         <div class="caution_area">
-                            <em class="h_caution"><span class="bu"></span>±¸¸Å½Ã À¯ÀÇ»çÇ×</em>
+                            <em class="h_caution"><span class="bu"></span></em>
                             <div class="caution_inner">
                                 <ul>
-                                <li>´ë±â ¿¹¾à »óÇ° ±¸¸Å ½Ã ¸ÅÁøµÈ »óÇ° ¹°·®ÀÌ Ãß°¡ ÀÔ°í µÉ °æ¿ì ´ë±âÀÚ ¼øÀ¸·Î<br>ÀÚµ¿ ±¸¸Å È®Á¤µÇ¸ç SMS·Î ±¸¸ÅÈ®Á¤ ¾È³» ¸Ş½ÃÁö¸¦ º¸³»µå¸³´Ï´Ù.</li>
-                                <li>Ãß°¡ÀÔ°í°¡ ¾øÀ» ½Ã ÆÇ¸ÅÁ¾·á 7ÀÏÈÄ (´Ü, Åä/ÀÏ °øÈŞÀÏ ÀÏ °æ¿ì Á÷ÈÄ ¿µ¾÷ÀÏ)<br><span>ÀÏ°ı È¯ºÒÃ³¸®</span> µË´Ï´Ù.</li>
+                                <li></li>
+                                <li><br><span></span></li>
                                 </ul>
                             </div>
                         </div>
-                        <p class="caution_dsc">±¸¸Å¸¦ °è¼Ó ÁøÇàÇÏ½Ã·Á¸é È®ÀÎÀ» ´­·¯ÁÖ¼¼¿ä.</p>
+                        <p class="caution_dsc"></p>
                         <div class="btn_area">
-                            <a style="cursor:pointer" id="lpop_btn_ok_new" class="btn_ok">È®ÀÎ</a>
+
+                     <input type="button" name="btn_js_update" id="btn_js_update" onclick="btn_js_update_click();" value="ìˆ˜ì •í•˜ê¸°" />  		 
+                    <input type="button" name="btn_js_delete" id="btn_js_delete" onclick="btn_js_delete_click();" value="ì‚­ì œí•˜ê¸°" />
+
+
                         </div>
                     </div>
-                    <a style="cursor:pointer" id="lpop_btn_close_new" class="btn_clse">·¹ÀÌ¾î ´İ±â</a>
+                    <a style="cursor:pointer" id="lpop_btn_close_new" class="btn_clse">
+                    </a>
                 </div>
-                <!-- ÀÌ »óÇ°À» º» °í°´ÀÌ ¸¹ÀÌ º» ´Ù¸¥ »óÇ° -->
+                <!-- ì´ ìƒí’ˆì„ ë³¸ ê³ ê°ì´ ë§ì´ ë³¸ ë‹¤ë¥¸ ìƒí’ˆ -->
                 <div class="user_other_deal wrap_deal_lst" id="viewuser" style="display:none;">
                     <div class="blank_line"></div>
-                    <h3 class="tit">ÀÌ »óÇ°À» º» °í°´ÀÌ ¸¹ÀÌ º» ´Ù¸¥ »óÇ°</h3>
+                    <h3 class="tit">ì´ ìƒí’ˆì„ ë³¸ ê³ ê°ì´ ë§ì´ ë³¸ ë‹¤ë¥¸ ìƒí’ˆ</h3>
                     <div id="viewuserview">
                     <ul class="lst column5s" id="viewUserViewUlArea">
                     </ul>
                     </div>
                     <div class="page">
                         <span class="num"><strong><span id="now_page">1</span><span class="bar">/</span></strong><span id="total_page"></span></span>
-                        <a href="#" class="btn_prev" tl:ord="0" tl:linktype="prev">ÀÌÀü »óÇ°</a>
-                        <a href="#" class="btn_next" tl:ord="0" tl:linktype="next">´ÙÀ½ »óÇ°</a>
+                        <a href="#" class="btn_prev" tl:ord="0" tl:linktype="prev">ì´ì „ ìƒí’ˆ</a>
+                        <a href="#" class="btn_next" tl:ord="0" tl:linktype="next">ë‹¤ìŒ ìƒí’ˆ</a>
                     </div>
                 </div>
-                <!-- ÀÌ »óÇ°À» º» °í°´ÀÌ ¸¹ÀÌ º» ´Ù¸¥ »óÇ° -->
-
+                <!-- ì´ ìƒí’ˆì„ ë³¸ ê³ ê°ì´ ë§ì´ ë³¸ ë‹¤ë¥¸ ìƒí’ˆ -->
                 <span class="bg_btm"></span>
-
                 </div>
+            
+        
+            
+        </div>
+    </div>
+      
+    <!-- boram end -->
+    
+    
+
+
+              </div>
+              <div class="clear"></div>
+              <div align="center" class="loading-image">
+             
+                <div class="load-01">
+                  <div class="load-02 fa-spin"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div> 
+</div>
+
+
+<div id="footer">
+    <div class="foot-inner">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <ul class="footer-list">
+        <li><a href="/companyInfo?active=aboutUs">ì„œë¹„ìŠ¤ ì†Œê°œ</a></li>
+        
+        <li><a href="http://blog.naver.com/PostThumbnailList.nhn?blogId=wishbeen&from=postList&categoryNo=97&parentCategoryNo=97" target="_blank">ìœ„ì‹œë¹ˆ ì‚¬ìš©ë²•</a></li>
+        
+        <li><a href="/companyInfo?active=faq">ì´ìš©ë¬¸ì˜</a></li>
+        <li><a href="/companyInfo?active=terms">ì´ìš©ì•½ê´€</a></li>
+        <li><a href="/companyInfo?active=privacy">ê°œì¸ì •ë³´ ì·¨ê¸‰ë°©ì¹¨</a></li>
+        <li><a href="/citySitemap">ì‚¬ì´íŠ¸ë§µ</a></li>
+        <li><span class="kakao-id"></span></li>
+      </ul><!-- footer-list-->
+
+      <div class="language">
+        <!-- TODO: ì–¸ì–´ ë°”ë€Œë©´ ì–¸ì–´ì— í•´ë‹¹í•˜ëŠ” ë„ë©”ì¸ìœ¼ë¡œ ì´ë™í•˜ë„ë¡ ìˆ˜ì • -->
+        <div class="language-type01">
+          <select id="language_select" class="state">
+            <option value="ko-KR"  selected  >í•œêµ­ì–´</option>
+            <option value="en-US"  >English</option>
+          </select>
+        </div>
+        <div class="language-type02">
+          <select class="currency money">
+            
+            
+            
+            
+            <option value="2"  > USD(ë¯¸êµ­)</option>
+
+            <option value="1" selected > KRW(í•œêµ­)</option>
+
+            <option value="0"  > EUR(ìœ ëŸ½ì—°í•©)</option>
+
+            <option value="3"  > JPY(ì¼ë³¸)</option>
+
+            <option value="4"  > CNY(ì¤‘êµ­)</option>
+
+            <option value="5"  > HKD(í™ì½©)</option>
+
+            <option value="6"  > TWD(ëŒ€ë§Œ)</option>
+
+            <option value="7"  > GBP(ì˜êµ­)</option>
+
+            <option value="8"  > CAD(ìºë‚˜ë‹¤)</option>
+
+            <option value="9"  > CHF(ìŠ¤ìœ„ìŠ¤)</option>
+  
+            <option value="10"  > SEK(ìŠ¤ì›¨ë´)</option>
+
+            <option value="11"  > AUD(í˜¸ì£¼)</option>
+ 
+            <option value="12"  > NZD(ë‰´ì§ˆëœë“œ)</option>
+ 
+            <option value="13"  > CZK(ì²´ì½”)</option>
+
+            <option value="14"  > TRY(í„°í‚¤)</option>
+ 
+            <option value="15"  > MNT(ëª½ê³¨)</option>
+  
+            <option value="16"  > ILS(ì´ìŠ¤ë¼ì—˜)</option>
+            
+            <option value="17"  > DKK(ë´ë§ˆí¬)</option>
+
+            <option value="18"  > NOK(ë…¸ë¥´ì›¨ì´)</option>
+ 
+            <option value="19"  > SAR(ì‚¬ìš°ë””ì•„ë¼ë¹„ì•„)</option>
+ 
+            <option value="20"  > KWD(ì¿ ì›¨ì´íŠ¸)</option>
+ 
+            <option value="21"  > BHD(ë°”ë ˆì¸)</option>
+            
+            <option value="22"  > AED(ì•„ëì—ë¯¸ë¦¬íŠ¸)</option>
+            
+            
+            
+            
+            <option value="23"  > JOD(ìš”ë¥´ë‹¨)</option>
+            
+            
+            
+            
+            <option value="24"  > EGP(ì´ì§‘íŠ¸)</option>
+            
+            
+            
+            
+            <option value="25"  > THB(íƒœêµ­)</option>
+            
+            
+            
+            
+            <option value="26"  > SGD(ì‹±ê°€í¬ë¥´)</option>
+            
+            
+            
+            
+            <option value="27"  > MYR(ë§ë ˆì´ì‹œì•„)</option>
+            
+            
+            
+            
+            <option value="28"  > IDR(ì¸ë„ë„¤ì‹œì•„)</option>
+            
+            
+            
+            
+            <option value="29"  > QAR(ì¹´íƒ€ë¥´)</option>
+            
+            
+            
+            
+            <option value="30"  > KZT(ì¹´ìíìŠ¤íƒ„)</option>
+            
+            
+            
+            
+            <option value="31"  > BND(ë¸Œë£¨ë‚˜ì´)</option>
+            
+            
+            
+            
+            <option value="32"  > INR(ì¸ë„)</option>
+            
+            
+            
+            
+            <option value="33"  > PKR(íŒŒí‚¤ìŠ¤íƒ„)</option>
+            
+            
+            
+            
+            <option value="34"  > BDT(ë°©ê¸€ë¼ë°ì‹œ)</option>
+            
+            
+            
+            
+            <option value="35"  > PHP(í•„ë¦¬í•€)</option>
+            
+            
+            
+            
+            <option value="36"  > MXN(ë©•ì‹œì½”)</option>
+            
+            
+            
+            
+            <option value="37"  > BRL(ë¸Œë¼ì§ˆ)</option>
+            
+            
+            
+            
+            <option value="38"  > VND(ë² íŠ¸ë‚¨)</option>
+            
+            
+            
+            
+            <option value="39"  > ZAR(ë‚¨ì•„í”„ë¦¬ì¹´ ê³µí™”êµ­)</option>
+            
+            
+            
+            
+            <option value="40"  > RUB(ëŸ¬ì‹œì•„)</option>
+            
+            
+            
+            
+            <option value="41"  > HUF(í—ê°€ë¦¬)</option>
+            
+            
+            
+            
+            <option value="42"  > PLN(í´ë€ë“œ)</option>
+            
+          </select>
+        </div>
+      </div><!-- language-->
+    </div><!-- footer-menu-->
+  </div><!-- footer-wrap-->
+<!-- footer_partner_wrap-->
+  <div class="footer-bottom">
+    <div class="copyright">
+      <p>ìƒí˜¸ëª… : (ì£¼)íˆ¬ì–´ìŠ¤í¬ë©<span>|</span>ëŒ€í‘œ : ë°•ë™ë‘<span>|</span>ê°œì¸ì •ë³´ì±…ì„ì : ì´ì§€í˜„</p>
+      <p>ì‚¬ì—…ìë“±ë¡ë²ˆí˜¸ : 212-86-00908<span>|</span>í†µì‹ íŒë§¤ì—…ì‹ ê³ ë²ˆí˜¸ : ì œ 2014-ì„œìš¸ìš©ì‚°-00910 í˜¸<span>|</span><a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2128600908" target="_blank">ì‚¬ì—…ìì •ë³´í™•ì¸</a></p>
+      <p>ì£¼ì†Œ: ì„œìš¸íŠ¹ë³„ì‹œ ìš©ì‚°êµ¬ í•œê°•ëŒ€ë¡œ 324 (ê°ˆì›”ë™) ì‹œê°€ì´ì•„ë¹Œë”© 6ì¸µ (ì£¼)íˆ¬ì–´ìŠ¤í¬ë©<span>|<!--</span>ëŒ€í‘œë²ˆí˜¸ : 070-4045-9771<span>|--></span><a href="mailto:support@wishbeen.com">ê´‘ê³  ë° ì œíœ´ : support@wishbeen.com</a></p>
+      <p></p>
+      <p>íˆ¬ì–´ìŠ¤í¬ë©ì€ í†µì‹ íŒë§¤ì¤‘ê°œìì´ë©° í†µì‹ íŒë§¤ì˜ ë‹¹ì‚¬ìê°€ ì•„ë‹™ë‹ˆë‹¤. ë”°ë¼ì„œ íˆ¬ì–´ìŠ¤í¬ë©ì€ ìƒí’ˆÂ·ê±°ë˜ì •ë³´ ë° ê±°ë˜ì— ëŒ€í•˜ì—¬ ì±…ì„ì„ ì§€ì§€ ì•ŠìŠµë‹ˆë‹¤.</p>
+    </div>
+
+
+  </div><!-- footer-bottom-->
+    </div>
+</div><!-- #footer-->
+
+
 </body>
 </html>

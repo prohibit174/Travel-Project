@@ -49,17 +49,67 @@ public class ProductDao {
 		}
 	}
 
-	public List<Product> listBoard() throws Exception {
+	public List<Product> listProduct() throws Exception {
 		SqlSession session = getSqlSessionFactory().openSession();
+		List<Product> list = null;
 		try {
-			return session.getMapper(TravelMapper.class).listProduct();
+			list = session.getMapper(TravelMapper.class).listProduct();
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
 		}finally{
 			session.close();
 		}
+		
+		return list;
 	}
+	
+	public Product detailProduct(String p_num) throws Exception {
+		SqlSession session = getSqlSessionFactory().openSession();
+		Product product = null;
+		try {
+			product = session.getMapper(TravelMapper.class).detailProduct(p_num);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		return product;
+	}
+	
+	public void updateProduct(Product product) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(TravelMapper.class).updateProduct(product);
+			if(re > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+	}
+	
+	public void deleteProduct(Product product) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(TravelMapper.class).deleteProduct(product);
+			if(re > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+	}
+
 
 	
 	

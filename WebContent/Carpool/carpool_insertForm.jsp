@@ -169,6 +169,7 @@
 <link rel='stylesheet' href='../GoogleAPI/fullcalendar.css' />
 <script src='${pageContext.request.contextPath}/GoogleAPI/fullcalendar.js'></script>
 <script src="${pageContext.request.contextPath}/GoogleAPI/moment.js"></script>
+<script src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
 <script>
     moment().format();
 </script>
@@ -243,7 +244,7 @@
         <ul id="menu_tab_list">
             <li><a data-tab="home" >HOME</a></li>
             <li><a data-tab="hotdeal" >동행</a></li>
-            <li><a data-tab="specialTip" >카풀</a></li>
+            <li><a href="main.carpool" >카풀</a></li>
             <li><a data-tab="community" >물품교환</a></li>
             <li><a data-tab="plan" >커뮤니티</a></li>
             <li><a data-tab="attraction" >블로그</a></li>

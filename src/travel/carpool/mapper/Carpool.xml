@@ -8,7 +8,7 @@
 	<cache />
 	
 	<insert id="insertCarpool" parameterType="Carpool">
-			insert into test(
+			insert into TEST(
 			c_num, u_id, start_lati, start_longti, dest_lati, dest_longti, c_price, c_date, c_person, c_dept_time
 		)
 		values(
@@ -17,6 +17,40 @@
 	</insert>
 	
 	
+		<select id="listCarpool" resultType="Carpool" parameterType="Search">
+		select * from test 
+		<if test="carpool_search !=null">
+		<where>
+		<!-- b_title LIKE %자바% OR b_wirter LIKE %자바% -->
+		<foreach collection="carpool_search" item="item" separator="or" open="(" close=")">
+			${item} LIKE #{searchKey}
+		</foreach>
+		</where>
+		</if>
+		
+	</select>
+	
+	<select id = "detailCarpool" parameterType="String" resultType="Carpool">
+		select * from test 
+		where c_num = #{c_num}
+	</select>
+	
+	<delete id = "deleteCarpool" parameterType="Carpool">
+		delete from test 
+		where c_num = #{c_num}
+	</delete>
+	
+	<update id = "updateCarpool" parameterType="Carpool">
+		update test set 
+		start_lati=#{start_lati}
+		start_longti=#{start_longti}
+		dest_lati=#{dest_lati}
+		dest_longti=#{dest_longti}
+		c_person=#{c_person}
+		where c_num=#{c_num}
+	</update>
+	
+
 </mapper>
 
 
