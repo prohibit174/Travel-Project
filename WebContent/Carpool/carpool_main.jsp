@@ -9,7 +9,7 @@
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <meta name="viewport" content="width=device-width, user-scalable=no" />
 <meta name="fragment" content="!" />
-<meta name="naver-site-verification" content="b5dc8e0c6fe0f77b6e8a970e244d1d74397fc8cf"/>
+<meta name="naver-site-verification" content2="b5dc8e0c6fe0f77b6e8a970e244d1d74397fc8cf"/>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?1">
 <meta name="referrer" content="origin">
 
@@ -169,6 +169,7 @@
 <link rel='stylesheet' href='../GoogleAPI/fullcalendar.css' />
 <script src='${pageContext.request.contextPath}/GoogleAPI/fullcalendar.js'></script>
 <script src="${pageContext.request.contextPath}/GoogleAPI/moment.js"></script>
+<script src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
 <script>
     moment().format();
 </script>
