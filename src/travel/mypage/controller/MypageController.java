@@ -14,6 +14,7 @@ import travel.mypage.action.ActionForward;
 import travel.mypage.action.CarpoolDeleteAction;
 import travel.mypage.action.CarpoolListAction;
 import travel.mypage.action.CarpoolUpdateAction;
+import travel.mypage.action.CarpoolUpdateAction2;
 
 
 @WebServlet("*.mypage")
@@ -28,7 +29,7 @@ public class MypageController extends HttpServlet {
 
    
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      
+    		
        String requestURI = request.getRequestURI();
        String contextPath = request.getContextPath();
        String command = requestURI.substring(contextPath.length()+1);
@@ -54,6 +55,13 @@ public class MypageController extends HttpServlet {
 			}
 		} else if (command.equals("carpoolUpdate.mypage")){
 			action = new CarpoolUpdateAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} 
+		} else if (command.equals("carpoolUpdate2.mypage")){
+			action = new CarpoolUpdateAction2();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

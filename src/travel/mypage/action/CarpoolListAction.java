@@ -28,7 +28,7 @@ public class CarpoolListAction implements Action {
 		request.setAttribute("list", list);
 		
 		ActionForward forward = new ActionForward();
-		
+			
 		
 		forward.setRedirect(false);
 		forward.setPath("MyPage/mypage_carpoolCheck.jsp");

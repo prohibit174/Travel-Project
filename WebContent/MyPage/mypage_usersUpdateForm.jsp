@@ -43,7 +43,7 @@
   }
 </script>
 
-
+<script src="/js/lib/bower_components/stacktrace-js/dist/stacktrace.min.js"></script>
 
 <link rel="stylesheet" href="../css/mypage_css/city-main-styles_mypage.css">
 	

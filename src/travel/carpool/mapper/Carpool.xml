@@ -42,10 +42,10 @@
 	
 	<update id = "updateCarpool" parameterType="Carpool">
 		update test set 
-		start_lati=#{start_lati}
-		start_longti=#{start_longti}
-		dest_lati=#{dest_lati}
-		dest_longti=#{dest_longti}
+		start_lati=#{start_lati},
+		start_longti=#{start_longti},
+		dest_lati=#{dest_lati},
+		dest_longti=#{dest_longti},
 		c_person=#{c_person}
 		where c_num=#{c_num}
 	</update>

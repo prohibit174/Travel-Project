@@ -15,13 +15,13 @@ public class CarpoolUpdateAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, Exception {
 		
-		String num = request.getParameter("c_num");
+		String c_num = request.getParameter("c_num");
 
 		CarpoolDao dao = CarpoolDao.getInstance();
-		Carpool carpool = dao.detailCarpool(num);
+		Carpool carpool = dao.detailCarpool(c_num);
 		System.out.println(carpool.getC_num());
 		
-		request.setAttribute("carpool", carpool);
+		
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
