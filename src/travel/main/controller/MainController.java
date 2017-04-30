@@ -1,4 +1,4 @@
-package travel.carpool.controller;
+package travel.main.controller;
 
 import java.io.IOException;
 
@@ -14,16 +14,18 @@ import travel.carpool.action.ActionForward;
 import travel.carpool.action.InsertAction;
 import travel.carpool.action.InsertFormAction;
 import travel.carpool.action.MainAction;
+import travel.main.action.LoginAction;
+import travel.main.action.LoginFormAction;
 import travel.product.action.ListAction;
 import travel.product.action.insertAction;
 
-@WebServlet("*.carpool")
-public class CarpoolController extends HttpServlet {
+@WebServlet("*.main")
+public class MainController extends HttpServlet {
    private static final long serialVersionUID = 1L;
        
    
    
-    public CarpoolController() {
+    public MainController() {
         super();
     }
 
@@ -36,12 +38,13 @@ public class CarpoolController extends HttpServlet {
        String command = requestURI.substring(contextPath.length()+1);
        System.out.println(command);
        
-       ActionForward forward = null;
-       Action action = null;
+       travel.main.action.ActionForward forward = null;
+       travel.main.action.Action action = null;
        
-       if(command.equals("insertForm.carpool")){
+       //insertForm.do占쏙옙 占쏙옙청占실억옙占쏙옙占쏙옙
+       if(command.equals("login.main")){
           //insertFormAction()占쏙옙 占쏙옙占쏙옙占� : 占쏙옙占쏙옙 jsp占싸곤옙占승메소듸옙
-          action = new InsertFormAction();
+          action = new LoginFormAction();
           //insert.form.jsp占쏙옙 占쏙옙占쌘댐옙.
           try {
              forward = action.execute(request, response);
@@ -49,27 +52,15 @@ public class CarpoolController extends HttpServlet {
             e.printStackTrace();
          }
          //커占실듸옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占신기에 占승댐옙 占쌓쇽옙占쏙옙 호占쏙옙占싹몌옙 占싫댐옙.
-       }else if(command.equals("insertAction.carpool")){
-           action = new InsertAction();
+       }else if(command.equals("loginAction.main")){
+           //insertFormAction()占쏙옙 占쏙옙占쏙옙占� : 占쏙옙占쏙옙 jsp占싸곤옙占승메소듸옙
+           action = new LoginAction();
+           //insert.form.jsp占쏙옙 占쏙옙占쌘댐옙.
            try {
-             forward = action.execute(request, response);   
+              forward = action.execute(request, response);
           } catch (Exception e) {
              e.printStackTrace();
           }
-       }else if(command.equals("list.carpool")){
-    	   action = new travel.carpool.action.ListAction();
-    	   try{
-    		   forward = action.execute(request, response);
-    	   } catch(Exception e){
-    		   e.printStackTrace();
-    	   }
-       }else if(command.equals("main.carpool")){
-    	   action = new MainAction();
-    	   try{
-    		   forward = action.execute(request, response);
-    	   } catch(Exception e){
-    		   e.printStackTrace();
-    	   }
        }
        
        if(forward !=null){

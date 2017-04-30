@@ -158,6 +158,7 @@
    src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/join_checkInfo.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/IdCheck.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/CheckEssential.js"></script>
 			
 
     <script data-main="/js/page/city"
@@ -248,7 +249,7 @@
 	<br>
 	<br>
 	<div class="form_body">
-		<form action="JoinAction.users" class="join_form">
+		<form action="JoinAction.users" class="join_form" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<legend>필수 입력 사항</legend>
 				<table class="primary_table">
@@ -309,9 +310,9 @@
 					<tr>
 					<th scope="row">성별</th>
 					<td>
-					<input type = "radio" name = "u_sex" value = "male">
+					<input type = "radio" name = "u_sex" id = "u_sex" value = "male">
 					<label>남자</label>
-					<input type = "radio" name = "u_sex" value="female">
+					<input type = "radio" name = "u_sex" id = "u_sex" value="female">
 					<label>여자</label>
 					</td>
 					
@@ -884,7 +885,8 @@
 
 			
 			<div class="nlogin_join_center">
-		<button type = "submit" class = "nlogin_btn">가입하기</button>
+		<!-- <button type = "submit" class = "nlogin_btn">가입하기</button> -->
+		<input type = "button" class = "nlogin_btn" value = "가입하기">
 		<span>이게 나의 최선이다..... 누가 가운데 정렬좀 해주세요.........</span>
 		</div>
 		
