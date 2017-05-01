@@ -5,12 +5,6 @@ $(document).ready(function(){
 		window.open(popUrl, "" , popOption);
 	});
 	
-	$('.btn-new-plan').click(function(){
-		alert('ㅅㅂ');
-	})
-	
-	$('.wishbeen-logo').click(function(){
-		alert('a')
-	})
+
 });
 	

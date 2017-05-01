@@ -16,6 +16,9 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin2.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin3.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin4.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/carpool_table.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
+
  <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
 <script type="text/javascript" src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>           
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent.js"></script>
@@ -39,9 +42,11 @@
     <div class="main-nav-con">
       <p class="wishbeen-logo"><span>세상의 모든 여행, 위시빈</span></p>
 
-		<div id="frames">
+		
+			<div id="frames">
 			<span>${member_id}</span>
-		</div>
+			</div>
+		
 		
       <div class="nav-login-search">
         <a class="btn-new-plan">로그인</a>
@@ -50,8 +55,7 @@
           <div>
             <a href="JoinForm.users" id="nav-btn-about"  >회원가입</a>
             <a href = "main.mypage" id="nav-login-btn" class="nav-btn-login">마이페이지</a>
-            <a id="nav-fb-login" class="fb"></a>
-            <a id="nav-ggl-login" class="ggl"></a>
+
           </div>
           
           
@@ -59,7 +63,7 @@
       </div>
     </div>
   </div><!-- header } -->
-</div><!-- page-container -->
+
 
 <!-- 포함되어야 할 파라미터 목록 -->
 <!-- language, curCity, tab (현재 선택된 탭) -->
@@ -72,6 +76,7 @@
   };
   g_localizedString['_SearchRegion_'] = "지역검색";
 </script>
+
 
 <div id="search_tab_dim" class="bg hide"></div>
 

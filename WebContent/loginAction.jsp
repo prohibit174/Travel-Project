@@ -10,7 +10,7 @@ function linkToOpener(URL){
 		window.close();
 }
 
-window.onload = linkToOpener('main.carpool?u_id=${users.u_id}');
+window.onload = linkToOpener('home.main?u_id=${users.u_id}');
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
