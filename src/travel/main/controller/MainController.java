@@ -61,6 +61,13 @@ public class MainController extends HttpServlet {
           } catch (Exception e) {
              e.printStackTrace();
           }
+       }else if(command.equals("main.main")){
+           action = new travel.main.action.MainAction();
+           try {
+              forward = action.execute(request, response);
+          } catch (Exception e) {
+             e.printStackTrace();
+          }
        }
        
        if(forward !=null){
@@ -73,7 +80,7 @@ public class MainController extends HttpServlet {
                     request.getRequestDispatcher(forward.getPath());
               dispatcher.forward(request, response);
           }
-       }
+       }	
        
     }
 
