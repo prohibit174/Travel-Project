@@ -110,6 +110,45 @@ public class ProductDao {
 			session.close();
 		}
 	}
+	//ÇýÁø Ãß°¡
+		public void insertProductReq(Product_Request proReq) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int re = -1;
+			try {
+				re = session.getMapper(TravelMapper.class).insertProductReq(proReq);
+				if(re > 0){
+					session.commit();
+				}else{
+					session.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				session.close();
+			}
+		}
+		
+		public Product_Request detailProductReq(String p_num) throws Exception {
+			SqlSession session = getSqlSessionFactory().openSession();
+			Product_Request productReq = null;
+			try {
+				productReq = session.getMapper(TravelMapper.class).detailProductReq(p_num);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+			return productReq;
+		}
+
+		
+		
+		
+		
+
+
+	}
+
 
 
 	
@@ -118,4 +157,3 @@ public class ProductDao {
 	
 
 
-}
