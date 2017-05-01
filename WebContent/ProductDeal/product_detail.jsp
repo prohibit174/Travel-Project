@@ -428,7 +428,7 @@
                         <div class="btn_area default">
                                                             <div class="btn_direct"><a id="buy_button" href="#buy">거래요청</a></div>                                                                                                  
                           
-                            <div                                class="click_zzim z_548520330">
+                            <div  class="click_zzim z_548520330">
                                 <input type="hidden" id="zzim_count" value="1414"><a id="deal_zzim" class="btn_zzim " style="cursor:pointer" value="548520330" tl:area="BWCO" tl:ord="2">쪽지보내기</a>
                             </div>
                         </div>

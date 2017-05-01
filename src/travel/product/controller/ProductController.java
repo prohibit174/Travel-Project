@@ -16,6 +16,7 @@ import travel.product.action.ActionForward;
 import travel.product.action.DetailAction;
 import travel.product.action.InsertFormAction;
 import travel.product.action.ListAction;
+import travel.product.action.Main;
 import travel.product.action.MainAction;
 import travel.product.action.UpdateAction;
 import travel.product.action.UpdateFormAction;
@@ -105,6 +106,13 @@ public class ProductController extends HttpServlet {
 		         }
 	       }else if(command.equals("deleteAction.product")){
 		          action = new deleteAction();
+		          try {
+		            forward = action.execute(request, response);   
+		         } catch (Exception e) {
+		            e.printStackTrace();
+		         }
+	       }else if(command.equals("Main.product")){
+		          action = new Main();
 		          try {
 		            forward = action.execute(request, response);   
 		         } catch (Exception e) {

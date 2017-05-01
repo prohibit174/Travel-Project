@@ -31,15 +31,15 @@ public class insertAction implements Action{
 					String p_img = multi.getFilesystemName("p_img");
 					product.setP_img(p_img);
 
-					//����� �̹���(jpg, gif) aaa.gif -> aaa_small.gif
+					//占쏙옙占쏙옙占� 占싱뱄옙占쏙옙(jpg, gif) aaa.gif -> aaa_small.gif
 					String pattern = p_img.substring(p_img.lastIndexOf(".")+1);
 					String headName = p_img.substring(0, p_img.lastIndexOf("."));
 					
-					//���� File��ü
+					//占쏙옙占쏙옙 File占쏙옙체
 					String imagePath = uploadPath+"\\"+p_img;
 					File src = new File(imagePath);
 					
-					//������̹��� -> file��ü
+					//占쏙옙占쏙옙占쏙옙譴占쏙옙占� -> file占쏙옙체
 					String thumImagePath = uploadPath+"\\" +headName+"_small."+pattern;
 					File dest = new File(thumImagePath);
 					
@@ -49,7 +49,7 @@ public class insertAction implements Action{
 					
 				}else{
 					product.setP_img("");
-					System.out.println("img�ȵ�");
+					System.out.println("img占싫듸옙載�");
 				}
 				
 				
