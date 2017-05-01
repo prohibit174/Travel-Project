@@ -37,7 +37,7 @@ public class LoginAction implements Action {
 		 if(dbusers==null){ // 로그인 실패
 	         response.setContentType("text/html;charset=utf-8");
 	         out.println("<script>");
-	         out.println("alert('아이디 또는 비밀번호를 확인하세요');");
+	         out.println("alert('Please Check your ID or Password');");
 	         out.println("location.href='login.main';");
 	         out.println("</script>");
 	         

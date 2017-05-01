@@ -8,7 +8,7 @@
 <script type="text/javascript">
 
 function linkToOpener(URL){
-	alert('로그아웃 되었습니다');
+	alert('Success Logout');
 	location.href = URL;
 }
 
