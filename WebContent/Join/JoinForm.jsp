@@ -53,7 +53,8 @@
   }
 
 </style>
-<script src="/js/lib/bower_components/stacktrace-js/dist/stacktrace.min.js"></script>
+<!-- boram erase 
+<script src="/js/lib/bower_components/stacktrace-js/dist/stacktrace.min.js"></script>-->
 <script>(function () {
     window.onerror = function(msg, file, line, col, error) {
       // callback is called with an Array[StackFrame]
@@ -154,15 +155,13 @@
 
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/users_css/city-main-styles_join.css">
-<script type="text/javascript"
-   src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>
+
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/join_checkInfo.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/IdCheck.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/CheckEssential.js"></script>
 			
 
-    <script data-main="/js/page/city"
-            src="/js/lib/bower_components/requirejs/require.js"></script>
+
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -310,7 +309,7 @@
 					<tr>
 					<th scope="row">성별</th>
 					<td>
-					<input type = "radio" name = "u_sex" value = "male">
+					<input type = "radio" name = "u_sex" value = "male" checked="checked">
 					<label>남자</label>
 					<input type = "radio" name = "u_sex" value= "female">
 					<label>여자</label>
@@ -321,7 +320,7 @@
 			<tr>
 				<th scope = "row">운전면허 유무</th>
 				<td>
-				<input type = "radio" name = "u_license" value = "licensed">
+				<input type = "radio" name = "u_license" value = "licensed" checked  = "checked">
 				<label>유</label>
 				<input type = "radio" name = "u_license" value = "Nolicensed">
 				<label>무</label>
@@ -370,7 +369,7 @@
 				<tr>
 				<th scope="row">여행 스타일</th>
 				<td>
-				<input type = "checkbox" name = "u_style" value = "healing">
+				<input type = "checkbox" name = "u_style" value = "healing" checked = "checked">
 				<label>&nbsp;힐링</label>&nbsp;&nbsp;
 				<input type = "checkbox" name = "u_style" value = "tour">
 				<label>&nbsp;관광</label>&nbsp;&nbsp;
