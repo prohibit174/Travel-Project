@@ -9,22 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import travel.carpool.action.Action;
-import travel.carpool.action.ActionForward;
-import travel.carpool.action.InsertAction;
-import travel.carpool.action.InsertFormAction;
-import travel.carpool.action.MainAction;
+import travel.main.action.HomeAction;
 import travel.main.action.LoginAction;
 import travel.main.action.LoginFormAction;
-import travel.product.action.ListAction;
-import travel.product.action.insertAction;
+
 
 @WebServlet("*.main")
 public class MainController extends HttpServlet {
    private static final long serialVersionUID = 1L;
        
-   
-   
     public MainController() {
         super();
     }
@@ -33,7 +26,6 @@ public class MainController extends HttpServlet {
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        //占쏙옙청占실댐옙 URL占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 확占쏙옙占쌔븝옙占쏙옙. getRequestURI占쌨쇽옙占썲를 占쏙옙占쌔쇽옙
        String requestURI = request.getRequestURI();
-       //System.out.println(requestURI);
        String contextPath = request.getContextPath();
        String command = requestURI.substring(contextPath.length()+1);
        System.out.println(command);
@@ -61,13 +53,13 @@ public class MainController extends HttpServlet {
           } catch (Exception e) {
              e.printStackTrace();
           }
-       }else if(command.equals("main.main")){
-           action = new travel.main.action.MainAction();
-           try {
-              forward = action.execute(request, response);
-          } catch (Exception e) {
-             e.printStackTrace();
-          }
+       }else if(command.equals("home.main")){
+    	   action = new HomeAction();
+    	   try{
+    		   forward = action.execute(request, response);
+    	   } catch(Exception e){
+    		   e.printStackTrace();
+    	   }
        }
        
        if(forward !=null){

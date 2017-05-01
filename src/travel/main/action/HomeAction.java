@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MainAction implements Action {
+public class HomeAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
@@ -14,7 +14,7 @@ public class MainAction implements Action {
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("main.jsp");
-		return null;
+		return forward;
 	}
 
 }
