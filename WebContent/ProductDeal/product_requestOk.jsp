@@ -1,5 +1,18 @@
+<%@page import="travel.product.model.Product_Request"%>
+<%@page import="java.util.List"%>
+<%@page import="travel.product.model.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+ProductDao dao = ProductDao.getInstance();
+String p_num=request.getParameter("p_num");
+
+Product_Request productReq=dao.detailProductReq(p_num);
+request.setAttribute("productReq", productReq);
+
+//System.out.println(p_num);
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -151,7 +164,7 @@
 <![endif]-->
 
 
-<link rel="stylesheet" href="./css/carpool_css/city-main-styles.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-main-styles.css">
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
@@ -176,17 +189,13 @@
     <div class="main-nav-con">
       <p class="wishbeen-logo"><span>세상의 모든 여행, 위시빈</span></p>
 
-		<div class="frame">
-		
-		</div>
-		
       <div class="nav-login-search">
         <a class="btn-new-plan">로그인</a>
         <div class="login-and-profile">
           
           <div>
-            <a href="JoinForm.users" id="nav-btn-about"  >회원가입</a>
-            <a href = "main.mypage" id="nav-login-btn" class="nav-btn-login">마이페이지</a>
+            <a id="nav-btn-about" href="http://blog.naver.com/PostThumbnailList.nhn?blogId=wishbeen&from=postList&categoryNo=97&parentCategoryNo=97" target="_blank">회원가입</a>
+            <a id="nav-login-btn" class="nav-btn-login">마이페이지</a>
             <a id="nav-fb-login" class="fb"></a>
             <a id="nav-ggl-login" class="ggl"></a>
           </div>
@@ -215,10 +224,10 @@
 <div class="main-tabs">
     <div class="tabs-list">
         <ul id="menu_tab_list">
-            <li><a href="home.main" >HOME</a></li>
+            <li><a data-tab="home" >HOME</a></li>
             <li><a data-tab="hotdeal" >동행</a></li>
-            <li><a href="main.carpool" >카풀</a></li>
-            <li><a data-tab="" >물품교환</a></li>
+            <li><a data-tab="specialTip" >카풀</a></li>
+            <li><a data-tab="community" >물품교환</a></li>
             <li><a data-tab="plan" >커뮤니티</a></li>
             <li><a data-tab="attraction" >블로그</a></li>
 
@@ -229,7 +238,7 @@
 </div><!-- e//main-tabs -->
 
 
-<script>
+<!-- <script>
     g_localizedString["_Won_"] = "원";
 g_localizedString["_Sale_"] = "할인";
 </script>
@@ -258,10 +267,14 @@ g_localizedString["_Sale_"] = "할인";
 
 <div class="slide-and-widget">
     <div class="inner-box">
+        
         <div id="slide">
-    		<div id="intro_banner_container" class="banner-container">
-        		<div class="banner-inner-box">
-            		<div>
+    ** 전달해야될 값들 **
+    introBanners
+    {banner-container
+    <div id="intro_banner_container" class="banner-container">
+        <div class="banner-inner-box">
+            <div>
                 <ul class="slider-list-container" style="margin-left:-1600px;">
                     
                     
@@ -322,7 +335,7 @@ g_localizedString["_Sale_"] = "할인";
             <a class="btn-prev"><span></span></a>
             <a class="btn-next"><span></span></a>
         </div>
-    </div><!-- banner-container -->
+    </div>banner-container }
 </div>
         
         <script>
@@ -332,7 +345,7 @@ g_localizedString["_Sale_"] = "할인";
   g_localizedString["_EnterDestination_"] = "목적지를 입력 해주세요.";
   g_data['clientType'] = "web";
 </script>
-<div id="widget">
+<div id="widget">201603위젯
   <div class="widget-wrap">
     
     <div class="tab-widget">
@@ -341,10 +354,11 @@ g_localizedString["_Sale_"] = "할인";
         <li data-target="flight-widget"><a>항공권 조회</a></li>
         <li data-target="hotdeal-widget"><a>여행핫팅</a></li>
       </ul>
-    </div> 
+    </div> e//tab-widget
+    
 
     
-    <div  class="htl-widget widget-content active"> 
+    <div  class="htl-widget widget-content active"> 호텔  {
     <div class="widget-data">
         <div class="btn-box"><button id="near-hotel" class="btn btn-near-htl"> 오늘밤 가능한 인근 호텔</button></div>
         <form action="" method="post">
@@ -402,7 +416,7 @@ g_localizedString["_Sale_"] = "할인";
             <p>위시빈의 최저가 호텔 조회는 호텔스컴바인과의 제휴를 통해 정보를 제공해 드리고 있습니다. 당사는 본 제휴와 관련한 상담, 예약, 구매 등에 대해 단순 정보 제공 이상으로는 관여하지 않으며, 이로 인해 발생하는 모든 일에 대한 책임을 지지 않습니다.</p> <p>예약 내역은 당 제휴사에서 전송하는 이메일 등으로 확인하실 수 있으며, 예약의 변경/취소 등에 관련한 내용은 실제 예약을 진행한 업체에 직접 문의하셔야 합니다.</p>
         </div>
     </div>
-</div> <!-- hlt-widget -->
+</div>e//호텔  hlt-widget }
     
     
     <div id="flight-widget-" class="flight-widget widget-content ">항공  {
@@ -498,7 +512,7 @@ g_localizedString["_Sale_"] = "할인";
           </div>
           <i class="ico"></i>
           </span>
-            </div> <!-- persanl -->
+            </div>e//persanl
 
             <div class="btn-box"><button id="flight-search-btn" type="button" class="btn btn-pakage btn btn-primary">검색하기</button></div>
 
@@ -507,7 +521,7 @@ g_localizedString["_Sale_"] = "할인";
             </div>
         </div>
     </fieldset>
-</div> <!-- flight-widget   -->
+</div>e//항공 flight-widget  }
     
     
   </div>
@@ -868,7 +882,7 @@ g_localizedString["_Sale_"] = "할인";
                     
                     <a class="btn-more" href="/city?serviceType=global&amp;tab=specialTip"><span>여행꿀팁</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                     
-                </div>
+                </div>e//btn-box
             </div>
         </div>
     </div>
@@ -890,7 +904,7 @@ g_localizedString["_Sale_"] = "할인";
                 </div>
                 <div class="clear"></div>
 
-
+e//btn-box
             </div>
         </div>
     </div>
@@ -1109,8 +1123,8 @@ g_localizedString["_Sale_"] = "할인";
                     
                     <a class="btn-more" href="/city?serviceType=global&amp;tab=community"><span>커뮤니티</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                     
-                </div>
-            </div>
+                </div>e//btn-box
+            </div>-e//conts-box-list
         </div>
     </div>
     
@@ -1311,7 +1325,7 @@ g_localizedString["_Sale_"] = "할인";
                 
                 <a class="btn-more" href="/city?serviceType=global&amp;tab=plan"><span>여행일정</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                 
-            </div>
+            </div>e//btn-box
         </div>
     </div>
     
@@ -1450,7 +1464,7 @@ g_localizedString["_Sale_"] = "할인";
                     
                     <a class="btn-more" href="/city?serviceType=global&amp;tab=attraction"><span>가볼만한 곳</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                     
-                </div>
+                </div>e//btn-box
             </div>
         </div>
         맛집
@@ -1584,7 +1598,7 @@ g_localizedString["_Sale_"] = "할인";
                     
                     <a class="btn-more" href="/city?serviceType=global&amp;tab=food"><span>맛집</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                     
-                </div>
+                </div>e//btn-box
             </div>
         </div>
         숙소
@@ -1718,7 +1732,7 @@ g_localizedString["_Sale_"] = "할인";
                     
                     <a class="btn-more" href="/city?serviceType=global&amp;tab=sleep"><span>숙소</span> 더보기 <img src="/images/btn-more.png" alt=""/></a>
                     
-                </div>
+                </div>e//btn-box
             </div>
         </div>
     </div>
@@ -1743,8 +1757,16 @@ g_localizedString["_Sale_"] = "할인";
 
 <div class="plan-search-top">위로가기 버튼
     <a class="btn-top" style="display: none;"><img src="/images/btn-top.png" alt="go to top"></a>
-</div>
-<h1> 여기가 컨텐츠 부분입니다.<br><br> 원하는 거 집어 넣으면 돼요</h1>
+</div> -->
+<!--  
+<h1> 여기가 컨텐츠 부분입니다.<br><br> 원하는 거 집어 넣으면 돼요</h1>-->
+
+<h4 align="center">거래요청 성공 
+</h4>
+  <div class="btn-box center">
+            <a class="btn-more" href="mainAction.product"><span>메인으로 가기</span> </a>
+            <a class="btn-more" href="detailReqAction.product?p_num=${productReq.p_num}"><span>확인하기</span></a>
+  </div>
 
 <div id="footer">
     <div class="foot-inner">

@@ -278,7 +278,7 @@
               <div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
            <!-- boram -->
              	<div class="form_body">
-		<form action="insertAction.product?p_num=" class="join_form" method="post" enctype="multipart/form-data">
+		<form action="insertAction.product" class="join_form" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<legend>물품 등록</legend>
 

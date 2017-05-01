@@ -1,5 +1,4 @@
 <%@page import="travel.product.model.Product"%>
-<%@page import="travel.product.model.ProductDao"%>
 <%@page import="java.util.List"%>
 <%@page import="travel.product.model.ProductDao"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
@@ -10,15 +9,10 @@
 <%
 	
 	request.setCharacterEncoding("utf-8");
-	String p_num=request.getParameter("p_num");
-
     ProductDao dao = ProductDao.getInstance();
 	
-    List<Product> list = dao.listProduct();
-    Product product=dao.detailProduct(p_num);
-    
-    System.out.println(product.getP_num());
-    
+   List<Product> list = dao.listProduct();
+   request.setAttribute("list", list);
    
    
 %>
@@ -34,22 +28,6 @@
 <meta name="naver-site-verification" content="b5dc8e0c6fe0f77b6e8a970e244d1d74397fc8cf"/>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?1">
 <meta name="referrer" content="origin">
-<link href="http://img2.tmon.kr/static/img/favi_tmon.ico" rel="shortcut icon"/>
-<link href="http://static2.tmon.kr/static/gen/css/common_new.css?v=e9246ef610b2c5ffeb315290178ace3b56b7e97a" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static1.tmon.kr/static/gen/css/deal.css?v=9967e849305d0ae005ce9fac80a0a74ade132c3e" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/deal_old.css?v=084304a6106f90aaeee0c7587bf899cad415c75b" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static1.tmon.kr/static/gen/css/deal_option.css?v=e2281836b3e88c746a8335f39d52a67b7516051a" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/cs_mem.css?v=e1226aa4dabb6690fae5f8ef33bd5a49e10bd188" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/deal_lst.css?v=84c22073473acdb08c012e29b9faf6349064b551" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/nanum_local.css?v=" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/dc_tmpl.css?v=6fb710d723b44a0f9998979d515cf5b05c623055" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static1.tmon.kr/static/fancybox/jquery.fancybox-1.3.4.css?v=20110520" rel="stylesheet" type="text/css" charset="utf-8" media="screen"/>
-<link href="http://static2.tmon.kr/static/gen/css/jquery.mCustomScrollbar.css?v=" rel="stylesheet" type="text/css" charset="utf-8"/>
-<!--    <link rel="stylesheet" type="text/css" charset="utf-8" href="/static/css/shared.css" sg:hash>  -->
-<!-- [D] 개발 완료시 http://img1.tmon.kr/resources/shared/p/css/shared.css 로 교체 부탁드립니다. -->
-<!-- <link rel="stylesheet" type="text/css" charset="utf-8" href="http://img1.tmon.kr/resources/shared/p/css/shared.css" sg:hash>  -->
-            <link href="http://img1.tmon.kr/resources/shared/p/css/shared.css?v=" rel="stylesheet" type="text/css"/>
-  
 
 
 <!--common meta data-->
@@ -102,23 +80,6 @@
       });
     };
   })();</script>
-  <script type="text/javascript">
-  
-	function btn_js_update_click(){
-  	  /* confirm(문자열, 초기값) */
-  	  var check = confirm("수정하시겠습니까?");
-  	  /* if(check == true) else false */
-  	  if(check) document.location.href="updateFormAction.product?p_num=<%=product.getP_num()%>";
-  	}
-  
-  
-	function btn_js_delete_click(){
-    	  /* confirm(문자열, 초기값) */
-    	  var check = confirm("삭제하시겠습니까?");
-    	  /* if(check == true) else false */
-    	  if(check) document.location.href="deleteAction.product?p_num=<%=product.getP_num()%>";
-    	}
-  </script>
 
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T5WKH7"
@@ -206,7 +167,7 @@
 <![endif]-->
 
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-curation-page-styles.css">
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
@@ -261,7 +222,6 @@
   g_localizedString['_SearchRegion_'] = "지역검색";
 </script>
 
-<div id="search_tab_dim" class="bg hide"></div>
 
 <div class="main-tabs">
     <div class="tabs-list">
@@ -278,29 +238,36 @@
 
    <!-- e//search-box -->
 </div><!-- e//main-tabs -->
-
-
-
-<!--<h1> 여기가 컨텐츠 부분입니다.<br><br> 원하는 거 집어 넣으면 돼요</h1>  -->
+<!-- 여기 -->
 
 <div id="contents"  class="city">
     <div class="conts-container">
         <div class="present">
             <div class="tabs-list">
                 
+                
+                
                 <ul class="tabs-list">
     
         
-            <li><a href="product_main.jsp" class="first-tag active"><span>전체 조회</span></a></li>
+            <li><a href="/city?serviceType=global&amp;tab=specialTip" class="first-tag active"><span>전체</span></a></li>
             
             
-            <li><a href="product_register2.jsp" data-id="5d1504d8bebfc81e" class=""><span>물품 등록</span></a></li>
+            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=9d8e9099ece71808" data-id="9d8e9099ece71808" class=""><span>베스트 여행기</span></a></li>
             
             
-            <li><a href="" class=""><span>물품 추천</span></a></li>
-
+            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=03a0320a545638be" data-id="03a0320a545638be" class=""><span>여행꿀팁</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=6450e6b4dad28b97" data-id="6450e6b4dad28b97" class=""><span>여행매거진</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=d0b231dbd188789e" data-id="d0b231dbd188789e" class=""><span>여행 상품 핫딜</span></a></li>
+            
+        
+    
 </ul>
-           
+            
                 <div id="google-ad-sense" style="margin-top:20px;float:left;" data-type="260x260">
                   <script type="text/javascript">
                     google_ad_client = "ca-pub-9419115827273897";
@@ -313,199 +280,108 @@
                           src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                   </script>
                 </div>
-         
+            
             </div><!-- e//tabs-list -->
 
             <div class="conts-box-list search">
-           
-              <div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
-          
-        <!-- boram -->
-    <div class="conts-container conts-box">
+<div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
+           <!-- boram -->
+             <div class="conts-container conts-box">
         <div class="contents-wrap">
-            <div class="bigHeader">물품 세부</div>
-            
-            <input type="hidden" id="total_amount" value="0">
-<link href="http://static2.tmon.kr/static/gen/css/jquery.jqzoom.css?v=0662945f6041df0748663a319955ef132fa97499" rel="stylesheet" type="text/css"/>
-                                    <div class="deal_detail_wrap deal_detail_type2">
-                <div class="img_area" style="width:350px;height:402px;visibility:;">
-                <div class="main_img" id="main_img" style="width:350px;height:402px;visibility:;">
-                        <div class="condition" style="z-index:100">
-                            </div>
-                        <ul class="roll" style="width:350px;height:402px;visibility:;"
-                        >
-                            <li style="width:350px;height:402px;visibility:;">
-                            <!-- 이미지 -->
-                                <img src="upload/<%=product.getP_img() %>" id="front_image_area" class="main_img_slide" style="width:350px;height:402px;visibility:;" alt="img" />
-                      
-                            </li>
-                            </ul>
-                        </div>
-                  
-                    <div class="review_result">
-                     
-                    </div>
-                                                        </div>                 <!-- WEB-3705 by dwkang <div class="alimipop" id="alarmpop" style="display:none;"></div> -->              
-                 <div class="ct_area" style="width:470px;height:576px;visibility:;">
-                    <div class="deal_info"></div>
-                     <p class="stit">판매자 이름</p>
-                    <h3 class="tit">상품명<br /></h3>
-                  
-                  
-               <div id="promotion_block">
-               <div id="price_info" class="price_info">
-               <p>가격:<%=product.getP_price()%>
+            <div class="bigHeader">
+		전체 물품
+            </div>
+            <div class="content-tabs">
+	물품 검색 : <input type="text" />
+            </div>
+            <div class="conts-box-list">
+                <div class="inner-box">
+
+
          
-                      
-                      
-                    </div>
-                    <div class="dc_coupon">
-                        <div class="menu_lst" id="menu_lst">
-                                                <a class="btn_viewcp _eventCoupon _act" tl:area="DDIA" tl:ord="1" style="cursor:pointer;display:none;" id="couponA">
-                                                       <img src="http://img2.tmon.kr/static/img/img_discount1.gif" width="28" height="21" alt="쿠폰"></img>
-                                                       <span id="couponDiscountAmount"></span>
-                                                       <span class="btn download">다운로드</span>
-                                                       </a>
-                                 <!--  <span class="bar">|</span>
-                                <em>판매기간:</em>
-                          
-                            </div>
-                    </div>
-                    </div> <!-- promotion_block -->
-	 <div class="people_time">
-                       판매기간:<%=product.getP_term()%>
-                          
-                      
-                    </div>
-                  
-                    <!-- 내용-->
-                        <p class="txt_choice">
-                                       내용
-                        </p>
-                                      
-                    <div class="option_info2">
-                        <p class="option_txt"></p>
-                        <ul class="uio_option_area uio_scroll">
-                        <li>
-    
-                          
-                        <%=product.getP_detail()%>
-                        </li>
-                        </ul>
-                      </div>
-                      
-                                            <div class="order_price1 sell" style="display:none;">
-                            <div class="total">
-                                <em>총 상품 금액 : </em>
-                                <strong><span class="total_amount">0</span><span class="won">원</span></strong>
-                            </div>
-                        </div>
-                  
-                    <!-- 상품 옵션 //-->
-                    <!--<dummy sg:if="!$self->preparing && count($self->alarm_keyword) > 0 && ($self->soldout || $self->deal_time_left == 0)">-->
-                        <!-- WEB-3705 by dwkang
-                        <div class="alarm_area">
-                            <strong class="blind">재판매 알리미 서비스</strong>
-                            <div class="alarm">
-                                <span sg:if="$self->soldout" class="soldout">매진되었습니다! 다음에 알려드릴까요</span>
-                                <span sg:elseif="$self->deal_time_left == 0" class="deal_end">판매 종료되었습니다! 다음에 알려드릴까요</span>
-                                <a onmouseover="$('#alarm_tooltip_main').css('display', 'block')" onmouseout="$('#alarm_tooltip_main').css('display', 'none')" class="ico_help">재판매 알리미 서비스란?</a>
-                                <div class="lpop_alarm" id="alarm_tooltip_main" style="display:none">
-                                    <div class="inner">
-                                    재판매 알리미 서비스를 신청하시면, <strong>다음에 같은 상품의 판매가 진행될 때</strong> 고객님의 이메일로 알려드립니다.
-                                    </div>
-                                    <span class="arr"></span>
-                                </div>
-                            </div>
-                            <a name="btn_alarm" onclick="alarmRequest('548520330', 'main');" attr-if:class="$self->alarm_request_cnt >= count($self->alarm_keyword);btn_alarm_ok" attr-else:class="btn_alarm" style="cursor:pointer">재판매 알리미 신청</a>
-                            <div class="ly_alarm" id="alarm_cancel_main" style="display:none;"><span class="arr"></span>재판매 알리미가 취소되었습니다.</div>
-                            <div class="ly_alarm" id="alarm_ok_main" style="display:none;"><span class="arr"></span>재판매 알리미가 신청되었습니다.</div>
-                        </div>
-                        -->
-                    <!--</dummy>
-                    <dummy sg:else>-->
-                  
-                        <div class="btn_area default">
-                                                            <div class="btn_direct"><a id="buy_button" href="#buy">거래요청</a></div>                                                                                                  
-                          
-                            <div  class="click_zzim z_548520330">
-                                <input type="hidden" id="zzim_count" value="1414"><a id="deal_zzim" class="btn_zzim " style="cursor:pointer" value="548520330" tl:area="BWCO" tl:ord="2">쪽지보내기</a>
-                            </div>
-                        </div>
-                  
-                    </div>
-                   
-               <!-- <div id="div_deal_zzimlayer" style=""></div>
-                <div class="lpop_wrap2" id="standby_alert" style="display:block;top:50%;z-index:1110;margin-top:-155px;display:none">
-                    <div class="lpop_cont">
-                        <div class="h_area" id="h_area_1" style="display:none">
-                            <strong class="txt">대기예약 상품입니다!</strong>
-                        </div>
-                        <!-- [D] 대기예약가능일 경우 -->
-                        <div class="h_area" id="h_area_2" style="display:none">
-                            <strong class="txt"><span id="h_area_txt"></span>장부터는 대기예약으로 구매됩니다!</strong>
-                        </div>
-                        <div class="caution_area">
-                            <em class="h_caution"><span class="bu"></span></em>
-                            <div class="caution_inner">
-                                <ul>
-                                <li></li>
-                                <li><br><span></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="caution_dsc"></p>
-                        <div class="btn_area">
+         <c:forEach var="product" items="${list}">
+<div data-id="6a341fddf4c819fc" class="content-box type01">
+	<a href = "detailAction.product?p_num=${product.p_num }" >
+    <div class="type01">
+      <div class="cover-img">
+      <!-- modi -->
+	<c:if test="${product.p_img!=null}">
+                  <c:set var="head"
+                     value="${fn:substring(product.p_img, 0, fn:length(product.p_img)-4) }"></c:set>
+                  <c:set var="pattern"
+                     value="${fn:substring(product.p_img, fn:length(head)+1, fn:length(product.p_img)) }"></c:set>
 
-                     <input type="button" name="btn_js_update" id="btn_js_update" onclick="btn_js_update_click();" value="수정하기" />  		 
-                    <input type="button" name="btn_js_delete" id="btn_js_delete" onclick="btn_js_delete_click();" value="삭제하기" />
+                  <c:choose>
+                     <c:when test="${pattern=='jpg' || pattern =='gif' || pattern =='png' }">
+                        <img src="upload/${head }_small.${pattern}" alt="img /">
+                     </c:when>
+                     <c:otherwise>
+                        <c:out value="No IMAGE"></c:out>
+                     </c:otherwise>
+                  </c:choose>
+               </c:if>
 
+      </div>
+      
+      <div class="tit"> <c:out value="${product.p_num }"></c:out></div>
+      <div class="desc">
+        <span><c:out value="${product.p_price }"></c:out></span>
+        <span><c:out value="${product.p_term }"></c:out></span>
+      </div>
+    </div>
+  </a>
+</div>
 
-                        </div>
-                    </div>
-                    <a style="cursor:pointer" id="lpop_btn_close_new" class="btn_clse">
-                    </a>
+ </c:forEach>
+                    <div class="clear"></div>
                 </div>
-                <!-- 이 상품을 본 고객이 많이 본 다른 상품 -->
-                <div class="user_other_deal wrap_deal_lst" id="viewuser" style="display:none;">
-                    <div class="blank_line"></div>
-                    <h3 class="tit">이 상품을 본 고객이 많이 본 다른 상품</h3>
-                    <div id="viewuserview">
-                    <ul class="lst column5s" id="viewUserViewUlArea">
-                    </ul>
-                    </div>
-                    <div class="page">
-                        <span class="num"><strong><span id="now_page">1</span><span class="bar">/</span></strong><span id="total_page"></span></span>
-                        <a href="#" class="btn_prev" tl:ord="0" tl:linktype="prev">이전 상품</a>
-                        <a href="#" class="btn_next" tl:ord="0" tl:linktype="next">다음 상품</a>
-                    </div>
-                </div>
-                <!-- 이 상품을 본 고객이 많이 본 다른 상품 -->
-                <span class="bg_btm"></span>
-                </div>
-            
-        
-            
+             
+            </div>
         </div>
     </div>
       
     <!-- boram end -->
-    
-    
-
 
               </div>
-              <div class="clear"></div>
-              <div align="center" class="loading-image">
-             
-                <div class="load-01">
-                  <div class="load-02 fa-spin"></div>
-                </div>
-              </div>
+                <!-- 넘겨야 할 파라미터: count, perPage, viewPageNum -->
+
+<div class="paging">
+  
+    <ul>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=1&amp;perPage=12"  class="active"><span>1</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=2&amp;perPage=12" ><span>2</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=3&amp;perPage=12" ><span>3</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=4&amp;perPage=12" ><span>4</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=5&amp;perPage=12" ><span>5</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=6&amp;perPage=12" ><span>6</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=7&amp;perPage=12" ><span>7</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=8&amp;perPage=12" ><span>8</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=9&amp;perPage=12" ><span>9</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=10&amp;perPage=12" ><span>10</span></a>
+          <a class="btn-next" href="/city?tab=specialTip&amp;viewPageNum=11&amp;perPage=12">다음</a>
+    </ul>
+   
+    
+</div>
+
             </div>
         </div>
     </div>
-</div> 
+</div>
+
+
+<div class="plan-search-top"><!-- 위로가기 버튼 -->
+    <a class="btn-top" style="display: none;"><img src="/images/btn-top.png" alt="go to top"></a>
 </div>
 
 
@@ -540,48 +416,114 @@
             
             
             <option value="2"  > USD(미국)</option>
-
+            
+            
+            
+            
             <option value="1" selected > KRW(한국)</option>
-
+            
+            
+            
+            
             <option value="0"  > EUR(유럽연합)</option>
-
+            
+            
+            
+            
             <option value="3"  > JPY(일본)</option>
-
+            
+            
+            
+            
             <option value="4"  > CNY(중국)</option>
-
+            
+            
+            
+            
             <option value="5"  > HKD(홍콩)</option>
-
+            
+            
+            
+            
             <option value="6"  > TWD(대만)</option>
-
+            
+            
+            
+            
             <option value="7"  > GBP(영국)</option>
-
+            
+            
+            
+            
             <option value="8"  > CAD(캐나다)</option>
-
+            
+            
+            
+            
             <option value="9"  > CHF(스위스)</option>
-  
+            
+            
+            
+            
             <option value="10"  > SEK(스웨덴)</option>
-
+            
+            
+            
+            
             <option value="11"  > AUD(호주)</option>
- 
+            
+            
+            
+            
             <option value="12"  > NZD(뉴질랜드)</option>
- 
+            
+            
+            
+            
             <option value="13"  > CZK(체코)</option>
-
+            
+            
+            
+            
             <option value="14"  > TRY(터키)</option>
- 
+            
+            
+            
+            
             <option value="15"  > MNT(몽골)</option>
-  
+            
+            
+            
+            
             <option value="16"  > ILS(이스라엘)</option>
             
+            
+            
+            
             <option value="17"  > DKK(덴마크)</option>
-
+            
+            
+            
+            
             <option value="18"  > NOK(노르웨이)</option>
- 
+            
+            
+            
+            
             <option value="19"  > SAR(사우디아라비아)</option>
- 
+            
+            
+            
+            
             <option value="20"  > KWD(쿠웨이트)</option>
- 
+            
+            
+            
+            
             <option value="21"  > BHD(바레인)</option>
+            
+            
+            
             
             <option value="22"  > AED(아랍에미리트)</option>
             
@@ -690,7 +632,19 @@
       </div><!-- language-->
     </div><!-- footer-menu-->
   </div><!-- footer-wrap-->
-<!-- footer_partner_wrap-->
+  <div class="footer_partner_wrap">
+    <div class="footer_partner">
+      <div class="footer_partner_tit">Partners</div>
+      <ul class="partner-list">
+        <li><a href="http://www.wooripension.com/" target="_blank"><image src="../../images/woori.png" class="우리팬션"/> </a></li>
+        <li><a href="http://www.tourbaksa.com/" target="_blank"><image src="../../images/tourbaksa.png" class="여행박사"/> </a></li>
+        <li><a href="http://www.pinspot.co.kr/" target="_blank"><image src="../../images/pin.png" class="핀스팟"/> </a></li>
+        <li><a href="https://www.pikicast.com/" target="_blank"><image src="../../images/piki.png" class="피키캐스트"/></a></li>
+        <li><a href="http://www.hanintel.com/" target="_blank"><image src="../../images/hanin.png" class="한인텔"/></a></li>
+        <li><a href="http://www.coocha.co.kr/" target="_blank"><image src="../../images/coocha.png" class="쿠차"/></a></li>
+      </ul>
+    </div><!-- footer_partner-->
+  </div><!-- footer_partner_wrap-->
   <div class="footer-bottom">
     <div class="copyright">
       <p>상호명 : (주)투어스크랩<span>|</span>대표 : 박동두<span>|</span>개인정보책임자 : 이지현</p>
@@ -700,7 +654,15 @@
       <p>투어스크랩은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 투어스크랩은 상품·거래정보 및 거래에 대하여 책임을 지지 않습니다.</p>
     </div>
 
-
+    <div class="footerlink">
+      
+      <a href="http://wishbeen.blog.me" class="blog" target="_blank" ><img src="/images/btn-f-blog.png" alt=""/></a>
+      <a href="https://www.facebook.com/wishbeen.co.kr" class="facebook" target="_blank"><img src="/images/btn-f-facebook.png" alt=""/></a>
+      <a class="apps" href="https://itunes.apple.com/kr/app/wisibin-yeohaengpilsuaeb-jayu/id930810134?mt=8" target="_blank"><img src="/images/btn-f-appstore.png" alt=""/></a>
+      
+      <a href="https://play.google.com/store/apps/details?id=com.tourscrap.wishbeen" class="googlep" target="_blank"><img src="/images/btn-f-googleplay.png" alt=""/></a>
+      <div class="footer_kakao"><image src="../../images/kakao.jpg" class="카카오"width="230px" height="37"/></div>
+    </div>
   </div><!-- footer-bottom-->
     </div>
 </div><!-- #footer-->

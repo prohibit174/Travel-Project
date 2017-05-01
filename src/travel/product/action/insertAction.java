@@ -2,7 +2,9 @@ package travel.product.action;
 
 
 import java.io.File;
+import java.io.IOException;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,10 +18,14 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 public class insertAction implements Action{
 
 	@Override
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception  {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException, Exception  {
+		System.out.println("method in");
+		
 		ProductDao dao = ProductDao.getInstance();
 		Product product = new Product();
 		
+		System.out.println(request.getParameter("p_num"));
 
 		String uploadPath = request.getRealPath("upload");
 		int size = 20 * 1024 * 1024; //20MB
@@ -31,15 +37,15 @@ public class insertAction implements Action{
 					String p_img = multi.getFilesystemName("p_img");
 					product.setP_img(p_img);
 
-					//����� �̹���(jpg, gif) aaa.gif -> aaa_small.gif
+				
 					String pattern = p_img.substring(p_img.lastIndexOf(".")+1);
 					String headName = p_img.substring(0, p_img.lastIndexOf("."));
 					
-					//���� File��ü
+				
 					String imagePath = uploadPath+"\\"+p_img;
 					File src = new File(imagePath);
 					
-					//������̹��� -> file��ü
+					
 					String thumImagePath = uploadPath+"\\" +headName+"_small."+pattern;
 					File dest = new File(thumImagePath);
 					
@@ -49,7 +55,7 @@ public class insertAction implements Action{
 					
 				}else{
 					product.setP_img("");
-					System.out.println("img�ȵ�");
+					System.out.println("imgnono");
 				}
 				
 				
