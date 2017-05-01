@@ -8,7 +8,7 @@ String c_num = request.getParameter("c_num");
     CarpoolDao dao = CarpoolDao.getInstance();
     Carpool carpool = dao.detailCarpool(c_num);
    
-   request.setAttribute("carpool", carpool);// 형 얘도 썼어요? 
+   request.setAttribute("carpool", carpool);
    
 %>
 <!DOCTYPE html>
