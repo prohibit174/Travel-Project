@@ -194,10 +194,15 @@
   <div class="header">
     <div class="main-nav-con">
       <p class="wishbeen-logo"><span>심심할 틈이 없다! 프로동행러</span></p>
-
-		<div class="frames">
-		
+<!-- 
+	if($(.frames span).text() != ''){
+		<span>님 환영합니다</~~>
+	}
+ -->
+		<div id="frames">
+			<span>${member_id}</span>
 		</div>
+	
 		
       <div class="nav-login-search">
         <a class="btn-new-plan">로그인</a>
@@ -207,10 +212,10 @@
             <a id="nav-btn-about" href="http://blog.naver.com/PostThumbnailList.nhn?blogId=wishbeen&from=postList&categoryNo=97&parentCategoryNo=97" target="_blank">회원가입</a>
             <a id="nav-login-btn" class="nav-btn-login">마이페이지</a>
           </div>
-          
+          	</div>
           
         </div><!-- login-and-profile -->
-      </div>
+      
     </div>
   </div><!-- header } -->
 </div><!-- page-container -->

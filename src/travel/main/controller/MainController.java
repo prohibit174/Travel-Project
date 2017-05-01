@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import travel.carpool.action.MainAction;
 import travel.main.action.HomeAction;
 import travel.main.action.LoginAction;
+import travel.main.action.LoginAction2;
 import travel.main.action.LoginFormAction;
 
 
@@ -56,6 +57,13 @@ public class MainController extends HttpServlet {
           }
        }else if(command.equals("home.main")){
     	   action = new HomeAction();
+    	   try{
+    		   forward = action.execute(request, response);
+    	   } catch(Exception e){
+    		   e.printStackTrace();
+    	   }
+       }else if(command.equals("loginAction2.main")){
+    	   action = new LoginAction2();
     	   try{
     		   forward = action.execute(request, response);
     	   } catch(Exception e){
