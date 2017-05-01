@@ -45,7 +45,7 @@
 
 <script src="/js/lib/bower_components/stacktrace-js/dist/stacktrace.min.js"></script>
 
-<link rel="stylesheet" href="../css/mypage_css/city-main-styles_mypage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
 	
 
 </head>
@@ -105,11 +105,11 @@
                 <ul class="tabs-list">
     
         
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal" class="first-tag active"><span>마이페이지</span></a></li> 
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=5d1504d8bebfc81e" data-id="5d1504d8bebfc81e" class=""><span>내 정보 수정</span></a></li>
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" data-id="2d8eef384cefda06" class=""><span>내 동행 조회</span></a></li>
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>내 카풀조회</span></a></li>
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>내 상품조회</span></a></li>
+            <li><a href="main.mypage" class="first-tag active"><span>마이페이지</span></a></li> 
+            <li><a href="main.mypage"  class=""><span>내 정보 수정</span></a></li>
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" class=""><span>내 동행 조회</span></a></li>
+            <li><a href="carpoolCheck.mypage" class=""><span>내 카풀조회</span></a></li>
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d"  class=""><span>내 상품조회</span></a></li>
             
 		</ul>
 

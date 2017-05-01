@@ -28,7 +28,7 @@ public class ListAction implements Action {
 		
 		
 		forward.setRedirect(false);
-		forward.setPath("Carpool/carpool_list.jsp");
+		forward.setPath("Carpool/carpool_myCarpool.jsp");
 		return forward;
 	}
 
