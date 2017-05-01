@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import travel.main.action.HomeAction;
+import travel.main.action.HomeMainAction;
 import travel.main.action.LoginAction;
 import travel.main.action.LoginFormAction;
 

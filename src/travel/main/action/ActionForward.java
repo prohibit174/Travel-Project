@@ -19,4 +19,8 @@ public class ActionForward {
 	public void setRedirect(boolean isRedirect) {
 		this.isRedirect = isRedirect;
 	}
+	
+	
+	
+	
 }
