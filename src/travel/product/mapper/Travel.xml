@@ -31,6 +31,21 @@
 		delete from product where p_num = #{p_num}
 	</delete>
 	
+	<!--혜진 거래요청 insert, detail-->
+	<insert id="insertProductReq" parameterType="Product_Request">
+		insert into product_request(
+			pr_reqnum, u_id, p_num, pr_ox, pr_place, pr_date
+			)
+		values(
+			#{pr_reqnum}, #{u_id}, #{p_num},
+			#{pr_ox},#{pr_place},#{pr_date}
+		)
+	</insert>
+	
+	<select id="detailProductReq" resultType="Product_Request" parameterType="String">
+		select * from Product_Request where p_num=#{p_num}
+	</select>
+	
 	
 </mapper>
 
