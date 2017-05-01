@@ -6,8 +6,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); 
-
-
 %>
 <!DOCTYPE html>
 
@@ -305,14 +303,14 @@
 	<c:forEach var="carpool" items="${list}">
       <tr height="30">
         <td align="center">${carpool.c_num }</td>
-         <td align="center">${carpool.start_lati }></td>
-         <td align=center>${carpool.start_longti }</td>
+         <td align="center">${carpool.start_lati }</td>
+         <td align=center>${carpool.start_longti}</td>
          <td align="center">${carpool.dest_lati }</td>
-         <td align="center">${carpool.dest_longti }</td>
+         <td align="center">${carpool.dest_longti}</td>
          <td align="center">${carpool.c_price }</td>
-         <td align="center">${carpool.c_date }</td>
-         <td align="center">${carpool.c_person }</td>
-         <td align="center">${carpool.c_dept_time }</td>
+         <td align="center">${carpool.c_date}</td>
+         <td align="center">${carpool.c_person}</td>
+         <td align="center">${carpool.c_dept_time}</td>
       </tr>      
       </c:forEach>  
 		</tbody>

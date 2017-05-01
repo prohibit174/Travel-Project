@@ -7,9 +7,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<%
 
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,7 +54,7 @@
 
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
-	
+
 
 </head>
 <body>
@@ -93,9 +91,9 @@
 <div class="main-tabs">
     <div class="tabs-list">
         <ul id="menu_tab_list">
-            <li><a data-tab="home" >HOME</a></li>
+            <li><a href="home.main" >HOME</a></li>
             <li><a data-tab="hotdeal" >동행</a></li>
-            <li><a data-tab="specialTip" >카풀</a></li>
+            <li><a href="main.carpool" >카풀</a></li>
             <li><a data-tab="community" >물품교환</a></li>
             <li><a data-tab="plan" >커뮤니티</a></li>
             <li><a data-tab="attraction" >블로그</a></li>
@@ -167,7 +165,6 @@
          </c:forEach>
       </table>
 			</fieldset>
-			
 			
 			<fieldset>
 			<legend>카풀 구매현황</legend>

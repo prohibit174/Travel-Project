@@ -15,6 +15,7 @@ import travel.mypage.action.CarpoolDeleteAction;
 import travel.mypage.action.CarpoolListAction;
 import travel.mypage.action.CarpoolUpdateAction;
 import travel.mypage.action.CarpoolUpdateAction2;
+import travel.mypage.action.MypageMainAction;
 
 
 @WebServlet("*.mypage")
@@ -62,6 +63,13 @@ public class MypageController extends HttpServlet {
 			} 
 		} else if (command.equals("carpoolUpdate2.mypage")){
 			action = new CarpoolUpdateAction2();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("main.mypage")){
+			action = new MypageMainAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
