@@ -111,13 +111,6 @@ public class ProductController extends HttpServlet {
 		         } catch (Exception e) {
 		            e.printStackTrace();
 		         }
-	       }else if(command.equals("Main.product")){
-		          action = new Main();
-		          try {
-		            forward = action.execute(request, response);   
-		         } catch (Exception e) {
-		            e.printStackTrace();
-		         }
 	       }
 	       
 	       

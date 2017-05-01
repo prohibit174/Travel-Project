@@ -1,8 +1,20 @@
+<%@page import="travel.product.model.Product"%>
+<%@page import="java.util.List"%>
+<%@page import="travel.product.model.ProductDao"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("utf-8"); %>
+
 <%
-	String p_num = request.getParameter("p_num");
-	System.out.println(p_num);
+	
+	request.setCharacterEncoding("utf-8");
+    ProductDao dao = ProductDao.getInstance();
+	
+   List<Product> list = dao.listProduct();
+   request.setAttribute("list", list);
+   
+   
 %>
 <!DOCTYPE html>
 <html>
@@ -150,14 +162,21 @@
     waitSeconds: 0
   };
 </script>
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="/styles/ie8.css" />
+<![endif]-->
 
 
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-main-styles.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-curation-page-styles.css">
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
-
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <![endif]-->
 </head>
 <body>
 
@@ -203,7 +222,6 @@
   g_localizedString['_SearchRegion_'] = "지역검색";
 </script>
 
-<div id="search_tab_dim" class="bg hide"></div>
 
 <div class="main-tabs">
     <div class="tabs-list">
@@ -220,16 +238,152 @@
 
    <!-- e//search-box -->
 </div><!-- e//main-tabs -->
+<!-- 여기 -->
 
-<!--  
-<h1> 여기가 컨텐츠 부분입니다.<br><br> 원하는 거 집어 넣으면 돼요</h1>-->
+<div id="contents"  class="city">
+    <div class="conts-container">
+        <div class="present">
+            <div class="tabs-list">
+                
+                
+                
+                <ul class="tabs-list">
+    
+        
+            <li><a href="/city?serviceType=global&amp;tab=specialTip" class="first-tag active"><span>전체</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=9d8e9099ece71808" data-id="9d8e9099ece71808" class=""><span>베스트 여행기</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=03a0320a545638be" data-id="03a0320a545638be" class=""><span>여행꿀팁</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=6450e6b4dad28b97" data-id="6450e6b4dad28b97" class=""><span>여행매거진</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=specialTip&amp;curationTag=d0b231dbd188789e" data-id="d0b231dbd188789e" class=""><span>여행 상품 핫딜</span></a></li>
+            
+        
+    
+</ul>
+            
+                <div id="google-ad-sense" style="margin-top:20px;float:left;" data-type="260x260">
+                  <script type="text/javascript">
+                    google_ad_client = "ca-pub-9419115827273897";
+                    google_ad_slot = "3548612763";
+                    google_ad_width = 260;
+                    google_ad_height = 260;
+                  </script>
+                  <!-- search-260x260 -->
+                  <script type="text/javascript"
+                          src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+                  </script>
+                </div>
+            
+            </div><!-- e//tabs-list -->
 
-<h4 align="center">물품이 삭제되었습니다.
-</h4>
-  <div class="btn-box center">
-            <a class="btn-more" href="mainAction.product"><span>메인으로 가기</span> </a>
-            <a class="btn-more" href="listAction.product"><span>확인하기</span></a>
-  </div>
+            <div class="conts-box-list search">
+<div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
+           <!-- boram -->
+             <div class="conts-container conts-box">
+        <div class="contents-wrap">
+            <div class="bigHeader">
+		전체 물품
+            </div>
+            <div class="content-tabs">
+	물품 검색 : <input type="text" />
+            </div>
+            <div class="conts-box-list">
+                <div class="inner-box">
+
+
+         
+         <c:forEach var="product" items="${list}">
+<div data-id="6a341fddf4c819fc" class="content-box type01">
+	<a href = "detailAction.product?p_num=${product.p_num }" >
+    <div class="type01">
+      <div class="cover-img">
+      <!-- modi -->
+	<c:if test="${product.p_img!=null}">
+                  <c:set var="head"
+                     value="${fn:substring(product.p_img, 0, fn:length(product.p_img)-4) }"></c:set>
+                  <c:set var="pattern"
+                     value="${fn:substring(product.p_img, fn:length(head)+1, fn:length(product.p_img)) }"></c:set>
+
+                  <c:choose>
+                     <c:when test="${pattern=='jpg' || pattern =='gif' || pattern =='png' }">
+                        <img src="upload/${head }_small.${pattern}" alt="img /">
+                     </c:when>
+                     <c:otherwise>
+                        <c:out value="No IMAGE"></c:out>
+                     </c:otherwise>
+                  </c:choose>
+               </c:if>
+
+      </div>
+      
+      <div class="tit"> <c:out value="${product.p_num }"></c:out></div>
+      <div class="desc">
+        <span><c:out value="${product.p_price }"></c:out></span>
+        <span><c:out value="${product.p_term }"></c:out></span>
+      </div>
+    </div>
+  </a>
+</div>
+
+ </c:forEach>
+                    <div class="clear"></div>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+      
+    <!-- boram end -->
+
+              </div>
+                <!-- 넘겨야 할 파라미터: count, perPage, viewPageNum -->
+
+<div class="paging">
+  
+    <ul>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=1&amp;perPage=12"  class="active"><span>1</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=2&amp;perPage=12" ><span>2</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=3&amp;perPage=12" ><span>3</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=4&amp;perPage=12" ><span>4</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=5&amp;perPage=12" ><span>5</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=6&amp;perPage=12" ><span>6</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=7&amp;perPage=12" ><span>7</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=8&amp;perPage=12" ><span>8</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=9&amp;perPage=12" ><span>9</span></a>
+        
+        <li><a href="/city?tab=specialTip&amp;viewPageNum=10&amp;perPage=12" ><span>10</span></a>
+          <a class="btn-next" href="/city?tab=specialTip&amp;viewPageNum=11&amp;perPage=12">다음</a>
+    </ul>
+   
+    
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="plan-search-top"><!-- 위로가기 버튼 -->
+    <a class="btn-top" style="display: none;"><img src="/images/btn-top.png" alt="go to top"></a>
+</div>
+
 
 <div id="footer">
     <div class="foot-inner">
@@ -478,7 +632,19 @@
       </div><!-- language-->
     </div><!-- footer-menu-->
   </div><!-- footer-wrap-->
-<!-- footer_partner_wrap-->
+  <div class="footer_partner_wrap">
+    <div class="footer_partner">
+      <div class="footer_partner_tit">Partners</div>
+      <ul class="partner-list">
+        <li><a href="http://www.wooripension.com/" target="_blank"><image src="../../images/woori.png" class="우리팬션"/> </a></li>
+        <li><a href="http://www.tourbaksa.com/" target="_blank"><image src="../../images/tourbaksa.png" class="여행박사"/> </a></li>
+        <li><a href="http://www.pinspot.co.kr/" target="_blank"><image src="../../images/pin.png" class="핀스팟"/> </a></li>
+        <li><a href="https://www.pikicast.com/" target="_blank"><image src="../../images/piki.png" class="피키캐스트"/></a></li>
+        <li><a href="http://www.hanintel.com/" target="_blank"><image src="../../images/hanin.png" class="한인텔"/></a></li>
+        <li><a href="http://www.coocha.co.kr/" target="_blank"><image src="../../images/coocha.png" class="쿠차"/></a></li>
+      </ul>
+    </div><!-- footer_partner-->
+  </div><!-- footer_partner_wrap-->
   <div class="footer-bottom">
     <div class="copyright">
       <p>상호명 : (주)투어스크랩<span>|</span>대표 : 박동두<span>|</span>개인정보책임자 : 이지현</p>
@@ -488,7 +654,15 @@
       <p>투어스크랩은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 투어스크랩은 상품·거래정보 및 거래에 대하여 책임을 지지 않습니다.</p>
     </div>
 
-
+    <div class="footerlink">
+      
+      <a href="http://wishbeen.blog.me" class="blog" target="_blank" ><img src="/images/btn-f-blog.png" alt=""/></a>
+      <a href="https://www.facebook.com/wishbeen.co.kr" class="facebook" target="_blank"><img src="/images/btn-f-facebook.png" alt=""/></a>
+      <a class="apps" href="https://itunes.apple.com/kr/app/wisibin-yeohaengpilsuaeb-jayu/id930810134?mt=8" target="_blank"><img src="/images/btn-f-appstore.png" alt=""/></a>
+      
+      <a href="https://play.google.com/store/apps/details?id=com.tourscrap.wishbeen" class="googlep" target="_blank"><img src="/images/btn-f-googleplay.png" alt=""/></a>
+      <div class="footer_kakao"><image src="../../images/kakao.jpg" class="카카오"width="230px" height="37"/></div>
+    </div>
   </div><!-- footer-bottom-->
     </div>
 </div><!-- #footer-->
