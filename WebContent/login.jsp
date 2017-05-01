@@ -14,58 +14,14 @@
 <meta name ="Generator" content="k2webtech">
 <meta name ="author" content="main">
 <script type="text/javascript">
-/* //enter�째 ��쨌�쩍� 쩐���쨉챨 �쩌�짤�책�쨍쨌� ��쨉쩔
-function jf_form_check2(){
-	if(event.keyCode == 13){
-		jf_form_check();
-		return;
-	}
-	
-}
 
-//쩐���쨉챨 �쩌�짤�짖�쨍쨌� ��쨉쩔
-function jf_form_check(){
-	if(document.mem_form.id.value == ""){
-		alert('쩐���쨉챨쨍짝 ��쨌���쩌쩌쩔채..');
-		document.mem_form.id.focus();
-		return false;
-	}
-
-	if(document.mem_form.pwd.value == ""){
-		alert('��쩍쨘쩔철쨉책쨈� 4�� ��쨩처�� 쩐���쨘짧��쨀짧 쩌첵��쨌� 짹쨍쩌쨘쨉�쩐챤쩐� ��쨈�쨈�');
-		document.mem_form.pwd.focus();
-		return false;
-	}
-
-	document.mem_form.action = "/servlet/wizard.servlet.contents.login.myloginMainServlet";
-
-
-	document.mem_form.command.value="pop_login";
-	document.mem_form.submit();
-
-}
-//째징�� ��쩐첨
-function jf_join(){
-	var file_name="/servlet/wizard.servlet.contents.login.myloginMainServlet";
-	file_name += "?client_id=main&command=join&target=popup";
-	window.open(file_name,  'user_modify','width=600,height=280');
-}
-
-function jf_findPass(){
-	var file_name="/servlet/wizard.servlet.contents.login.myloginMainServlet";
-	file_name += "?client_id=main&command=find_pass";
-	window.open(file_name,  'find_pass','width=400,height=360');
-}
-function jf_join_reload(id,pwd){
-	opener.location.href='/servlet/wizard.servlet.contents.login.myloginMainServlet?client_id=main&command=login&id='+id+'&pwd='+pwd;
-	window.close();
-} */
 function linkToOpener(URL){
 	if(window.opener && !window.opener.closed)
 		window.opener.location = URL;
 		window.closed();
 }
 </script><noscript></noscript>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/loginPopup/login_success.js"></script>
 </head>
 
 
@@ -103,7 +59,7 @@ document.domain = "kornu.ac.kr";
 <tr>
 <td style='font-family:"Verdana", "쨉쨍쩔챵";font-size: 12px;color: 4e4e4e;letter-spacing: -0.5px; vertical-align:-13px;'>ID :</td>
 <td><input name="u_id" id="u_id" size=10 maxlength=20 type="text" style='width:90px;height:20px;'></td>
-<td rowspan="2" align="right"><button onclick=""><img type="submit" src="${pageContext.request.contextPath}/images/loginPopupImages/log_btn_login.gif" width="44" height="46"   alt="로그인버튼" longdesc="" style="cursor:hand"></button></td>
+<td rowspan="2" align="right"><button onclick=""><img type="submit" id="login_button" src="${pageContext.request.contextPath}/images/loginPopupImages/log_btn_login.gif" width="44" height="46"   alt="로그인버튼" longdesc="" style="cursor:hand"></button></td>
 </tr>
 <tr>
 <td style='font-family:"Verdana", "쨉쨍쩔챵";font-size: 12px;color: 4e4e4e;letter-spacing: -0.5px; vertical-align:-13px;'>PW :</td>
@@ -115,7 +71,8 @@ document.domain = "kornu.ac.kr";
 
 <td width="54"><a href="javascript:linkToOpener('JoinForm.users')"><img src="./images/loginPopupImages/log_btn_join.gif" width="53" height="20" onClick="jf_join();" onkeypress="if(event.keycode==13)jf_join();" alt="�쨍쩔첩 째징�� 쨔철�째" longdesc="" style="cursor:hand"></a></td>
 <td width="124"><img src="./images/loginPopupImages/log_btn_searchpass.gif" width="108" height="20" onClick="javascript:jf_findPass();" onkeypress="if(event.keycode==13)jf_findPass();" alt="쨘챰쨔�쨔첩�짙 째�쨩철 쨔철�째" longdesc="" style="cursor:hand"></td>
-
+<div class="frames">
+</div>
 </tr>
 </table></td>
 </tr>

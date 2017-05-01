@@ -173,13 +173,8 @@
 <script>
     moment().format();
 </script>
-<script type="text/javascript">
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/loginPopup/login_success.js"></script>
 
-
-
-		
-	
-</script>
     <!--[if lt IE 9]>
     <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
     <![endif]-->
@@ -200,6 +195,10 @@
     <div class="main-nav-con">
       <p class="wishbeen-logo"><span>심심할 틈이 없다! 프로동행러</span></p>
 
+		<div class="frames">
+		
+		</div>
+		
       <div class="nav-login-search">
         <a class="btn-new-plan">로그인</a>
         <div class="login-and-profile">

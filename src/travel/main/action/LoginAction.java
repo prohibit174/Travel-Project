@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.jasper.tagplugins.jstl.core.Out;
+
+import net.sf.json.JSONArray;
+
 import travel.main.model.LoginDao;
 import travel.users.model.Users;
 
@@ -27,28 +31,34 @@ public class LoginAction implements Action {
 		
 		dbusers = dao.loginCheck(users);
 		
-		
 		ActionForward forward = new ActionForward();
 		
-		
+        PrintWriter out = response.getWriter();
 		 if(dbusers==null){ // 로그인 실패
 	         response.setContentType("text/html;charset=utf-8");
-	         PrintWriter out = response.getWriter();
 	         out.println("<script>");
 	         out.println("alert('아이디 또는 비밀번호를 확인하세요');");
 	         out.println("location.href='/login.main';");
 	         out.println("</script>");
+	         
 	         out.close();
 	      }else{ //성공
 	         HttpSession session = request.getSession(false);
 	           if(session != null){ 
 	               session.invalidate(); 
+	               
+	               
 	              }
+	          
+	           String json = JSONArray.fromObject(dbusers).toString();
+	           out.print(json);
+	           System.out.println(json);
 	           session = request.getSession(true); 
 	           
 	           session.setAttribute("member_id", dbusers.getU_id());// 아이디 세션 저장
+	     
 	         forward.setRedirect(false);
-	         forward.setPath("test.jsp");
+	         forward.setPath("login.main");
 	      }
 	
 		 return forward;
