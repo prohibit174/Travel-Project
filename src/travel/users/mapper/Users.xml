@@ -7,16 +7,26 @@
 	<cache />
 
 	<!-- 새로운 게시글 입력 -->
-	<insert id="insertUsers" parameterType="Users">
+<!-- 	<insert id="insertUsers" parameterType="Users">
 		insert into users(
-			u_id, u_name, u_pwd, u_birth, <!-- u_sex, --> u_address, u_job,
-			 u_lang, u_religion,  <!-- u_license, --> u_img
-			 <!-- ts_name -->
+			u_id, u_pwd, u_name, u_birth,  u_sex, u_address, u_job,
+			 u_lang, u_religion,  u_license, u_img 
+			 ts_name
 		)values(
-			#{u_id}, #{u_name}, #{u_pwd}, #{u_birth},<!-- #{u_sex}, -->#{u_address},#{u_job},
-			#{u_lang},#{u_religion},<!-- #{u_license},  -->#{u_img}
+			#{u_id},#{u_pwd}, #{u_name},  #{u_birth}, #{u_sex}, #{u_address},#{u_job},
+			#{u_lang},#{u_religion}, #{u_license}, #{u_img} 
 		)
 		
+	</insert> -->
+	
+	<insert id="insertUsers2" parameterType="Users">
+		insert into users(
+			u_id, u_pwd, u_name, u_birth,  u_sex, u_address, u_job,
+			 u_lang, u_religion,  u_license, u_img, u_style
+		)values(
+			#{u_id},#{u_pwd}, #{u_name},  #{u_birth}, #{u_sex}, #{u_address},#{u_job},
+			#{u_lang},#{u_religion},  #{u_license} , #{u_img}, #{u_style} 
+		)
 	</insert>
 	
 	<!-- id확인 -->
@@ -28,15 +38,6 @@
 	
 
 </mapper>
-
-
-
-
-
-
-
-
-
 
 
 

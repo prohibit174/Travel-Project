@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import travel.carpool.mapper.CarpoolMapper;
+import travel.carpool.model.Carpool;
 import travel.users.mapper.UsersMapper;
 
 public class UsersDao {
@@ -33,27 +35,23 @@ public class UsersDao {
 	}
 	
 	//insert
-	public int insertUsers(Users users){
+	public void insertUsers(Users users) throws Exception {
+		SqlSession session = getSqlSessionFactory().openSession();
 		int re = -1;
-		SqlSession sqlsession = getSqlSessionFactory().openSession();
-		
 		try {
-			System.out.println("try in");
-			re = sqlsession.getMapper(UsersMapper.class).insertUsers(users);
-			
-			if(re>0){
-				sqlsession.commit();
+			re = session.getMapper(UsersMapper.class).insertUsers(users);
+			if(re > 0){
+				session.commit();
 			}else{
-				sqlsession.rollback();
+				session.rollback();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally{
-			sqlsession.close();
+		}finally {
+			session.close();
 		}
-		System.out.println("DAO"+ re);
-		return re;
 	}
+	
 	
 	
 	public int checkId(String string){
@@ -62,11 +60,31 @@ public class UsersDao {
 		
 		try {
 			re = sqlsession.getMapper(UsersMapper.class).idCheck(string);
-			//�뿬湲곕줈 �엯�젰諛쏆� id媛� 議댁옱�븯�뒗吏� 媛��닔媛� �뱾�뼱�삱嫄곗엫.
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		return re;
 	}
+
+	public void insertUsers2(Users users) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(UsersMapper.class).insertUsers2(users);
+			if(re > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		
+	}
+
+	
 }

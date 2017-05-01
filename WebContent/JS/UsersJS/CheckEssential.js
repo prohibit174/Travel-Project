@@ -8,9 +8,9 @@ $(function(){
 			alert('개인정보수집에 동의가 필요합니다.');
 		}else if($('#u_sex').is(':checked')==false){
 			alert('성별을 선택해주세요.');
-		}/*else if($('license').is(':checked')==false){
+		}else if($('#u_license').is(':checked')==false){
 			alert('운전면허 소지여부를 선택해주세요.');
-		}*/else if($('#u_id').val()==""){
+		}else if($('#u_id').val()==""){
 			alert('아이디는 필수 사항 입니다.');
 		}else if($('#pwcheck').val()==""){
 			alert('비밀번호 확인을 해주세요.');
