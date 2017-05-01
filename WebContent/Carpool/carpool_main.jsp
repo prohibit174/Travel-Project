@@ -239,7 +239,7 @@
 <div class="main-tabs">
     <div class="tabs-list">
         <ul id="menu_tab_list">
-            <li><a data-tab="home" >HOME</a></li>
+            <li><a href="home.main" >HOME</a></li>
             <li><a data-tab="hotdeal" >동행</a></li>
             <li><a href="main.carpool" >카풀</a></li>
             <li><a data-tab="community" >물품교환</a></li>

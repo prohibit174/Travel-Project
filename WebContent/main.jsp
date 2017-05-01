@@ -185,8 +185,8 @@
         <div class="login-and-profile">
           
           <div>
-            <a id="nav-btn-about" href="http://blog.naver.com/PostThumbnailList.nhn?blogId=wishbeen&from=postList&categoryNo=97&parentCategoryNo=97" target="_blank">회원가입</a>
-            <a id="nav-login-btn" class="nav-btn-login">마이페이지</a>
+            <a href="JoinForm.users" id="nav-btn-about"  >회원가입</a>
+            <a href = "main.mypage" id="nav-login-btn" class="nav-btn-login">마이페이지</a>
             <a id="nav-fb-login" class="fb"></a>
             <a id="nav-ggl-login" class="ggl"></a>
           </div>
@@ -215,9 +215,9 @@
 <div class="main-tabs">
     <div class="tabs-list">
         <ul id="menu_tab_list">
-            <li><a data-tab="home" >HOME</a></li>
+            <li><a href="home.main" >HOME</a></li>
             <li><a data-tab="hotdeal" >동행</a></li>
-            <li><a data-tab="specialTip" >카풀</a></li>
+            <li><a href="main.carpool" >카풀</a></li>
             <li><a data-tab="community" >물품교환</a></li>
             <li><a data-tab="plan" >커뮤니티</a></li>
             <li><a data-tab="attraction" >블로그</a></li>
