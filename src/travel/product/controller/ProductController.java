@@ -14,8 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import travel.product.action.Action;
 import travel.product.action.ActionForward;
 import travel.product.action.DetailAction;
+import travel.product.action.DetailReqAction;
 import travel.product.action.InsertFormAction;
+import travel.product.action.InsertReqAction;
+import travel.product.action.InsertReqFormAction;
 import travel.product.action.ListAction;
+
 import travel.product.action.MainAction;
 import travel.product.action.UpdateAction;
 import travel.product.action.UpdateFormAction;
@@ -52,7 +56,7 @@ public class ProductController extends HttpServlet {
 	            e.printStackTrace();
 	         }
 
-	       } else if(command.equals("insertRoute.product")){
+	       } else if(command.equals("insertAction.product")){
 	          action = new insertAction();
 	          try {
 	            forward = action.execute(request, response);   
@@ -111,6 +115,33 @@ public class ProductController extends HttpServlet {
 		            e.printStackTrace();
 		         }
 	       }
+	       else if(command.equals("insertReqForm.product")){ 
+		          action = new InsertReqFormAction();
+		          try {
+		            forward = action.execute(request, response);   
+		         } catch (Exception e) {
+		            e.printStackTrace();
+		         }
+	          
+	          
+	       }else if(command.equals("insertReqAction.product")){
+		          action = new InsertReqAction();
+		          try {
+		            forward = action.execute(request, response);   
+		         } catch (Exception e) {
+		            e.printStackTrace();
+		         }
+	       } 
+	       
+	       	else if(command.equals("detailReqAction.product")){
+		          action = new DetailReqAction();
+		          try {
+		            forward = action.execute(request, response);   
+		         } catch (Exception e) {
+		            e.printStackTrace();
+		         }
+	       	}
+	       	 
 	       
 	       
 	       
