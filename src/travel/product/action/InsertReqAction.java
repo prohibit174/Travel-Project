@@ -1,5 +1,8 @@
 package travel.product.action;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -8,7 +11,7 @@ import travel.product.model.Product_Request;
 
 public class InsertReqAction implements Action {
 	
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception  {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception   {
 		ProductDao dao = ProductDao.getInstance();
 		Product_Request proReq = new Product_Request();
 		

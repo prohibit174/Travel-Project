@@ -21,8 +21,8 @@ public class ListAction implements Action {
 		request.setAttribute("list", list);
 		
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(true);
-		forward.setPath("product_list.jsp");
+		forward.setRedirect(false);
+		forward.setPath("ProductDeal/product_list.jsp");
 		
 		return forward;
 	}

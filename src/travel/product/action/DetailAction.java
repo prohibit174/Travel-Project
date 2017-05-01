@@ -12,7 +12,7 @@ import travel.product.model.ProductDao;
 public class DetailAction implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception{
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception {
 		String p_num = request.getParameter("p_num");
 		  
 		   

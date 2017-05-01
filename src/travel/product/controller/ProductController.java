@@ -19,7 +19,7 @@ import travel.product.action.InsertFormAction;
 import travel.product.action.InsertReqAction;
 import travel.product.action.InsertReqFormAction;
 import travel.product.action.ListAction;
-import travel.product.action.Main;
+
 import travel.product.action.MainAction;
 import travel.product.action.UpdateAction;
 import travel.product.action.UpdateFormAction;
@@ -56,7 +56,7 @@ public class ProductController extends HttpServlet {
 	            e.printStackTrace();
 	         }
 
-	       } else if(command.equals("insertRoute.product")){
+	       } else if(command.equals("insertAction.product")){
 	          action = new insertAction();
 	          try {
 	            forward = action.execute(request, response);   

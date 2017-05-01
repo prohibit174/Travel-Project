@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class InsertReqFormAction implements Action {
 	
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception {
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("ProductDeal/product_request.jsp");
