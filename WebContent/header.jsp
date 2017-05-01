@@ -1,10 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <style type="text/css">
   body, pre {
-    font-family: "¸¼Àº °íµñ","Malgun Gothic","Helvetica Neue","Apple SD Gothic Neo",Helvetica,Arial,"Apple Gothic","µ¸¿ò",Dotum,sans-serif!important;
+    font-family: "ë§‘ì€ ê³ ë”•","Malgun Gothic","Helvetica Neue","Apple SD Gothic Neo",Helvetica,Arial,"Apple Gothic","ë‹ì›€",Dotum,sans-serif!important;
   }
 
   .if-me{
@@ -17,6 +16,18 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin2.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin3.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin4.css" />
+ <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
+<script type="text/javascript" src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>           
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/tests.js"></script>
+ <script src='${pageContext.request.contextPath}/GoogleAPI/lib/jquery.min.js'></script>
+<script src='${pageContext.request.contextPath}/GoogleAPI/lib/moment.min.js'></script>
+<link rel='stylesheet' href='../GoogleAPI/fullcalendar.css' />
+<script src='${pageContext.request.contextPath}/GoogleAPI/fullcalendar.js'></script>
+<script src="${pageContext.request.contextPath}/GoogleAPI/moment.js"></script>
+<script src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/loginPopup/login_success.js"></script>
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -26,19 +37,19 @@
   <!-- {header -->
   <div class="header">
     <div class="main-nav-con">
-      <p class="wishbeen-logo"><span>¼¼»óÀÇ ¸ğµç ¿©Çà, À§½Ãºó</span></p>
+      <p class="wishbeen-logo"><span>ì„¸ìƒì˜ ëª¨ë“  ì—¬í–‰, ìœ„ì‹œë¹ˆ</span></p>
 
 		<div id="frames">
 			<span>${member_id}</span>
 		</div>
 		
       <div class="nav-login-search">
-        <a class="btn-new-plan">·Î±×ÀÎ</a>
+        <a class="btn-new-plan">ë¡œê·¸ì¸</a>
         <div class="login-and-profile">
           
           <div>
-            <a href="JoinForm.users" id="nav-btn-about"  >È¸¿ø°¡ÀÔ</a>
-            <a href = "main.mypage" id="nav-login-btn" class="nav-btn-login">¸¶ÀÌÆäÀÌÁö</a>
+            <a href="JoinForm.users" id="nav-btn-about"  >íšŒì›ê°€ì…</a>
+            <a href = "main.mypage" id="nav-login-btn" class="nav-btn-login">ë§ˆì´í˜ì´ì§€</a>
             <a id="nav-fb-login" class="fb"></a>
             <a id="nav-ggl-login" class="ggl"></a>
           </div>
@@ -50,16 +61,16 @@
   </div><!-- header } -->
 </div><!-- page-container -->
 
-<!-- Æ÷ÇÔµÇ¾î¾ß ÇÒ ÆÄ¶ó¹ÌÅÍ ¸ñ·Ï -->
-<!-- language, curCity, tab (ÇöÀç ¼±ÅÃµÈ ÅÇ) -->
+<!-- í¬í•¨ë˜ì–´ì•¼ í•  íŒŒë¼ë¯¸í„° ëª©ë¡ -->
+<!-- language, curCity, tab (í˜„ì¬ ì„ íƒëœ íƒ­) -->
 <script>
   g_data['searchTabData'] = {
     language : "ko-KR",
     curServiceType: "global",
-    curCityName: "Àü¼¼°è",
+    curCityName: "ì „ì„¸ê³„",
     tab: ""
   };
-  g_localizedString['_SearchRegion_'] = "Áö¿ª°Ë»ö";
+  g_localizedString['_SearchRegion_'] = "ì§€ì—­ê²€ìƒ‰";
 </script>
 
 <div id="search_tab_dim" class="bg hide"></div>
@@ -68,11 +79,11 @@
     <div class="tabs-list">
         <ul id="menu_tab_list">
             <li><a href="home.main" >HOME</a></li>
-            <li><a data-tab="hotdeal" >µ¿Çà</a></li>
-            <li><a href="main.carpool" >Ä«Ç®</a></li>
-            <li><a data-tab="" >¹°Ç°±³È¯</a></li>
-            <li><a data-tab="plan" >Ä¿¹Â´ÏÆ¼</a></li>
-            <li><a data-tab="attraction" >ºí·Î±×</a></li>
+            <li><a data-tab="hotdeal" >ë™í–‰</a></li>
+            <li><a href="main.carpool" >ì¹´í’€</a></li>
+            <li><a data-tab="" >ë¬¼í’ˆêµí™˜</a></li>
+            <li><a data-tab="plan" >ì»¤ë®¤ë‹ˆí‹°</a></li>
+            <li><a data-tab="attraction" >ë¸”ë¡œê·¸</a></li>
 
         </ul><!-- e// tabs -->
     </div><!-- e//tabs-list -->
