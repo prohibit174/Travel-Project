@@ -176,6 +176,10 @@
     <div class="main-nav-con">
       <p class="wishbeen-logo"><span>세상의 모든 여행, 위시빈</span></p>
 
+		<div class="frame">
+		
+		</div>
+		
       <div class="nav-login-search">
         <a class="btn-new-plan">로그인</a>
         <div class="login-and-profile">
