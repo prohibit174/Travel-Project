@@ -55,10 +55,11 @@ public class LoginAction implements Action {
 	           System.out.println(json);
 	           session = request.getSession(true); 
 	           
+	           System.out.println(dbusers.getU_id());
 	           session.setAttribute("member_id", dbusers.getU_id());// 아이디 세션 저장
 	     
 	         forward.setRedirect(false);
-	         forward.setPath("login.main");
+	         forward.setPath("test.");
 	      }
 	
 		 return forward;

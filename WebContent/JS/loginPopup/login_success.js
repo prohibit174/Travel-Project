@@ -16,9 +16,10 @@ $('#login_button').click(function() {
        $.each(data, function(index, entry) {
       	 if(index == data.length-1){
       		   var html = '<div class="entry">';
-		            html += '<div>'
+		            html += '<div>';
 		            html += '<p class="id">' + entry.id + '님 환영합니다  </p>' ;
-		            html += '</div>'
+		            html += '</div>';
+		            html += '</div>';
 		          
 		            $('.frames').append(html);
 
