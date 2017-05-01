@@ -20,27 +20,26 @@ public class insertAction implements Action{
 		ProductDao dao = ProductDao.getInstance();
 		Product product = new Product();
 		
-		//ÆÄÀÏ ¾÷·Îµå (°æ·Î, Å©±â, ÀÎÄÚµù¹æ½Ä,ÁßÃ¸Á¤Ã¥)
-		//ÀüÃ¼°æ·Î
+
 		String uploadPath = request.getRealPath("upload");
 		int size = 20 * 1024 * 1024; //20MB
 	
 		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, 
 									"utf-8", new DefaultFileRenamePolicy());
-		//ÆÄÀÏ ¾÷·Îµå
+	
 				if(multi.getFilesystemName("p_img") != null){
 					String p_img = multi.getFilesystemName("p_img");
 					product.setP_img(p_img);
 
-					//½æ³×ÀÏ ÀÌ¹ÌÁö(jpg, gif) aaa.gif -> aaa_small.gif
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½(jpg, gif) aaa.gif -> aaa_small.gif
 					String pattern = p_img.substring(p_img.lastIndexOf(".")+1);
 					String headName = p_img.substring(0, p_img.lastIndexOf("."));
 					
-					//¿øº» File°´Ã¼
+					//ï¿½ï¿½ï¿½ï¿½ Fileï¿½ï¿½Ã¼
 					String imagePath = uploadPath+"\\"+p_img;
 					File src = new File(imagePath);
 					
-					//½æ³×ÀÏÀÌ¹ÌÁö -> file°´Ã¼
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½ï¿½ -> fileï¿½ï¿½Ã¼
 					String thumImagePath = uploadPath+"\\" +headName+"_small."+pattern;
 					File dest = new File(thumImagePath);
 					
@@ -50,7 +49,7 @@ public class insertAction implements Action{
 					
 				}else{
 					product.setP_img("");
-					System.out.println("img¾Èµé¾î°¨");
+					System.out.println("imgï¿½Èµï¿½î°¨");
 				}
 				
 				

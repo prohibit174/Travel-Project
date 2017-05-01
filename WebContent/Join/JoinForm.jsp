@@ -249,7 +249,7 @@
 	<br>
 	<br>
 	<div class="form_body">
-		<form action="JoinAction.users" class="join_form" method="post" enctype="multipart/form-data">
+		<form action="JoinAction.users" class="join_form" method="post">
 			<fieldset>
 				<legend>필수 입력 사항</legend>
 				<table class="primary_table">
@@ -886,7 +886,7 @@
 			
 			<div class="nlogin_join_center">
 		<!-- <button type = "submit" class = "nlogin_btn">가입하기</button> -->
-		<input type = "button" class = "nlogin_btn" value = "가입하기">
+		<input type = "submit" class = "nlogin_btn" value = "가입하기">
 		<span>이게 나의 최선이다..... 누가 가운데 정렬좀 해주세요.........</span>
 		</div>
 		
