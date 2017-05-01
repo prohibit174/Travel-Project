@@ -38,6 +38,7 @@ public class UsersDao {
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		
 		try {
+			System.out.println("try in");
 			re = sqlsession.getMapper(UsersMapper.class).insertUsers(users);
 			
 			if(re>0){

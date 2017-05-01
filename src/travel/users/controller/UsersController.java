@@ -26,15 +26,15 @@ public class UsersController extends HttpServlet {
         
     }
 
-	public void joinProcess(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+	public void doProcess(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 		String requestURI = request.getRequestURI();
-		System.out.println(requestURI);
+
 		
 	/*	String path = request.getContextPath();
 		//travelProject
 */		String contextPath = request.getContextPath();
     	//getContextPath를 통해서 컨텍스트 경로를 가져옴.
-    	System.out.println(contextPath);
+    
     	
     	String command = requestURI.substring(contextPath.length()+1);
     	/*전체 경로에서 context경로의 뒤에 있는 /까지 포함하기위해서 +1을 넣어줌.
@@ -62,9 +62,7 @@ public class UsersController extends HttpServlet {
 			}
     	}else if(command.equals("JoinAction.users")){
     		action = new JoinAction();
-    		
     		try {
-				
     			forward = action.execute(request, response);
     			
 			} catch (Exception e) {
@@ -97,11 +95,13 @@ public class UsersController extends HttpServlet {
 	}
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		joinProcess(request, response);
+		doProcess(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		joinProcess(request, response);
+		doProcess(request, response);
 	}
+
+
 
 }
