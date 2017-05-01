@@ -8,7 +8,7 @@ public class Product implements Serializable {
 	private String p_img;
 	private String p_detail;
 	private String p_price;
-	private String p_amount;
+	private String p_name;
 	private String p_term;
 	private String p_ox;
 	
@@ -16,7 +16,7 @@ public class Product implements Serializable {
 	
 	
 
-	public Product(String p_num, String u_id, String p_img, String p_detail, String p_price, String p_amount,
+	public Product(String p_num, String u_id, String p_img, String p_detail, String p_price, String p_name,
 			String p_term, String p_ox) {
 		super();
 		this.p_num = p_num;
@@ -24,7 +24,7 @@ public class Product implements Serializable {
 		this.p_img = p_img;
 		this.p_detail = p_detail;
 		this.p_price = p_price;
-		this.p_amount = p_amount;
+		this.p_name = p_name;
 		this.p_term = p_term;
 		this.p_ox = p_ox;
 	}
@@ -71,12 +71,12 @@ public class Product implements Serializable {
 		this.p_price = p_price;
 	}
 
-	public String getP_amount() {
-		return p_amount;
+	public String getp_name() {
+		return p_name;
 	}
 
-	public void setP_amount(String p_amount) {
-		this.p_amount = p_amount;
+	public void setp_name(String p_name) {
+		this.p_name = p_name;
 	}
 
 	public String getP_term() {
