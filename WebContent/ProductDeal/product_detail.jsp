@@ -349,7 +349,7 @@
                  <div class="ct_area" style="width:470px;height:576px;visibility:;">
                     <div class="deal_info"></div>
                      <p class="stit">판매자 이름</p>
-                    <h3 class="tit">상품명<br /></h3>
+                    <h3 class="tit">상품명:<%=product.getp_name()%><br /></h3>
                   
                   
                <div id="promotion_block">

@@ -8,10 +8,10 @@
 	<cache />
 	<insert id="insertProduct" parameterType="Product">
 			insert into product(
-		p_num, u_id, p_img, p_detail, p_price, p_amount, p_term, p_ox
+		p_num, u_id, p_img, p_detail, p_price, p_name, p_term, p_ox
 		)
 		values(
-			#{p_num}, #{u_id}, #{p_img},#{p_detail},#{p_price},#{p_amount}, #{p_term}, #{p_ox}
+			#{p_num}, #{u_id}, #{p_img},#{p_detail},#{p_price},#{p_name}, #{p_term}, #{p_ox}
 		)
 	</insert>
 	

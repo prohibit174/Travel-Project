@@ -4,8 +4,8 @@
     
 <% request.setCharacterEncoding("UTF-8"); %>
 
-<jsp:useBean id="users" class = "travel.users.model.Users"></jsp:useBean>
-<jsp:setProperty property="*" name="users"/>
+<%-- <jsp:useBean id="users" class = "travel.users.model.Users"></jsp:useBean>
+<jsp:setProperty property="*" name="users"/> --%>
 
 <% 
 

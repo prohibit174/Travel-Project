@@ -15,12 +15,12 @@ public class Users implements Serializable{
 	private String u_religion;
 	private String u_license;
 	private String u_img;
-	private String ts_name;
+	private String u_style;
 
 	public Users(){}
 
 	public Users(String u_id, String u_pwd, String u_name, String u_birth, String u_sex, String u_address, String u_job,
-			String u_lang, String u_religion, String u_license, String u_img, String ts_name) {
+			String u_lang, String u_religion, String u_license, String u_img, String u_style) {
 		super();
 		this.u_id = u_id;
 		this.u_pwd = u_pwd;
@@ -33,7 +33,7 @@ public class Users implements Serializable{
 		this.u_religion = u_religion;
 		this.u_license = u_license;
 		this.u_img = u_img;
-		this.ts_name = ts_name;
+		this.u_style = u_style;
 	}
 
 	public String getU_id() {
@@ -124,12 +124,12 @@ public class Users implements Serializable{
 		this.u_img = u_img;
 	}
 
-	public String getTs_name() {
-		return ts_name;
+	public String getU_style() {
+		return u_style;
 	}
 
-	public void setTs_name(String ts_name) {
-		this.ts_name = ts_name;
+	public void setU_style(String u_style) {
+		this.u_style = u_style;
 	}
 
 	

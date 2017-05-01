@@ -328,9 +328,9 @@ String p_num = request.getParameter("p_num");
 					</tr>
 					
 					<tr>
-					<th scope="row">수량</th>
+					<th scope="row">상품명</th>
 					<td>
-					<input type = "text" id = "p_amount" name="p_amount" value="${product.p_amount }">
+					<input type = "text" id = "p_name" name="p_name" value="${product.p_name }">
 					</tr>
 					
 					

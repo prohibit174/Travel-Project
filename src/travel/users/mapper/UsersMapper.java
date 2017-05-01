@@ -4,6 +4,7 @@ import travel.users.model.Users;
 
 public interface UsersMapper {
 
-	public int insertUsers(Users users);
-	public Integer idCheck(String string);
+	 int insertUsers(Users users);
+	 Integer idCheck(String string);
+	int insertUsers2(Users users);
 }
