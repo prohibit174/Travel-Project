@@ -16,7 +16,7 @@ import travel.main.model.LoginDao;
 import travel.users.model.Users;
 
 
-public class LoginAction implements Action {
+public class LoginAction2 implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
@@ -34,16 +34,8 @@ public class LoginAction implements Action {
 		ActionForward forward = new ActionForward();
 		
         PrintWriter out = response.getWriter();
-		 if(dbusers==null){ // 로그인 실패
-	         response.setContentType("text/html;charset=utf-8");
-	         out.println("<script>");
-	         out.println("alert('아이디 또는 비밀번호를 확인하세요');");
-	         out.println("location.href='login.main';");
-	         out.println("</script>");
-	         
-	         out.close();
-	      }else{ //성공
-	/*         HttpSession session = request.getSession(false);
+//성공
+	         HttpSession session = request.getSession(false);
 
 	           if(session != null){ 
 	               session.invalidate(); 
@@ -58,11 +50,12 @@ public class LoginAction implements Action {
 	           
 	           System.out.println(dbusers.getU_id());
 	           session.setAttribute("member_id", dbusers.getU_id());// 아이디 세션 저장
-*/	     request.setAttribute("users", users);
+	           
+	     request.setAttribute("users", users);
 	         forward.setRedirect(false);
-	         forward.setPath("loginAction2.main");
+	         forward.setPath("loginAction.jsp");
 	         
-	      }
+	      
 	
 		 return forward;
 	}
