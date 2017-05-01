@@ -39,7 +39,6 @@ public class CarpoolController extends HttpServlet {
        ActionForward forward = null;
        Action action = null;
        
-       //insertForm.do占쏙옙 占쏙옙청占실억옙占쏙옙占쏙옙
        if(command.equals("insertForm.carpool")){
           //insertFormAction()占쏙옙 占쏙옙占쏙옙占� : 占쏙옙占쏙옙 jsp占싸곤옙占승메소듸옙
           action = new InsertFormAction();

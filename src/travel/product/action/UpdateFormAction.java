@@ -21,7 +21,7 @@ public class UpdateFormAction implements Action {
 		Product product = dao.detailProduct(p_num);
 		ActionForward forward = new ActionForward();
 
-		forward.setRedirect(true);
+		forward.setRedirect(false);
 		forward.setPath("ProductDeal/product_update.jsp");
 		return forward;
 	}

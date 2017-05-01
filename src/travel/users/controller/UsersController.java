@@ -70,6 +70,7 @@ public class UsersController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+    		
     	}else if(command.equals("IdCheckAction.users")){
     		action = new IdCheckAction();
     		
@@ -79,9 +80,7 @@ public class UsersController extends HttpServlet {
 				e.printStackTrace();
 			}
     	}
-    	
-    	
-    	
+   
     	
     	if(forward!=null){
     		//forward가 null이 아니라는건 한번 실행해봤다.

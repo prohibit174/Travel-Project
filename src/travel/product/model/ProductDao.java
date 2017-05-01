@@ -75,6 +75,41 @@ public class ProductDao {
 		}
 		return product;
 	}
+	
+	public void updateProduct(Product product) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(TravelMapper.class).updateProduct(product);
+			if(re > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+	}
+	
+	public void deleteProduct(Product product) {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(TravelMapper.class).deleteProduct(product);
+			if(re > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+	}
+
 
 	
 	

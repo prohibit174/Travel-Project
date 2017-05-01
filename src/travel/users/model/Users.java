@@ -1,6 +1,8 @@
 package travel.users.model;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users implements Serializable{
 
 	private String u_id;
 	private String u_pwd;

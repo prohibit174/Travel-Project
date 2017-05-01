@@ -8,7 +8,9 @@ import travel.carpool.model.Carpool;
 import travel.carpool.model.Search;
 
 public interface CarpoolMapper {
-	public int insertCarpool(Carpool carpool);
-	public List<Carpool> listCarpool(Search search);
-
+	 int insertCarpool(Carpool carpool);
+	 List<Carpool> listCarpool(Search search);
+	 int deleteCarpool(Carpool carpool);
+	Carpool detailCarpool(String c_num);
+	int updateCarpool(Carpool carpool);
 }

@@ -29,12 +29,9 @@ public class insertAction implements Action{
 									"utf-8", new DefaultFileRenamePolicy());
 		//파일 업로드
 				if(multi.getFilesystemName("p_img") != null){
-					System.out.println("method in");
 					String p_img = multi.getFilesystemName("p_img");
-					System.out.println(p_img);
 					product.setP_img(p_img);
 
-					
 					//썸네일 이미지(jpg, gif) aaa.gif -> aaa_small.gif
 					String pattern = p_img.substring(p_img.lastIndexOf(".")+1);
 					String headName = p_img.substring(0, p_img.lastIndexOf("."));
@@ -59,28 +56,13 @@ public class insertAction implements Action{
 				
 		
 		product.setP_num(multi.getParameter("p_num"));
-		System.out.println(request.getParameter("p_num"));
-		
 		product.setU_id(multi.getParameter("u_id"));
-		System.out.println(request.getParameter("u_id"));
-		
-		//product.setP_img(request.getParameter("p_img"));
-	
-		
 		product.setP_detail(multi.getParameter("p_detail"));
-		System.out.println(multi.getParameter("p_detail"));
-		
-		product.setP_price(multi.getParameter("p_price"));
-		System.out.println(multi.getParameter("p_price"));
-		
+		product.setP_price(multi.getParameter("p_price"));	
 		product.setP_amount(multi.getParameter("p_amount"));
-		System.out.println(multi.getParameter("p_amount"));
-		
 		product.setP_term(multi.getParameter("p_term"));
-		System.out.println(multi.getParameter("p_term"));
-		
 		product.setP_ox(multi.getParameter("p_ox"));
-		System.out.println(multi.getParameter("p_ox"));
+
 		
 		dao.insertProduct(product);
 		
