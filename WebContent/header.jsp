@@ -31,7 +31,9 @@
 <script src="${pageContext.request.contextPath}/GoogleAPI/moment.js"></script>
 <script src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/loginPopup/login_success.js"></script>
+<script type="text/javascript">
 
+</script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
@@ -49,7 +51,7 @@
 		
 		
       <div class="nav-login-search">
-        <a class="btn-new-plan" href="">로그인</a>
+        <a class="btn-new-plan">로그인</a>
         <div class="login-and-profile">
           
           <div>

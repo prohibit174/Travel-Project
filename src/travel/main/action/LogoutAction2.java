@@ -16,18 +16,29 @@ import travel.main.model.LoginDao;
 import travel.users.model.Users;
 
 
-public class LogoutAction implements Action {
+public class LogoutAction2 implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, Exception {
 		
+		
 		ActionForward forward = new ActionForward();
 		
+        PrintWriter out = response.getWriter();
 //¼º°ø
+	         HttpSession session = request.getSession(false);
 
+	           if(session != null){ 
+	               session.invalidate(); 
+
+	              }
+
+	           session = request.getSession(true); 
+	     
+	           session.removeAttribute("member_id");
 	         forward.setRedirect(false);
-	         forward.setPath("logoutAction2.main");
+	         forward.setPath("logoutAction.jsp");
 	         
 	      
 	

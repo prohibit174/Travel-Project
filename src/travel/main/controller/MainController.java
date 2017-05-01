@@ -15,6 +15,7 @@ import travel.main.action.LoginAction;
 import travel.main.action.LoginAction2;
 import travel.main.action.LoginFormAction;
 import travel.main.action.LogoutAction;
+import travel.main.action.LogoutAction2;
 
 
 @WebServlet("*.main")
@@ -72,6 +73,13 @@ public class MainController extends HttpServlet {
     	   }
        }else if(command.equals("logoutAction.main")){
     	   action = new LogoutAction();
+    	   try{
+    		   forward = action.execute(request, response);
+    	   } catch(Exception e){
+    		   e.printStackTrace();
+    	   }
+       }else if(command.equals("logoutAction2.main")){
+    	   action = new LogoutAction2();
     	   try{
     		   forward = action.execute(request, response);
     	   } catch(Exception e){

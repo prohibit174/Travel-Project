@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	window.onload = function() {
+	if($('.btn-new-plan').text() === "로그인"){
 		if ($('#frames span').text() != '') {
 			var html = '';
 			html += '<span> 님 환영 합니다. </span>';
@@ -9,9 +10,11 @@ $(document).ready(function() {
 			$('.btn-new-plan').append("로그아웃");*/
 			$('.btn-new-plan').text("로그아웃")
 
-		}else if($('.btn-new-plan').text() === "로그아웃"){
-			$('.btn-new-plan').text("로그인")
 		}
+	}else if($('.btn-new-plan').text() === "로그아웃"){
+		$('.btn-new-plan').text("로그인");
+		$('#frames').empty();
+	}
 	}
 
 });
