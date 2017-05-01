@@ -50,7 +50,7 @@ public class CarpoolController extends HttpServlet {
             e.printStackTrace();
          }
          //커占실듸옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占신기에 占승댐옙 占쌓쇽옙占쏙옙 호占쏙옙占싹몌옙 占싫댐옙.
-       }else if(command.equals("insertAction.carpool")){
+       }else if(command.equals("insertRoute.carpool")){
            action = new InsertAction();
            try {
              forward = action.execute(request, response);   

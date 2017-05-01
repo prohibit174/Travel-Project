@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="travel.route.mapper.TravelMapper">
+
+	<cache />
+	<insert id="insertRoute" parameterType="Route">
+			insert into Trip_Plan(
+			tp_num,cor_region,u_id,tp_date
+		)
+		values(
+			#{tp_num},#{cor_region},#{u_id},#{tp_date}
+			<!-- '3','3','3','2017-04-15' -->
+		)
+	</insert>
+	
+</mapper>
