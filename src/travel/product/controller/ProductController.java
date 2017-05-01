@@ -52,7 +52,7 @@ public class ProductController extends HttpServlet {
 	            e.printStackTrace();
 	         }
 
-	       } else if(command.equals("insertAction.product")){
+	       } else if(command.equals("insertRoute.product")){
 	          action = new insertAction();
 	          try {
 	            forward = action.execute(request, response);   
