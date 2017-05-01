@@ -70,8 +70,8 @@ public class UserAction implements Action {
 		dao.insertUsers2(users);
 		
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(false);
-		forward.setPath("Join/JoinAction.jsp");		
+		forward.setRedirect(true);
+		forward.setPath("home.main");		
 		
 		return forward;
 	}

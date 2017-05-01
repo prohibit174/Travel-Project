@@ -16,7 +16,7 @@ $(function(){
 			alert('비밀번호 확인을 해주세요.');
 		}else{
 			$.ajax({
-				url : "JoinAction.users",
+				url : "UserAction.users",
 				data : $(".join_form"),
 				success : sendHandler
 					
