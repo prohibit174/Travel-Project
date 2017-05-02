@@ -5,9 +5,12 @@ $(document).ready(function() {
 			html += '<span> 님 환영 합니다. </span>';
 			$('#frames').append(html);
 
-			$('.btn-new-plan').empty();
-			$('.btn-new-plan').append("로그아웃");
+			/*$('.btn-new-plan').empty();
+			$('.btn-new-plan').append("로그아웃");*/
+			$('.btn-new-plan').text("로그아웃")
 
+		}else if($('.btn-new-plan').text() === "로그아웃"){
+			$('.btn-new-plan').text("로그인")
 		}
 	}
 

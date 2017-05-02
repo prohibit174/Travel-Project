@@ -49,7 +49,7 @@
 		
 		
       <div class="nav-login-search">
-        <a class="btn-new-plan">로그인</a>
+        <a class="btn-new-plan" href="">로그인</a>
         <div class="login-and-profile">
           
           <div>
