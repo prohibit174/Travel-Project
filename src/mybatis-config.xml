@@ -6,6 +6,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="travel.product.model.Product" alias="Product"/>
+		<typeAlias type="travel.product.model.Product_Request" alias="Product_Request"/>
 	</typeAliases>
 	
 	<environments default="development">

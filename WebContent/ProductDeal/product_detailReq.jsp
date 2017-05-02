@@ -1,27 +1,21 @@
-<%@page import="travel.product.model.Product"%>
+<%@page import="travel.product.model.Product_Request"%>
 <%@page import="travel.product.model.ProductDao"%>
-<%@page import="java.util.List"%>
-<%@page import="travel.product.model.ProductDao"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<% request.setCharacterEncoding("utf-8"); %>
 <%
-	
-	request.setCharacterEncoding("utf-8");
-	String p_num=request.getParameter("p_num");
 
-    ProductDao dao = ProductDao.getInstance();
-	
-    List<Product> list = dao.listProduct();
-    Product product=dao.detailProduct(p_num);
-    
-    System.out.println(product.getP_num());
-    
-   
-   
+String p_num=request.getParameter("p_num");
+System.out.println(p_num);
+ProductDao dao = ProductDao.getInstance();
+
+
+Product_Request productReq=dao.detailProductReq(p_num);
+System.out.println(productReq.getP_num());
+
+
+
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,22 +28,6 @@
 <meta name="naver-site-verification" content="b5dc8e0c6fe0f77b6e8a970e244d1d74397fc8cf"/>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?1">
 <meta name="referrer" content="origin">
-<link href="http://img2.tmon.kr/static/img/favi_tmon.ico" rel="shortcut icon"/>
-<link href="http://static2.tmon.kr/static/gen/css/common_new.css?v=e9246ef610b2c5ffeb315290178ace3b56b7e97a" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static1.tmon.kr/static/gen/css/deal.css?v=9967e849305d0ae005ce9fac80a0a74ade132c3e" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/deal_old.css?v=084304a6106f90aaeee0c7587bf899cad415c75b" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static1.tmon.kr/static/gen/css/deal_option.css?v=e2281836b3e88c746a8335f39d52a67b7516051a" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/cs_mem.css?v=e1226aa4dabb6690fae5f8ef33bd5a49e10bd188" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/deal_lst.css?v=84c22073473acdb08c012e29b9faf6349064b551" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/nanum_local.css?v=" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/dc_tmpl.css?v=6fb710d723b44a0f9998979d515cf5b05c623055" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static1.tmon.kr/static/fancybox/jquery.fancybox-1.3.4.css?v=20110520" rel="stylesheet" type="text/css" charset="utf-8" media="screen"/>
-<link href="http://static2.tmon.kr/static/gen/css/jquery.mCustomScrollbar.css?v=" rel="stylesheet" type="text/css" charset="utf-8"/>
-<!--    <link rel="stylesheet" type="text/css" charset="utf-8" href="/static/css/shared.css" sg:hash>  -->
-<!-- [D] 개발 완료시 http://img1.tmon.kr/resources/shared/p/css/shared.css 로 교체 부탁드립니다. -->
-<!-- <link rel="stylesheet" type="text/css" charset="utf-8" href="http://img1.tmon.kr/resources/shared/p/css/shared.css" sg:hash>  -->
-            <link href="http://img1.tmon.kr/resources/shared/p/css/shared.css?v=" rel="stylesheet" type="text/css"/>
-  
 
 
 <!--common meta data-->
@@ -102,23 +80,6 @@
       });
     };
   })();</script>
-  <script type="text/javascript">
-  
-	function btn_js_update_click(){
-  	  /* confirm(문자열, 초기값) */
-  	  var check = confirm("수정하시겠습니까?");
-  	  /* if(check == true) else false */
-  	  if(check) document.location.href="updateFormAction.product?p_num=<%=product.getP_num()%>";
-  	}
-  
-  
-	function btn_js_delete_click(){
-    	  /* confirm(문자열, 초기값) */
-    	  var check = confirm("삭제하시겠습니까?");
-    	  /* if(check == true) else false */
-    	  if(check) document.location.href="deleteAction.product?p_num=<%=product.getP_num()%>";
-    	}
-  </script>
 
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T5WKH7"
@@ -206,7 +167,7 @@
 <![endif]-->
 
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-main-styles.css">
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
@@ -291,14 +252,25 @@
                 <ul class="tabs-list">
     
         
-            <li><a href="product_main.jsp" class="first-tag active"><span>전체 조회</span></a></li>
+            <li><a href="mainAction.product" class="first-tag active"><span>전체 조회</span></a></li>
             
             
-            <li><a href="product_register2.jsp" data-id="5d1504d8bebfc81e" class=""><span>물품 등록</span></a></li>
+            <li><a href="insertForm.product" data-id="5d1504d8bebfc81e" class=""><span>물품 등록</span></a></li>
             
             
-            <li><a href="" class=""><span>물품 추천</span></a></li>
-
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" data-id="2d8eef384cefda06" class=""><span>물품 추천</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>물품 교환 리스트</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=d89affed9eab18e5" data-id="d89affed9eab18e5" class=""><span>---</span></a></li>
+            
+            
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=d3d1bffe5bf618e5" data-id="d3d1bffe5bf618e5" class=""><span>---</span></a></li>
+            
+        
+    
 </ul>
            
                 <div id="google-ad-sense" style="margin-top:20px;float:left;" data-type="260x260">
@@ -319,176 +291,75 @@
             <div class="conts-box-list search">
            
               <div class="inner-box" data-wishbeen-hotdeal-count="0" id="hotdeal-list" data-keyword="에어텔" data-category="T_22">
-          
-        <!-- boram -->
-    <div class="conts-container conts-box">
-        <div class="contents-wrap">
-            <div class="bigHeader">물품 세부</div>
-            
-            <input type="hidden" id="total_amount" value="0">
-<link href="http://static2.tmon.kr/static/gen/css/jquery.jqzoom.css?v=0662945f6041df0748663a319955ef132fa97499" rel="stylesheet" type="text/css"/>
-                                    <div class="deal_detail_wrap deal_detail_type2">
-                <div class="img_area" style="width:350px;height:402px;visibility:;">
-                <div class="main_img" id="main_img" style="width:350px;height:402px;visibility:;">
-                        <div class="condition" style="z-index:100">
-                            </div>
-                        <ul class="roll" style="width:350px;height:402px;visibility:;"
-                        >
-                            <li style="width:350px;height:402px;visibility:;">
-                            <!-- 이미지 -->
-                                <img src="upload/<%=product.getP_img() %>" id="front_image_area" class="main_img_slide" style="width:350px;height:402px;visibility:;" alt="img" />
-                      
-                            </li>
-                            </ul>
-                        </div>
-                  
-                    <div class="review_result">
-                     
-                    </div>
-                                                        </div>                 <!-- WEB-3705 by dwkang <div class="alimipop" id="alarmpop" style="display:none;"></div> -->              
-                 <div class="ct_area" style="width:470px;height:576px;visibility:;">
-                    <div class="deal_info"></div>
-                     <p class="stit">판매자 이름</p>
-                    <h3 class="tit">상품명<br /></h3>
-                  
-                  
-               <div id="promotion_block">
-               <div id="price_info" class="price_info">
-               <p>가격:<%=product.getP_price()%>
          
-                      
-                      
-                    </div>
-                    <div class="dc_coupon">
-                        <div class="menu_lst" id="menu_lst">
-                                                <a class="btn_viewcp _eventCoupon _act" tl:area="DDIA" tl:ord="1" style="cursor:pointer;display:none;" id="couponA">
-                                                       <img src="http://img2.tmon.kr/static/img/img_discount1.gif" width="28" height="21" alt="쿠폰"></img>
-                                                       <span id="couponDiscountAmount"></span>
-                                                       <span class="btn download">다운로드</span>
-                                                       </a>
-                                 <!--  <span class="bar">|</span>
-                                <em>판매기간:</em>
-                          
-                            </div>
-                    </div>
-                    </div> <!-- promotion_block -->
-	 <div class="people_time">
-                       판매기간:<%=product.getP_term()%>
-                          
-                      
-                    </div>
-                  
-                    <!-- 내용-->
-                        <p class="txt_choice">
-                                       내용
-                        </p>
-                                      
-                    <div class="option_info2">
-                        <p class="option_txt"></p>
-                        <ul class="uio_option_area uio_scroll">
-                        <li>
-    
-                          
-                        <%=product.getP_detail()%>
-                        </li>
-                        </ul>
-                      </div>
-                      
-                                            <div class="order_price1 sell" style="display:none;">
-                            <div class="total">
-                                <em>총 상품 금액 : </em>
-                                <strong><span class="total_amount">0</span><span class="won">원</span></strong>
-                            </div>
-                        </div>
-                  
-                    <!-- 상품 옵션 //-->
-                    <!--<dummy sg:if="!$self->preparing && count($self->alarm_keyword) > 0 && ($self->soldout || $self->deal_time_left == 0)">-->
-                        <!-- WEB-3705 by dwkang
-                        <div class="alarm_area">
-                            <strong class="blind">재판매 알리미 서비스</strong>
-                            <div class="alarm">
-                                <span sg:if="$self->soldout" class="soldout">매진되었습니다! 다음에 알려드릴까요</span>
-                                <span sg:elseif="$self->deal_time_left == 0" class="deal_end">판매 종료되었습니다! 다음에 알려드릴까요</span>
-                                <a onmouseover="$('#alarm_tooltip_main').css('display', 'block')" onmouseout="$('#alarm_tooltip_main').css('display', 'none')" class="ico_help">재판매 알리미 서비스란?</a>
-                                <div class="lpop_alarm" id="alarm_tooltip_main" style="display:none">
-                                    <div class="inner">
-                                    재판매 알리미 서비스를 신청하시면, <strong>다음에 같은 상품의 판매가 진행될 때</strong> 고객님의 이메일로 알려드립니다.
-                                    </div>
-                                    <span class="arr"></span>
-                                </div>
-                            </div>
-                            <a name="btn_alarm" onclick="alarmRequest('548520330', 'main');" attr-if:class="$self->alarm_request_cnt >= count($self->alarm_keyword);btn_alarm_ok" attr-else:class="btn_alarm" style="cursor:pointer">재판매 알리미 신청</a>
-                            <div class="ly_alarm" id="alarm_cancel_main" style="display:none;"><span class="arr"></span>재판매 알리미가 취소되었습니다.</div>
-                            <div class="ly_alarm" id="alarm_ok_main" style="display:none;"><span class="arr"></span>재판매 알리미가 신청되었습니다.</div>
-                        </div>
-                        -->
-                    <!--</dummy>
-                    <dummy sg:else>-->
-                  
-                        <div class="btn_area default">
-                                                            <div class="btn_direct"><a id="buy_button" href="#buy">거래요청</a></div>                                                                                                  
-                          
-                            <div  class="click_zzim z_548520330">
-                                <input type="hidden" id="zzim_count" value="1414"><a id="deal_zzim" class="btn_zzim " style="cursor:pointer" value="548520330" tl:area="BWCO" tl:ord="2">쪽지보내기</a>
-                            </div>
-                        </div>
-                  
-                    </div>
-                   
-               <!-- <div id="div_deal_zzimlayer" style=""></div>
-                <div class="lpop_wrap2" id="standby_alert" style="display:block;top:50%;z-index:1110;margin-top:-155px;display:none">
-                    <div class="lpop_cont">
-                        <div class="h_area" id="h_area_1" style="display:none">
-                            <strong class="txt">대기예약 상품입니다!</strong>
-                        </div>
-                        <!-- [D] 대기예약가능일 경우 -->
-                        <div class="h_area" id="h_area_2" style="display:none">
-                            <strong class="txt"><span id="h_area_txt"></span>장부터는 대기예약으로 구매됩니다!</strong>
-                        </div>
-                        <div class="caution_area">
-                            <em class="h_caution"><span class="bu"></span></em>
-                            <div class="caution_inner">
-                                <ul>
-                                <li></li>
-                                <li><br><span></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="caution_dsc"></p>
-                        <div class="btn_area">
+           <!-- boram -->
+             	<div class="form_body">
+             	
+		<form action="" class="join_form" method="post">
+			<fieldset>
+				<legend>거래 요청 확인</legend>
+				<table class="primary_table" style="margin-left: auto; margin-right: auto;">
+					<tbody>
+					
+					<tr>
+					<th scope="row">거래번호</th>
+					<td>
+					<p><%=productReq.getPr_reqnum() %></p>
+					</tr>
+					
+					<tr>
+					<th scope="row">회원ID</th>
+					<td>
+					<p><%=productReq.getU_id() %></p>
+					</tr>
+					
+					<tr>
+					<th scope="row">물품번호</th>
+					<td>
+					<p><%=productReq.getP_num()%></p>
+					</tr>
+					
+					<tr>
+					<th scope="row">수락여부</th>
+					<td>
+					<p><%=productReq.getPr_ox()%></p>
+					</tr>
+					
+					<tr>
+					<th scope="row">장소</th>
+					<td>
+					<p><%=productReq.getPr_place()%></p>
+					</tr>
+					
+					<tr>
+					<th scope="row">일시</th>
+					<td>
+					<p><%=productReq.getPr_date() %></p>
+					<td>
+					
+					</tr>
+					
+				
+					
 
-                     <input type="button" name="btn_js_update" id="btn_js_update" onclick="btn_js_update_click();" value="수정하기" />  		 
-                    <input type="button" name="btn_js_delete" id="btn_js_delete" onclick="btn_js_delete_click();" value="삭제하기" />
+					</tbody>
+
+				</table>
+			</fieldset>
+		 <div class="btn-box center">
+		<!-- <button type = "submit" class="btn-more">등록하기</button>-->
+		</div>
+			<!-- 
+		 <div class="btn-box center">
+                    
+                    <a class="btn-more" href="product_registerOk.jsp"><span>등록하기</span></a>
+                    
+                </div>
+                 -->
+		</form>
 
 
-                        </div>
-                    </div>
-                    <a style="cursor:pointer" id="lpop_btn_close_new" class="btn_clse">
-                    </a>
-                </div>
-                <!-- 이 상품을 본 고객이 많이 본 다른 상품 -->
-                <div class="user_other_deal wrap_deal_lst" id="viewuser" style="display:none;">
-                    <div class="blank_line"></div>
-                    <h3 class="tit">이 상품을 본 고객이 많이 본 다른 상품</h3>
-                    <div id="viewuserview">
-                    <ul class="lst column5s" id="viewUserViewUlArea">
-                    </ul>
-                    </div>
-                    <div class="page">
-                        <span class="num"><strong><span id="now_page">1</span><span class="bar">/</span></strong><span id="total_page"></span></span>
-                        <a href="#" class="btn_prev" tl:ord="0" tl:linktype="prev">이전 상품</a>
-                        <a href="#" class="btn_next" tl:ord="0" tl:linktype="next">다음 상품</a>
-                    </div>
-                </div>
-                <!-- 이 상품을 본 고객이 많이 본 다른 상품 -->
-                <span class="bg_btm"></span>
-                </div>
-            
-        
-            
-        </div>
-    </div>
-      
+	</div>
     <!-- boram end -->
     
     
@@ -506,7 +377,6 @@
         </div>
     </div>
 </div> 
-</div>
 
 
 <div id="footer">
