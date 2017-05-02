@@ -13,6 +13,7 @@
 	
    List<Product> list = dao.listProduct();
    request.setAttribute("list", list);
+   request.getAttribute("users");
    
    
 %>
