@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?20170502">
 
 <head>
     
