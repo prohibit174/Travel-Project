@@ -77,7 +77,6 @@
       			</div><!-- language-->
     		</div><!-- footer-menu-->
   		</div><!-- footer-wrap-->
-<!-- footer_partner_wrap-->
   		<div class="footer-bottom">
     		<div class="copyright">
       			<p>상호명 : (주)프로동행러<span>|</span>대표 : 김보람<span>|</span>개인정보책임자 : 김지웅</p>

@@ -31,7 +31,7 @@
 
 form{ margin-top:29px}
 form:after{ content:""; display:block; clear:both; *zoom:1}
-form legend{ display:block; width:70%; margin:0; padding-bottom:8px; font-size:18px; font-weight:600; color:#000; border-bottom:2px solid #000}
+form legend{ display:block; width:70%; margin:0; padding-bottom:8px; font-size:18px; font-weight:600; color:#FF8000; border-bottom:2px solid #FF8000}
 
 
 .body						{ position:relative; z-index:50; margin:0 auto; width:1091px; padding:42px 20px 100px 20px}
