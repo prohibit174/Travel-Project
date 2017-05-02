@@ -36,7 +36,11 @@
 
 
 <meta name="google-signin-client_id" content="41152955122-5m3ufq08325k2m3mgeppmkknn9rql13h.apps.googleusercontent.com">
-
+<link rel="stylesheet" href="./css/carpool_css/city-main-styles.css">
+ <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
+<script data-main="/js/page/city" src="/js/lib/bower_components/requirejs/require.js"></script>
+<script src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/loginPopup/login_success.js"></script>
 <style type="text/css">
   body, pre {
     font-family: "맑은 고딕","Malgun Gothic","Helvetica Neue","Apple SD Gothic Neo",Helvetica,Arial,"Apple Gothic","돋움",Dotum,sans-serif!important;
@@ -47,49 +51,8 @@
   }
 
 </style>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin.css" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin2.css" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin3.css" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin4.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/carpool_table.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
-<!-- css 봉현 -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/users_css/city-main-styles_join.css">
-<script src = "//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/join_checkInfo.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/IdCheck.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/CheckEssential.js?version=20170502"></script>
-<!-- 봉현 -->
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-curation-page-styles.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-main-styles.css">
-<link href="http://img2.tmon.kr/static/img/favi_tmon.ico" rel="shortcut icon"/>
-<!-- 보람 디테일 -->
-<link href="http://static2.tmon.kr/static/gen/css/common_new.css?v=e9246ef610b2c5ffeb315290178ace3b56b7e97a" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static1.tmon.kr/static/gen/css/deal.css?v=9967e849305d0ae005ce9fac80a0a74ade132c3e" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/deal_old.css?v=084304a6106f90aaeee0c7587bf899cad415c75b" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static1.tmon.kr/static/gen/css/deal_option.css?v=e2281836b3e88c746a8335f39d52a67b7516051a" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/cs_mem.css?v=e1226aa4dabb6690fae5f8ef33bd5a49e10bd188" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/deal_lst.css?v=84c22073473acdb08c012e29b9faf6349064b551" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/nanum_local.css?v=" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/dc_tmpl.css?v=6fb710d723b44a0f9998979d515cf5b05c623055" rel="stylesheet" type="text/css" charset="utf-8"/>
-<link href="http://static2.tmon.kr/static/gen/css/jquery.jqzoom.css?v=0662945f6041df0748663a319955ef132fa97499" rel="stylesheet" type="text/css"/>
-<link href="http://static1.tmon.kr/static/fancybox/jquery.fancybox-1.3.4.css?v=20110520" rel="stylesheet" type="text/css" charset="utf-8" media="screen"/>
-<!-- 디테일 끝 -->
- <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
-<script type="text/javascript" src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>           
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent2.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/tests.js"></script>
- <script src='${pageContext.request.contextPath}/GoogleAPI/lib/jquery.min.js'></script>
-<script src='${pageContext.request.contextPath}/GoogleAPI/lib/moment.min.js'></script>
-<link rel='stylesheet' href='../GoogleAPI/fullcalendar.css' />
-<script src='${pageContext.request.contextPath}/GoogleAPI/fullcalendar.js'></script>
-<script src="${pageContext.request.contextPath}/GoogleAPI/moment.js"></script>
-<script src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/JS/loginPopup/login_success.js"></script>
-<script type="text/javascript">
+
 
 </script>
 <head>
