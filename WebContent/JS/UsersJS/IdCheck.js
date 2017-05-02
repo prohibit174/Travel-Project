@@ -4,6 +4,7 @@ $(function(){
 	var regexp = "^[a-z0-9]"
 	
 	$("#u_idcheck").click(function(){
+		alert('id');
 		$.ajax({
 			url : "IdCheckAction.users",
 			type : "post",

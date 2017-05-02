@@ -69,15 +69,15 @@ public class JoinAction implements Action {
 		users.setU_religion(multi.getParameter("u_religion"));
 		users.setU_license(multi.getParameter("u_license"));
 		users.setU_img(multi.getParameter("u_img"));
-/*		users.setTs_name(request.getParameter("ts_name"));
-*/		
+		users.setU_style(request.getParameter("u_style"));
+		
 		dao.insertUsers(users);
 		
 		
 		System.out.println("JoinAction");
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(false);
-		forward.setPath("Join/JoinAction.jsp");		
+		forward.setRedirect(true);
+		forward.setPath("home.main");		
 		
 		return forward;
 	}
