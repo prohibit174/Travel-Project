@@ -13,9 +13,9 @@
 	
    List<Product> list = dao.listProduct();
    request.setAttribute("list", list);
-   System.out.println(session.getAttribute("member_id"));
-   String u_id  = session.getAttribute("member_id").toString();
    
+
+
 %>
 <!DOCTYPE html>
 <html>
