@@ -218,7 +218,7 @@
             <li><a href="home.main" >HOME</a></li>
             <li><a data-tab="hotdeal" >동행</a></li>
             <li><a href="main.carpool" >카풀</a></li>
-            <li><a data-tab="community" >물품교환</a></li>
+            <li><a data-tab="" >물품교환</a></li>
             <li><a data-tab="plan" >커뮤니티</a></li>
             <li><a data-tab="attraction" >블로그</a></li>
 

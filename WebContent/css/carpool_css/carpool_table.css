@@ -39,7 +39,7 @@
   color:#fff;
   line-height:60px;
   text-align:center;
-  background:#989A8F;
+  background:#FF8000;
   margin-left:70px;
   margin-top:10px;
 }
@@ -51,26 +51,27 @@ margin-top:50px;
      font-family: 'Droid Serif', sans-serif;
      padding:5px;
     span {
-     font-weight:bold; 
+     font-weight:bold;
     }
   }
 }
 
 .sign {
   margin-top:50px;
-    .button {
-   border: 1px solid #989A8F;
+}
+
+.button {
+   border: 1px solid #DDDCD8;
    padding: 10px 40px;
    -webkit-border-radius: 6px;
    -moz-border-radius: 6px;
    border-radius: 6px;
-   color: #989A8F;
+   color: #FF8000;
    font-size: 14px;
    text-decoration: none;
    vertical-align: middle;
     font-size:17px;
    }
-}
 
 .purple {
   background-color:#5D4660;   

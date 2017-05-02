@@ -53,7 +53,7 @@
 </script>
 
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/mypage_table.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/carpool_table.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
 
 
@@ -137,21 +137,22 @@
 						<li>
 							<div class="top">
 								<h1>${carpool.c_num }</h1>
-								<div class = "circle">${carpool.c_price }</div>
+								<div class = "circle">${carpool.c_price }$</div>
 							</div>
 							<div class="bottom">
 								<p><span>${carpool.start_lati }</span></p>
 								<p><span>${carpool.start_longti}</span></p>
 								<p><span>${carpool.dest_lati }</span></p>
 								<p><span>${carpool.dest_longti}</span></p>
-								<p><span>${carpool.c_date}</span></p>
-								<p><span>${carpool.c_person}</span></p>
+								<p><span>출발일 ${carpool.c_date}</span></p>
+								<p><span>남은좌석 ${carpool.c_person}</span></p>
 								<p><span>${carpool.c_dept_time}</span></p>
 							    <div class="sign">
-    								<a href='#' class='button'>SIGN UP</a>
+    								<a href='#' class='button'>자세히 보기</a>
     							</div>
     						</div>
     					</li>
+    					<c:if test=""></c:if>
 					</c:forEach>
 					
 					
