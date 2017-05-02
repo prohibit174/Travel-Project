@@ -1,6 +1,17 @@
+<%@page import="travel.users.model.UsersDao"%>
+<%@page import="travel.users.model.Users"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
-
+<%
+	String u_id  = session.getAttribute("member_id").toString();
+	
+	request.setAttribute("u_id", u_id);
+	
+	UsersDao dao = UsersDao.getInstance();
+	Users user = dao.userDetail(u_id);
+	
+	request.setAttribute("user", user);	
+%>
 <!DOCTYPE html>
 <html>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-curation-page-styles.css">
@@ -71,7 +82,7 @@
 					<tr>
 					<th scope="row">회원ID</th>
 					<td>
-					<input type = "text" id = "u_id" name="u_id">
+					<input type = "text" id = "u_id" name="u_id" value="${u_id}">
 					</tr>
 					
 					<tr>

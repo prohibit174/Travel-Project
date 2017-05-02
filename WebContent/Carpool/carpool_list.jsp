@@ -70,7 +70,7 @@
  <form action="list.carpool" method="post">
        <input type="hidden" name="temp" value="temp"></input>
        					<select name="carpool_search" data-val="1">
-							<option value="">전체</option>
+							<option value=''>전체</option>
 							<option value="u_id">회원정보</option>
 							<option value="start_lati">출발지</option>
 							<option value="dest_lati">도착지</option>
