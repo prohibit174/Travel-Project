@@ -15,64 +15,8 @@
 	<link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/css/carpool_css/carpool_list.css">
 	<link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css"> 	
 <head>
-	<meta charset="UTF-8" />
+<%@include file="../header.jsp" %>
 
-	<meta http-equiv="X-UA-Compatible"	content="IE=edge, chrome=1" />
-
-	<meta name="description"		content="국내 최대 카풀, KTX 카풀, 차계부, 주차장, 택시 카풀, 실시간 카풀, 자동차용품, 실내, 실외용품, 세차, 차량관리, 블랙박스, 차량관리 단계별 용품, 실내관리, 출장세차, 소낙스, 소프트99, 맥과이어스, 엑소기어, 인피니앱, 리틀트리, 코원" />
-	<meta name="keywords"			content="카풀, 자동차 카풀, 스키카풀, 여행카풀, 명절카풀, 추석카풀, 설카풀, KTX카풀, KTX, 차계부, 주차장, 택시 카풀, 실시간 카풀, 자동차용품, 실내, 실외용품, 세차, 차량관리, 블랙박스, 차량관리 단계별 용품, 실내관리, 출장세차, 소낙스, 소프트99, 맥과이어스, 엑소기어, 인피니앱, 리틀트리, 코원" />
-	<meta name="author"				content="SocialNanum" />
-	<meta name="viewport"			content="width=device-width, user-scalable=yes" />
-
-	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-
-	<title>카풀조회</title>
-
-
-
-
-</head>
-
-<div class="page-container">
-  <!-- {header -->
-  <div class="header">
-    <div class="main-nav-con">
-      <p class="wishbeen-logo"><span>심심할 틈이 없다! 프로동행러</span></p>
-
-      <div class="nav-login-search">
-        <a class="btn-new-plan">로그인</a>
-        <div class="login-and-profile">
-          
-          <div>
-            <a id="nav-btn-about" href="http://blog.naver.com/PostThumbnailList.nhn?blogId=wishbeen&from=postList&categoryNo=97&parentCategoryNo=97" target="_blank">회원가입</a>
-            <a id="nav-login-btn" class="nav-btn-login">마이페이지</a>
-            <a id="nav-fb-login" class="fb"></a>
-            <a id="nav-ggl-login" class="ggl"></a>
-          </div>
-          
-          
-        </div><!-- login-and-profile -->
-      </div>
-    </div>
-  </div><!-- header } -->
-</div><!-- page-container -->
-
-
-<div class="main-tabs">
-    <div class="tabs-list">
-        <ul id="menu_tab_list">
-            <li><a data-tab="home" >HOME</a></li>	
-            <li><a data-tab="hotdeal" >동행</a></li>
-            <li><a href="main.carpool" >카풀</a></li>
-            <li><a data-tab="community" >물품교환</a></li>
-            <li><a data-tab="plan" >커뮤니티</a></li>
-            <li><a data-tab="attraction" >블로그</a></li>
-
-        </ul><!-- e// tabs -->
-    </div><!-- e//tabs-list -->
-
-   <!-- e//search-box -->
-</div><!-- e//main-tabs -->
 
 
 

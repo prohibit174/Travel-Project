@@ -12,98 +12,9 @@
 <html>
 <head>
     
- <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-<meta name="viewport" content="width=device-width, user-scalable=no" />
-<meta name="fragment" content="!" />
-<meta name="naver-site-verification" content="b5dc8e0c6fe0f77b6e8a970e244d1d74397fc8cf"/>
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?1">
-<meta name="referrer" content="origin">
+<%@include file="../header.jsp" %>
 
-
-<!-- common meta data -->
-<title>가볼만한곳/맛집/숙박 정보, 항공/호텔 가격비교, 나만의 여행일정 | 여행의 모든 것, 위시빈</title>
-<meta name="keywords" content="위시빈, 여행일정, 여행정보, 여행꿀팁, 세계여행정보, 국내여행정보, 해외여행정보, 여행팁, 자유여행, 자유여행준비, 가이드북, 지도, 추천일정, 테마여행, 명소, 스팟, 맛집, 쇼핑, 숙박, 호텔, 게스트하우스, 최저가 항공권 검색, 최저가 숙박 검색, 최저가 호텔 검색, 특가 항공권, 무료 항공 이벤트, 무료 호텔 이벤트, 여행Q&A, 여행후기, 홍콩, 마카오, 오사카, 후쿠오카, 도쿄, 타이베이, 베이징, 상하이, 칭다오, 싱가포르, 방콕, 푸껫, 보라카이, 코타 키나발루, 파리, 로마, 런던, 바르셀로나, 크로아티아, 이스탄불, 뉴욕, 하와이, 미서부, 괌, 시드니, 제주, 타이중, 가오슝">
-<meta name="description" content="궁금한 여행정보, 위시빈에 다 있다! 1천 개 이상의 전 세계 여행꿀팁 · 25만 개의 자유 여행일정 · 40만 개의 전 세계 가볼만한 곳, 맛집, 숙박 정보 · 여행자들이 직접 남긴 100만 개의 리뷰/후기/꿀팁 · 항공, 호텔 가격비교 · 나만의 여행일정 계획하기"/>
-<link rel="canonical" href="https://www.wishbeen.co.kr/">
-<meta name="url" content=https://www.wishbeen.co.kr/>
-<meta name="keywords" content="">
-<meta name="subject" content="가볼만한곳/맛집/숙박 정보, 항공/호텔 가격비교, 나만의 여행일정">
-<meta name="googlebot" content="index,follow">
-
-
-<style type="text/css">
-  body, pre {
-    font-family: "맑은 고딕","Malgun Gothic","Helvetica Neue","Apple SD Gothic Neo",Helvetica,Arial,"Apple Gothic","돋움",Dotum,sans-serif!important;
-  }
-
-  .if-me{
-    display: none !important;
-  }
-
-</style>
-
-
-<script type="text/javascript">
-  function snsLoginHandler(){
-    window.location.reload();
-  }
-</script>
-
-
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
-
-
-</head>
 <body>
-
-
-<div class="page-container">
-  <!-- {header -->
-  <div class="header">
-    <div class="main-nav-con">
-      <p class="wishbeen-logo"><span>세상의 모든 여행, 위시빈</span></p>
-
-      <div class="nav-login-search">
-        <a class="btn-new-plan">로그인</a>
-        <div class="login-and-profile">
-          
-          <div>
-            <a id="nav-btn-about" href="http://blog.naver.com/PostThumbnailList.nhn?blogId=wishbeen&from=postList&categoryNo=97&parentCategoryNo=97" target="_blank">회원가입</a>
-            <a id="nav-login-btn" class="nav-btn-login">마이페이지</a>
-            <a id="nav-fb-login" class="fb"></a>
-            <a id="nav-ggl-login" class="ggl"></a>
-          </div>
-          
-          
-        </div><!-- login-and-profile -->
-      </div>
-    </div>
-  </div><!-- header } -->
-</div><!-- page-container -->
-
-
-
-<div id="search_tab_dim" class="bg hide"></div>
-
-<div class="main-tabs">
-    <div class="tabs-list">
-        <ul id="menu_tab_list">
-            <li><a href="home.main" >HOME</a></li>
-            <li><a data-tab="hotdeal" >동행</a></li>
-            <li><a href="main.carpool" >카풀</a></li>
-            <li><a data-tab="community" >물품교환</a></li>
-            <li><a data-tab="plan" >커뮤니티</a></li>
-            <li><a data-tab="attraction" >블로그</a></li>
-
-        </ul><!-- e// tabs -->
-    </div><!-- e//tabs-list -->
-
-   <!-- e//search-box -->
-</div><!-- e//main-tabs -->
-
 	<br>
 	<div class="form_body">
 		<form  class="join_form">
