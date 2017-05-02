@@ -11,6 +11,7 @@
 
 <!DOCTYPE html>
 <html>
+	<link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/css/carpool_css/carpool_table.css">
 <head>
     
 <%@include file="../header.jsp" %>
@@ -66,27 +67,6 @@
     					</li>
 
 					</c:forEach>
-					    					<%-- <c:if test="${carpool.c_num%5==0}" var="result">
-    					test result = ${result} }
-    					<br>
-    					</c:if> --%>
-					
-					
-						<!-- <li>
-  							<div class="top">
-    							<h1>STARTER</h1>
-    								<div class="circle">$19</div>
-  							</div>
-  							<div class="bottom">
-    							<p><span>5</span> users</p>
-    							<p><span>10</span> projects</p>
-    							<p><span>10GB</span> amount of space</p>
-    							<p><span>5</span> e-mail accounts</p>
-    							<div class="sign">
-    							<a href='#' class='button'>SIGN UP</a>
-    </div>
-  </div>
-</li> --> 
 					</ul>
 				</div>
 			</div>
@@ -97,4 +77,5 @@
 
 <%@include file="../footer.jsp" %>
 </body>
+
 </html>
