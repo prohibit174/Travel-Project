@@ -11,7 +11,7 @@ public class InsertFormAction implements Action {
 		public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception {
 			ActionForward forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("/ProductDeal/product_register2.jsp");
+			forward.setPath("ProductDeal/product_register2.jsp");
 			
 			return forward;
 		}
