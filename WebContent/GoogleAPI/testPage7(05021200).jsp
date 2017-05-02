@@ -37,62 +37,69 @@
        var map;
        var cal =[];
        var movingPath = [];
-      var c = 0;
+     	 var c = 0;
        
-       function collectEventForLine(map){
-          
-          if(cal != null){
-            cal = $('#calendar').fullCalendar( 'clientEvents');
-           cal.sort(function(a,b){
-             return a.start < b.start ? -1 : a.start > b.start ? 1 : 0;  
-                       });
-          }else{
-             cal = $('#calendar').fullCalendar( 'clientEvents');
-          }
-             if(cal.length > 0){
-            latLngList.splice(0, latLngList.length);
-             for(var i=0; i < cal.length; i++){
-                for(var a=0; a < marker_zoom4.length; a++){
-                   if(marker_zoom4[a].title == cal[i].title){
-                      latLngList.push(marker_zoom4[a].getPosition());
+     	function collectEventForLine(map){
+            
+            if(cal != null){
+              cal = $('#calendar').fullCalendar( 'clientEvents');
+             cal.sort(function(a,b){
+               return a.start < b.start ? -1 : a.start > b.start ? 1 : 0;  
+                         });
+            }else{
+               cal = $('#calendar').fullCalendar( 'clientEvents');
+            }
+               if(cal.length > 0){
+              latLngList.splice(0, latLngList.length);
+               for(var i=0; i < cal.length; i++){
+                  for(var a=0; a < marker_zoom4.length; a++){
+                     if(marker_zoom4[a].title == cal[i].title){
+                        latLngList.push(marker_zoom4[a].getPosition());
+                     }
                    }
-                }
-             }
-              createLine(latLngList, map);
+                  for(var a=0; a < marker_zoom5.length; a++){
+                     if(marker_zoom5[a].title == cal[i].title){
+                        latLngList.push(marker_zoom5[a].getPosition());
+                     }
+                   }
+               }
+                createLine(latLngList, map);
+                
+               /*  collectEvent();
+                jsonEncode = JSON.stringify(allEvent);
+                obj.value = jsonEncode;  */
+               }
               
-             /*  collectEvent();
-              jsonEncode = JSON.stringify(allEvent);
-              obj.value = jsonEncode;  */
-             }
-            
-         };  //collectEventForLine End
-       
-       
-       function collectEvent(){
-           var cal=[];
-           cal=$('#calendar').fullCalendar( 'clientEvents');
-           
-           for(var i=0;i<cal.length;i++){
-            
-               var valDate = cal[i].start.format("YYYY-MM-DD");
-                    var sdate = new moment(cal[i].start).format("YYYY-MM-DD");
+           };  //collectEventForLine End 
+     	 
+           function collectEvent(){
+               var cal=[];
+               cal=$('#calendar').fullCalendar( 'clientEvents');
+               
+               for(var i=0;i<cal.length;i++){
+                
+                   var valDate = cal[i].start.format("YYYY-MM-DD");
+                        var sdate = new moment(cal[i].start).format("YYYY-MM-DD");
 
-                    var newDate = moment(sdate);
-                    var edate = new moment(cal[i].end).format("YYYY-MM-DD");
-                    var newEndDate = moment(edate);
-                    
-                    var duration = moment.duration(newDate.diff(newEndDate));   //ì°¨ì ´ê° 
-                   var durationdays = (-duration.asDays());      //ì°¨ì ´ê°  ì ¼ë¡  í  ì ° ë  ì§  
-                   
-                    for(var a=0; a < durationdays;a++){
-                      allEvent.push(new storeEvent(0 ,cal[i].title, moment(valDate).format("YYYY-MM-DD")));
-                      valDate = new moment(valDate).add(1, 'days');
-                    }  //event store in arry
-              }//event store in var End
-           for(var b=0; b < allEvent.length; b++){
-           }
-              
-       } //collectEvent method End
+                        var newDate = moment(sdate);
+                        var edate = new moment(cal[i].end).format("YYYY-MM-DD");
+                        var newEndDate = moment(edate);
+                        
+                        var duration = moment.duration(newDate.diff(newEndDate));   //ì°¨ì ´ê° 
+                       var durationdays = (-duration.asDays());      //ì°¨ì ´ê°  ì ¼ë¡  í  ì ° ë  ì§  
+                       
+                        for(var a=0; a < durationdays;a++){
+                          allEvent.push(new storeEvent(0 ,cal[i].title, moment(valDate).format("YYYY-MM-DD")));
+                          valDate = new moment(valDate).add(1, 'days');
+                        }  //event store in arry
+                  }//event store in var End
+             /*   for(var b=0; b < allEvent.length; b++){
+                  alert(allEvent[b].title + allEvent[b].eventdate);
+               } */
+               jsonEncode = JSON.stringify(allEvent);
+               obj.value = jsonEncode;
+                  
+           } //collectEvent method End
        
        function storeEvent (id ,title, eventdate) {
           this.id = id;
@@ -101,6 +108,7 @@
        }
        
         function LongDateToShortDate(longDate){
+           //alert('LongDateToShortDate - longDate : '+longDate);
             var todayYear= longDate.getFullYear();
             longDate.setDate(longDate.getDate()+1);
             var todayMonth= longDate.getMonth()+1;
@@ -117,10 +125,12 @@
          
                longDate=String(todayYear+'-'+todayMonth+'-'+todayday);
                shortDate=longDate;
+               //alert('LongDateToShortDate - shortDate : '+shortDate);
                return shortDate;
          }
          
           function ShortDateToLongDate(shortDate){
+           //   alert('ShortDateToLongDate - shortDate : '+shortDate);
             tempDate=new Date();
             var temp=String(shortDate);
             var strArr=temp.split('-');
@@ -129,12 +139,13 @@
             tempDate.setDate(strArr[2]);
 
             var LongDate=tempDate;
+           // alert('ShortDateToLongDate - LongDate : '+LongDate);
             return LongDate;
          } 
           
        
-     /* Calendar ÃªÂ´Â Ã«Â Â¨ Ã«Â³Â Ã¬Â Â  */  
-      var todayDate = new Date(); //Ã Â Â Ã¬Â Â¬ Ã«Â Â Ã¬Â§Â 
+     /* Calendar ÃªÂ´Â€Ã«Â Â¨ Ã«Â³Â€Ã¬ÂˆÂ˜ */  
+      var todayDate = new Date(); //Ã­Â˜Â„Ã¬ÂžÂ¬ Ã«Â‚Â Ã¬Â§Âœ
       var currentDate=new Date();      
       
       var calEventColor=[];
@@ -163,83 +174,89 @@
         var bernLocation = {lat: 46.95, lng: 7.45};
         var zurichLocation = {lat: 47.366667, lng: 8.55};
         
-         marker_zoom4[0] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+         marker_zoom4[0] = new google.maps.Marker({//ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â§ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â»ÃƒÂ‚Ã‚Â¤ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â¥ÃƒÂ‚Ã‚Â¼ uluruÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚  ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â°ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚ 
             position: franceLocation,
             map: map,
             title:'France'
           });
-       marker_zoom4[1] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom4[1] = new google.maps.Marker({//ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â§ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â»ÃƒÂ‚Ã‚Â¤ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â¥ÃƒÂ‚Ã‚Â¼ uluruÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚  ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â°ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚ 
             position: belgiumLocation,
             map: map,
             title:'Belguim'
           });
-       marker_zoom4[2] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom4[2] = new google.maps.Marker({//ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â§ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â»ÃƒÂ‚Ã‚Â¤ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â¥ÃƒÂ‚Ã‚Â¼ uluruÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚  ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â°ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚ 
             position: germanyLocation,
             map: map,
             title:'Germany'
           });
-       marker_zoom4[3] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom4[3] = new google.maps.Marker({//ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â§ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â»ÃƒÂ‚Ã‚Â¤ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â¥ÃƒÂ‚Ã‚Â¼ uluruÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚  ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â°ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚ 
             position: swissLocation,
             map: map,
             title:'Swiss'
          });
        
-        marker_zoom5[0] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+        marker_zoom5[0] = new google.maps.Marker({//ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â§ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â»ÃƒÂ‚Ã‚Â¤ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â¥ÃƒÂ‚Ã‚Â¼ uluruÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚  ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â°ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚ 
             position: parisLocation,
             map: map,
             title:'Paris'
           });
-       marker_zoom5[1] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[1] = new google.maps.Marker({//ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â§ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â»ÃƒÂ‚Ã‚Â¤ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â¥ÃƒÂ‚Ã‚Â¼ uluruÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚  ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â°ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚ 
             position: niceLocation,
             map: map,
             title:'Nice'
           });
-       marker_zoom5[2] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[2] = new google.maps.Marker({//ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â§ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â»ÃƒÂ‚Ã‚Â¤ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â¥ÃƒÂ‚Ã‚Â¼ uluruÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚  ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â°ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚ 
             position: brusselsLocation,
             map: map,
             title:'Brussels'
           });
-       marker_zoom5[3] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[3] = new google.maps.Marker({//ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â§ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â»ÃƒÂ‚Ã‚Â¤ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â¥ÃƒÂ‚Ã‚Â¼ uluruÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚  ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â°ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚ 
             position: berlinLocation,
             map: map,
             title:'Berlin'
           });
-       marker_zoom5[4] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[4] = new google.maps.Marker({//ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â§ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â»ÃƒÂ‚Ã‚Â¤ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â¥ÃƒÂ‚Ã‚Â¼ uluruÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚  ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â°ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚ 
             position: munichLocation,
             map: map,
             title:'Munich'
           });
-       marker_zoom5[5] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[5] = new google.maps.Marker({//ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â§ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â»ÃƒÂ‚Ã‚Â¤ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â¥ÃƒÂ‚Ã‚Â¼ uluruÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚  ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â°ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚ 
             position: bernLocation,
             map: map,
             title:'Bern'
           });
-       marker_zoom5[6] = new google.maps.Marker({//Ã Â Ã Â«Ã Â Ã Â§Ã Â  Ã Â Ã Â¬Ã Â Ã Â»Ã Â Ã Â¤Ã Â Ã Â«Ã Â Ã Â¥Ã Â Ã Â¼ uluruÃ Â Ã Â¬Ã Â  Ã Â   Ã Â Ã Â¬Ã Â Ã Â°Ã Â  Ã Â Ã Â¬Ã Â  Ã Â  
+       marker_zoom5[6] = new google.maps.Marker({//ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â§ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â»ÃƒÂ‚Ã‚Â¤ÃƒÂƒÃ‚Â«ÃƒÂ‚Ã‚Â¥ÃƒÂ‚Ã‚Â¼ uluruÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚  ÃƒÂƒÃ‚Â¬ÃƒÂ‚Ã‚Â°ÃƒÂ‚ ÃƒÂƒÃ‚Â¬ÃƒÂ‚ ÃƒÂ‚ 
             position: zurichLocation,
             map: map,
             title:'Zurich'
           });
       
  
-         map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: parisLocation
         });
+        
+                     //marker_zoom4[i].setAnimation(google.maps.Animation.BOUNCE);
 
              window.setTimeout(function(){
                 marker_zoom4[0].setAnimation(google.maps.Animation.DROP);
+                //marker_zoom4[0].setAnimation(google.maps.Animation.BOUNCE);
                  marker_zoom4[0].setMap(map);
             },200);
              window.setTimeout(function(){
                  marker_zoom4[1].setAnimation(google.maps.Animation.DROP);
+                // marker_zoom4[1].setAnimation(google.maps.Animation.BOUNCE);
                   marker_zoom4[1].setMap(map);
              },400);
              window.setTimeout(function(){
                  marker_zoom4[2].setAnimation(google.maps.Animation.DROP);
+                // marker_zoom4[2].setAnimation(google.maps.Animation.BOUNCE);
                   marker_zoom4[2].setMap(map);
              },600);
              window.setTimeout(function(){
                  marker_zoom4[3].setAnimation(google.maps.Animation.DROP);
+                // marker_zoom4[3].setAnimation(google.maps.Animation.BOUNCE);
                   marker_zoom4[3].setMap(map);
              },800);
              
@@ -269,17 +286,10 @@
             }
           });
         
-        
-        /* marker_zoom4 Ã Â Â´Ã«Â¦Â  Ã¬Â Â´Ã«Â²Â¤Ã Â Â¸*/
+        /* marker_zoom4 Ã­ÂÂ´Ã«Â¦Â­ Ã¬ÂÂ´Ã«Â²Â¤Ã­ÂŠÂ¸*/
         for(i=0;i<marker_zoom4.length;i++)
        {
           marker_zoom4[i].addListener('click', function() {
-             for(abcd = 0; abcd < movingPath.length;abcd++){
-                   movingPath[abcd].setMap(null);
-                   alert('in for'+abcd);
-                 }
-             
-             
              if(susDay == null || susEnd == null){
                   if(susDay == null ){
                 alert("select start date")
@@ -290,11 +300,10 @@
              }else{
            
                 var temp = susEnd;
-                 susEnd=LongDateToShortDate(ShortDateToLongDate(susEnd));
-               
-                 
-           /*  latLngList.push(this.getPosition());  */
-            /* createLine(latLngList, map); */
+           susEnd=LongDateToShortDate(ShortDateToLongDate(susEnd));
+           
+           latLngList.push(this.getPosition());
+            createLine(latLngList, map);
              
              var title=this.getTitle();
              var date=currentDate;
@@ -322,13 +331,16 @@
                } );
                  susDay = null;
                susEnd = null;
-               collectEventForLine(map);
                }      //else end
-           
+               
+            
+               collectEvent();
+               jsonEncode = JSON.stringify(allEvent);
+               obj.value = jsonEncode; 
                });   //click event end
 
        }
-        /* marker_zoom5 Ã Â Â´Ã«Â¦Â  Ã¬Â Â´Ã«Â²Â¤Ã Â Â¸*/
+        /* marker_zoom5 Ã­ÂÂ´Ã«Â¦Â­ Ã¬ÂÂ´Ã«Â²Â¤Ã­ÂŠÂ¸*/
         for(i=0;i<marker_zoom5.length;i++)
         {
             marker_zoom5[i].addListener('click', function() {
@@ -343,8 +355,8 @@
                   var temp = susEnd;   
              susEnd=LongDateToShortDate(ShortDateToLongDate(susEnd));
              
-           /*   latLngList.push(this.getPosition());
-              createLine(latLngList, map); */
+             latLngList.push(this.getPosition());
+              createLine(latLngList, map);
                
                var title=this.getTitle();
                var date=currentDate;
@@ -374,43 +386,31 @@
                  }      //else end
                  });   //click event end
          }
-        
-        
-        
-        
       }  // initmap end
       
       
-      //createLine Start 
-      function createLine(latLngList, map){
-         var bounds = new google.maps.LatLngBounds();
-        
-         for(var i=0; i<latLngList.length;i++){
-            if(i+1 == latLngList.length){
-              break; 
-            }
-            calcRoute(latLngList[i], latLngList[i+1]);
-            bounds.extend(latLngList[i]);
-            bounds.extend(latLngList[i+1]);
-         }
-         function calcRoute(source, destination){
-       movingPath[c] = new google.maps.Polyline({
-          path: [source, destination],
+      //Ã¬Â„Â ÃªÂ¸Â‹ÃªÂ¸Â° 
+      function createLine(latLngList, map){ 
+         var movingPath = new google.maps.Polyline({
+          path: latLngList,
           geodesic: true,
           strokeColor: '#000000',
-          strokeOpacity: 1.0,
+          strokeOpacity: 10.0,
           strokeWeight: 1
         });
-         movingPath[c].setMap(map);
-       c++;
-         } // calcRoute End
-      } // createLine End
+         if(latLngList.length>1){
+         movingPath.setMap(map);
+         }
+      }
+    //Ã¬Â„Â ÃªÂ¸Â‹ÃªÂ¸Â°
+    
+    
+    
     
     
        /* ------------------------initMap() start --------------------------------------------------------*/
-      /* ------------------------Calendar ÃªÂ´Â Ã«Â Â¨ Ã¬Â Â¤Ã Â Â¸Ã«Â¦Â½Ã Â Â¸ Ã¬Â Â Ã¬Â Â  ------------------------------------------------*/
+      /* ------------------------Calendar ÃªÂ´Â€Ã«Â Â¨ Ã¬ÂŠÂ¤Ã­ÂŠÂ¸Ã«Â¦Â½Ã­ÂŠÂ¸ Ã¬Â‹ÂœÃ¬ÂžÂ‘ ------------------------------------------------*/
       
-   
       
         $(document).ready(function(){
        // page is now ready, initialize the calendar...
@@ -418,7 +418,6 @@
            // put your options and callbacks here
                defaultDate : todayDate
                , editable : true
-               , eventStartEditable : true
                 , resizable: true
                 , eventLimit : true
                 , dayClick: function(date, jsEvent, view) {
@@ -442,24 +441,17 @@
        });
    });
     
-
-        
-
-        
-
-        
-        window.onload = function() {      
+        window.onload = function() {   	
            obj = document.getElementById('json'); 
         } 
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnrWQ2SHvedNrvdozheYo32pHwCbuvPgs&callback=initMap">
-    </script>   
+    </script>	
     
- 	  <form action="insertRoute.route" method="post">
+   <form action="insertRoute.route" method="post">
       <input type="hidden" name="json" value="" id="json">
             <input type="submit" value="send">
    </form>
-   
   </body>
 </html>
