@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import travel.accompany.action.Action;
 import travel.accompany.action.ActionForward;
-import travel.accompany.action.listAccompany;
+import travel.accompany.action.selectUserRoute;
 
 
 @WebServlet("*.accompany")
@@ -37,7 +37,7 @@ public class AccompanyController extends HttpServlet {
 	       
 	   
 	       if(command.equals("listAccompany.accompany")){
-	          action = new listAccompany();
+	          action = new selectUserRoute();
 	          try {
 	             forward = action.execute(request, response);
 	         } catch (Exception e) {

@@ -30,11 +30,11 @@ public class AccompanyDao {
 		return new SqlSessionFactoryBuilder().build(input);
 	}
 
-	public List<Accompany> listProduct() throws Exception {
+	public List<Accompany> selectUserRoute(String userID) throws Exception {
 		SqlSession session = getSqlSessionFactory().openSession();
 		List<Accompany> list = null;
 		try {
-			list = session.getMapper(TravelMapper.class).listAccompany();
+			list = session.getMapper(TravelMapper.class).selectUserRoute("0");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{

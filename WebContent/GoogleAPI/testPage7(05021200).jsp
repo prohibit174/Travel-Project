@@ -40,7 +40,6 @@
      	 var c = 0;
        
      	function collectEventForLine(map){
-            
             if(cal != null){
               cal = $('#calendar').fullCalendar( 'clientEvents');
              cal.sort(function(a,b){
