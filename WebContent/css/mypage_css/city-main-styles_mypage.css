@@ -29,7 +29,7 @@
 	padding-right: 20px;
 }
 
-form{ margin-top:29px}
+form{ margin-top:29px; margin-bottom: 5%}
 form:after{ content:""; display:block; clear:both; *zoom:1}
 form legend{ display:block; width:70%; margin:0; padding-bottom:8px; font-size:18px; font-weight:600; color: #ff8000; border-bottom:2px solid #ff8000}
 
