@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
 import travel.route.model.Route;
@@ -26,13 +27,14 @@ public class insertRoute implements Action{
 		//for(int i=0;i<jsonArray.size())
 		//jsonArray.add(index, value);
 		  
-	  	Object obj = JSONValue.parseWithException(json);
+	  	  Object obj = JSONValue.parseWithException(json);
 	      JSONArray jsonArray = (JSONArray)obj;
+	      
 	      for(int i=0;i<jsonArray.size();i++) {
-	       JSONObject rstJson = (JSONObject)lstJson.get(i);
+	       JSONObject rstJson = (JSONObject)jsonArray.get(i);
 	       System.out.println(i+"== : " + rstJson.get("data1"));
 	       System.out.println(i+"== : " + rstJson.get("data2"));
-	      }*/
+	      }
 		route.setCor_region(request.getParameter("json"));
 		Random r=new Random();
 		int random=r.nextInt(100000000);
