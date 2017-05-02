@@ -29,12 +29,15 @@
 		)
 	</insert>
 	
-	<!-- id확인 -->
+	<!-- id 중복 확인 -->
 	<select id="idCheck" parameterType="String" resultType="int">
 		SELECT count(*) FROM users WHERE u_id = #{u_id}
 	</select>
 	
-	
+	<!-- 한명 정보만 가져오기 -->
+	<select id="userDetail" parameterType="String" resultType="Users" >
+		SELECT * FROM users WHERE u_id = #{u_id}
+	</select>
 	
 
 </mapper>

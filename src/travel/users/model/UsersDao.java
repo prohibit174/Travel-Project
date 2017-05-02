@@ -85,6 +85,19 @@ public class UsersDao {
 		}
 		
 	}
+	
+	public Users userDetail(String u_id){
+		SqlSession session = getSqlSessionFactory().openSession();
+		Users users = null;
+		try {
+			users = session.getMapper(UsersMapper.class).userDetail(u_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return users;
+	}
 
 	
 }
