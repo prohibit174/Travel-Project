@@ -37,6 +37,7 @@
        
        function collectEvent(){
            var cal=[];
+           allEvent=[];
            cal=$('#calendar').fullCalendar( 'clientEvents');
            
            for(var i=0;i<cal.length;i++){
@@ -403,12 +404,6 @@
        });
    });
     
-
-        
-
-  		
-
-        
         window.onload = function() {   	
            obj = document.getElementById('json'); 
         } 
