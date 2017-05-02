@@ -15,7 +15,7 @@
                 <ul class="tabs-list">
     
         
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal" class="first-tag active"><span>CARPOOL</span></a></li>
+            <li><a href="main.carpool" class="first-tag active"><span>CARPOOL</span></a></li>
             <li><a href="insertForm.carpool"  class=""><span>카풀 등록</span></a></li>     
             <li><a href="list.carpool" data-id="2d8eef384cefda06" class=""><span>대기중인 카풀 리스트</span></a></li>
             <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>내 카풀 등록 조회</span></a></li>

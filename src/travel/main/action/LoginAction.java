@@ -26,7 +26,6 @@ public class LoginAction implements Action {
 		Users users = new Users();
 		
 		users.setU_id(request.getParameter("u_id"));
-		System.out.println(request.getParameter("u_id"));
 		users.setU_pwd(request.getParameter("u_pwd"));
 		
 		dbusers = dao.loginCheck(users);
