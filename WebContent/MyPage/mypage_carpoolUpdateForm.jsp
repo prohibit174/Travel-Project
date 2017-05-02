@@ -13,6 +13,25 @@ String c_num = request.getParameter("c_num");
 %>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin2.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin3.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin4.css" />
+
+    <script data-main="/js/page/city"
+            src="/js/lib/bower_components/requirejs/require.js"></script>
+ <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
+<script type="text/javascript" src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>           
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/tests.js"></script>
+ <script src='${pageContext.request.contextPath}/GoogleAPI/lib/jquery.min.js'></script>
+<script src='${pageContext.request.contextPath}/GoogleAPI/lib/moment.min.js'></script>
+<link rel='stylesheet' href='../GoogleAPI/fullcalendar.css' />
+<script src='${pageContext.request.contextPath}/GoogleAPI/fullcalendar.js'></script>
+<script src="${pageContext.request.contextPath}/GoogleAPI/moment.js"></script>
+<script src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
 <head>
     
 <%@include file="../header.jsp" %>
