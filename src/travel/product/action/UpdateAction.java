@@ -63,6 +63,8 @@ public class UpdateAction implements Action {
 				System.out.println(p_num);
 				dao.updateProduct(product);	
 				
+				request.setAttribute("product", product);
+				
 				
 				ActionForward forward = new ActionForward();
 

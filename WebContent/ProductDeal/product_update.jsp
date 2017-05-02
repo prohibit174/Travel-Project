@@ -14,6 +14,8 @@ String p_num = request.getParameter("p_num");
 %>
 <!DOCTYPE html>
 <html>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-curation-page-styles.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-main-styles.css">
 <head>
 </head>
 <%@include file="../header.jsp" %>
