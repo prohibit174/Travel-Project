@@ -80,7 +80,7 @@
 					<tr>
 					<th scope = "row">생년월일</th>
 					<td>
-					<input type = "text" name = "u_birth" >
+					<input type = "text" name = "u_birth" placeholder = "yyyyMMdd">
 					</td>
 					</tr>
 					
@@ -147,7 +147,7 @@
 							<input type="checkbox" name="u_style" value="eat"> <label>&nbsp;맛집</label>&nbsp;&nbsp;
 							<input type="checkbox" name="u_style" value="activity"> <label>&nbsp;액티비티</label>&nbsp;&nbsp;
 							<input type="checkbox" name="u_style" value="rest"> <label>&nbsp;휴양</label>
-							<span>하나만 선택해주세요</span></td>
+							&nbsp;&nbsp;<span>하나만 선택해주세요</span></td>
 					</tr>
 
 					<tr>

@@ -2,9 +2,11 @@
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="/css/mypage_css/city-main-styles_mypage.css">
 <head>
     
 <%@include file="../header.jsp" %>
+
 
 <body>
 	<br>
