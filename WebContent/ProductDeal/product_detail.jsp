@@ -1,7 +1,8 @@
+<%@page import="travel.users.model.Users"%>
+<%@page import="travel.users.model.UsersDao"%>
 <%@page import="travel.product.model.Product"%>
 <%@page import="travel.product.model.ProductDao"%>
 <%@page import="java.util.List"%>
-<%@page import="travel.product.model.ProductDao"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -17,10 +18,8 @@
     List<Product> list = dao.listProduct();
     Product product=dao.detailProduct(p_num);
     
-    System.out.println(product.getP_num());
-    
-   
-   
+    request.setAttribute("product", product);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -132,16 +131,14 @@
                                                         </div>                 <!-- WEB-3705 by dwkang <div class="alimipop" id="alarmpop" style="display:none;"></div> -->              
                  <div class="ct_area" style="width:470px;height:576px;visibility:;">
                     <div class="deal_info"></div>
-                     <p class="stit">판매자 이름</p>
+                     <p class="stit">판매자:<%=product.getU_id() %></p>
                     <h3 class="tit">상품명:<%=product.getp_name()%><br /></h3>
                   
                   
                <div id="promotion_block">
                <div id="price_info" class="price_info">
                <p>가격:<%=product.getP_price()%>
-         
-                      
-                      
+
                     </div>
                     <div class="dc_coupon">
                         <div class="menu_lst" id="menu_lst">
@@ -184,31 +181,7 @@
                                 <strong><span class="total_amount">0</span><span class="won">원</span></strong>
                             </div>
                         </div>
-                  
-                    <!-- 상품 옵션 //-->
-                    <!--<dummy sg:if="!$self->preparing && count($self->alarm_keyword) > 0 && ($self->soldout || $self->deal_time_left == 0)">-->
-                        <!-- WEB-3705 by dwkang
-                        <div class="alarm_area">
-                            <strong class="blind">재판매 알리미 서비스</strong>
-                            <div class="alarm">
-                                <span sg:if="$self->soldout" class="soldout">매진되었습니다! 다음에 알려드릴까요</span>
-                                <span sg:elseif="$self->deal_time_left == 0" class="deal_end">판매 종료되었습니다! 다음에 알려드릴까요</span>
-                                <a onmouseover="$('#alarm_tooltip_main').css('display', 'block')" onmouseout="$('#alarm_tooltip_main').css('display', 'none')" class="ico_help">재판매 알리미 서비스란?</a>
-                                <div class="lpop_alarm" id="alarm_tooltip_main" style="display:none">
-                                    <div class="inner">
-                                    재판매 알리미 서비스를 신청하시면, <strong>다음에 같은 상품의 판매가 진행될 때</strong> 고객님의 이메일로 알려드립니다.
-                                    </div>
-                                    <span class="arr"></span>
-                                </div>
-                            </div>
-                            <a name="btn_alarm" onclick="alarmRequest('548520330', 'main');" attr-if:class="$self->alarm_request_cnt >= count($self->alarm_keyword);btn_alarm_ok" attr-else:class="btn_alarm" style="cursor:pointer">재판매 알리미 신청</a>
-                            <div class="ly_alarm" id="alarm_cancel_main" style="display:none;"><span class="arr"></span>재판매 알리미가 취소되었습니다.</div>
-                            <div class="ly_alarm" id="alarm_ok_main" style="display:none;"><span class="arr"></span>재판매 알리미가 신청되었습니다.</div>
-                        </div>
-                        -->
-                    <!--</dummy>
-                    <dummy sg:else>-->
-                  
+         
                         <div class="btn_area default">
                                                             <div class="btn_direct"><a id="buy_button" href="#buy">거래요청</a></div>                                                                                                  
                           
@@ -219,12 +192,7 @@
                   
                     </div>
                    
-               <!-- <div id="div_deal_zzimlayer" style=""></div>
-                <div class="lpop_wrap2" id="standby_alert" style="display:block;top:50%;z-index:1110;margin-top:-155px;display:none">
-                    <div class="lpop_cont">
-                        <div class="h_area" id="h_area_1" style="display:none">
-                            <strong class="txt">대기예약 상품입니다!</strong>
-                        </div>
+        
                         <!-- [D] 대기예약가능일 경우 -->
                         <div class="h_area" id="h_area_2" style="display:none">
                             <strong class="txt"><span id="h_area_txt"></span>장부터는 대기예약으로 구매됩니다!</strong>

@@ -1,17 +1,16 @@
+<%@page import="travel.users.model.UsersDao"%>
+<%@page import="travel.users.model.Users"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <%
-
-	System.out.println(session.getAttribute("member_id"));
 	String u_id  = session.getAttribute("member_id").toString();
 	
 	request.setAttribute("u_id", u_id);
 	
+	UsersDao dao = UsersDao.getInstance();
 	Users user = dao.userDetail(u_id);
 	
-	request.setAttribute("user", user);
-	
-	
+	request.setAttribute("user", user);	
 %>
 <!DOCTYPE html>
 <html>
