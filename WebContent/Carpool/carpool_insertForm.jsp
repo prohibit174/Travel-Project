@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
+<% 
+String id =(String)session.getAttribute("member_id");
+%>
 <!DOCTYPE html>
 
 <html>
@@ -564,11 +567,11 @@
 										</tr>
 										<tr>
 											<td colspan="2" class="last">
-												<p class="nlogin_date_info">생년월일과 성별은 이메일/비밀번호 분실하였을경우 본인확인을 위해 꼭 필요한 정보입니다.</p>
+												<p class="nlogin_date_info">카풀 등록창에 등록될 개인정보 입니다.</p>
 												<div class="nlogin_form_section">
 													<div class="nlogin_select" id="nlogin_year">
 														<input type="hidden" id="nlogin_year_value" name="birth_y">
-														<p data-value="choice"><span>생일 년도</span></p>
+														<p data-value="choice"><span>아이디 : <%=id %></span></p>
 														<ul>
 																													<li><a href="#" id="y1" data-value="2003">2003</a></li>
 																													<li><a href="#" id="y2" data-value="2002">2002</a></li>
