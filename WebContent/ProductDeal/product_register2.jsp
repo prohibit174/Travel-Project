@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+
 </head>
 <%@include file="../header.jsp" %>
 
