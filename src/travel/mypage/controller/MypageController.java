@@ -16,6 +16,7 @@ import travel.mypage.action.CarpoolListAction;
 import travel.mypage.action.CarpoolUpdateAction;
 import travel.mypage.action.CarpoolUpdateAction2;
 import travel.mypage.action.MypageMainAction;
+import travel.mypage.action.UpdateUserAction;
 
 
 @WebServlet("*.mypage")
@@ -68,6 +69,13 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} else if (command.equals("UpdateUserAction.mypage")){
+			action = new UpdateUserAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		} else if (command.equals("main.mypage")){
 			action = new MypageMainAction();
 			try {
@@ -75,7 +83,11 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+		} 
+       
+    
+       
+       
        
        if(forward !=null){
           if(forward.isRedirect()){

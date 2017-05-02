@@ -23,12 +23,13 @@
 <head>
 <%@include file="../header.jsp" %>
 
+
 </head>
 <body>
 
 <br>
 	<div class="form_body">
-		<form action="JoinAction.join" class="join_form">
+		<form class="join_form" method="post" action="UpdateUserAction.mypage">
 		        <div class="present">
             <div class="tabs-list">
                 
@@ -85,14 +86,14 @@
 					<tr>
 					<th scope = "row">생년월일</th>
 					<td>
-					생일정보
+					${user.u_birth }
 					</td>
 					</tr>
 					
 					<tr>
 					<th scope="row">성별</th>
 					<td>
-					남자냐 여자냐
+					${user.u_sex }
 					</td>
 					</tr>
 					
@@ -100,17 +101,14 @@
 			<tr>
 				<th scope = "row">운전면허 유무</th>
 				<td>
-				<input type = "radio" name = "u_license" value = "licensed" checked  = "checked">
-				<label>유</label>
-				<input type = "radio" name = "u_license" value = "Nolicensed">
-				<label>무</label>
+				${user.u_license }
 				</td>
 				</tr>
 					
 					<tr>
 					<th scope = "row">거주 지역</th>
 					<td>
-					거주지역 표시
+					${user.u_address }
 					</td>
 					</tr>
 
@@ -126,43 +124,36 @@
 					<tr>
 						<th scope="row">직업</th>
 						<td>
-						직업
+						${user.u_job }
 						</td>
 					</tr>
 
 					<tr>
 						<th scope="row">사용언어</th>
-						<td>사용 언어 <span>&nbsp;&nbsp;
-								여행 시 사용하는 언어를 알려주세요.</span></td>
+						<td>${user.u_lang }</td>
 					</tr>
 
 					<tr>
 						<th scope="row">종교</th>
-						<td>종교</td>
+						<td>${user.u_religion }</td>
 					</tr>
 
 
 					<tr>
 						<th scope="row">여행 스타일</th>
-						<td><input type="checkbox" name="u_style" value="healing"
-							checked="checked"> <label>&nbsp;힐링</label>&nbsp;&nbsp; <input
-							type="checkbox" name="u_style" value="tour"> <label>&nbsp;관광</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="eat"> <label>&nbsp;맛집</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="activity"> <label>&nbsp;액티비티</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="rest"> <label>&nbsp;휴양</label>
-							<span>하나만 선택해주세요</span></td>
+						<td>${user.u_style }</td>
 					</tr>
 
 					<tr>
 						<th scope="row">프로필 이미지</th>
-						<td><input type="file" name="u_img" id="u_img"></td>
+						<td>${user.u_img}</td>
 					</tr>
 					</tbody>
 				</table>
 			</fieldset>
 
 		<div class="nlogin_join_center">
-		<button type = "submit" class = "nlogin_btn">수정하기</button>
+		<button type = "submit" class = "nlogin_btn">수정하기</button>	 
 		</div>
 		
 		
