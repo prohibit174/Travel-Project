@@ -33,36 +33,73 @@
        susEnd = null;
        var allEvent=[];
        var jsonEncode;
-       var obj
+       var obj;
+       var map;
+       var cal =[];
+       var movingPath = [];
+     	 var c = 0;
        
-       function collectEvent(){
-           var cal=[];
-           allEvent=[];
-           cal=$('#calendar').fullCalendar( 'clientEvents');
-           
-           for(var i=0;i<cal.length;i++){
+     	function collectEventForLine(map){
             
-               var valDate = cal[i].start.format("YYYY-MM-DD");
-                    var sdate = new moment(cal[i].start).format("YYYY-MM-DD");
-
-                    var newDate = moment(sdate);
-                    var edate = new moment(cal[i].end).format("YYYY-MM-DD");
-                    var newEndDate = moment(edate);
-                    
-                    var duration = moment.duration(newDate.diff(newEndDate));   //ì°¨ì´ê°’
-                   var durationdays = (-duration.asDays());      //ì°¨ì´ê°’ ì¼ë¡œ í™˜ì‚° ë‚ ì§œ 
-                   
-                    for(var a=0; a < durationdays;a++){
-                      allEvent.push(new storeEvent(0 ,cal[i].title, moment(valDate).format("YYYY-MM-DD")));
-                      valDate = new moment(valDate).add(1, 'days');
-                    }  //event store in arry
-              }//event store in var End
-           for(var b=0; b < allEvent.length; b++){
-            //  alert(allEvent[b].title);
-             // alert(allEvent[b].eventdate);
-           }
+            if(cal != null){
+              cal = $('#calendar').fullCalendar( 'clientEvents');
+             cal.sort(function(a,b){
+               return a.start < b.start ? -1 : a.start > b.start ? 1 : 0;  
+                         });
+            }else{
+               cal = $('#calendar').fullCalendar( 'clientEvents');
+            }
+               if(cal.length > 0){
+              latLngList.splice(0, latLngList.length);
+               for(var i=0; i < cal.length; i++){
+                  for(var a=0; a < marker_zoom4.length; a++){
+                     if(marker_zoom4[a].title == cal[i].title){
+                        latLngList.push(marker_zoom4[a].getPosition());
+                     }
+                   }
+                  for(var a=0; a < marker_zoom5.length; a++){
+                     if(marker_zoom5[a].title == cal[i].title){
+                        latLngList.push(marker_zoom5[a].getPosition());
+                     }
+                   }
+               }
+                createLine(latLngList, map);
+                
+               /*  collectEvent();
+                jsonEncode = JSON.stringify(allEvent);
+                obj.value = jsonEncode;  */
+               }
               
-       } //collectEvent method End
+           };  //collectEventForLine End 
+     	 
+           function collectEvent(){
+               var cal=[];
+               cal=$('#calendar').fullCalendar( 'clientEvents');
+               
+               for(var i=0;i<cal.length;i++){
+                
+                   var valDate = cal[i].start.format("YYYY-MM-DD");
+                        var sdate = new moment(cal[i].start).format("YYYY-MM-DD");
+
+                        var newDate = moment(sdate);
+                        var edate = new moment(cal[i].end).format("YYYY-MM-DD");
+                        var newEndDate = moment(edate);
+                        
+                        var duration = moment.duration(newDate.diff(newEndDate));   //ì°¨ì ´ê° 
+                       var durationdays = (-duration.asDays());      //ì°¨ì ´ê°  ì ¼ë¡  í  ì ° ë  ì§  
+                       
+                        for(var a=0; a < durationdays;a++){
+                          allEvent.push(new storeEvent(0 ,cal[i].title, moment(valDate).format("YYYY-MM-DD")));
+                          valDate = new moment(valDate).add(1, 'days');
+                        }  //event store in arry
+                  }//event store in var End
+             /*   for(var b=0; b < allEvent.length; b++){
+                  alert(allEvent[b].title + allEvent[b].eventdate);
+               } */
+               jsonEncode = JSON.stringify(allEvent);
+               obj.value = jsonEncode;
+                  
+           } //collectEvent method End
        
        function storeEvent (id ,title, eventdate) {
           this.id = id;
