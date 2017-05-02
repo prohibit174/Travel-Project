@@ -19,6 +19,11 @@
     Product product=dao.detailProduct(p_num);
     
     request.setAttribute("product", product);
+    
+    String u_id = session.getAttribute("member_id").toString();
+    
+    request.setAttribute("u_id", u_id);
+ 
 
 %>
 <!DOCTYPE html>
@@ -38,6 +43,14 @@
     	  var check = confirm("삭제하시겠습니까?");
     	  /* if(check == true) else false */
     	  if(check) document.location.href="deleteAction.product?p_num=<%=product.getP_num()%>";
+    	}
+	
+	
+		function btn_js_request_click(){
+    	  /* confirm(문자열, 초기값) */
+    	  var check = confirm("요청하시겠습니까?");
+    	  /* if(check == true) else false */
+    	  if(check) document.location.href="detailReqAction.product?p_num=<%=product.getP_num()%>";
     	}
   </script>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-curation-page-styles.css">
@@ -208,11 +221,17 @@
                         </div>
                         <p class="caution_dsc"></p>
                         <div class="btn_area">
-
-                     <input type="button" name="btn_js_update" id="btn_js_update" onclick="btn_js_update_click();" value="수정하기" />  		 
+                        <!-- boram  -->
+						<c:choose>
+					       <c:when test="${u_id == product.u_id}">
+					<input type="button" name="btn_js_update" id="btn_js_update" onclick="btn_js_update_click();" value="수정하기" />  		 
                     <input type="button" name="btn_js_delete" id="btn_js_delete" onclick="btn_js_delete_click();" value="삭제하기" />
-
-
+					       </c:when>
+					       <c:otherwise>
+					<input type="button" name="btn_js_request_update" id="btn_js_request_update" onclick="btn_js_request_click();" value="거래요청" />
+					       </c:otherwise>
+				 	  </c:choose>
+						<!-- boram -->
                         </div>
                     </div>
                     <a style="cursor:pointer" id="lpop_btn_close_new" class="btn_clse">

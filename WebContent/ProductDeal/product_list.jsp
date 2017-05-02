@@ -14,7 +14,7 @@
    List<Product> list = dao.listProduct();
    request.setAttribute("list", list);
    
-
+	
 
 %>
 <!DOCTYPE html>
