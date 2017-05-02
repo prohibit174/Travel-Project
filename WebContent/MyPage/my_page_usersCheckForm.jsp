@@ -1,17 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("utf-8"); %>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
 
-<head>
-    
-<%@include file="../header.jsp" %>
-</head>
 
+<head>
+<%@include file="../header.jsp" %>
+
+</head>
 <body>
-	<br>
+
+<br>
 	<div class="form_body">
 		<form action="JoinAction.join" class="join_form">
 		        <div class="present">
@@ -44,7 +45,7 @@
             </div><!-- e//tabs-list -->
             </div> <!-- present -->
 			<fieldset>
-				<legend>회원정보수정</legend>
+				<legend>회원정보확인</legend>
 
 				<table class="primary_table">
 					<tbody>
@@ -61,28 +62,9 @@
 				
 					
 					<tr>
-					<th scope="row">비밀번호</th>
-					<td>
-					<input type = "password" name = "u_pwd" id = "u_pwd">
-					&nbsp;&nbsp;&nbsp;&nbsp;<span>알파벳과 숫자 조합으로 6~12자</span>
-					
-					
-					
-					</tr>
-					
-					<tr>
-					<th scope="row">비밀번호 확인</th>
-					<td>
-					<input type = "password" name = "pwcheck" id = "pwcheck">
-					&nbsp;&nbsp;
-					<font id="check" size="2" color="red"></font> 
-
-					</tr>
-					
-					<tr>
 					<th scope="row">닉네임</th>
 					<td>
-					<input type = "text" name = "u_name">
+					닉네임도 고정값이 좋지않을까..? 사기의 위험이나...
 					</td>
 					</tr>
 					
@@ -114,7 +96,7 @@
 					<tr>
 					<th scope = "row">거주 지역</th>
 					<td>
-					 <input type = "text" name = "u_address">	
+					거주지역 표시
 					</td>
 					</tr>
 
@@ -129,19 +111,20 @@
 
 					<tr>
 						<th scope="row">직업</th>
-						<td><input type="text" name="u_job" placeholder="직업을 입력해주세요">
+						<td>
+						직업
 						</td>
 					</tr>
 
 					<tr>
 						<th scope="row">사용언어</th>
-						<td><input type="text" name="u_lang"> <span>&nbsp;&nbsp;
+						<td>사용 언어 <span>&nbsp;&nbsp;
 								여행 시 사용하는 언어를 알려주세요.</span></td>
 					</tr>
 
 					<tr>
 						<th scope="row">종교</th>
-						<td><input type="text" name="u_religion"></td>
+						<td>종교</td>
 					</tr>
 
 
@@ -174,6 +157,5 @@
 
 	</div>
 
-<%@include file="../footer.jsp" %>
 </body>
 </html>

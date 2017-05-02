@@ -10,6 +10,7 @@
 
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
 <head>
     
 <%@include file="../header.jsp" %>

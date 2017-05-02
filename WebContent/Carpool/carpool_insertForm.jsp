@@ -1,11 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
-<html>
-<head>
-    
-<%@include file="../header.jsp" %>
 
+<html>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin2.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin3.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin4.css" />
+
+    <script data-main="/js/page/city"
+            src="/js/lib/bower_components/requirejs/require.js"></script>
+ <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
+<script type="text/javascript" src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>           
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/tests.js"></script>
+ <script src='${pageContext.request.contextPath}/GoogleAPI/lib/jquery.min.js'></script>
+<script src='${pageContext.request.contextPath}/GoogleAPI/lib/moment.min.js'></script>
+<link rel='stylesheet' href='../GoogleAPI/fullcalendar.css' />
+<script src='${pageContext.request.contextPath}/GoogleAPI/fullcalendar.js'></script>
+<script src="${pageContext.request.contextPath}/GoogleAPI/moment.js"></script>
+<script src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
+<head>
+</head>
+<%@include file="../header.jsp" %>
+<body>
 
 
 <div id="contents"  class="city">
@@ -14,17 +34,9 @@
             <div class="tabs-list">
                 
                 <ul class="tabs-list">
-    
-        
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal" class="first-tag active"><span>CARPOOL</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=5d1504d8bebfc81e" data-id="5d1504d8bebfc81e" class=""><span>카풀 등록</span></a></li>
-            
-            
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=2d8eef384cefda06" data-id="2d8eef384cefda06" class=""><span>대기중인 카풀 리스트</span></a></li>
-            
-            
+            <li><a href="main.carpool" class="first-tag active"><span>CARPOOL</span></a></li>
+            <li><a href="insertForm.carpool"  class=""><span>카풀 등록</span></a></li>     
+            <li><a href="list.carpool" data-id="2d8eef384cefda06" class=""><span>대기중인 카풀 리스트</span></a></li>
             <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>내 카풀 등록 조회</span></a></li>
             
 		</ul>

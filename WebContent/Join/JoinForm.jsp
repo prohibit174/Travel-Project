@@ -2,6 +2,13 @@
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/users_css/city-main-styles_join.css?version=20170502">
+<script src = "//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/join_checkInfo.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/IdCheck.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/CheckEssential.js?version=20170502"></script>
+<!-- js 갱신시키기 : http://copyrightdj.tistory.com/162 -->
 <head>
     
    
@@ -80,7 +87,7 @@
 					<tr>
 					<th scope = "row">생년월일</th>
 					<td>
-					<input type = "text" name = "u_birth" >
+					<input type = "text" name = "u_birth" placeholder = "yyyyMMdd">
 					</td>
 					</tr>
 					
@@ -147,7 +154,7 @@
 							<input type="checkbox" name="u_style" value="eat"> <label>&nbsp;맛집</label>&nbsp;&nbsp;
 							<input type="checkbox" name="u_style" value="activity"> <label>&nbsp;액티비티</label>&nbsp;&nbsp;
 							<input type="checkbox" name="u_style" value="rest"> <label>&nbsp;휴양</label>
-							<span>하나만 선택해주세요</span></td>
+							&nbsp;&nbsp;<span>하나만 선택해주세요</span></td>
 					</tr>
 
 					<tr>
