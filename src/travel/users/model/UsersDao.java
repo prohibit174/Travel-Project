@@ -34,7 +34,7 @@ public class UsersDao {
 		return new SqlSessionFactoryBuilder().build(in);	
 	}
 	
-	//insert
+	//insert user
 	public void insertUsers(Users users) throws Exception {
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = -1;
@@ -53,7 +53,7 @@ public class UsersDao {
 	}
 	
 	
-	
+	//Check User ID Duplicate
 	public int checkId(String string){
 		int re = -1;
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
@@ -86,6 +86,7 @@ public class UsersDao {
 		
 	}
 	
+	//User Detail Information
 	public Users userDetail(String u_id){
 		SqlSession session = getSqlSessionFactory().openSession();
 		Users users = null;
@@ -99,5 +100,15 @@ public class UsersDao {
 		return users;
 	}
 
+	//User Information Update
+	public void userUpdate(String U_id){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 }
