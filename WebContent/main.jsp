@@ -155,6 +155,8 @@
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
+ <script type="text/javascript" src="${pageContext.request.contextPath}/JS/loginPopup/login_success.js"></script>
+            
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -176,8 +178,8 @@
     <div class="main-nav-con">
       <p class="wishbeen-logo"><span>세상의 모든 여행, 위시빈</span></p>
 
-		<div class="frame">
-		
+		<div id="frames">
+			<span>${member_id}</span>
 		</div>
 		
       <div class="nav-login-search">
@@ -1733,6 +1735,8 @@ g_localizedString["_Sale_"] = "할인";
       google_ad_width = 728;
       google_ad_height = 90;
     </script>
+    <!-- 세션  -->
+    
     main-bottom
     <script type="text/javascript"
             src="//pagead2.googlesyndication.com/pagead/show_ads.js">

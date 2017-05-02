@@ -14,6 +14,7 @@ import travel.users.action.ActionForward;
 import travel.users.action.IdCheckAction;
 import travel.users.action.JoinAction;
 import travel.users.action.JoinFormAction;
+import travel.users.action.UserAction;
 
 
 @WebServlet("*.users")
@@ -62,6 +63,7 @@ public class UsersController extends HttpServlet {
 			}
     	}else if(command.equals("JoinAction.users")){
     		action = new JoinAction();
+    		//얘 안됩니다.....T-T UserAction으로 가세여
     		try {
     			forward = action.execute(request, response);
     			
@@ -72,6 +74,13 @@ public class UsersController extends HttpServlet {
     	}else if(command.equals("IdCheckAction.users")){
     		action = new IdCheckAction();
     		
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("UserAction.users")){
+    		action = new UserAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

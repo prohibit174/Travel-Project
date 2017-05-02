@@ -53,7 +53,8 @@
   }
 
 </style>
-<script src="/js/lib/bower_components/stacktrace-js/dist/stacktrace.min.js"></script>
+<!-- boram erase 
+<script src="/js/lib/bower_components/stacktrace-js/dist/stacktrace.min.js"></script>-->
 <script>(function () {
     window.onerror = function(msg, file, line, col, error) {
       // callback is called with an Array[StackFrame]
@@ -154,15 +155,13 @@
 
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/users_css/city-main-styles_join.css">
-<script type="text/javascript"
-   src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>
+
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/join_checkInfo.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/IdCheck.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/CheckEssential.js"></script>
 			
 
-    <script data-main="/js/page/city"
-            src="/js/lib/bower_components/requirejs/require.js"></script>
+
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -249,7 +248,7 @@
 	<br>
 	<br>
 	<div class="form_body">
-		<form action="JoinAction.users" class="join_form" method="post">
+			 <form action="UserAction.users" class="join_form" method="post"  enctype="multipart/form-data">
 			<fieldset>
 				<legend>필수 입력 사항</legend>
 				<table class="primary_table">
@@ -262,7 +261,7 @@
 					<td>
 					<input type = "text" name = "u_id" id = "u_id">
 					&nbsp;&nbsp;&nbsp;&nbsp;<span>영문소문자 / 숫자, 4~16자</span>
-					<input type = "button" id = "u_idcheck" value = "중복검사">
+			 		<input type = "button" id = "u_idcheck" value = "중복검사"> 
 					
 					</td>
 					</tr>
@@ -271,7 +270,7 @@
 					<th></th>
 					<td>
 					<font id="idcheck" size="2" color="green"></font> 
-					<td>
+					</td>
 					</tr>
 					
 					<tr>
@@ -310,80 +309,29 @@
 					<tr>
 					<th scope="row">성별</th>
 					<td>
-					<input type = "radio" name = "u_sex" id = "u_sex" value = "male">
+					<input type = "radio" name = "u_sex" value = "male" checked="checked">
 					<label>남자</label>
-					<input type = "radio" name = "u_sex" id = "u_sex" value="female">
+					<input type = "radio" name = "u_sex" value= "female">
 					<label>여자</label>
 					</td>
-					
 					</tr>
 					
+					
+			<tr>
+				<th scope = "row">운전면허 유무</th>
+				<td>
+				<input type = "radio" name = "u_license" value = "licensed" checked  = "checked">
+				<label>유</label>
+				<input type = "radio" name = "u_license" value = "Nolicensed">
+				<label>무</label>
+				</td>
+				</tr>
+					
 					<tr>
-					<th scope = "row">주소</th>
+					<th scope = "row">거주 지역</th>
 					<td>
-					 <input type = "text" name = "u_address">		<!-- 주소입려어어억 API를 사용해봅시다-->
-						<!-- 	<input type="text" id="sample4_postcode" placeholder="우편번호"> 
-							<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br> <input type="text" id="sample4_roadAddress"
-							placeholder="도로명주소"> 
-							<input type="text" id="sample4_jibunAddress" placeholder="지번주소"> <span id="guide"
-							style="color: #999"></span> <script
-								src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-								
-							<script>
-							    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
-							    function sample4_execDaumPostcode() {
-							        new daum.Postcode({
-							            oncomplete: function(data) {
-							                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-							
-							                // 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
-							                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-							                var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
-							                var extraRoadAddr = ''; // 도로명 조합형 주소 변수
-							
-							                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-							                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-							                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-							                    extraRoadAddr += data.bname;
-							                }
-							                // 건물명이 있고, 공동주택일 경우 추가한다.
-							                if(data.buildingName !== '' && data.apartment === 'Y'){
-							                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-							                }
-							                // 도로명, 지번 조합형 주소가 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-							                if(extraRoadAddr !== ''){
-							                    extraRoadAddr = ' (' + extraRoadAddr + ')';
-							                }
-							                // 도로명, 지번 주소의 유무에 따라 해당 조합형 주소를 추가한다.
-							                if(fullRoadAddr !== ''){
-							                    fullRoadAddr += extraRoadAddr;
-							                }
-							
-							                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-							                document.getElementById('sample4_postcode').value = data.zonecode; //5자리 새우편번호 사용
-							                document.getElementById('sample4_roadAddress').value = fullRoadAddr;
-							                document.getElementById('sample4_jibunAddress').value = data.jibunAddress;
-							
-							                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-							                if(data.autoRoadAddress) {
-							                    //예상되는 도로명 주소에 조합형 주소를 추가한다.
-							                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
-							                    document.getElementById('guide').innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
-							
-							                } else if(data.autoJibunAddress) {
-							                    var expJibunAddr = data.autoJibunAddress;
-							                    document.getElementById('guide').innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
-							
-							                } else {
-							                    document.getElementById('guide').innerHTML = '';
-							                }
-							            }
-							        }).open();
-							    }
-							</script>
-
- -->
-							</td>
+					 <input type = "text" name = "u_address">	
+					</td>
 					</tr>
 
 					</tbody>
@@ -417,62 +365,40 @@
 				</td>
 				</tr>
 			
-			<!-- 	<tr>
-				<th scope = "row">운전면허 유무</th>
-				<td>
-				<input type = "text" name = "u_license">
-				<input type = "radio" name = "u_license" value = "licensed">
-				<label>유</label>
-				<input type = "radio" name = "u_license" value = "Nolicensed">
-				<label>무</label>
-				</td>
-				</tr> -->
 				
 				<tr>
 				<th scope="row">여행 스타일</th>
 				<td>
-				<input type = "checkbox" name = "ts_name" value = "healing">
+				<input type = "checkbox" name = "u_style" value = "healing" checked = "checked">
 				<label>&nbsp;힐링</label>&nbsp;&nbsp;
-				<input type = "checkbox" name = "ts_name" value = "tour">
+				<input type = "checkbox" name = "u_style" value = "tour">
 				<label>&nbsp;관광</label>&nbsp;&nbsp;
-				<input type = "checkbox" name = "ts_name" value = "eat">
+				<input type = "checkbox" name = "u_style" value = "eat">
 				<label>&nbsp;맛집</label>&nbsp;&nbsp;
-				<input type = "checkbox" name = "ts_name" value = "activity">
+				<input type = "checkbox" name = "u_style" value = "activity">
 				<label>&nbsp;액티비티</label>&nbsp;&nbsp;
-				<input type = "checkbox" name = "ts_name" value = "rest">
+				<input type = "checkbox" name = "u_style" value = "rest">
 				<label>&nbsp;휴양</label>
+				<span>하나만 선택해주세요</span>
 				</td>
 				</tr>
-				
-				<tr>
-				<th scope = "row">프로필 이미지</th>
-				<td>
-				<input type = "file" name = "u_img">
-				</td>
-				</tr>
-				
-				
-			
-			
+					
+					<tr>
+					<th scope="row">프로필 이미지</th>
+					<td>
+					<input type = "file" name = "u_img" id = "u_img">
+					</td>
+					</tr>
+			</tbody>
 			</table>
-			
-			
 			</fieldset>
-
-
-			<!-- <div class="agreeBox agreeAll">
-				<input name="agree" type="checkbox" id="agreeAll"> 
-				<label for="agreeAll">이용약관, 개인정보 수집 및 이용, 프로모션 안내 메일 수신(선택)에 모두
-					동의합니다. </label>
-			</div> -->
-			<div>
+			 <div>
 				<div class="nlogin_policy_wrap">
 					<div class="nlogin_policy_check">
 						<input name="law_agree" type="checkbox" value="1" id="law_agree" />
 						<label for="law_agree">이용약관에 동의<em>(필수)</em></label>
 					</div>
 					<div class="policy_content_wrap" id="terms_20161107">
-					<!-- style="display: none;" -->
 						<div class="fake_box"></div>
 						<div class="policy_content">
 							<p class="private_list_title">제1조 [목적]</p>
@@ -883,16 +809,15 @@
 				</div>
 			</div>
 
+
 			
 			<div class="nlogin_join_center">
 		<!-- <button type = "submit" class = "nlogin_btn">가입하기</button> -->
 		<input type = "submit" class = "nlogin_btn" value = "가입하기">
 		<span>이게 나의 최선이다..... 누가 가운데 정렬좀 해주세요.........</span>
 		</div>
-		
-		
 		</form>
-
+			 
 
 	</div>
 

@@ -6,7 +6,6 @@
 
 
 
-
 <html>
 <head>
 <title>로그인 폼</title>
@@ -18,11 +17,13 @@
 function linkToOpener(URL){
 	if(window.opener && !window.opener.closed)
 		window.opener.location = URL;
-		window.closed();
+		window.close();
 }
 </script><noscript></noscript>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/loginPopup/login_success.js"></script>
+
 </head>
+
 
 
 
@@ -31,10 +32,13 @@ function linkToOpener(URL){
 
 document.domain = "kornu.ac.kr";
 </script><noscript></noscript>
+<script type="text/javascript">
 
+
+</script>
 
 <body>
-<form method=post name=mem_form action="loginAction.main">
+<form  name=mem_form action="loginAction.main" method="post">
 <input type="hidden" name="command" value="" />
 <input type=hidden name=client_id value="main">
 <input type=hidden name="return_url" value="wizipsi.kornu.ac.kr/user/main/e_knu/e_knu01.html">
@@ -58,8 +62,8 @@ document.domain = "kornu.ac.kr";
 <td height="80"><table width="190" border="0" align="center" cellpadding="1" cellspacing="0" summary="쨌�짹��� ��쨌� ����쨘챠">
 <tr>
 <td style='font-family:"Verdana", "쨉쨍쩔챵";font-size: 12px;color: 4e4e4e;letter-spacing: -0.5px; vertical-align:-13px;'>ID :</td>
-<td><input name="u_id" id="u_id" size=10 maxlength=20 type="text" style='width:90px;height:20px;'></td>
-<td rowspan="2" align="right"><button onclick=""><img type="submit" id="login_button" src="${pageContext.request.contextPath}/images/loginPopupImages/log_btn_login.gif" width="44" height="46"   alt="로그인버튼" longdesc="" style="cursor:hand"></button></td>
+<td><input name="u_id" id="u_id" size=10 maxlength=20 type="text" style='width:90px;height:20px;' ></td>
+<td rowspan="2" align="right"><input type="submit"  id="login_button" value="로그인"></td>
 </tr>
 <tr>
 <td style='font-family:"Verdana", "쨉쨍쩔챵";font-size: 12px;color: 4e4e4e;letter-spacing: -0.5px; vertical-align:-13px;'>PW :</td>
@@ -71,9 +75,9 @@ document.domain = "kornu.ac.kr";
 
 <td width="54"><a href="javascript:linkToOpener('JoinForm.users')"><img src="./images/loginPopupImages/log_btn_join.gif" width="53" height="20" onClick="jf_join();" onkeypress="if(event.keycode==13)jf_join();" alt="�쨍쩔첩 째징�� 쨔철�째" longdesc="" style="cursor:hand"></a></td>
 <td width="124"><img src="./images/loginPopupImages/log_btn_searchpass.gif" width="108" height="20" onClick="javascript:jf_findPass();" onkeypress="if(event.keycode==13)jf_findPass();" alt="쨘챰쨔�쨔첩�짙 째�쨩철 쨔철�째" longdesc="" style="cursor:hand"></td>
-<div class="frames">
-</div>
+
 </tr>
+
 </table></td>
 </tr>
 </table></td>
@@ -82,6 +86,6 @@ document.domain = "kornu.ac.kr";
 </tr>
 </table>
 </form>
-
+<div id  = "frames"></div>
 </body>
 </html>

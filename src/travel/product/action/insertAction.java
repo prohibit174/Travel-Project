@@ -64,7 +64,7 @@ public class insertAction implements Action{
 		product.setU_id(multi.getParameter("u_id"));
 		product.setP_detail(multi.getParameter("p_detail"));
 		product.setP_price(multi.getParameter("p_price"));	
-		product.setP_amount(multi.getParameter("p_amount"));
+		product.setp_name(multi.getParameter("p_name"));
 		product.setP_term(multi.getParameter("p_term"));
 		product.setP_ox(multi.getParameter("p_ox"));
 
