@@ -152,8 +152,12 @@
     							</div>
     						</div>
     					</li>
-    					<c:if test=""></c:if>
+
 					</c:forEach>
+					    					<%-- <c:if test="${carpool.c_num%5==0}" var="result">
+    					test result = ${result} }
+    					<br>
+    					</c:if> --%>
 					
 					
 						<!-- <li>
