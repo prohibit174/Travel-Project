@@ -7,6 +7,8 @@
 
 <!DOCTYPE html>
 <html>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-curation-page-styles.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-main-styles.css">
 <head>
     
 </head>
