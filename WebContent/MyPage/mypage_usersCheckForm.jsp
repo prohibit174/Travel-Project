@@ -1,5 +1,19 @@
+<%@page import="travel.users.model.UsersDao"%>
+<%@page import="travel.users.model.Users"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+  <% //System.out.println(session.getAttribute("member_id"));
+    
+    String u_id = session.getAttribute("member_id").toString();
+    //System.out.println(u_id);
+    
+    UsersDao dao = UsersDao.getInstance();
+    Users user = dao.userDetail(u_id);
+    
+    request.setAttribute("user", user);
+    
+    
+    %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -55,7 +69,7 @@
 					아이디
 					</th>
 					<td>
-					유저 id
+					${user.u_id }
 					
 					</td>
 					</tr>
@@ -64,7 +78,7 @@
 					<tr>
 					<th scope="row">닉네임</th>
 					<td>
-					닉네임도 고정값이 좋지않을까..? 사기의 위험이나...
+					${user.u_name }
 					</td>
 					</tr>
 					
@@ -156,6 +170,6 @@
 
 
 	</div>
-
+<%@include file="../footer.jsp" %>
 </body>
 </html>
