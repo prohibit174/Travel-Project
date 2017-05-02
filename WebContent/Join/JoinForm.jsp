@@ -94,9 +94,9 @@
 					<tr>
 					<th scope="row">성별</th>
 					<td>
-					<input type = "radio" name = "u_sex" value = "male" checked="checked">
+					<input type = "radio" name = "u_sex" value = "남자" checked="checked">
 					<label>남자</label>
-					<input type = "radio" name = "u_sex" value= "female">
+					<input type = "radio" name = "u_sex" value= "여자">
 					<label>여자</label>
 					</td>
 					</tr>
@@ -105,9 +105,9 @@
 			<tr>
 				<th scope = "row">운전면허 유무</th>
 				<td>
-				<input type = "radio" name = "u_license" value = "licensed" checked  = "checked">
+				<input type = "radio" name = "u_license" value = "운전면허 소지" checked  = "checked">
 				<label>유</label>
-				<input type = "radio" name = "u_license" value = "Nolicensed">
+				<input type = "radio" name = "u_license" value = "운전면허 미소지">
 				<label>무</label>
 				</td>
 				</tr>
@@ -148,12 +148,12 @@
 
 					<tr>
 						<th scope="row">여행 스타일</th>
-						<td><input type="checkbox" name="u_style" value="healing"
+						<td><input type="checkbox" name="u_style" value="힐링"
 							checked="checked"> <label>&nbsp;힐링</label>&nbsp;&nbsp; <input
-							type="checkbox" name="u_style" value="tour"> <label>&nbsp;관광</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="eat"> <label>&nbsp;맛집</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="activity"> <label>&nbsp;액티비티</label>&nbsp;&nbsp;
-							<input type="checkbox" name="u_style" value="rest"> <label>&nbsp;휴양</label>
+							type="checkbox" name="u_style" value="관광"> <label>&nbsp;관광</label>&nbsp;&nbsp;
+							<input type="checkbox" name="u_style" value="맛집"> <label>&nbsp;맛집</label>&nbsp;&nbsp;
+							<input type="checkbox" name="u_style" value="액티비티"> <label>&nbsp;액티비티</label>&nbsp;&nbsp;
+							<input type="checkbox" name="u_style" value="휴양"> <label>&nbsp;휴양</label>
 							&nbsp;&nbsp;<span>하나만 선택해주세요</span></td>
 					</tr>
 
