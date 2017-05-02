@@ -29,13 +29,9 @@ public class LogoutAction2 implements Action {
 //¼º°ø
 	         HttpSession session = request.getSession(false);
 
-	           if(session != null){ 
-	               session.invalidate(); 
-
-	              }
 
 	           session = request.getSession(true); 
-	     
+	           System.out.println(session.getAttribute("member_id"));
 	           session.removeAttribute("member_id");
 	         forward.setRedirect(false);
 	         forward.setPath("logoutAction.jsp");

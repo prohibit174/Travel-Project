@@ -26,7 +26,6 @@ public class LoginAction2 implements Action {
 		Users users = new Users();
 		
 		users.setU_id(request.getParameter("u_id"));
-		System.out.println(request.getParameter("u_id"));
 		users.setU_pwd(request.getParameter("u_pwd"));
 		
 		dbusers = dao.loginCheck(users);
@@ -48,7 +47,6 @@ public class LoginAction2 implements Action {
 	           System.out.println(json);
 	           session = request.getSession(true); 
 	           
-	           System.out.println(dbusers.getU_id());
 	           session.setAttribute("member_id", dbusers.getU_id());// 아이디 세션 저장
 	           
 	     request.setAttribute("users", users);
