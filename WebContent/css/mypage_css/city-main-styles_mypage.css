@@ -15,7 +15,7 @@
 	}
 
 .form_body{
-	dispay : inline;
+	dispay : inline; margin-left: 15px;
 }
 
 .join_form th{
@@ -29,7 +29,7 @@
 	padding-right: 20px;
 }
 
-form{ margin-top:29px}
+form{ margin-top:29px; margin-bottom: 5%}
 form:after{ content:""; display:block; clear:both; *zoom:1}
 form legend{ display:block; width:70%; margin:0; padding-bottom:8px; font-size:18px; font-weight:600; color: #ff8000; border-bottom:2px solid #ff8000}
 
@@ -49,7 +49,7 @@ h2.cs_title					{ display:block; position:relative; width:100%; font-size:18px; 
 
 .nlogin_btn {margin:0; padding:12px 32px; line-height:18px; background:#ff7f11; border:1px solid #e86e0f; font-size:18px; color:#fff; font-weight:bold; cursor:pointer}
 .nlogin_join_center {margin-top:30px; text-align:center; margin-right: 30%}
-
+div fieldset {margin-left: 25%;}
 
 /* 기존  */
 html {

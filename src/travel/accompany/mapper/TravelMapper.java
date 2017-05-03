@@ -6,7 +6,6 @@ import travel.accompany.model.Accompany;
 
 public interface TravelMapper {
 
-	List<Accompany> listAccompany();
-
+	List<Accompany> selectUserRoute(String userID);
 
 }

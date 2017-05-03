@@ -1,6 +1,5 @@
 package travel.route.action;
 
-
 import java.io.File;
 import java.util.Random;
 

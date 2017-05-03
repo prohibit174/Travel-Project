@@ -1,9 +1,19 @@
+<%@page import="travel.users.model.Users"%>
+<%@page import="travel.users.model.UsersDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+
+	String u_id = session.getAttribute("member_id").toString();
+	UsersDao dao = UsersDao.getInstance();
+	Users user = dao.userDetail(u_id);
+	
+	request.setAttribute("user", user);
+%>
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?20170502">
 
 <head>
     
@@ -54,7 +64,7 @@
 					아이디
 					</th>
 					<td>
-					유저 id
+					${user.u_id }
 					
 					</td>
 					</tr>
@@ -82,21 +92,21 @@
 					<tr>
 					<th scope="row">닉네임</th>
 					<td>
-					<input type = "text" name = "u_name">
+					${users.u_name }
 					</td>
 					</tr>
 					
 					<tr>
 					<th scope = "row">생년월일</th>
 					<td>
-					생일정보
+					${users.u_birth }
 					</td>
 					</tr>
 					
 					<tr>
 					<th scope="row">성별</th>
 					<td>
-					남자냐 여자냐
+					${users.u_sex }
 					</td>
 					</tr>
 					
@@ -165,7 +175,7 @@
 			</fieldset>
 
 		<div class="nlogin_join_center">
-		<button type = "submit" class = "nlogin_btn">수정하기</button>
+		<button type = "submit" class = "nlogin_btn">수정완료</button>
 		</div>
 		
 		

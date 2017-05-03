@@ -74,6 +74,28 @@ $(document).ready(function(){
 					<script
 						src="${pageContext.request.contextPath}/JS/loginPopup/loginPopup.js"></script>
 				</div>
+			<!-- 검색 -->
+		<article class="header_bot hideClass1">
+				<fieldset>
+					<legend class="hidden">티클 검색하기</legend>
+					<!-- 티클 타입 1 -->
+	<input type="hidden" name="tikle_pattern" value="1" class="hideClass">
+					
+ <form action="list.carpool" method="post">
+       <input type="hidden" name="temp" value="temp"></input>
+       					<select name="carpool_search" data-val="1">
+							<option value=''>전체</option>
+							<option value="u_id">회원정보</option>
+							<option value="start_lati">출발지</option>
+							<option value="dest_lati">도착지</option>
+							<option value="c_price">가격</option>
+							<option value="c_person">남은 좌석</option>
+					</select>
+       <input type="text" name="searchKey" size="20"></input>
+       <input type="submit" name="" value="검색" title="검색" class="btn_type3 btn_search j_btn_search">
+   </form>
+				</fieldset>
+		</article> <!-- header_bot hideClass1 -->
 
 			</div>
 			<!-- e//tabs-list -->

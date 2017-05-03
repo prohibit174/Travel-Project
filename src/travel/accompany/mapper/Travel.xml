@@ -7,8 +7,10 @@
 
 	<cache />
 
-	
-	
+		<select id="selectUserRoute" resultType="accompany" parameterType="String">
+			select tp_num, c.cor_region, cor_longi, cor_lati, u_id, tp_date
+			from cordinates c, trip_plan t where c.cor_region = t.cor_region and t.u_id='0'
+		</select>
 </mapper>
 
 
