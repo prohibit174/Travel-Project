@@ -11,6 +11,5 @@
 <title>Insert title here</title>
 </head>
 <body>
-신청하시겠습니까?
 </body>
 </html>

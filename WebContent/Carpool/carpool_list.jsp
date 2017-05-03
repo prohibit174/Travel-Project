@@ -16,9 +16,23 @@
 
 
 <html>
+ <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/carpool_css/carpool_table.css">
-
+<script type="text/javascript">
+$(document).ready(function(){
+		$('.apply_button').click(function(){
+			if(confirm("신청하시겠습니까?") == true){
+				alert('신청합니다');
+				location.href="main.carpool";
+			}
+			else{
+				alert('X')
+			}
+		});
+	
+});
+</script>
 <head>
 </head>
 <%@include file="../header.jsp"%>
@@ -109,9 +123,7 @@
 									</p>
 
 									<div class="sign">
-										<input type = "button" value="신청" onclick="location.href='requestForm.carpool'" class='button'>
-
-
+										<input type = "button" value="신청" class='apply_button'>
 									</div>
 									<br>
 									<br>

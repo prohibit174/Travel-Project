@@ -72,7 +72,6 @@ public class CarpoolController extends HttpServlet {
     		   e.printStackTrace();
     	   }
        }else if(command.equals("requestForm.carpool")){
-    	   System.out.println("controller in");
     	   action = new RequestFormAction();
     	   try{
     		   forward = action.execute(request, response);

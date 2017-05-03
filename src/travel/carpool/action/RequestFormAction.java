@@ -15,8 +15,8 @@ public class RequestFormAction implements Action {
 			throws ServletException, IOException, Exception {
 		System.out.println("action in");
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(true);
-		forward.setPath("carpool_requestForm.jsp");
+		forward.setRedirect(false);
+		forward.setPath("Carpool/carpool_requestForm.jsp");
 		
 		return forward;
 	}
