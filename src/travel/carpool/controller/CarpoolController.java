@@ -14,7 +14,7 @@ import travel.carpool.action.ActionForward;
 import travel.carpool.action.InsertAction;
 import travel.carpool.action.InsertFormAction;
 import travel.carpool.action.MainAction;
-import travel.carpool.action.RequestFormAction;
+import travel.carpool.action.RequestAction;
 import travel.product.action.ListAction;
 import travel.product.action.insertAction;
 
@@ -71,8 +71,8 @@ public class CarpoolController extends HttpServlet {
     	   } catch(Exception e){
     		   e.printStackTrace();
     	   }
-       }else if(command.equals("requestForm.carpool")){
-    	   action = new RequestFormAction();
+       }else if(command.equals("request.carpool")){
+    	   action = new RequestAction();
     	   try{
     		   forward = action.execute(request, response);
     	   } catch(Exception e){

@@ -14,8 +14,6 @@ import org.apache.ibatis.io.Resources;
 
 public class CarpoolDao {
 	private static CarpoolDao dao = new CarpoolDao();
-	private static int count = 1;
-
 	public static CarpoolDao getInstance() {
 		return dao;
 	}
@@ -104,6 +102,21 @@ public class CarpoolDao {
 		}finally {
 			session.close();
 		}
-		
+	}
+	public void insertCarpool_Request(Carpool_Request carpool_request) throws Exception {
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = session.getMapper(CarpoolMapper.class).insertCarpool_Request(carpool_request);
+			if(re > 0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
 	}
 }

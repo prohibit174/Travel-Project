@@ -19,12 +19,12 @@
  <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/carpool_css/carpool_table.css">
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(document).ready(function(){
 		$('.apply_button').click(function(){
 			if(confirm("신청하시겠습니까?") == true){
 				alert('신청합니다');
-				location.href="main.carpool";
+				location.href="request.carpool?c_num=${carpool.c_num}";
 			}
 			else{
 				alert('X')
@@ -32,6 +32,18 @@ $(document).ready(function(){
 		});
 	
 });
+</script> -->
+
+<script type="text/javascript">
+function applyLink(URL){
+	if(confirm("신청하시겠습니까?") == true){
+		alert('신청합니다');
+		location.href=URL;
+	}
+	else{
+		alert('X');
+	}
+}
 </script>
 <head>
 </head>
@@ -144,8 +156,12 @@ $(document).ready(function(){
 										<span>${carpool.c_dept_time}</span>
 									</p>
 
-									<div class="sign">
+<!-- 									<div class="sign">
 										<input type = "button" value="신청" class='apply_button'>
+									</div> -->
+									<div class="sign">
+										<input type = "button" onclick="javascript:applyLink('request.carpool?c_num=${carpool.c_num}')"
+										value="신청" class='apply_button'>
 									</div>
 									<br>
 									<br>

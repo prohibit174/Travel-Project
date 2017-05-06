@@ -7,6 +7,7 @@
 	<typeAliases>
 		<typeAlias type="travel.carpool.model.Carpool" alias="Carpool"/>
 		<typeAlias type="travel.carpool.model.Search" alias="Search"/>
+		<typeAlias type="travel.carpool.model.Carpool_Request" alias="Carpool_Request"/>
 	</typeAliases>
 	
 	<environments default="development">

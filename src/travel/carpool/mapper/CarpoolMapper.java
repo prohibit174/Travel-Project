@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.RowBounds;
 
 import travel.carpool.model.Carpool;
+import travel.carpool.model.Carpool_Request;
 import travel.carpool.model.Search;
 
 public interface CarpoolMapper {
@@ -13,4 +14,5 @@ public interface CarpoolMapper {
 	 int deleteCarpool(Carpool carpool);
 	Carpool detailCarpool(String c_num);
 	int updateCarpool(Carpool carpool);
+	int insertCarpool_Request(Carpool_Request carpool_request);
 }
