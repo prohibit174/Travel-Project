@@ -3,7 +3,7 @@ $(document).ready(function() {
 	if($('.btn-new-plan').text() === "로그인"){
 		if ($('#frames span').text() != '') {
 			var html = '';
-			html += '<span> 님 환영 합니다. </span>';
+			html += '<span> 님 환영합니다 </span>';
 			$('#frames').append(html);
 
 			/*$('.btn-new-plan').empty();
