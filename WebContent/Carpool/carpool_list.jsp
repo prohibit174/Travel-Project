@@ -37,8 +37,9 @@ $(document).ready(function(){
 <script type="text/javascript">
 function applyLink(URL){
 	if(confirm("신청하시겠습니까?") == true){
-		alert('신청합니다');
 		location.href=URL;
+		alert('신청되었습니다');
+
 	}
 	else{
 		alert('X');
@@ -93,19 +94,7 @@ function applyLink(URL){
 					<!-- 티클 타입 1 -->
 	<input type="hidden" name="tikle_pattern" value="1" class="hideClass">
 					
- <form action="list.carpool" method="post">
-       <input type="hidden" name="temp" value="temp"></input>
-       					<select name="carpool_search" data-val="1">
-							<option value=''>전체</option>
-							<option value="u_id">회원정보</option>
-							<option value="start_lati">출발지</option>
-							<option value="dest_lati">도착지</option>
-							<option value="c_price">가격</option>
-							<option value="c_person">남은 좌석</option>
-					</select>
-       <input type="text" name="searchKey" size="20"></input>
-       <input type="submit" name="" value="검색" title="검색" class="btn_type3 btn_search j_btn_search">
-   </form>
+
 				</fieldset>
 		</article> <!-- header_bot hideClass1 -->
 
@@ -127,13 +116,17 @@ function applyLink(URL){
 		</form>
 				<div class="table">
 					<ul>
-						<c:forEach var="carpool" items="${list}">
+						<c:forEach var="carpool" items="${listModel.list}">
+							
 							<li>
 								<div class="top">
-									<h1>${carpool.c_num }</h1>
-									<div class="circle">${carpool.c_price }$</div>
+									<h5>등록번호 : ${carpool.c_num }</h5>
+									<div class="circle">이미지</div>
 								</div>
 								<div class="bottom">
+									<p>
+										<span>등록자 : ${carpool.u_id }</span>
+									</p>
 									<p>
 										<span>${carpool.start_lati }</span>
 									</p>
@@ -147,13 +140,16 @@ function applyLink(URL){
 										<span>${carpool.dest_longti}</span>
 									</p>
 									<p>
-										<span>출발일 ${carpool.c_date}</span>
+										<span>가격 : ${carpool.c_person}</span>
 									</p>
 									<p>
 										<span>남은좌석 ${carpool.c_person}</span>
 									</p>
 									<p>
-										<span>${carpool.c_dept_time}</span>
+										<span>출발일시 : ${carpool.c_date}</span>
+									</p>
+									<p>
+										<span>도착일시 : ${carpool.c_dept_time}</span>
 									</p>
 
 <!-- 									<div class="sign">
@@ -169,7 +165,10 @@ function applyLink(URL){
 							</li>
 
 						</c:forEach>
+									
+
 					</ul>
+	
 				</div>
 				<!-- table -->
 
@@ -178,7 +177,31 @@ function applyLink(URL){
 
 		</div>
 		<!-- present -->
-
+				<div id="paging">
+   
+   <!-- 이전 -->
+   <span id="page_back">
+   <c:if test="${listModel.startPage > 5 }">
+      <a href="list.carpool?pageNum=${listModel.startPage - 5}" >[이전]</a>
+   </c:if>
+   </span>
+   <!-- 페이지 목록 -->
+   <c:forEach var="pageNo" begin="${listModel.startPage}"
+      end="${listModel.endPage }">
+      <span id="page_number">
+      <c:if test="${listModel.requestPage == pageNo}"><b></c:if>
+      <a href="list.carpool?pageNum=${pageNo}" >[${pageNo}]</a>
+      <c:if test="${listModel.requestPage == pageNo}"></b></c:if>
+      </span>
+   </c:forEach>
+   
+   <!-- 이후 -->
+   <span id="page_front">
+   <c:if test="${listModel.endPage < listModel.totalPageCount}">
+      <a href="list.carpool?pageNum=${listModel.startPage + 5}">[이후]</a>   
+   </c:if>
+   </span>
+   </div><!-- paging end -->
 	</div>
 	<!-- wrapper -->
 

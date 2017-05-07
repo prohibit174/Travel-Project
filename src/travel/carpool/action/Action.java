@@ -6,6 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import travel.carpool.model.ListModel;
+
 public interface Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception;
+
 }

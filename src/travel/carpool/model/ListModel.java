@@ -3,9 +3,9 @@ package travel.carpool.model;
 import java.util.List;
 
 public class ListModel {
-	private List<Carpool> list;
-	private int requestPage;
-	private int totalPageCount;
+	private List<Carpool> list; 
+	private int requestPage; 
+	private int totalPageCount; 
 	private int startPage;
 	private int endPage;
 	

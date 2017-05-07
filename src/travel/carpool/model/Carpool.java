@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Carpool implements Serializable {
 
-	private String c_num;
+	private int c_num;
 	private String u_id;
 	private String start_lati;
 	private String start_longti;
@@ -19,7 +19,7 @@ public class Carpool implements Serializable {
 	public Carpool(){}
 
 
-	public Carpool(String c_num, String u_id, String start_lati, String start_longti, String dest_lati,
+	public Carpool(int c_num, String u_id, String start_lati, String start_longti, String dest_lati,
 			String dest_longti, String c_price, String c_date, String c_person, String c_dept_time) {
 		super();
 		this.c_num = c_num;
@@ -35,12 +35,12 @@ public class Carpool implements Serializable {
 	}
 
 
-	public String getC_num() {
+	public int getC_num() {
 		return c_num;
 	}
 
 
-	public void setC_num(String c_num) {
+	public void setC_num(int c_num) {
 		this.c_num = c_num;
 	}
 
