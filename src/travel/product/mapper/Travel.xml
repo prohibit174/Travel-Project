@@ -15,8 +15,16 @@
 		)
 	</insert>
 	
-	<select id="listProduct" resultType="Product">
+	<select id="listProduct" resultType="Product" parameterType="Product_Search">
 		select * from product
+		
+		<if test="product_search !=null">
+		<where>
+		<foreach collection="product_search" item="item" separator="or" open="(" close=")">
+			${item} LIKE #{searchKey}
+		</foreach>
+		</where>
+		</if>
 	</select>
 	
 	<select id="detailProduct" resultType="Product" parameterType="String">

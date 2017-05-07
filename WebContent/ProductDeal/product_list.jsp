@@ -1,3 +1,4 @@
+<%@page import="travel.product.model.Product_Search"%>
 <%@page import="travel.product.model.Product"%>
 <%@page import="java.util.List"%>
 <%@page import="travel.product.model.ProductDao"%>
@@ -9,10 +10,11 @@
 <%
 	
 	request.setCharacterEncoding("utf-8");
-    ProductDao dao = ProductDao.getInstance();
+    //ProductDao dao = ProductDao.getInstance();
+    //Product_Search proSearch=new Product_Search();
 	
-   List<Product> list = dao.listProduct();
-   request.setAttribute("list", list);
+   //List<Product> list = dao.listProduct(proSearch);
+   //request.setAttribute("list", list);
    
 	
 
@@ -72,8 +74,22 @@
             <div class="bigHeader">
 		전체 물품
             </div>
-            <div class="content-tabs">
-	물품 검색 : <input type="text" />
+            
+     <div class="content-tabs">
+     <form action="listAction.product" method="post">
+       <input type="hidden" name="temp" value="temp"></input>
+       					<select name="product_search" data-val="1">
+							
+							<option value="p_name">상품명</option>
+							<option value="u_id">사용자아이디</option>
+							
+					</select>
+       <input type="text" name="searchKey" size="20"></input>
+       <input type="submit" name="" value="검색" title="검색" class="btn_type3 btn_search j_btn_search">
+   </form>
+            
+            
+	
             </div>
             <div class="conts-box-list">
                 <div class="inner-box">

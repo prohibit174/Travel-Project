@@ -4,11 +4,12 @@ import java.util.List;
 
 import travel.product.model.Product;
 import travel.product.model.Product_Request;
+import travel.product.model.Product_Search;
 
 public interface TravelMapper {
 
 	int insertProduct(Product product);
-	List<Product> listProduct();
+	List<Product> listProduct(Product_Search proSearch);
 	Product detailProduct(String p_num);
 	int updateProduct(Product product);
 	int deleteProduct(Product product);
