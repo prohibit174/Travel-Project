@@ -48,8 +48,15 @@
 		where c_num=#{c_num}
 	</update>
 	
+	
+	
+	<insert id= "insertCarpool_Request" parameterType="Carpool_Request">
+		insert into TEST1 VALUES(cr_num.nextval, 'x', #{c_num}, #{u_id})
+	</insert>
+	
 
 </mapper>
+
 
 
 
