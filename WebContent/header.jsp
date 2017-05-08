@@ -12,7 +12,7 @@
 
 
 <!--common meta data-->
-<title>가볼만한곳/맛집/숙박 정보, 항공/호텔 가격비교, 나만의 여행일정 | 여행의 모든 것, 위시빈</title>
+<title>프로 동행러</title>
 <meta name="keywords" content="위시빈, 여행일정, 여행정보, 여행꿀팁, 세계여행정보, 국내여행정보, 해외여행정보, 여행팁, 자유여행, 자유여행준비, 가이드북, 지도, 추천일정, 테마여행, 명소, 스팟, 맛집, 쇼핑, 숙박, 호텔, 게스트하우스, 최저가 항공권 검색, 최저가 숙박 검색, 최저가 호텔 검색, 특가 항공권, 무료 항공 이벤트, 무료 호텔 이벤트, 여행Q&A, 여행후기, 홍콩, 마카오, 오사카, 후쿠오카, 도쿄, 타이베이, 베이징, 상하이, 칭다오, 싱가포르, 방콕, 푸껫, 보라카이, 코타 키나발루, 파리, 로마, 런던, 바르셀로나, 크로아티아, 이스탄불, 뉴욕, 하와이, 미서부, 괌, 시드니, 제주, 타이중, 가오슝">
 <meta name="description" content="궁금한 여행정보, 위시빈에 다 있다! 1천 개 이상의 전 세계 여행꿀팁 · 25만 개의 자유 여행일정 · 40만 개의 전 세계 가볼만한 곳, 맛집, 숙박 정보 · 여행자들이 직접 남긴 100만 개의 리뷰/후기/꿀팁 · 항공, 호텔 가격비교 · 나만의 여행일정 계획하기"/>
 <link rel="canonical" href="https://www.wishbeen.co.kr/">
@@ -70,7 +70,7 @@ $(function(){
 #menu_tab_list li ul {position:absolute; width:150px; z-index: 1;}
 #menu_tab_list li.on ul {height:auto; background:#303a50; opacity: 0.9}
 #menu_tab_list li ul li a {margin:3px 0px 3px 3px; color:;  text-align: left;}
-
+#airplane{padding-bottom: 230px;}
 </style>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Button.css"/><!-- 버튼 CSS -->
 
@@ -82,7 +82,7 @@ $(function(){
   <!-- {header -->
   <div class="header">
     <div class="main-nav-con">
-      <a href="home.main"><p class="wishbeen-logo"><span>나를 클릭하면 HOME으로 갑니다</span></p></a>
+      <a href="home.main"><img id="airplane" width=90px height=auto alt="비행기" src="${pageContext.request.contextPath}/images/airplane.PNG"><p class="title-logo"><span>외로울 틈이 없다 ! 프로동행러</span></p></a>
 
 
       <div class="nav-login-search">

@@ -8892,7 +8892,7 @@ body.spot-page-body {
 }
 
 .tabs-list li a.active {
-	color: #ff8000
+	color: #000000;
 }
 
 .search-box {
@@ -10309,7 +10309,9 @@ body.spot-page-body {
 }
 
 .present .tabs-list li a.active {
-	color: #ff8000
+	color: #000000;
+	font-weight: bold;
+	
 }
 
 .present .tabs-list li .depth2 {
@@ -10319,17 +10321,17 @@ body.spot-page-body {
 .present .tabs-list li a.active span {
 	display: inline-block;
 	height: 50px;
-	border-bottom: 3px solid #ff8000
+	border-bottom: 3px solid #000000;
 }
 
 .present .tabs-list li a.active:hover span {
-	border-bottom: 3px solid #ff8000
+	border-bottom: 3px solid #857a80;
 }
 
 .present .tabs-list li a:hover span {
 	display: inline-block;
 	height: 50px;
-	border-bottom: 3px solid #333
+	border-bottom: 3px solid #857a80
 }
 
 .present .conts-box-list {
@@ -20245,15 +20247,15 @@ a.loginwithf.goog {
 	background: #fff
 }
 
-.header .wishbeen-logo {
+.header .title-logo {
 	overflow: hidden;
 	display: block;
 	float: left;
 	height: 50px;
-	padding: 0;
+	padding-top: 13px;
 	font-size: 18px;
-	color: #ff8000;
-	font-weight: 300
+	color: #000000;
+	font-weight: bold;
 }
 
 .header .wishbeen-logo a {
