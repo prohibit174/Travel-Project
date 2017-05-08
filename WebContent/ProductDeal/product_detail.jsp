@@ -15,9 +15,7 @@
 	String p_num=request.getParameter("p_num");
 
     ProductDao dao = ProductDao.getInstance();
-    Product_Search proSearch=new Product_Search();
-	
-    List<Product> list = dao.listProduct(proSearch);
+
     Product product=dao.detailProduct(p_num);
     
     request.setAttribute("product", product);
@@ -48,12 +46,13 @@
     	}
 	
 	
-		function btn_js_request_click(){
-    	  /* confirm(문자열, 초기값) */
-    	  var check = confirm("요청하시겠습니까?");
-    	  /* if(check == true) else false */
-    	  if(check) document.location.href="detailReqAction.product?p_num=<%=product.getP_num()%>";
-    	}
+	function btn_js_request_click(){
+  	  /* confirm(문자열, 초기값) */
+  	  var check = confirm("요청하시겠습니까?");
+  	  /* if(check == true) else false */
+  	  if(check) document.location.href="insertReqFormAction.product?p_num=<%=product.getP_num()%>";
+  	  
+		}
   </script>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-curation-page-styles.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product_css/city-main-styles.css">
@@ -89,7 +88,7 @@
                 <ul class="tabs-list">
     
         
-            <li><a href="mainAction.product" class="first-tag active"><span>전체 조회</span></a></li>
+            <li><a href="listAction.product" class="first-tag active"><span>전체 조회</span></a></li>
             
             
             <li><a href="insertForm.product"><span>물품 등록</span></a></li>
@@ -263,9 +262,6 @@
     </div>
       
     <!-- boram end -->
-    
-    
-
 
               </div>
               <div class="clear"></div>

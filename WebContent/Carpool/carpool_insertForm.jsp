@@ -6,7 +6,6 @@ String id =(String)session.getAttribute("member_id");
 <!DOCTYPE html>
 
 <html>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin2.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin3.css" />
@@ -14,6 +13,7 @@ String id =(String)session.getAttribute("member_id");
 
     <script data-main="/js/page/city"
             src="/js/lib/bower_components/requirejs/require.js"></script>
+            <script type="text/javascript" src="${pageContext.request.contextPath}/JS/MainEvent/NotLoginEvent.js"></script>
  <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
 <script type="text/javascript" src="http://www.nowarch.com/resources/js/jquery-1.10.2.min.js"></script>           
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/carpool_JoinEvent.js"></script>
@@ -38,9 +38,9 @@ String id =(String)session.getAttribute("member_id");
                 
                 <ul class="tabs-list">
             <li><a href="main.carpool" class="first-tag active"><span>CARPOOL</span></a></li>
-            <li><a href="insertForm.carpool"  class=""><span>카풀 등록</span></a></li>     
-            <li><a href="list.carpool" data-id="2d8eef384cefda06" class=""><span>대기중인 카풀 리스트</span></a></li>
-            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class=""><span>내 카풀 등록 조회</span></a></li>
+            <li><a href="insertForm.carpool"  class="Carpool_Enrollment"><span>카풀 등록</span></a></li>     
+            <li><a href="list.carpool" data-id="2d8eef384cefda06" class="Carpool_Waiting"><span>대기중인 카풀 리스트</span></a></li>
+            <li><a href="/city?serviceType=global&amp;tab=hotdeal&amp;curationTag=f9188662257e085d" data-id="f9188662257e085d" class="My_Carpool"><span>내 카풀 등록 조회</span></a></li>
             
 		</ul>
 
@@ -655,7 +655,13 @@ String id =(String)session.getAttribute("member_id");
 						</div>
 						
 						<div class="nlogin_join_center">
-							<button class="nlogin_btn" type="submit">카풀 등록</button>
+							<div class="back">
+							    <div class="button_base b03_skewed_slide_in">
+							        <div>Sign up</div>
+							        <div></div>
+							        <div><button type="submit">Sign up</button></div>
+							    </div>
+							</div>
 					    </div>
 </form>					
 
