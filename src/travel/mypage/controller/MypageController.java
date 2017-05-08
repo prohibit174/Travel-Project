@@ -16,6 +16,7 @@ import travel.mypage.action.CarpoolListAction;
 import travel.mypage.action.CarpoolUpdateAction;
 import travel.mypage.action.CarpoolUpdateAction2;
 import travel.mypage.action.MypageMainAction;
+import travel.mypage.action.ProductRequestListAction;
 import travel.mypage.action.UpdateUserAction;
 
 
@@ -78,6 +79,13 @@ public class MypageController extends HttpServlet {
 			}
 		} else if (command.equals("main.mypage")){
 			action = new MypageMainAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}   else if (command.equals("productRequestList.mypage")){
+			action = new ProductRequestListAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

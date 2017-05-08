@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -49,11 +50,11 @@ public class ProductDao {
 		}
 	}
 
-	public List<Product> listProduct(Product_Search proSearch) throws Exception {
+	public List<Product> listProduct(int startRow, Product_Search proSearch) throws Exception {
 		SqlSession session = getSqlSessionFactory().openSession();
 		List<Product> list = null;
 		try {
-			list = session.getMapper(TravelMapper.class).listProduct(proSearch);
+			list = session.getMapper(TravelMapper.class).listProduct(new RowBounds(startRow, 8), proSearch);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
@@ -140,6 +141,49 @@ public class ProductDao {
 			}
 			return productReq;
 		}
+		
+		public List<Product_Request> listProductRequest(String u_id) throws Exception {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<Product_Request> list = null;
+			try {
+				list = session.getMapper(TravelMapper.class).listProductRequest(u_id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+			
+			return list;
+		}
+
+		public int countProduct(Product_Search product_search) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int total=0;
+			try {
+				total = session.getMapper(TravelMapper.class).countProduct(product_search);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+			return total;
+		}
+
+		public List<Product> listProduct(Product_Search proSearch) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<Product> list = null;
+			try {
+				list = session.getMapper(TravelMapper.class).listProduct(proSearch);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+			
+			return list;
+		}
+		
+		
 
 		
 		
