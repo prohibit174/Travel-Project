@@ -33,10 +33,8 @@
 
 
 <meta property="fb:app_id" content="1422306324649276" />
-
-
 <meta name="google-signin-client_id" content="41152955122-5m3ufq08325k2m3mgeppmkknn9rql13h.apps.googleusercontent.com">
-<link rel="stylesheet" href="./css/carpool_css/city-main-styles.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
  <script type="text/javascript" src="${pageContext.request.contextPath}/JS/carpool_javascript/jquery.js"></script>
 <script data-main="/js/page/city" src="/js/lib/bower_components/requirejs/require.js"></script>
 <script src="${pageContext.request.contextPath}/JS/MainEvent/loginPopup.js"></script>
@@ -56,6 +54,7 @@ $(function(){
 
 });
 </script>
+
 <style type="text/css">
   body, pre {
     font-family: "맑은 고딕","Malgun Gothic","Helvetica Neue","Apple SD Gothic Neo",Helvetica,Arial,"Apple Gothic","돋움",Dotum,sans-serif!important;
@@ -67,16 +66,14 @@ $(function(){
 
 #menu_tab_list > li {display:inline-block; }
 #menu_tab_list > li > a {display:block; line-height:25px; width:150px; text-align:center; padding-top: 10px;}
-#menu_tab_list > li.on a {background:#777; color:#fff;}
+#menu_tab_list > li.on a {color:; }
 #menu_tab_list li ul {position:absolute; width:150px; z-index: 1;}
-#menu_tab_list li.on ul {height:auto; background:#777;}
-#menu_tab_list li ul li a {margin:3px 0px 3px 3px; color:#fff; text-align: left;}
+#menu_tab_list li.on ul {height:auto; background:#303a50; opacity: 0.9}
+#menu_tab_list li ul li a {margin:3px 0px 3px 3px; color:;  text-align: left;}
 
 </style>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/Button.css"/><!-- 버튼 CSS -->
 
-
-
-</script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
@@ -88,13 +85,13 @@ $(function(){
       <a href="home.main"><p class="wishbeen-logo"><span>나를 클릭하면 HOME으로 갑니다</span></p></a>
 
 
-		
       <div class="nav-login-search">
         <a class="btn-new-plan">로그인</a>
 
         <div class="login-and-profile">
 
           <div>
+
             <a href="JoinForm.users" id="nav-btn-about"  >회원가입</a>
             <a  id="nav-login-btn" class="myPage_btn">마이페이지</a>
           </div>
@@ -108,7 +105,13 @@ $(function(){
       </p>
     </div>
   </div><!-- header } -->
-
+<div class="back">
+    <div class="button_base b03_skewed_slide_in">
+        <div>Modify</div>
+        <div></div>
+        <div>Modify</div>
+    </div>
+</div>
 
 <!-- 포함되어야 할 파라미터 목록 -->
 <!-- language, curCity, tab (현재 선택된 탭) -->
@@ -129,18 +132,18 @@ $(function(){
     <div class="tabs-list">
         <ul id="menu_tab_list">
             <li><a href="home.main" >HOME</a></li>
-            <li><a data-tab="hotdeal" >동행</a></li>
+            <li><a href=".accompany">ACCOMPANY</a></li>
             <li>
-            	<a href="main.carpool" >카풀</a>
+            	<a href="main.carpool" >CARPOOL</a>
             	<ul>
-            		<li><a class="Carpool_Enrollment"><span>카풀 등록</span></a></li>     
+            		<li><a class="Carpool_Enrollment"><span>경로 수정</span></a></li>     
             		<li><a href="list.carpool" data-id="2d8eef384cefda06" class="Carpool_Waiting"><span>대기중인 카풀 리스트</span></a></li>
            			<li><a data-id="f9188662257e085d" class="My_Carpool"><span>내 카풀 등록 조회</span></a></li>
             	</ul>
             </li>
-            <li><a href="listAction.product" >물품교환</a></li>
-            <li><a data-tab="plan" >커뮤니티</a></li>
-            <li><a data-tab="attraction" >블로그</a></li>
+            <li><a href="listAction.product" >EXCHANGE</a></li>
+            <li><a data-tab="plan" >COMMUNITY</a></li>
+            <li><a data-tab="attraction" >BLOG</a></li>
 
         </ul><!-- e// tabs -->
     </div><!-- e//tabs-list -->

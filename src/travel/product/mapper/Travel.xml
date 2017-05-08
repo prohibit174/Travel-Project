@@ -58,6 +58,20 @@
 		select * from product_req where p_num = (select p_num from product where u_id = #{u_id})
 	</select>
 	
+
+	<select id="countProduct" resultType="int" parameterType="Product_Search">
+		select count(*) from product	
+		<!-- Product list paging work -->
+		<if test="product_search !=null">
+				<where>
+					<!-- b_title, LIKE %자바% OR  b_writer LIKE %자바%-->
+					<foreach collection="product_search" item="item" separator="OR" open="(" close=")" >
+						${item} LIKE #{searchKey}
+					</foreach>
+				</where>
+			</if>
+	</select>
+	
 	
 	<update id="updateAccept" parameterType="Product_Request">
 	  	UPDATE product_req SET pr_ox='o'

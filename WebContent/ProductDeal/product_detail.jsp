@@ -15,9 +15,7 @@
 	String p_num=request.getParameter("p_num");
 
     ProductDao dao = ProductDao.getInstance();
-    Product_Search proSearch=new Product_Search();
-	
-    List<Product> list = dao.listProduct(proSearch);
+
     Product product=dao.detailProduct(p_num);
     
     request.setAttribute("product", product);
@@ -264,9 +262,6 @@
     </div>
       
     <!-- boram end -->
-    
-    
-
 
               </div>
               <div class="clear"></div>

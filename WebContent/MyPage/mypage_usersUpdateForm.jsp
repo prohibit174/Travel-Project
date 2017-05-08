@@ -14,6 +14,9 @@
 <html>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?20170502">
+<script src = "//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/UpdateInfo"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/join_checkInfo.js"></script>
 
 <head>
     
@@ -23,7 +26,7 @@
 <body>
 	<br>
 	<div class="form_body">
-		<form action="JoinAction.join" class="join_form">
+		<form action="ModifyUser.mypage" class="join_form">
 		        <div class="present">
             <div class="tabs-list">
                 
@@ -92,21 +95,21 @@
 					<tr>
 					<th scope="row">닉네임</th>
 					<td>
-					${users.u_name }
+					${user.u_name }
 					</td>
 					</tr>
 					
 					<tr>
 					<th scope = "row">생년월일</th>
 					<td>
-					${users.u_birth }
+					${user.u_birth }
 					</td>
 					</tr>
 					
 					<tr>
 					<th scope="row">성별</th>
 					<td>
-					${users.u_sex }
+					${user.u_sex }
 					</td>
 					</tr>
 					
