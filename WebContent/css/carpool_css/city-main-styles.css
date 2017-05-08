@@ -8863,6 +8863,7 @@ body.spot-page-body {
 	width: 100%;
 	min-height: 30px;
 	background: #000000;
+	opacity: 0.7;
 }
 
 .main-tabs .tabs-list {
@@ -8873,7 +8874,8 @@ body.spot-page-body {
 }
 
 .tabs-list li {
-	float: left
+	float: left;
+	text-weight: bold;
 }
 
 .tabs-list li a {
@@ -20834,7 +20836,8 @@ a:hover.noti-check-off, a:hover.noti-check-on {
 	min-width: 1200px;
 	padding: 0 0 90px;
 	margin: 0 auto;
-	background: #303a50
+	background: #000000;
+	opacity: 0.7;
 }
 
 .footer-wrap {
