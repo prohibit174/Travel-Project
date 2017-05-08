@@ -60,10 +60,15 @@
 	
 	
 	<update id="updateAccept" parameterType="Product_Request">
-	  	update product_req 
-	  	set pr_ox='o'
-	  	where p_num = #{p_num}
+	  	UPDATE product_req SET pr_ox='o'
+	  	WHERE p_num = #{p_num}
 	</update>
+	
+	<select id="listNotAceept" resultType="Product_Request">
+		select * from product_req
+		where pr_ox ='x'
+	
+	</select>
 	
 	
 </mapper>

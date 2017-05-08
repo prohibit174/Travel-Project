@@ -21,7 +21,6 @@ public class CarpoolListAction implements Action {
 		CarpoolDao dao = CarpoolDao.getInstance();
 		Search search = new Search();
 		search.setCarpool_search(request.getParameterValues("carpool_search"));
-		search.setSearchKey("%"+request.getParameter("searchKey")+"%");
 
 		
 		List<Carpool> list = dao.listCarpool(search);

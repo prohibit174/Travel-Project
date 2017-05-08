@@ -17,6 +17,7 @@ public interface TravelMapper {
 	int insertProductReq(Product_Request proReq);
 	List<Product_Request> listProductRequest(String u_id);
 	int updateAccept(Product_Request proReq);
+	List<Product_Request> listNotAceept();
 
 
 }

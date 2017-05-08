@@ -144,6 +144,7 @@ public class ProductController extends HttpServlet {
 	       	}
 	       
 	       	else if(command.equals("updateAcceptAction.product")){
+	       		System.out.println("in");
 		          action = new UpdateAcceptAction();
 		          try {
 		            forward = action.execute(request, response);   
