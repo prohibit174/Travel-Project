@@ -31,13 +31,7 @@
 <head>
 <script type="text/javascript">
 
-function btn_js_accept_click(){
-	  /* confirm(문자열, 초기값) */
-	  var check = confirm("수락하시겠습니까?");
-	  /* if(check == true) else false */
-	  if(check) document.location.href="updateAcceptAction.product?p_num=<%=productReq.getP_num()%>";
-	  
-	}
+
 </script>
     
 <%@include file="../header.jsp" %>
@@ -80,8 +74,9 @@ function btn_js_accept_click(){
             </div> <!-- present -->
             
           
-			<fieldset>
-				<legend>물품 교환 요청 목록</legend>
+        
+        <fieldset>
+				<legend>수락된 요청 목록</legend>
 				
             <table class="primary_table">
             <tr>
@@ -91,8 +86,7 @@ function btn_js_accept_click(){
             <th>수락여부</th>
             <th>장소</th>
             <th>시간</th> 
-            <th>수락</th> 
-            <th>거절</th> 
+           
             </tr>
             
             
@@ -106,17 +100,13 @@ function btn_js_accept_click(){
          <td align="center">${product_req.pr_ox }</td>
          <td align="center">${product_req.pr_place }</td>
          <td align="center">${product_req.pr_date }</td>
-         <td align="center"><input type="button" value="수락" " class="nlogin_btn" onclick=btn_js_accept_click();></td>
-         <td align="center"><input type="button" value="거절" onclick="location.href='carpoolDelete.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
+        
          </tr>
          </c:forEach>
-         
        
    
          </table>
-         <br><br><br>
         </fieldset>
-       
 
 		</form>
 

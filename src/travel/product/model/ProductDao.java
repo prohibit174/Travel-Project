@@ -141,6 +141,7 @@ public class ProductDao {
 			return productReq;
 		}
 		
+		
 		public List<Product_Request> listProductRequest(String u_id) throws Exception {
 			SqlSession session = getSqlSessionFactory().openSession();
 			List<Product_Request> list = null;
@@ -154,6 +155,25 @@ public class ProductDao {
 			
 			return list;
 		}
+		
+		//수락신청 여부 변경
+		public void updateAccept(Product_Request proReq) {
+			SqlSession session = getSqlSessionFactory().openSession();
+			int re = -1;
+			try {
+				re = session.getMapper(TravelMapper.class).updateAccept(proReq);
+				if(re > 0){
+					session.commit();
+				}else{
+					session.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				session.close();
+			}
+		}
+		
 
 		
 		

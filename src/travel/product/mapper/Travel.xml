@@ -53,10 +53,17 @@
 	<select id="detailProductReq" resultType="Product_Request" parameterType="String">
 		select * from product_req where p_num=#{p_num}
 	</select>
-	
+	 
 	<select id="listProductRequest" resultType="Product_Request" parameterType="String">
 		select * from product_req where p_num = (select p_num from product where u_id = #{u_id})
 	</select>
+	
+	
+	<update id="updateAccept" parameterType="Product_Request">
+	  	update product_req 
+	  	set pr_ox='o'
+	  	where p_num = #{p_num}
+	</update>
 	
 	
 </mapper>

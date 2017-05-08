@@ -21,6 +21,7 @@ import travel.product.action.InsertReqFormAction;
 import travel.product.action.ListAction;
 
 import travel.product.action.MainAction;
+import travel.product.action.UpdateAcceptAction;
 import travel.product.action.UpdateAction;
 import travel.product.action.UpdateFormAction;
 import travel.product.action.deleteAction;
@@ -141,11 +142,23 @@ public class ProductController extends HttpServlet {
 		            e.printStackTrace();
 		         }
 	       	}
+	       
+	       	else if(command.equals("updateAcceptAction.product")){
+		          action = new UpdateAcceptAction();
+		          try {
+		            forward = action.execute(request, response);   
+		         } catch (Exception e) {
+		            e.printStackTrace();
+		         }
+	          
+	          
+	       }
+	       
+	    
+	       	 
 	       	 
 	       
-	       
-	       
-	       
+	     
 	       if(forward !=null){
 	          if(forward.isRedirect()){
 	             response.sendRedirect(forward.getPath());
