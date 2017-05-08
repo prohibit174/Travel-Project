@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?20170502">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?20170508">
 <script src = "//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/UpdateInfo"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/UsersJS/join_checkInfo.js"></script>
@@ -76,7 +76,7 @@
 					<tr>
 					<th scope="row">비밀번호</th>
 					<td>
-					<input type = "password" name = "u_pwd" id = "u_pwd">
+					<input type = "password" name = "u_pwd" id = "u_pwd" placeholder="필수 항목입니다.">
 					&nbsp;&nbsp;&nbsp;&nbsp;<span>알파벳과 숫자 조합으로 6~12자</span>
 					
 					
@@ -127,7 +127,7 @@
 					<tr>
 					<th scope = "row">거주 지역</th>
 					<td>
-					 <input type = "text" name = "u_address">	
+					 <input type = "text" name = "u_address" placeholder="필수항목 입니다.">	
 					</td>
 					</tr>
 
