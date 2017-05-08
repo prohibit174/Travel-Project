@@ -154,6 +154,8 @@
 
 		<div class="nlogin_join_center">
 		<button type = "submit" class = "nlogin_btn">수정하기</button>	 
+		
+
 		</div>
 		
 		

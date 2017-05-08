@@ -2,8 +2,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/users_css/city-main-styles_join.css?version=20170502">
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?20170508">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
@@ -41,8 +40,10 @@
             </div> <!-- present -->
             
           <form action="CheckPw.mypage">
-          	잘못된 비밀번호 입니다.
+          <div class = "in_form">
+          	잘못된 비밀번호 입니다.<br><br>
          <input type = "submit" value = "돌아가기" class = "nlogin_btn">
+         </div>
           </form>
 
 </body>

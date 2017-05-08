@@ -169,10 +169,10 @@
 							<span>하나만 선택해주세요</span></td>
 					</tr>
 
-					<tr>
+					<!-- <tr>
 						<th scope="row">프로필 이미지</th>
 						<td><input type="file" name="u_img" id="u_img"></td>
-					</tr>
+					</tr> -->
 					</tbody>
 				</table>
 			</fieldset>

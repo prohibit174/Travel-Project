@@ -10,6 +10,6 @@ public interface UsersMapper {
 	 Integer idCheck(String string);
 	int insertUsers2(Users users);
 	 Users userDetail(String u_id);
-	 int userUpdate(String u_id);
+	 int userUpdate(Users users);
 	 Integer checkPw(Map<String, String> map);
 }
