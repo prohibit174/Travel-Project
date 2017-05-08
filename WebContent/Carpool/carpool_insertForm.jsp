@@ -656,7 +656,13 @@ String id =(String)session.getAttribute("member_id");
 						</div>
 						
 						<div class="nlogin_join_center">
-							<button class="nlogin_btn" type="submit">카풀 등록</button>
+							<div class="back">
+							    <div class="button_base b03_skewed_slide_in">
+							        <div>Sign up</div>
+							        <div></div>
+							        <div>Sign up</div>
+							    </div>
+							</div>
 					    </div>
 </form>					
 
