@@ -18,7 +18,8 @@
 	
 	
 	<select id="listCarpool" resultType="Carpool" parameterType="Search">
-		select * from test 
+		select * from test
+		where c_person>0 
 		<if test="carpool_search !=null">
 		<where>
 		<foreach collection="carpool_search" item="item" separator="or" open="(" close=")">
