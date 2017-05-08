@@ -96,11 +96,11 @@ public class Accompany implements Serializable {
 	public void setU_license(String u_license) {
 		this.u_license = u_license;
 	}
-	public String getTs_id() {
-		return ts_id;
+	public String getu_style() {
+		return u_style;
 	}
-	public void setTs_id(String ts_id) {
-		this.ts_id = ts_id;
+	public void setu_style(String u_style) {
+		this.u_style = u_style;
 	}
 	public String getU_sex() {
 		return u_sex;
@@ -115,7 +115,7 @@ public class Accompany implements Serializable {
 
 	public Accompany(String tp_num, String cor_region, String cor_longi, String cor_lati, String u_id,
 			String tp_date, String u_name, String u_birth, String u_address, String u_job, String u_lang, String u_img,
-			String u_religion, String u_license, String ts_id, String u_sex) {
+			String u_religion, String u_license, String u_style, String u_sex) {
 		super();
 		this.tp_num = tp_num;
 		this.cor_region = cor_region;
@@ -131,7 +131,7 @@ public class Accompany implements Serializable {
 		this.u_img = u_img;
 		this.u_religion = u_religion;
 		this.u_license = u_license;
-		this.ts_id = ts_id;
+		this.u_style = u_style;
 		this.u_sex = u_sex;
 	}
 
@@ -150,7 +150,7 @@ public class Accompany implements Serializable {
 	private String u_img;
 	private String u_religion;
 	private String u_license;
-	private String ts_id;
+	private String u_style;
 	private String u_sex;
 
 	

@@ -340,7 +340,7 @@ function applyLink(URL){
     var accom_img=[];
     var accom_religion=[];
     var accom_license=[];
-    var accom_ts_id=[];
+    var accom_u_style=[];
     var accom_sex=[];
        
     var infowindow=[];
@@ -363,7 +363,7 @@ function applyLink(URL){
                   <c:set var="u_img" value="${accompany.u_img}"></c:set>
                   <c:set var="u_religion" value="${accompany.u_religion}"></c:set>
                   <c:set var="u_license" value="${accompany.u_license}"></c:set>
-                  <c:set var="ts_id" value="${accompany.ts_id}"></c:set>
+                  <c:set var="u_style" value="${accompany.u_style}"></c:set>
                   <c:set var="u_sex" value="${accompany.u_sex}"></c:set>
                   
                   
@@ -384,7 +384,7 @@ function applyLink(URL){
                   accom_img[accom_index]="${u_img}";
                   accom_religion[accom_index]="${u_religion}";
                   accom_license[accom_index]="${u_license}";
-                  accom_ts_id[accom_index]="${ts_id}";
+                  accom_u_style[accom_index]="${u_style}";
                   accom_sex[accom_index]="${u_sex}";
                   
  				 	var accom_temp;
