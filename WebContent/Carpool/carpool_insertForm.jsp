@@ -6,7 +6,6 @@ String id =(String)session.getAttribute("member_id");
 <!DOCTYPE html>
 
 <html>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/carpool_css/city-main-styles.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin2.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/carpool_css/carpoolJoin3.css" />
@@ -660,7 +659,7 @@ String id =(String)session.getAttribute("member_id");
 							    <div class="button_base b03_skewed_slide_in">
 							        <div>Sign up</div>
 							        <div></div>
-							        <div>Sign up</div>
+							        <div><button type="submit">Sign up</button></div>
 							    </div>
 							</div>
 					    </div>
