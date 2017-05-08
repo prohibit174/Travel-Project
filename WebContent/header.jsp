@@ -132,11 +132,11 @@ $(function(){
     <div class="tabs-list">
         <ul id="menu_tab_list">
             <li><a href="home.main" >HOME</a></li>
-            <li><a href="">ACCOMPANY</a></li>
+            <li><a href=".accompany">ACCOMPANY</a></li>
             <li>
             	<a href="main.carpool" >CARPOOL</a>
             	<ul>
-            		<li><a class="Carpool_Enrollment"><span>카풀 등록</span></a></li>     
+            		<li><a class="Carpool_Enrollment"><span>경로 수정</span></a></li>     
             		<li><a href="list.carpool" data-id="2d8eef384cefda06" class="Carpool_Waiting"><span>대기중인 카풀 리스트</span></a></li>
            			<li><a data-id="f9188662257e085d" class="My_Carpool"><span>내 카풀 등록 조회</span></a></li>
             	</ul>

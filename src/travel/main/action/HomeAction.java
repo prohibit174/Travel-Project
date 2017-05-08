@@ -13,7 +13,7 @@ public class HomeAction implements Action {
 			throws ServletException, IOException, Exception {
 		
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(false);
+		forward.setRedirect(true);
 		forward.setPath("main.jsp");
 		return forward;
 	
