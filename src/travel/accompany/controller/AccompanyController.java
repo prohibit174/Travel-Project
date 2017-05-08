@@ -36,7 +36,7 @@ public class AccompanyController extends HttpServlet {
 	       ActionForward forward = null;
 	       Action action = null;
 	       
-	   
+	       if(command.equals("main.accompany")){
 	    	   System.out.println("hihi");
 	          action = new accomp_main();
 	          try {
@@ -44,7 +44,7 @@ public class AccompanyController extends HttpServlet {
 	         } catch (Exception e) {
 	            e.printStackTrace();
 	         }
-
+	          }
 	        
 	       	   
 	       if(forward !=null){

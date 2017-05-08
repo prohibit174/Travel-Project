@@ -19,8 +19,13 @@ public interface TravelMapper {
 	Product_Request detailProductReq(String p_num);
 	int insertProductReq(Product_Request proReq);
 	List<Product_Request> listProductRequest(String u_id);
+<<<<<<< HEAD
+	int updateAccept(Product_Request proReq);
+	List<Product_Request> listNotAceept();
+=======
 	int countProduct(Product_Search proSearch);
 	List<Product> listProduct(Product_Search proSearch);
+>>>>>>> branch '김두두' of https://github.com/prohibit174/Travel-Project
 
 
 }
