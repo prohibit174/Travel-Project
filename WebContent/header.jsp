@@ -42,7 +42,20 @@
 <script src="${pageContext.request.contextPath}/JS/MainEvent/loginPopup.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/MainEvent/login_success.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/JS/MainEvent/NotLoginEvent.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#menu_tab_list > li > ul").hide();
+	$("#menu_tab_list > li").mouseenter("focusin", function() {
+	    $(this).addClass("on");
+	    $("#menu_tab_list > li.on ul").show();
+	});
+	$("#menu_tab_list > li").mouseleave("focusout", function() {
+	    $(this).removeClass("on");
+		$("#menu_tab_list > li > ul").hide();
+	});
 
+});
+</script>
 <style type="text/css">
   body, pre {
     font-family: "맑은 고딕","Malgun Gothic","Helvetica Neue","Apple SD Gothic Neo",Helvetica,Arial,"Apple Gothic","돋움",Dotum,sans-serif!important;
@@ -51,6 +64,13 @@
   .if-me{
     display: none !important;
   }
+
+#menu_tab_list > li {display:inline-block; }
+#menu_tab_list > li > a {display:block; line-height:25px; width:150px; text-align:center; padding-top: 10px;}
+#menu_tab_list > li.on a {background:#777; color:#fff;}
+#menu_tab_list li ul {position:absolute; width:150px; z-index: 1;}
+#menu_tab_list li.on ul {height:auto; background:#777;}
+#menu_tab_list li ul li a {margin:3px 0px 3px 3px; color:#fff; text-align: left;}
 
 </style>
 
@@ -110,7 +130,14 @@
         <ul id="menu_tab_list">
             <li><a href="home.main" >HOME</a></li>
             <li><a data-tab="hotdeal" >동행</a></li>
-            <li><a href="main.carpool" >카풀</a></li>
+            <li>
+            	<a href="main.carpool" >카풀</a>
+            	<ul>
+            		<li><a class="Carpool_Enrollment"><span>카풀 등록</span></a></li>     
+            		<li><a href="list.carpool" data-id="2d8eef384cefda06" class="Carpool_Waiting"><span>대기중인 카풀 리스트</span></a></li>
+           			<li><a data-id="f9188662257e085d" class="My_Carpool"><span>내 카풀 등록 조회</span></a></li>
+            	</ul>
+            </li>
             <li><a href="listAction.product" >물품교환</a></li>
             <li><a data-tab="plan" >커뮤니티</a></li>
             <li><a data-tab="attraction" >블로그</a></li>
