@@ -82,7 +82,7 @@ $(function(){
   <!-- {header -->
   <div class="header">
     <div class="main-nav-con">
-      <a href="home.main"><img id="airplane" width=90px height=auto alt="비행기" src="${pageContext.request.contextPath}/images/airplane.PNG"><p class="title-logo"><span>외로울 틈이 없다 ! 프로동행러</span></p></a>
+      <a href="home.main"><p class="title-logo"><span>외로울 틈이 없다 ! 프로동행러</span></p></a>
 
 
       <div class="nav-login-search">
