@@ -105,13 +105,7 @@ $(function(){
       </p>
     </div>
   </div><!-- header } -->
-<div class="back">
-    <div class="button_base b03_skewed_slide_in">
-        <div>Modify</div>
-        <div></div>
-        <div>Modify</div>
-    </div>
-</div>
+
 
 <!-- 포함되어야 할 파라미터 목록 -->
 <!-- language, curCity, tab (현재 선택된 탭) -->

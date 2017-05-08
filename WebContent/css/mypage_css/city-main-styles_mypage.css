@@ -1,4 +1,4 @@
-
+div.in_form {margin-left: 20%;}
 .lnb ul.city_name			{ margin-bottom:60px}
 .lnb ul.city_name li.city	{ margin-top:29px}
 .lnb ul.city_name li.flag	{ margin-top:5px; font-size:20px; font-weight:600; color:#000; letter-spacing:-0.15em; line-height:20px}
@@ -20,13 +20,13 @@
 
 .join_form th{
 	padding: 8px;
-	padding-right: 20px;
+	padding-right: 10px;
 	width: 109px;
 }
 
 .join_form td{
 	padding: 8px;
-	padding-right: 20px;
+	padding-right: 15px;
 }
 
 form{ margin-top:29px; margin-bottom: 5%}

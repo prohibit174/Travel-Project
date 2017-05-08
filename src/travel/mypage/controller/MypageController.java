@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import travel.mypage.action.Action;
 import travel.mypage.action.ActionForward;
 import travel.mypage.action.CarpoolDeleteAction;
+import travel.mypage.action.CarpoolDetailAction;
 import travel.mypage.action.CarpoolListAction;
 import travel.mypage.action.CarpoolUpdateAction;
 import travel.mypage.action.CarpoolUpdateAction2;
@@ -26,8 +27,6 @@ import travel.mypage.action.UpdateUserAction;
 public class MypageController extends HttpServlet {
    private static final long serialVersionUID = 1L;
        
-   
-   
     public MypageController() {
         super();
     }
@@ -43,7 +42,7 @@ public class MypageController extends HttpServlet {
        ActionForward forward = null;
        Action action = null;
        
-
+       
        if(command.equals("carpoolCheck.mypage")){
           action = new CarpoolListAction();
           try {
@@ -108,12 +107,14 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} 
-
-       
-    
-       
-       
+		}else if (command.equals("carpoolDetail.mypage")) {
+			action = new CarpoolDetailAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
        
        if(forward !=null){
           if(forward.isRedirect()){
