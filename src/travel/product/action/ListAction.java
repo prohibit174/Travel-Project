@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import travel.product.model.Product;
 import travel.product.model.ProductDao;
+import travel.product.model.Product_Search;
 
 public class ListAction implements Action {
 	
@@ -16,8 +17,13 @@ public class ListAction implements Action {
 			throws ServletException, IOException, Exception {
 		ProductDao dao = ProductDao.getInstance();
 		
+		Product_Search proSearch =new Product_Search();
+		proSearch.setProduct_search(request.getParameterValues("product_search"));
+		proSearch.setSearchKey("%"+request.getParameter("searchKey")+"%");
 		
-		List<Product> list = dao.listProduct();
+		
+		
+		List<Product> list = dao.listProduct(proSearch);
 		request.setAttribute("list", list);
 		
 		ActionForward forward = new ActionForward();

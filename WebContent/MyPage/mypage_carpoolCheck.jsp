@@ -53,23 +53,23 @@
 				
             <table class="primary_table">
             <tr>
-            <th>이름</th>
+            <th>등록번호</th>
+            <th>아이디</th>
             <th>출발</th>
             <th>가격</th>
             <th>출발시간</th>
-            <th>남은인원</th>
-            <th>주소</th> 
+            <th>남은좌석</th>
             <th>수정</th> 
             <th>삭제</th> 
             </tr>
 	<c:forEach var="carpool" items="${list}">
       <tr height="30">
          <td align="center">${carpool.c_num }</td>
+         <td align="center">${carpool.u_id }</td>
          <td align="center">${carpool.start_lati }></td>
          <td align="center">${carpool.c_price }</td>
-         <td align="center">${carpool.c_date }</td>
-         <td align="center">${carpool.c_person }</td>
          <td align="center">${carpool.c_dept_time }</td>
+         <td align="center">${carpool.c_person }</td>
          <td align="center"><input type="button" value="수정" onclick="location.href='carpoolUpdate.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
          <td align="center"><input type="button" value="삭제" onclick="location.href='carpoolDelete.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
          

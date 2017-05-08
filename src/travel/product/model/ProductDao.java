@@ -49,11 +49,11 @@ public class ProductDao {
 		}
 	}
 
-	public List<Product> listProduct() throws Exception {
+	public List<Product> listProduct(Product_Search proSearch) throws Exception {
 		SqlSession session = getSqlSessionFactory().openSession();
 		List<Product> list = null;
 		try {
-			list = session.getMapper(TravelMapper.class).listProduct();
+			list = session.getMapper(TravelMapper.class).listProduct(proSearch);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{

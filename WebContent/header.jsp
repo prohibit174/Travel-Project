@@ -63,27 +63,27 @@
   <!-- {header -->
   <div class="header">
     <div class="main-nav-con">
-      <p class="wishbeen-logo"><span>세상의 모든 여행, 위시빈</span></p>
+      <a href="home.main"><p class="wishbeen-logo"><span>나를 클릭하면 HOME으로 갑니다</span></p></a>
 
-		
-			<div id="frames">
-			<span>${member_id}</span>
-			</div>
-		
+
 		
       <div class="nav-login-search">
         <a class="btn-new-plan">로그인</a>
+
         <div class="login-and-profile">
-          
+
           <div>
             <a href="JoinForm.users" id="nav-btn-about"  >회원가입</a>
             <a href = "main.mypage" id="nav-login-btn" class="nav-btn-login">마이페이지</a>
-
           </div>
-          
-          
+
         </div><!-- login-and-profile -->
+        
       </div>
+      
+      <p id="frames"><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <span>${member_id}</span>
+      </p>
     </div>
   </div><!-- header } -->
 

@@ -1,3 +1,4 @@
+<%@page import="travel.product.model.Product_Search"%>
 <%@page import="travel.users.model.Users"%>
 <%@page import="travel.users.model.UsersDao"%>
 <%@page import="travel.product.model.Product"%>
@@ -14,8 +15,9 @@
 	String p_num=request.getParameter("p_num");
 
     ProductDao dao = ProductDao.getInstance();
+    Product_Search proSearch=new Product_Search();
 	
-    List<Product> list = dao.listProduct();
+    List<Product> list = dao.listProduct(proSearch);
     Product product=dao.detailProduct(p_num);
     
     request.setAttribute("product", product);

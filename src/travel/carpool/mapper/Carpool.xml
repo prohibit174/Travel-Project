@@ -12,7 +12,7 @@
 			c_num, u_id, start_lati, start_longti, dest_lati, dest_longti, c_price, c_date, c_person, c_dept_time
 		)
 		values(
-			1, 1234, #{start_lati}, #{start_longti}, #{dest_lati}, #{dest_longti}, 2000, SYSDATE, #{c_person}, SYSDATE
+			#{c_num}, #{u_id}, #{start_lati}, #{start_longti}, #{dest_lati}, #{dest_longti}, 2000, SYSDATE, #{c_person}, SYSDATE
 		)
 	</insert>
 	
@@ -26,6 +26,10 @@
 		</foreach>
 		</where>
 		</if>
+	</select>
+	
+	<select id = "carpool_num" resultType="integer">
+		select max(c_num) from TEST 
 	</select>
 	
 	<select id = "detailCarpool" parameterType="String" resultType="Carpool">
@@ -48,8 +52,26 @@
 		where c_num=#{c_num}
 	</update>
 	
+	<select id="countCarpool" resultType="int" parameterType="Search">
+		select count(*) from TEST	
+		<!-- Carpool list paging work -->
+		<if test="carpool_search !=null">
+				<where>
+					<!-- b_title, LIKE %자바% OR  b_writer LIKE %자바%-->
+					<foreach collection="carpool_search" item="item" separator="OR" open="(" close=")" >
+						${item} LIKE #{searchKey}
+					</foreach>
+				</where>
+			</if>
+	</select>
+	
+	<insert id= "insertCarpool_Request" parameterType="Carpool_Request">
+		insert into TEST1 VALUES(cr_num.nextval, 'x', #{c_num}, #{u_id})
+	</insert>
+	
 
 </mapper>
+
 
 
 
