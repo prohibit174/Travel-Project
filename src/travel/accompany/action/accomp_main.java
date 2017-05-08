@@ -11,20 +11,20 @@ import travel.accompany.model.Accompany;
 import travel.accompany.model.AccompanyDao;
 import travel.accompany.model.Route;
 
-public class getUserRoute implements Action {
+public class accomp_main implements Action {
 	
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, Exception {
-		AccompanyDao dao = AccompanyDao.getInstance();
+		//AccompanyDao dao = AccompanyDao.getInstance();
 		
-		Route route=new Route();
-		route.setU_id("0");
-		List<Accompany> list = dao.getUserRoute(route);
+		//Route route=new Route();
+		//route.setU_id("0");
+		//List<Accompany> list = dao.getUserRoute(route);
 		//request.setAttribute("list", list);
 		
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(true);
-		forward.setPath("Accomp_main.jsp");
+		//forward.setRedirect(false);
+		forward.setPath("Accompany/Accomp_main2.jsp");
 		
 		return forward;
 	}
