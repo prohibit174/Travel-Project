@@ -140,6 +140,20 @@ public class ProductDao {
 			}
 			return productReq;
 		}
+		
+		public List<Product_Request> listProductRequest(String u_id) throws Exception {
+			SqlSession session = getSqlSessionFactory().openSession();
+			List<Product_Request> list = null;
+			try {
+				list = session.getMapper(TravelMapper.class).listProductRequest(u_id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+			
+			return list;
+		}
 
 		
 		
