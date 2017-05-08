@@ -96,7 +96,7 @@
             var movingPath = new google.maps.Polyline({
              path: latLngList,
              geodesic: true,
-             strokeColor: '#000000',
+             strokeColor: '#000000',	
              strokeOpacity: 10.0,
              strokeWeight: 1
            });
