@@ -2,10 +2,13 @@ package travel.carpool.model;
 
 import java.io.Serializable;
 
+import travel.users.model.Users;
+
 public class Carpool implements Serializable {
 
 	private int c_num;
 	private String u_id;
+	private String u_img;
 	private String start_lati;
 	private String start_longti;
 	private String dest_lati;
@@ -19,11 +22,12 @@ public class Carpool implements Serializable {
 	public Carpool(){}
 
 
-	public Carpool(int c_num, String u_id, String start_lati, String start_longti, String dest_lati,
+	public Carpool(int c_num, String u_id, String u_img, String start_lati, String start_longti, String dest_lati,
 			String dest_longti, String c_price, String c_date, int c_person, String c_dept_time) {
 		super();
 		this.c_num = c_num;
 		this.u_id = u_id;
+		this.u_img = u_img;
 		this.start_lati = start_lati;
 		this.start_longti = start_longti;
 		this.dest_lati = dest_lati;
@@ -33,6 +37,8 @@ public class Carpool implements Serializable {
 		this.c_person = c_person;
 		this.c_dept_time = c_dept_time;
 	}
+
+
 
 
 	public int getC_num() {
@@ -52,6 +58,16 @@ public class Carpool implements Serializable {
 
 	public void setU_id(String u_id) {
 		this.u_id = u_id;
+	}
+
+
+	public String getU_img() {
+		return u_img;
+	}
+
+
+	public void setU_img(String u_img) {
+		this.u_img = u_img;
 	}
 
 
@@ -133,5 +149,8 @@ public class Carpool implements Serializable {
 	public void setC_dept_time(String c_dept_time) {
 		this.c_dept_time = c_dept_time;
 	}
+
+	
+
 	
 }

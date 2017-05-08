@@ -60,6 +60,7 @@
             <th>가격</th>
             <th>출발시간</th>
             <th>남은좌석</th>
+            <th>현황</th>
             <th>수정</th> 
             <th>삭제</th> 
             </tr>
@@ -71,6 +72,7 @@
          <td align="center">${carpool.c_price }</td>
          <td align="center">${carpool.c_dept_time }</td>
          <td align="center">${carpool.c_person }</td>
+         <td align="center"><input type="button" value="현황" onclick="location.href='carpoolDetail.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
          <td align="center"><input type="button" value="수정" onclick="location.href='carpoolUpdate.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
          <td align="center"><input type="button" value="삭제" onclick="location.href='carpoolDelete.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
          

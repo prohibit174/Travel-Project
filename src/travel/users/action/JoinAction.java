@@ -69,7 +69,8 @@ public class JoinAction implements Action {
 		users.setU_religion(multi.getParameter("u_religion"));
 		users.setU_license(multi.getParameter("u_license"));
 		users.setU_img(multi.getParameter("u_img"));
-		users.setU_style(request.getParameter("u_style"));
+		users.setU_style(multi.getParameter("u_style"));
+		/*users.setU_style(request.getParameter("u_style"));*/
 		
 		dao.insertUsers(users);
 		

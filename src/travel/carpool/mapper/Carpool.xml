@@ -5,20 +5,23 @@
 
 
 <mapper namespace="travel.carpool.mapper.CarpoolMapper">
+
+
 	<cache />
-	
+
 	<insert id="insertCarpool" parameterType="Carpool">
 			insert into TEST(
-			c_num, u_id, start_lati, start_longti, dest_lati, dest_longti, c_price, c_date, c_person, c_dept_time
+			c_num, u_id, u_img, start_lati, start_longti, dest_lati, dest_longti, c_price, c_date, c_person, c_dept_time
 		)
 		values(
-			#{c_num}, #{u_id}, #{start_lati}, #{start_longti}, #{dest_lati}, #{dest_longti}, 2000, SYSDATE, #{c_person}, SYSDATE
+			#{c_num}, #{u_id},#{u_img}, #{start_lati}, #{start_longti}, #{dest_lati}, #{dest_longti}, 2000, SYSDATE, #{c_person}, SYSDATE
 		)
 	</insert>
 	
 	
 	<select id="listCarpool" resultType="Carpool" parameterType="Search">
-		select * from test 
+		select * from test
+		where c_person>0 
 		<if test="carpool_search !=null">
 		<where>
 		<foreach collection="carpool_search" item="item" separator="or" open="(" close=")">
@@ -91,6 +94,7 @@
 		select * from test1
 		where u_id=#{u_id} 
 	</select>
+
 </mapper>
 
 

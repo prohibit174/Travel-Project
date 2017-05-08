@@ -17,7 +17,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage?ver20170508.css">
 
 
 <head>
@@ -154,6 +154,8 @@
 
 		<div class="nlogin_join_center">
 		<button type = "submit" class = "nlogin_btn">수정하기</button>	 
+		
+
 		</div>
 		
 		

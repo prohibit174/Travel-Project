@@ -54,6 +54,7 @@ public class UserAction implements Action {
 					System.out.println("img안들어감");
 				}
 				
+			
 		users.setU_id(multi.getParameter("u_id"));
 		users.setU_name(multi.getParameter("u_name"));
 		users.setU_pwd(multi.getParameter("u_pwd"));

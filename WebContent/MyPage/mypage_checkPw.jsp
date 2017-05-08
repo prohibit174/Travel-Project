@@ -2,8 +2,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/users_css/city-main-styles_join.css?version=20170502">
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mypage_css/city-main-styles_mypage.css?20170508">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -41,12 +40,14 @@
             </div><!-- e//tabs-list -->
             </div> <!-- present -->
 
-<form action="UpdateUserAction.mypage">
+<form action="UpdateUserAction.mypage" class="join_form">
+<div class = "in_form">
 개인 정보 보호를 위해 비밀번호를 입력해주세요.<br><br><br>
 <!-- 아이디 입력 <input type = "text" id = "u_id"><br><br> -->
 비밀번호 입력&nbsp;&nbsp;<input type = "password" id = "u_pwd" name = "u_pwd"><br><br>
 <input type = "submit" value = "회원정보 수정" class = "nlogin_btn">
 <!-- http://doublesprogramming.tistory.com/94 -->
+</div>
 </form>
 </body>
 </html>

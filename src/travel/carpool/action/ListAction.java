@@ -13,13 +13,15 @@ import travel.carpool.model.Carpool;
 import travel.carpool.model.CarpoolDao;
 import travel.carpool.model.ListModel;
 import travel.carpool.model.Search;
+import travel.users.model.Users;
 
 public class ListAction implements Action {
 	private static final int PAGE_SIZE = 10;
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, Exception {
-
+			Users user = (Users) request.getAttribute("user");
+			request.setAttribute("user", user);
 		   String pageNum = request.getParameter("pageNum");
 		   if(pageNum == null){
 		      pageNum = "1";
@@ -29,6 +31,7 @@ public class ListAction implements Action {
 		   System.out.println(requestPage);
 		ActionForward forward = new ActionForward();
 		ListModel listModel = carpoolListPaging(request, requestPage);
+		
 		request.setAttribute("listModel", listModel);
 		forward.setRedirect(false);
 		forward.setPath("Carpool/carpool_list.jsp");
