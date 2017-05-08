@@ -20286,7 +20286,8 @@ a.loginwithf.goog {
 	line-height: 50px;
 	padding: 0 20px;
 	font-size: 14px;
-	color: #ff8000;
+	font-weight: bold;
+	color: #000000;
 	text-decoration: none;
 	border-left: 1px solid #eee
 }
