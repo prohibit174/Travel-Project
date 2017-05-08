@@ -29,7 +29,7 @@
 
 <br>
 	<div class="form_body">
-		<form class="join_form" method="post" action="UpdateUserAction.mypage">
+		<form class="join_form" method="post" action="CheckPw.mypage">
 		        <div class="present">
             <div class="tabs-list">
                 

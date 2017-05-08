@@ -25,7 +25,7 @@
 			 u_lang, u_religion,  u_license, u_img, u_style
 		)values(
 			#{u_id},#{u_pwd}, #{u_name},  #{u_birth}, #{u_sex}, #{u_address},#{u_job},
-			#{u_lang},#{u_religion},  #{u_license} , #{u_img}, #{u_style , jdbcType=VARCHAR} 
+			#{u_lang},#{u_religion},  #{u_license} , #{u_img}, #{u_style<!--  , jdbcType=VARCHAR -->} 
 		)
 	</insert>
 	
@@ -39,7 +39,7 @@
 		SELECT * FROM users WHERE u_id = #{u_id}
 	</select>
 	
-	<!-- 정보 수정 -->
+		<!-- 정보 수정 -->
 	<update id="userUpdate" parameterType="String">
 	UPDATE users SET u_pwd = #{u_pwd}, u_address = #{u_address}, u_job = #{u_job}, 
 	u_lang = #{u_lang}, u_religion = #{u_religion}, u_license = #{u_license}, 
@@ -47,7 +47,12 @@
 	WHERE u_id = #{u_id}
 	
 	</update>
-
+	
+	<select id="checkPw" parameterType="map" resultType="int">
+		SELECT count(*) FROM users WHERE u_id = #{u_id} AND u_pwd = #{u_pwd}
+	
+	</select>
+	
 </mapper>
 
 
