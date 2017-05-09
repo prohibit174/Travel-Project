@@ -11,14 +11,14 @@
 <%
 	String u_id = session.getAttribute("member_id").toString();
 	String p_num=request.getParameter("p_num");
-	System.out.println(p_num);
+
 	ProductDao dao = ProductDao.getInstance();
 	Product_Request productReq=dao.detailProductReq(p_num);
 	request.setAttribute("productReq", productReq);
 	
 	List<Product_Request> list = dao.listProductRequest(u_id);
+
 	request.setAttribute("list", list);
-	
 	
 
 
@@ -31,16 +31,7 @@
 <head>
 <script type="text/javascript">
 
-function btn_js_accept_click(URL){
-	  /* confirm(문자열, 초기값) */
-	  //var check = confirm("수락하시겠습니까?");
-	  /* if(check == true) else false */
-	  //if(check) document.location.href="updateAcceptAction.product?p_num=${productReq.p_num}";
-	  if(confirm("수락하시겠습니까?") == true){
-		  location.href=URL;
-	  }
-	 
-	}
+
 </script>
     
 <%@include file="../header.jsp" %>
@@ -83,8 +74,9 @@ function btn_js_accept_click(URL){
             </div> <!-- present -->
             
           
-			<fieldset>
-				<legend>물품 교환 요청 목록</legend>
+        
+        <fieldset>
+				<legend>수락된 요청 목록</legend>
 				
             <table class="primary_table">
             <tr>
@@ -94,15 +86,13 @@ function btn_js_accept_click(URL){
             <th>수락여부</th>
             <th>장소</th>
             <th>시간</th> 
-            <th>수락</th> 
-            <th>거절</th> 
+           
             </tr>
             
             
 
             
 	<c:forEach var="product_req" items="${list}">
-	
       <tr height="30">
         <td align="center">${product_req.pr_reqnum }</td>
          <td align="center">${product_req.u_id }</td>
@@ -110,19 +100,13 @@ function btn_js_accept_click(URL){
          <td align="center">${product_req.pr_ox }</td>
          <td align="center">${product_req.pr_place }</td>
          <td align="center">${product_req.pr_date }</td>
-         
-         <td align="center"><input type="button" value="수락" class="nlogin_btn" onclick="javascript:btn_js_accept_click('updateAcceptAction.product?p_num=${product_req.p_num }')"></td>
-         <td align="center"><input type="button" value="거절" onclick="location.href='carpoolDelete.mypage?c_num=${carpool.c_num } '" class="nlogin_btn"></td>
         
          </tr>
          </c:forEach>
        
-       
    
          </table>
-         <br><br><br>
         </fieldset>
-       
 
 		</form>
 

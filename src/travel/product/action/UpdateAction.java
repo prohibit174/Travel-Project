@@ -59,6 +59,7 @@ public class UpdateAction implements Action {
 					System.out.println("img안들어감");
 				}
 				
+				
 				product.setP_num(p_num);
 				System.out.println(p_num);
 				dao.updateProduct(product);	

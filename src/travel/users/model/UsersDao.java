@@ -105,11 +105,12 @@ public class UsersDao {
 	}
 
 	//User Information Update
-	public void userUpdate(String u_id){
+	public void userUpdate(Users users){
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re = -1;
 		try {
-			re = session.getMapper(UsersMapper.class).userUpdate(u_id);
+			re = session.getMapper(UsersMapper.class).userUpdate(users);
+			System.out.println(re);
 			if(re>0){
 				session.commit();
 			}else{

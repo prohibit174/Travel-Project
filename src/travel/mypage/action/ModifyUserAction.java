@@ -19,9 +19,9 @@ public class ModifyUserAction implements Action {
 		HttpSession session = request.getSession();
 		String u_id = session.getAttribute("member_id").toString();
 		
-		Users users = new Users();
 		UsersDao dao = UsersDao.getInstance();
-		dao.userUpdate(u_id);
+		
+		Users users = dao.userDetail(u_id);
 		
 		users.setU_pwd(request.getParameter("u_pwd"));
 		users.setU_license(request.getParameter("u_license"));
@@ -31,10 +31,13 @@ public class ModifyUserAction implements Action {
 		users.setU_religion(request.getParameter("u_religion"));
 		users.setU_style(request.getParameter("u_style"));
 		
+		dao.userUpdate(users);
+		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
 		forward.setPath("home.main");
 		System.out.println("modifyAction");
+		
 		
 		return forward;
 	}
