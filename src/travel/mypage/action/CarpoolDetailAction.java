@@ -6,8 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import travel.carpool.action.Action;
-import travel.carpool.action.ActionForward;
+
+
 import travel.carpool.model.Carpool;
 import travel.carpool.model.CarpoolDao;
 
@@ -28,7 +28,6 @@ public class CarpoolDetailAction implements Action {
 		forward.setRedirect(false);
 		forward.setPath("carpoolCheck.mypage");
 		return forward;
-		return null;
 	}
 
 }

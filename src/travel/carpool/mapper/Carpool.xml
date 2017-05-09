@@ -93,6 +93,8 @@
 	<select id="myRequestCarpool" resultType="Carpool_Request" parameterType="String">
 		select * from test1
 		where u_id=#{u_id} 
+		
+		select c_num,u_id from test where c_num IN (select c_num from test1 where u_id = #{u_id});
 	</select>
 
 </mapper>

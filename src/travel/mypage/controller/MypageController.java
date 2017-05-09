@@ -71,7 +71,14 @@ public class MypageController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("UpdateUserAction.mypage")){
+		} else if (command.equals("carpoolDetail.mypage")) {
+			action = new CarpoolDetailAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if (command.equals("UpdateUserAction.mypage")){
 			action = new UpdateUserAction();
 			try {
 				forward = action.execute(request, response);
@@ -102,13 +109,6 @@ public class MypageController extends HttpServlet {
 			}
 		}else if (command.equals("productRequestList.mypage")){
 			action = new ProductRequestListAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}else if (command.equals("carpoolDetail.mypage")) {
-			action = new CarpoolDetailAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
