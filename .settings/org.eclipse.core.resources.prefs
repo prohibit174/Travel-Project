@@ -23,6 +23,7 @@ encoding//src/travel/product/action/DetailAction.java=UTF-8
 encoding//src/travel/product/action/UpdateFormAction.java=UTF-8
 encoding//src/travel/product/action/insertAction.java=UTF-8
 encoding//src/travel/product/controller/ProductController.java=UTF-8
+encoding//src/travel/product/mapper/TravelMapper.java=UTF-8
 encoding//src/travel/product/model/ImageUtil.java=UTF-8
 encoding//src/travel/users/model/ImageUtil.java=UTF-8
 encoding//src/travel/users/model/UsersDao.java=UTF-8

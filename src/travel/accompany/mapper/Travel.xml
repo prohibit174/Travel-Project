@@ -21,15 +21,15 @@
 			 and TO_CHAR(t.tp_date,'YYYY/MM/DD')=SUBSTR(#{tp_date},0,4)||'/'||SUBSTR(#{tp_date},6,2)||'/'||SUBSTR(#{tp_date},9,2)
 			and c.cor_lati=(select cor_lati from cordinates c where cor_region=#{cor_region})
 			and c.cor_longi=(select cor_longi from cordinates c where cor_region=#{cor_region})
-			order by 
+			<!-- order by 
 			case 
-			when u.ts_id='0' then 1 
- 			when ABS(to_number(SUBSTR(u.u_birth,0,4))-to_number(SUBSTR(#{u_birth},0,4))) &lt;  5 then 2 
+				when u.ts_id='0' then 1 
+			when ABS(to_number(SUBSTR(u.u_birth,0,4))-to_number(SUBSTR(#{u_birth},0,4))) &lt;  5 then 2 
 			when u.u_sex=#{u_sex} then 3
 			when u.u_lang=#{u_lang} then 4  
 			when u.u_religion=#{u_religion} then 5
-			when u.u_job=#{u_job} then 6 
-			end  
+			when u.u_job=#{u_job} then 1 
+			end    -->
 			</select>
 	
 </mapper>

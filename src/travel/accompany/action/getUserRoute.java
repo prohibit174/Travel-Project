@@ -24,7 +24,7 @@ public class getUserRoute implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
-		forward.setPath("Accomp_main.jsp");
+		forward.setPath("Accomp_main2.jsp");
 		
 		return forward;
 	}

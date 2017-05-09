@@ -25,7 +25,7 @@ public interface TravelMapper {
 =======
 	int countProduct(Product_Search proSearch);
 	List<Product> listProduct(Product_Search proSearch);
->>>>>>> branch '김두두' of https://github.com/prohibit174/Travel-Project
+>>>>>>> branch '源��몢�몢' of https://github.com/prohibit174/Travel-Project
 
 
 }
