@@ -5,14 +5,16 @@
 
 
 <mapper namespace="travel.carpool.mapper.CarpoolMapper">
+
+
 	<cache />
-	
+
 	<insert id="insertCarpool" parameterType="Carpool">
 			insert into TEST(
-			c_num, u_id, start_lati, start_longti, dest_lati, dest_longti, c_price, c_date, c_person, c_dept_time
+			c_num, u_id, u_img, start_lati, start_longti, dest_lati, dest_longti, c_price, c_date, c_person, c_dept_time
 		)
 		values(
-			#{c_num}, #{u_id}, #{start_lati}, #{start_longti}, #{dest_lati}, #{dest_longti}, 2000, SYSDATE, #{c_person}, SYSDATE
+			#{c_num}, #{u_id},#{u_img}, #{start_lati}, #{start_longti}, #{dest_lati}, #{dest_longti}, 2000, SYSDATE, #{c_person}, SYSDATE
 		)
 	</insert>
 	
@@ -92,6 +94,7 @@
 		select * from test1
 		where u_id=#{u_id} 
 	</select>
+
 </mapper>
 
 

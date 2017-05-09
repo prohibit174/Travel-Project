@@ -10,6 +10,7 @@
 	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
+
 %>
 <!DOCTYPE html>
 
@@ -115,12 +116,30 @@ function applyLink(URL){
 		</form>
 				<div class="table">
 					<ul>
+					
 						<c:forEach var="carpool" items="${listModel.list}">
 							
 							<li>
 								<div class="top">
-									<h5>등록번호 : ${carpool.c_num }</h5>
-									<div class="circle">이미지</div>
+									<h5>등록번호 : ${carpool.c_num}</h5>
+								
+									<div class="circle"><c:if test="${carpool.u_img!=null}">
+                  <c:set var="head"
+                     value="${fn:substring(carpool.u_img, 0, fn:length(carpool.u_img)-4) }"></c:set>
+                  <c:set var="pattern"
+                     value="${fn:substring(carpool.u_img, fn:length(head)+1, fn:length(carpool.u_img)) }"></c:set>
+
+                  <c:choose>
+                     <c:when test="${pattern=='jpg' || pattern =='gif' || pattern =='png' }">
+                        <img src="upload/${head }_small.${pattern}" alt="img /">
+                     </c:when>
+                     <c:otherwise>
+                        <c:out value="No IMAGE"></c:out>
+                     </c:otherwise>
+                  </c:choose>
+               </c:if></div>
+									
+									
 								</div>
 								<div class="bottom">
 									<p>
@@ -139,7 +158,7 @@ function applyLink(URL){
 										<span>${carpool.dest_longti}</span>
 									</p>
 									<p>
-										<span>가격 : ${carpool.c_person}</span>
+										<span>가격 : ${carpool.c_price}</span>
 									</p>
 									<p>
 										<span>남은좌석 ${carpool.c_person}</span>
